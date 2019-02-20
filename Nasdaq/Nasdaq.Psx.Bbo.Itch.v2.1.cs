@@ -9,22 +9,32 @@ namespace MyNamespace {
         ///  Swap byte order for 2 byte unsigned short
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static uint Swap(ushort value)
-            => value << 8 | value >> 8 
+        internal static ushort Swap(ushort value)
+            => unchecked(value << 8 | value >> 8);
+        
+        /// <summary>
+        ///  Swap byte order in unsigned integer
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static uint Swap(uint value)
+            => unchecked((value & 0x000000FF) << 24 |
+                         (value & 0x0000FF00) << 8  |
+                         (value & 0x00FF0000) >> 8  |
+                         (value & 0xFF000000) >> 24);
         
         /// <summary>
         ///  Swap byte order for 8 byte unsigned long
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static uint Swap(ulong value)
-            => (0x00000000000000FF) & (value >> 56) |
-               (0x000000000000FF00) & (value >> 40) |
-               (0x0000000000FF0000) & (value >> 24) |
-               (0x00000000FF000000) & (value >> 8)  |
-               (0x000000FF00000000) & (value << 8)  |
-               (0x0000FF0000000000) & (value << 24) |
-               (0x00FF000000000000) & (value << 40) |
-               (0xFF00000000000000) & (value << 56);
+        internal static ulong Swap(ulong value)
+            => unchecked((0x00000000000000FF) & (value >> 56) |
+                         (0x000000000000FF00) & (value >> 40) |
+                         (0x0000000000FF0000) & (value >> 24) |
+                         (0x00000000FF000000) & (value >> 8)  |
+                         (0x000000FF00000000) & (value << 8)  |
+                         (0x0000FF0000000000) & (value << 24) |
+                         (0x00FF000000000000) & (value << 40) |
+                         (0xFF00000000000000) & (value << 56));
         
     };
 
@@ -56,8 +66,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Count
     /// </summary>
-    public struct Count {
-        public ushort Raw;
+    public unsafe struct Count {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -85,8 +104,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Etp Leverage Factor
     /// </summary>
-    public struct EtpLeverageFactor {
-        public uint Raw;
+    public unsafe struct EtpLeverageFactor {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -175,8 +203,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Length
     /// </summary>
-    public struct Length {
-        public ushort Raw;
+    public unsafe struct Length {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -300,8 +337,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Psx Best Bid Size
     /// </summary>
-    public struct PsxBestBidSize {
-        public uint Raw;
+    public unsafe struct PsxBestBidSize {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -316,8 +362,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Psx Best Offer Size
     /// </summary>
-    public struct PsxBestOfferSize {
-        public uint Raw;
+    public unsafe struct PsxBestOfferSize {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -350,8 +405,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Round Lot Size
     /// </summary>
-    public struct RoundLotSize {
-        public uint Raw;
+    public unsafe struct RoundLotSize {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -381,8 +445,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Sequence
     /// </summary>
-    public struct Sequence {
-        public ulong Raw;
+    public unsafe struct Sequence {
+        public const int Size = 8;
+
+        public ulong Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ulong Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -439,8 +512,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Tracking Number
     /// </summary>
-    public struct TrackingNumber {
-        public ushort Raw;
+    public unsafe struct TrackingNumber {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 

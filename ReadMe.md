@@ -11,7 +11,7 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 |Protocol Count | Generated Lines|
 |--- | ---|
-|46 | 58,108|
+|46 | 60,884|
 
 Please report any errors as issues.  Include a small note on the protocol and version, and a minimal capture demonstrating the problem.
 

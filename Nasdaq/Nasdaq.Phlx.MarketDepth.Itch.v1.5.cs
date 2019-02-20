@@ -9,22 +9,32 @@ namespace MyNamespace {
         ///  Swap byte order for 2 byte unsigned short
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static uint Swap(ushort value)
-            => value << 8 | value >> 8 
+        internal static ushort Swap(ushort value)
+            => unchecked(value << 8 | value >> 8);
+        
+        /// <summary>
+        ///  Swap byte order in unsigned integer
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static uint Swap(uint value)
+            => unchecked((value & 0x000000FF) << 24 |
+                         (value & 0x0000FF00) << 8  |
+                         (value & 0x00FF0000) >> 8  |
+                         (value & 0xFF000000) >> 24);
         
         /// <summary>
         ///  Swap byte order for 8 byte unsigned long
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static uint Swap(ulong value)
-            => (0x00000000000000FF) & (value >> 56) |
-               (0x000000000000FF00) & (value >> 40) |
-               (0x0000000000FF0000) & (value >> 24) |
-               (0x00000000FF000000) & (value >> 8)  |
-               (0x000000FF00000000) & (value << 8)  |
-               (0x0000FF0000000000) & (value << 24) |
-               (0x00FF000000000000) & (value << 40) |
-               (0xFF00000000000000) & (value << 56);
+        internal static ulong Swap(ulong value)
+            => unchecked((0x00000000000000FF) & (value >> 56) |
+                         (0x000000000000FF00) & (value >> 40) |
+                         (0x0000000000FF0000) & (value >> 24) |
+                         (0x00000000FF000000) & (value >> 8)  |
+                         (0x000000FF00000000) & (value << 8)  |
+                         (0x0000FF0000000000) & (value << 24) |
+                         (0x00FF000000000000) & (value << 40) |
+                         (0xFF00000000000000) & (value << 56));
         
     };
 
@@ -37,40 +47,85 @@ namespace MyNamespace {
     /// <summary>
     ///  Ask
     /// </summary>
-    public struct Ask {
-        public uint Raw;
+    public unsafe struct Ask {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Ask Price
     /// </summary>
-    public struct AskPrice {
-        public ushort Raw;
+    public unsafe struct AskPrice {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Ask Reference Number Delta
     /// </summary>
-    public struct AskReferenceNumberDelta {
-        public uint Raw;
+    public unsafe struct AskReferenceNumberDelta {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Ask Size
     /// </summary>
-    public struct AskSize {
-        public uint Raw;
+    public unsafe struct AskSize {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Auction Id
     /// </summary>
-    public struct AuctionId {
-        public uint Raw;
+    public unsafe struct AuctionId {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -87,56 +142,119 @@ namespace MyNamespace {
     /// <summary>
     ///  Base Reference Number
     /// </summary>
-    public struct BaseReferenceNumber {
-        public ulong Raw;
+    public unsafe struct BaseReferenceNumber {
+        public const int Size = 8;
+
+        public ulong Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ulong Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Bid
     /// </summary>
-    public struct Bid {
-        public uint Raw;
+    public unsafe struct Bid {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Bid Price
     /// </summary>
-    public struct BidPrice {
-        public ushort Raw;
+    public unsafe struct BidPrice {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Bid Reference Number Delta
     /// </summary>
-    public struct BidReferenceNumberDelta {
-        public uint Raw;
+    public unsafe struct BidReferenceNumberDelta {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Bid Size
     /// </summary>
-    public struct BidSize {
-        public uint Raw;
+    public unsafe struct BidSize {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Cancelled Contracts
     /// </summary>
-    public struct CancelledContracts {
-        public uint Raw;
+    public unsafe struct CancelledContracts {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Cancelled Reference Number Delta
     /// </summary>
-    public struct CancelledReferenceNumberDelta {
-        public uint Raw;
+    public unsafe struct CancelledReferenceNumberDelta {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -154,16 +272,34 @@ namespace MyNamespace {
     /// <summary>
     ///  Count
     /// </summary>
-    public struct Count {
-        public ushort Raw;
+    public unsafe struct Count {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Cross Number
     /// </summary>
-    public struct CrossNumber {
-        public uint Raw;
+    public unsafe struct CrossNumber {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -217,8 +353,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Executed Contracts
     /// </summary>
-    public struct ExecutedContracts {
-        public uint Raw;
+    public unsafe struct ExecutedContracts {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -249,8 +394,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Explicit Strike Price
     /// </summary>
-    public struct ExplicitStrikePrice {
-        public uint Raw;
+    public unsafe struct ExplicitStrikePrice {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -266,24 +420,51 @@ namespace MyNamespace {
     /// <summary>
     ///  Imbalance Price
     /// </summary>
-    public struct ImbalancePrice {
-        public uint Raw;
+    public unsafe struct ImbalancePrice {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Imbalance Volume
     /// </summary>
-    public struct ImbalanceVolume {
-        public uint Raw;
+    public unsafe struct ImbalanceVolume {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Length
     /// </summary>
-    public struct Length {
-        public ushort Raw;
+    public unsafe struct Length {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -303,8 +484,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Match Number
     /// </summary>
-    public struct MatchNumber {
-        public uint Raw;
+    public unsafe struct MatchNumber {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -355,16 +545,34 @@ namespace MyNamespace {
     /// <summary>
     ///  New Reference Number Delta
     /// </summary>
-    public struct NewReferenceNumberDelta {
-        public uint Raw;
+    public unsafe struct NewReferenceNumberDelta {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Number Of Reference Number Deltas
     /// </summary>
-    public struct NumberOfReferenceNumberDeltas {
-        public ushort Raw;
+    public unsafe struct NumberOfReferenceNumberDeltas {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -380,8 +588,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Option Id
     /// </summary>
-    public struct OptionId {
-        public uint Raw;
+    public unsafe struct OptionId {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -407,56 +624,119 @@ namespace MyNamespace {
     /// <summary>
     ///  Order Id
     /// </summary>
-    public struct OrderId {
-        public uint Raw;
+    public unsafe struct OrderId {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Order Reference Number Delta
     /// </summary>
-    public struct OrderReferenceNumberDelta {
-        public uint Raw;
+    public unsafe struct OrderReferenceNumberDelta {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Original Ask Reference Number Delta
     /// </summary>
-    public struct OriginalAskReferenceNumberDelta {
-        public uint Raw;
+    public unsafe struct OriginalAskReferenceNumberDelta {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Original Bid Reference Number Delta
     /// </summary>
-    public struct OriginalBidReferenceNumberDelta {
-        public uint Raw;
+    public unsafe struct OriginalBidReferenceNumberDelta {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Original Reference Number Delta
     /// </summary>
-    public struct OriginalReferenceNumberDelta {
-        public uint Raw;
+    public unsafe struct OriginalReferenceNumberDelta {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Paired Contracts
     /// </summary>
-    public struct PairedContracts {
-        public uint Raw;
+    public unsafe struct PairedContracts {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Price
     /// </summary>
-    public struct Price {
-        public uint Raw;
+    public unsafe struct Price {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -472,8 +752,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Reference Number Delta
     /// </summary>
-    public struct ReferenceNumberDelta {
-        public uint Raw;
+    public unsafe struct ReferenceNumberDelta {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -488,8 +777,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Second
     /// </summary>
-    public struct Second {
-        public uint Raw;
+    public unsafe struct Second {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -512,8 +810,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Sequence
     /// </summary>
-    public struct Sequence {
-        public ulong Raw;
+    public unsafe struct Sequence {
+        public const int Size = 8;
+
+        public ulong Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ulong Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -536,32 +843,68 @@ namespace MyNamespace {
     /// <summary>
     ///  Short Ask Size
     /// </summary>
-    public struct ShortAskSize {
-        public ushort Raw;
+    public unsafe struct ShortAskSize {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Short Bid Size
     /// </summary>
-    public struct ShortBidSize {
-        public ushort Raw;
+    public unsafe struct ShortBidSize {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Short Price
     /// </summary>
-    public struct ShortPrice {
-        public ushort Raw;
+    public unsafe struct ShortPrice {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Short Volume
     /// </summary>
-    public struct ShortVolume {
-        public ushort Raw;
+    public unsafe struct ShortVolume {
+        public const int Size = 2;
+
+        public ushort Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ushort Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -576,8 +919,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Timestamp
     /// </summary>
-    public struct Timestamp {
-        public uint Raw;
+    public unsafe struct Timestamp {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -619,8 +971,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Volume
     /// </summary>
-    public struct Volume {
-        public uint Raw;
+    public unsafe struct Volume {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
