@@ -1329,11 +1329,12 @@ namespace MyNamespace {
     public unsafe struct SettlementType {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1354,11 +1355,12 @@ namespace MyNamespace {
     public unsafe struct SideLeg1 {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1370,11 +1372,12 @@ namespace MyNamespace {
     public unsafe struct SideLeg2 {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1386,11 +1389,12 @@ namespace MyNamespace {
     public unsafe struct SideLeg3 {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1402,11 +1406,12 @@ namespace MyNamespace {
     public unsafe struct SideLeg4 {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1418,11 +1423,12 @@ namespace MyNamespace {
     public unsafe struct SideLeg5 {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1434,11 +1440,12 @@ namespace MyNamespace {
     public unsafe struct SideLeg6 {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1450,11 +1457,12 @@ namespace MyNamespace {
     public unsafe struct SideOfBuyer {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1466,11 +1474,12 @@ namespace MyNamespace {
     public unsafe struct SideOfSeller {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1667,11 +1676,12 @@ namespace MyNamespace {
     public unsafe struct TradeSideOfLeg {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1683,11 +1693,12 @@ namespace MyNamespace {
     public unsafe struct TradeSideOfNonCustomOrder {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };

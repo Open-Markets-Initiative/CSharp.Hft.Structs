@@ -256,11 +256,12 @@ namespace MyNamespace {
     public unsafe struct DealPriceDenominator {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -370,11 +371,12 @@ namespace MyNamespace {
     public unsafe struct EventType {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -404,11 +406,12 @@ namespace MyNamespace {
     public unsafe struct FfMarketTradeIndicator {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -420,11 +423,12 @@ namespace MyNamespace {
     public unsafe struct FlexAllowed {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -478,11 +482,12 @@ namespace MyNamespace {
     public unsafe struct HasPreOpenVolume {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -571,11 +576,12 @@ namespace MyNamespace {
     public unsafe struct HedgePriceDenominator {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -587,11 +593,12 @@ namespace MyNamespace {
     public unsafe struct HedgeSecurityType {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -760,11 +767,12 @@ namespace MyNamespace {
     public unsafe struct IsAdjustedTrade {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -803,11 +811,12 @@ namespace MyNamespace {
     public unsafe struct IsImplied {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -819,11 +828,12 @@ namespace MyNamespace {
     public unsafe struct IsImpliedSpreadAtMarketOpen {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -844,11 +854,12 @@ namespace MyNamespace {
     public unsafe struct IsRfq {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1489,11 +1500,12 @@ namespace MyNamespace {
     public unsafe struct NumDecimalsOptionsPrice {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1521,11 +1533,12 @@ namespace MyNamespace {
     public unsafe struct NumDecimalsStrikePrice {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1601,11 +1614,12 @@ namespace MyNamespace {
     public unsafe struct OffExchangeIncrementQtyDenominator {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -1784,11 +1798,12 @@ namespace MyNamespace {
     public unsafe struct OrderPriceDenominator {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -2131,11 +2146,12 @@ namespace MyNamespace {
     public unsafe struct SettlePriceDenominator {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
@@ -2507,11 +2523,12 @@ namespace MyNamespace {
     public unsafe struct UnitQtyDenominator {
         public const int Size = 1;
 
-        public fixed sbyte Bytes[Size];
+        public byte Byte;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public char Value
+                => (char)Bytes;
+        
         public override string ToString()
             => $"{Value}";
     };
