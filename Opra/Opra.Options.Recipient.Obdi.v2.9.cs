@@ -89,8 +89,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Best Bid Size
     /// </summary>
-    public struct BestBidSize {
-        public uint Raw;
+    public unsafe struct BestBidSize {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -139,8 +144,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Best Offer Size
     /// </summary>
-    public struct BestOfferSize {
-        public uint Raw;
+    public unsafe struct BestOfferSize {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -163,16 +173,26 @@ namespace MyNamespace {
     /// <summary>
     ///  Bid Size 2
     /// </summary>
-    public struct BidSize2 {
-        public ushort Raw;
+    public unsafe struct BidSize2 {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Bid Size 4
     /// </summary>
-    public struct BidSize4 {
-        public uint Raw;
+    public unsafe struct BidSize4 {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -247,8 +267,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Expiration Day
     /// </summary>
-    public struct ExpirationDay {
-        public byte Raw;
+    public unsafe struct ExpirationDay {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -286,8 +311,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Expiration Year
     /// </summary>
-    public struct ExpirationYear {
-        public byte Raw;
+    public unsafe struct ExpirationYear {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -390,8 +420,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Message Count
     /// </summary>
-    public struct MessageCount {
-        public byte Raw;
+    public unsafe struct MessageCount {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -414,8 +453,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Message Data Length
     /// </summary>
-    public struct MessageDataLength {
-        public ushort Raw;
+    public unsafe struct MessageDataLength {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -446,24 +490,39 @@ namespace MyNamespace {
     /// <summary>
     ///  Offer Size 2
     /// </summary>
-    public struct OfferSize2 {
-        public ushort Raw;
+    public unsafe struct OfferSize2 {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Offer Size 4
     /// </summary>
-    public struct OfferSize4 {
-        public uint Raw;
+    public unsafe struct OfferSize4 {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Open Interest Volume
     /// </summary>
-    public struct OpenInterestVolume {
-        public uint Raw;
+    public unsafe struct OpenInterestVolume {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -527,8 +586,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Price
     /// </summary>
-    public struct Price {
-        public uint Raw;
+    public unsafe struct Price {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -605,8 +669,8 @@ namespace MyNamespace {
     ///  Session Indicator Values
     /// </summary>
     public enum SessionIndicator : byte {
-        Regular = "0",
-        PreMarket = "88",
+        Regular = 0,
+        PreMarket = 88,
     };
 
 
@@ -630,16 +694,26 @@ namespace MyNamespace {
     /// <summary>
     ///  Strike Price 2
     /// </summary>
-    public struct StrikePrice2 {
-        public ushort Raw;
+    public unsafe struct StrikePrice2 {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Strike Price 4
     /// </summary>
-    public struct StrikePrice4 {
-        public uint Raw;
+    public unsafe struct StrikePrice4 {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -663,8 +737,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Trade Identifier
     /// </summary>
-    public struct TradeIdentifier {
-        public uint Raw;
+    public unsafe struct TradeIdentifier {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -713,8 +792,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Version
     /// </summary>
-    public struct Version {
-        public byte Raw;
+    public unsafe struct Version {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -722,22 +810,22 @@ namespace MyNamespace {
     ///  Volume Values
     /// </summary>
     public enum Volume : uint {
-        NyseAmerican = "A",
-        Box = "B",
-        Cboe = "C",
-        Edgx = "E",
-        Gemini = "H",
-        Ise = "I",
-        Mercury = "J",
-        Miax = "M",
-        NyseArca = "N",
-        Opra = "O",
-        MiaxPearl = "P",
-        Nasdaq = "Q",
-        C2 = "W",
-        NasdaqBx = "T",
-        NasdaqPhlx = "X",
-        Bats = "Z",
+        NyseAmerican = A,
+        Box = B,
+        Cboe = C,
+        Edgx = E,
+        Gemini = H,
+        Ise = I,
+        Mercury = J,
+        Miax = M,
+        NyseArca = N,
+        Opra = O,
+        MiaxPearl = P,
+        Nasdaq = Q,
+        C2 = W,
+        NasdaqBx = T,
+        NasdaqPhlx = X,
+        Bats = Z,
     };
 
 

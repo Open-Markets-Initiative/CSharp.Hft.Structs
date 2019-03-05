@@ -92,13 +92,7 @@ namespace MyNamespace {
     public unsafe struct CurrencyCodeText {
         public const int Size = 0;
 
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
+        public fixed byte Bytes[Size];
     };
 
 
@@ -106,8 +100,8 @@ namespace MyNamespace {
     ///  Exercise Style Values
     /// </summary>
     public enum ExerciseStyle : byte {
-        American = "0",
-        European = "1",
+        American = 0,
+        European = 1,
     };
 
 
@@ -249,8 +243,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Md Price Level
     /// </summary>
-    public struct MdPriceLevel {
-        public byte Raw;
+    public unsafe struct MdPriceLevel {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -258,10 +261,10 @@ namespace MyNamespace {
     ///  Md Update Action Values
     /// </summary>
     public enum MdUpdateAction : byte {
-        Insert = "0",
-        Change = "1",
-        Delete = "2",
-        Overlay = "5",
+        Insert = 0,
+        Change = 1,
+        Delete = 2,
+        Overlay = 5,
     };
 
 
@@ -269,18 +272,27 @@ namespace MyNamespace {
     ///  Md Volume Type Values
     /// </summary>
     public enum MdVolumeType : byte {
-        TotalLimit = "0",
-        CustomerLimit = "1",
-        TotalContingencyAllOrNone = "2",
-        CustomerContingencyAllOrNone = "3",
+        TotalLimit = 0,
+        CustomerLimit = 1,
+        TotalContingencyAllOrNone = 2,
+        CustomerContingencyAllOrNone = 3,
     };
 
 
     /// <summary>
     ///  Message Count
     /// </summary>
-    public struct MessageCount {
-        public byte Raw;
+    public unsafe struct MessageCount {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -386,16 +398,34 @@ namespace MyNamespace {
     /// <summary>
     ///  No Entries
     /// </summary>
-    public struct NoEntries {
-        public byte Raw;
+    public unsafe struct NoEntries {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  No Legs
     /// </summary>
-    public struct NoLegs {
-        public byte Raw;
+    public unsafe struct NoLegs {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -435,8 +465,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Price Type
     /// </summary>
-    public struct PriceType {
-        public byte Raw;
+    public unsafe struct PriceType {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -444,8 +483,8 @@ namespace MyNamespace {
     ///  Put Or Call Values
     /// </summary>
     public enum PutOrCall : byte {
-        Put = "0",
-        Call = "1",
+        Put = 0,
+        Call = 1,
     };
 
 
@@ -508,15 +547,15 @@ namespace MyNamespace {
     ///  Security Trading Status Values
     /// </summary>
     public enum SecurityTradingStatus : byte {
-        Halted = "2",
-        Open = "17",
-        Closed = "18",
-        PreOpen = "21",
-        OpeningRotation = "22",
-        FastMarket = "23",
-        StrategyMarketInOpeningRotation = "24",
-        StrategyMarketQuotesNonFirm = "25",
-        Suspended = "26",
+        Halted = 2,
+        Open = 17,
+        Closed = 18,
+        PreOpen = 21,
+        OpeningRotation = 22,
+        FastMarket = 23,
+        StrategyMarketInOpeningRotation = 24,
+        StrategyMarketQuotesNonFirm = 25,
+        Suspended = 26,
     };
 
 
@@ -534,13 +573,7 @@ namespace MyNamespace {
     public unsafe struct SecurityTypeText {
         public const int Size = 0;
 
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
+        public fixed byte Bytes[Size];
     };
 
 
@@ -591,13 +624,7 @@ namespace MyNamespace {
     public unsafe struct SymbolText {
         public const int Size = 0;
 
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
+        public fixed byte Bytes[Size];
     };
 
 
@@ -615,13 +642,7 @@ namespace MyNamespace {
     public unsafe struct TargetLocationIdText {
         public const int Size = 0;
 
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
+        public fixed byte Bytes[Size];
     };
 
 
@@ -629,11 +650,11 @@ namespace MyNamespace {
     ///  Template Id Values
     /// </summary>
     public enum TemplateId : byte {
-        SecurityDefinitionMessage = "13",
-        SnapshotFullRefreshMessage = "17",
-        IncrementalRefreshMessage = "18",
-        SecurityStatusMessage = "19",
-        HeartbeatMessage = "16",
+        SecurityDefinitionMessage = 13,
+        SnapshotFullRefreshMessage = 17,
+        IncrementalRefreshMessage = 18,
+        SecurityStatusMessage = 19,
+        HeartbeatMessage = 16,
     };
 
 
@@ -651,13 +672,7 @@ namespace MyNamespace {
     public unsafe struct UnderlyingSymbolText {
         public const int Size = 0;
 
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
+        public fixed byte Bytes[Size];
     };
 
 
@@ -675,21 +690,24 @@ namespace MyNamespace {
     public unsafe struct UnderlyingTypeText {
         public const int Size = 0;
 
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
+        public fixed byte Bytes[Size];
     };
 
 
     /// <summary>
     ///  Version
     /// </summary>
-    public struct Version {
-        public byte Raw;
+    public unsafe struct Version {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 

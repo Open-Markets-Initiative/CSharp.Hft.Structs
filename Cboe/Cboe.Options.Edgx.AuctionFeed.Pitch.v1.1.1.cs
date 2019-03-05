@@ -6,16 +6,26 @@ namespace MyNamespace {
     /// <summary>
     ///  Auction End Offset
     /// </summary>
-    public struct AuctionEndOffset {
-        public uint Raw;
+    public unsafe struct AuctionEndOffset {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Auction Id
     /// </summary>
-    public struct AuctionId {
-        public ulong Raw;
+    public unsafe struct AuctionId {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -31,16 +41,26 @@ namespace MyNamespace {
     /// <summary>
     ///  Contracts
     /// </summary>
-    public struct Contracts {
-        public uint Raw;
+    public unsafe struct Contracts {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Count
     /// </summary>
-    public struct Count {
-        public byte Raw;
+    public unsafe struct Count {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -56,8 +76,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Execution Id
     /// </summary>
-    public struct ExecutionId {
-        public ulong Raw;
+    public unsafe struct ExecutionId {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -80,16 +105,26 @@ namespace MyNamespace {
     /// <summary>
     ///  Length
     /// </summary>
-    public struct Length {
-        public ushort Raw;
+    public unsafe struct Length {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Message Length
     /// </summary>
-    public struct MessageLength {
-        public byte Raw;
+    public unsafe struct MessageLength {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -97,13 +132,13 @@ namespace MyNamespace {
     ///  Message Type Values
     /// </summary>
     public enum MessageType : byte {
-        TimeMessage = "0x20",
-        UnitClearMessage = "0x97",
-        AuctionNotificationMessage = "0xAD",
-        AuctionCancelMessage = "0xAE",
-        AuctionTradeMessage = "0xAF",
-        SymbolMappingMessage = "0x2E",
-        EndOfSessionMessage = "0x2D",
+        TimeMessage = 0x20,
+        UnitClearMessage = 0x97,
+        AuctionNotificationMessage = 0xAD,
+        AuctionCancelMessage = 0xAE,
+        AuctionTradeMessage = 0xAF,
+        SymbolMappingMessage = 0x2E,
+        EndOfSessionMessage = 0x2D,
     };
 
 
@@ -142,16 +177,26 @@ namespace MyNamespace {
     /// <summary>
     ///  Price
     /// </summary>
-    public struct Price {
-        public ulong Raw;
+    public unsafe struct Price {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Sequence
     /// </summary>
-    public struct Sequence {
-        public uint Raw;
+    public unsafe struct Sequence {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -200,32 +245,52 @@ namespace MyNamespace {
     /// <summary>
     ///  Time
     /// </summary>
-    public struct Time {
-        public uint Raw;
+    public unsafe struct Time {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Time Offset
     /// </summary>
-    public struct TimeOffset {
-        public uint Raw;
+    public unsafe struct TimeOffset {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Timestamp
     /// </summary>
-    public struct Timestamp {
-        public uint Raw;
+    public unsafe struct Timestamp {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Unit
     /// </summary>
-    public struct Unit {
-        public byte Raw;
+    public unsafe struct Unit {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 

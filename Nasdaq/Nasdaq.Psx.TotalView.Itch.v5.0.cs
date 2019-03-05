@@ -458,9 +458,9 @@ namespace MyNamespace {
     ///  Market Code Values
     /// </summary>
     public enum MarketCode : sbyte {
-        Nasdaq = "Q",
-        Bx = "B",
-        Psx = "X",
+        Nasdaq = Q,
+        Bx = B,
+        Psx = X,
     };
 
 
@@ -577,8 +577,8 @@ namespace MyNamespace {
     ///  Operational Halt Action Values
     /// </summary>
     public enum OperationalHaltAction : sbyte {
-        Halted = "H",
-        Resumed = "T",
+        Halted = H,
+        Resumed = T,
     };
 
 
@@ -845,8 +845,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Timestamp
     /// </summary>
-    public struct Timestamp {
-        public ulong Raw;
+    public unsafe struct Timestamp {
+        public const int Size = 6;
+
+        public ulong Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ulong Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 

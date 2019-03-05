@@ -82,8 +82,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Compact Bid Size
     /// </summary>
-    public struct CompactBidSize {
-        public ushort Raw;
+    public unsafe struct CompactBidSize {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -98,8 +103,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Compact Offer Size
     /// </summary>
-    public struct CompactOfferSize {
-        public ushort Raw;
+    public unsafe struct CompactOfferSize {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -114,8 +124,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Compact Size
     /// </summary>
-    public struct CompactSize {
-        public ushort Raw;
+    public unsafe struct CompactSize {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -131,8 +146,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Expected Event Time Nano Seconds Part
     /// </summary>
-    public struct ExpectedEventTimeNanoSecondsPart {
-        public uint Raw;
+    public unsafe struct ExpectedEventTimeNanoSecondsPart {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -155,8 +175,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Leg Ratio Qty
     /// </summary>
-    public struct LegRatioQty {
-        public ushort Raw;
+    public unsafe struct LegRatioQty {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -164,8 +189,8 @@ namespace MyNamespace {
     ///  Leg Side Values
     /// </summary>
     public enum LegSide : byte {
-        Bid = "B",
-        Ask = "A",
+        Bid = B,
+        Ask = A,
     };
 
 
@@ -228,16 +253,26 @@ namespace MyNamespace {
     /// <summary>
     ///  Notification Time
     /// </summary>
-    public struct NotificationTime {
-        public uint Raw;
+    public unsafe struct NotificationTime {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Number Of Legs
     /// </summary>
-    public struct NumberOfLegs {
-        public byte Raw;
+    public unsafe struct NumberOfLegs {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -318,8 +353,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Packet Length
     /// </summary>
-    public struct PacketLength {
-        public ushort Raw;
+    public unsafe struct PacketLength {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -327,34 +367,49 @@ namespace MyNamespace {
     ///  Packet Type Values
     /// </summary>
     public enum PacketType : byte {
-        Heartbeat = "0",
-        StartOfSession = "1",
-        EndOfSession = "2",
-        ApplicationMessage = "3",
+        Heartbeat = 0,
+        StartOfSession = 1,
+        EndOfSession = 2,
+        ApplicationMessage = 3,
     };
 
 
     /// <summary>
     ///  Priority Quote Width
     /// </summary>
-    public struct PriorityQuoteWidth {
-        public uint Raw;
+    public unsafe struct PriorityQuoteWidth {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Product Add Update Time
     /// </summary>
-    public struct ProductAddUpdateTime {
-        public uint Raw;
+    public unsafe struct ProductAddUpdateTime {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Product Id
     /// </summary>
-    public struct ProductId {
-        public uint Raw;
+    public unsafe struct ProductId {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -440,8 +495,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Seconds Part
     /// </summary>
-    public struct SecondsPart {
-        public uint Raw;
+    public unsafe struct SecondsPart {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -464,48 +524,78 @@ namespace MyNamespace {
     /// <summary>
     ///  Sequence Number
     /// </summary>
-    public struct SequenceNumber {
-        public ulong Raw;
+    public unsafe struct SequenceNumber {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Session Id
     /// </summary>
-    public struct SessionId {
-        public uint Raw;
+    public unsafe struct SessionId {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Session Number
     /// </summary>
-    public struct SessionNumber {
-        public byte Raw;
+    public unsafe struct SessionNumber {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Strategy Add Time
     /// </summary>
-    public struct StrategyAddTime {
-        public uint Raw;
+    public unsafe struct StrategyAddTime {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Strategy Id
     /// </summary>
-    public struct StrategyId {
-        public uint Raw;
+    public unsafe struct StrategyId {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Strike Price
     /// </summary>
-    public struct StrikePrice {
-        public uint Raw;
+    public unsafe struct StrikePrice {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -523,8 +613,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Timestamp
     /// </summary>
-    public struct Timestamp {
-        public uint Raw;
+    public unsafe struct Timestamp {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -550,16 +645,26 @@ namespace MyNamespace {
     /// <summary>
     ///  Trade Id
     /// </summary>
-    public struct TradeId {
-        public uint Raw;
+    public unsafe struct TradeId {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Trade Size
     /// </summary>
-    public struct TradeSize {
-        public uint Raw;
+    public unsafe struct TradeSize {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -625,8 +730,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Wide Bid Size
     /// </summary>
-    public struct WideBidSize {
-        public uint Raw;
+    public unsafe struct WideBidSize {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -641,8 +751,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Wide Offer Size
     /// </summary>
-    public struct WideOfferSize {
-        public uint Raw;
+    public unsafe struct WideOfferSize {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -657,8 +772,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Wide Size
     /// </summary>
-    public struct WideSize {
-        public uint Raw;
+    public unsafe struct WideSize {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 

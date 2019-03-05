@@ -7,26 +7,36 @@ namespace MyNamespace {
     ///  Aggressor Side Values
     /// </summary>
     public enum AggressorSide : byte {
-        Buy = "1",
-        Sell = "2",
-        AggressorSide = "2",
-        AggressorSide = "1",
+        Buy = 1,
+        Sell = 2,
+        AggressorSide = 2,
+        AggressorSide = 1,
     };
 
 
     /// <summary>
     ///  Aggressor Time
     /// </summary>
-    public struct AggressorTime {
-        public ulong Raw;
+    public unsafe struct AggressorTime {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Application Sequence Number
     /// </summary>
-    public struct ApplicationSequenceNumber {
-        public uint Raw;
+    public unsafe struct ApplicationSequenceNumber {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -34,18 +44,23 @@ namespace MyNamespace {
     ///  Application Sequence Reset Indicator Values
     /// </summary>
     public enum ApplicationSequenceResetIndicator : byte {
-        NoReset = "0",
-        Reset = "1",
-        ApplSeqResetIndicator = "1",
-        ApplSeqResetIndicator = "0",
+        NoReset = 0,
+        Reset = 1,
+        ApplSeqResetIndicator = 1,
+        ApplSeqResetIndicator = 0,
     };
 
 
     /// <summary>
     ///  Bid Px
     /// </summary>
-    public struct BidPx {
-        public ulong Raw;
+    public unsafe struct BidPx {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -60,8 +75,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Body Len
     /// </summary>
-    public struct BodyLen {
-        public ushort Raw;
+    public unsafe struct BodyLen {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -69,10 +89,10 @@ namespace MyNamespace {
     ///  Completion Indicator Values
     /// </summary>
     public enum CompletionIndicator : byte {
-        Incomplete = "0",
-        Complete = "1",
-        CompletionIndicator = "1",
-        CompletionIndicator = "0",
+        Incomplete = 0,
+        Complete = 1,
+        CompletionIndicator = 1,
+        CompletionIndicator = 0,
     };
 
 
@@ -87,8 +107,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Exec Id
     /// </summary>
-    public struct ExecId {
-        public ulong Raw;
+    public unsafe struct ExecId {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -96,18 +121,23 @@ namespace MyNamespace {
     ///  Fast Market Indicator Values
     /// </summary>
     public enum FastMarketIndicator : byte {
-        No = "0",
-        Yes = "1",
-        FastMarketIndicator = "1",
-        FastMarketIndicator = "0",
+        No = 0,
+        Yes = 1,
+        FastMarketIndicator = 1,
+        FastMarketIndicator = 0,
     };
 
 
     /// <summary>
     ///  Header Length
     /// </summary>
-    public struct HeaderLength {
-        public ushort Raw;
+    public unsafe struct HeaderLength {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -123,26 +153,36 @@ namespace MyNamespace {
     ///  Implied Market Indicator Values
     /// </summary>
     public enum ImpliedMarketIndicator : byte {
-        NotImplied = "0",
-        ImpliedInOut = "3",
-        ImpliedMarketIndicator = "3",
-        ImpliedMarketIndicator = "0",
+        NotImplied = 0,
+        ImpliedInOut = 3,
+        ImpliedMarketIndicator = 3,
+        ImpliedMarketIndicator = 0,
     };
 
 
     /// <summary>
     ///  Last Msg Seq Num Processed
     /// </summary>
-    public struct LastMsgSeqNumProcessed {
-        public uint Raw;
+    public unsafe struct LastMsgSeqNumProcessed {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Last Px
     /// </summary>
-    public struct LastPx {
-        public ulong Raw;
+    public unsafe struct LastPx {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -157,8 +197,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Last Update Time
     /// </summary>
-    public struct LastUpdateTime {
-        public ulong Raw;
+    public unsafe struct LastUpdateTime {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -182,10 +227,10 @@ namespace MyNamespace {
     ///  Leg Side Values
     /// </summary>
     public enum LegSide : byte {
-        Buy = "1",
-        Sell = "2",
-        LegSide = "2",
-        LegSide = "1",
+        Buy = 1,
+        Sell = 2,
+        LegSide = 2,
+        LegSide = 1,
     };
 
 
@@ -209,13 +254,13 @@ namespace MyNamespace {
     ///  Match Sub Type Values
     /// </summary>
     public enum MatchSubType : byte {
-        OpeningAuction = "1",
-        ClosingAuction = "2",
-        IntradayAuction = "3",
-        CircuitBreakerAuction = "4",
-        IpoAuction = "5",
-        MatchSubType = "5",
-        MatchSubType = "1",
+        OpeningAuction = 1,
+        ClosingAuction = 2,
+        IntradayAuction = 3,
+        CircuitBreakerAuction = 4,
+        IpoAuction = 5,
+        MatchSubType = 5,
+        MatchSubType = 1,
     };
 
 
@@ -223,19 +268,24 @@ namespace MyNamespace {
     ///  Match Type Values
     /// </summary>
     public enum MatchType : byte {
-        ConfirmedTradeReport = "3",
-        CrossAuction = "5",
-        CallAuction = "7",
-        MatchType = "7",
-        MatchType = "3",
+        ConfirmedTradeReport = 3,
+        CrossAuction = 5,
+        CallAuction = 7,
+        MatchType = 7,
+        MatchType = 3,
     };
 
 
     /// <summary>
     ///  Md Entry Px
     /// </summary>
-    public struct MdEntryPx {
-        public ulong Raw;
+    public unsafe struct MdEntryPx {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -251,52 +301,72 @@ namespace MyNamespace {
     ///  Md Entry Type Values
     /// </summary>
     public enum MdEntryType : byte {
-        Trade = "2",
-        OpeningPrice = "4",
-        ClosingPrice = "5",
-        HighPrice = "7",
-        LowPrice = "8",
-        TradeVolume = "66",
-        PreviousClosingPrice = "101",
-        OpeningAuction = "200",
-        IntradayAuction = "201",
-        CircuitBreakerAuction = "202",
-        ClosingAuction = "203",
-        IpoAuction = "204",
-        MdEntryType = "204",
-        MdEntryType = "2",
+        Trade = 2,
+        OpeningPrice = 4,
+        ClosingPrice = 5,
+        HighPrice = 7,
+        LowPrice = 8,
+        TradeVolume = 66,
+        PreviousClosingPrice = 101,
+        OpeningAuction = 200,
+        IntradayAuction = 201,
+        CircuitBreakerAuction = 202,
+        ClosingAuction = 203,
+        IpoAuction = 204,
+        MdEntryType = 204,
+        MdEntryType = 2,
     };
 
 
     /// <summary>
     ///  Msg Seq Num
     /// </summary>
-    public struct MsgSeqNum {
-        public uint Raw;
+    public unsafe struct MsgSeqNum {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  No Legs
     /// </summary>
-    public struct NoLegs {
-        public byte Raw;
+    public unsafe struct NoLegs {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  No Md Entries
     /// </summary>
-    public struct NoMdEntries {
-        public byte Raw;
+    public unsafe struct NoMdEntries {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Offer Px
     /// </summary>
-    public struct OfferPx {
-        public ulong Raw;
+    public unsafe struct OfferPx {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -312,25 +382,35 @@ namespace MyNamespace {
     ///  Ord Type Values
     /// </summary>
     public enum OrdType : byte {
-        Market = "1",
-        OrdType = "1",
-        OrdType = "1",
+        Market = 1,
+        OrdType = 1,
+        OrdType = 1,
     };
 
 
     /// <summary>
     ///  Packet Id
     /// </summary>
-    public struct PacketId {
-        public ushort Raw;
+    public unsafe struct PacketId {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Packet Seq Num
     /// </summary>
-    public struct PacketSeqNum {
-        public uint Raw;
+    public unsafe struct PacketSeqNum {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -407,8 +487,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Partition ID
     /// </summary>
-    public struct PartitionId {
-        public byte Raw;
+    public unsafe struct PartitionId {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -416,10 +501,10 @@ namespace MyNamespace {
     ///  Potential Security Trading Event Values
     /// </summary>
     public enum PotentialSecurityTradingEvent : byte {
-        None = "0",
-        PriceVolatilityAuctionIsExtended = "10",
-        PotentialSecurityTradingEvent = "10",
-        PotentialSecurityTradingEvent = "0",
+        None = 0,
+        PriceVolatilityAuctionIsExtended = 10,
+        PotentialSecurityTradingEvent = 10,
+        PotentialSecurityTradingEvent = 0,
     };
 
 
@@ -434,16 +519,26 @@ namespace MyNamespace {
     /// <summary>
     ///  Prev Price
     /// </summary>
-    public struct PrevPrice {
-        public ulong Raw;
+    public unsafe struct PrevPrice {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Price
     /// </summary>
-    public struct Price {
-        public ulong Raw;
+    public unsafe struct Price {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -451,24 +546,29 @@ namespace MyNamespace {
     ///  Product Complex Values
     /// </summary>
     public enum ProductComplex : byte {
-        StandardOptionStrategy = "2",
-        NonStandardOptionStrategy = "3",
-        VolatilityStrategy = "4",
-        FuturesSpread = "5",
-        InterProductSpread = "6",
-        StandardFuturesStrategy = "7",
-        PackAndBundle = "8",
-        Strip = "9",
-        ProductComplex = "9",
-        ProductComplex = "2",
+        StandardOptionStrategy = 2,
+        NonStandardOptionStrategy = 3,
+        VolatilityStrategy = 4,
+        FuturesSpread = 5,
+        InterProductSpread = 6,
+        StandardFuturesStrategy = 7,
+        PackAndBundle = 8,
+        Strip = 9,
+        ProductComplex = 9,
+        ProductComplex = 2,
     };
 
 
     /// <summary>
     ///  Request Time
     /// </summary>
-    public struct RequestTime {
-        public ulong Raw;
+    public unsafe struct RequestTime {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -500,12 +600,12 @@ namespace MyNamespace {
     ///  Security Status Values
     /// </summary>
     public enum SecurityStatus : byte {
-        Active = "1",
-        Inactive = "2",
-        Expired = "4",
-        Suspended = "9",
-        SecurityStatus = "9",
-        SecurityStatus = "1",
+        Active = 1,
+        Inactive = 2,
+        Expired = 4,
+        Suspended = 9,
+        SecurityStatus = 9,
+        SecurityStatus = 1,
     };
 
 
@@ -521,10 +621,10 @@ namespace MyNamespace {
     ///  Security Trading Event Values
     /// </summary>
     public enum SecurityTradingEvent : byte {
-        PriceVolatilityAuctionIsExtended = "10",
-        PriceVolatilityAuctionIsExtendedAgain = "11",
-        SecurityTradingEvent = "11",
-        SecurityTradingEvent = "0",
+        PriceVolatilityAuctionIsExtended = 10,
+        PriceVolatilityAuctionIsExtendedAgain = 11,
+        SecurityTradingEvent = 11,
+        SecurityTradingEvent = 0,
     };
 
 
@@ -532,25 +632,25 @@ namespace MyNamespace {
     ///  Security Trading Status Values
     /// </summary>
     public enum SecurityTradingStatus : byte {
-        TradingHalt = "2",
-        MarketImbalanceBuy = "7",
-        MarketImbalanceSell = "8",
-        Closed = "200",
-        Restricted = "201",
-        Book = "202",
-        Continuous = "203",
-        OpeningAuction = "204",
-        OpeningAuctionFreeze = "205",
-        IntradayAuction = "206",
-        IntradayAuctionFreeze = "207",
-        CircuitBreakerAuction = "208",
-        CircuitBreakerAuctionFreeze = "209",
-        ClosingAuction = "210",
-        ClosingAuctionFreeze = "211",
-        IpoAuction = "212",
-        IpoAuctionFreeze = "213",
-        SecurityTradingStatus = "213",
-        SecurityTradingStatus = "2",
+        TradingHalt = 2,
+        MarketImbalanceBuy = 7,
+        MarketImbalanceSell = 8,
+        Closed = 200,
+        Restricted = 201,
+        Book = 202,
+        Continuous = 203,
+        OpeningAuction = 204,
+        OpeningAuctionFreeze = 205,
+        IntradayAuction = 206,
+        IntradayAuctionFreeze = 207,
+        CircuitBreakerAuction = 208,
+        CircuitBreakerAuctionFreeze = 209,
+        ClosingAuction = 210,
+        ClosingAuctionFreeze = 211,
+        IpoAuction = 212,
+        IpoAuctionFreeze = 213,
+        SecurityTradingStatus = 213,
+        SecurityTradingStatus = 2,
     };
 
 
@@ -558,26 +658,36 @@ namespace MyNamespace {
     ///  Side Values
     /// </summary>
     public enum Side : byte {
-        Buy = "1",
-        Sell = "2",
-        Side = "2",
-        Side = "1",
+        Buy = 1,
+        Sell = 2,
+        Side = 2,
+        Side = 1,
     };
 
 
     /// <summary>
     ///  Template Id
     /// </summary>
-    public struct TemplateId {
-        public ushort Raw;
+    public unsafe struct TemplateId {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Tot No Orders
     /// </summary>
-    public struct TotNoOrders {
-        public ushort Raw;
+    public unsafe struct TotNoOrders {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -585,11 +695,11 @@ namespace MyNamespace {
     ///  Trad Ses Status Values
     /// </summary>
     public enum TradSesStatus : byte {
-        Halted = "1",
-        Open = "2",
-        Closed = "3",
-        TradSesStatus = "3",
-        TradSesStatus = "1",
+        Halted = 1,
+        Open = 2,
+        Closed = 3,
+        TradSesStatus = 3,
+        TradSesStatus = 1,
     };
 
 
@@ -597,9 +707,9 @@ namespace MyNamespace {
     ///  Trade Condition Values
     /// </summary>
     public enum TradeCondition : byte {
-        ImpliedTrade = "1",
-        TradeCondition = "1",
-        TradeCondition = "1",
+        ImpliedTrade = 1,
+        TradeCondition = 1,
+        TradeCondition = 1,
     };
 
 
@@ -607,13 +717,13 @@ namespace MyNamespace {
     ///  Trading Session Id Values
     /// </summary>
     public enum TradingSessionId : byte {
-        Day = "1",
-        Morning = "3",
-        Evening = "5",
-        AfterHours = "6",
-        Holiday = "7",
-        TradingSessionId = "7",
-        TradingSessionId = "1",
+        Day = 1,
+        Morning = 3,
+        Evening = 5,
+        AfterHours = 6,
+        Holiday = 7,
+        TradingSessionId = 7,
+        TradingSessionId = 1,
     };
 
 
@@ -621,61 +731,91 @@ namespace MyNamespace {
     ///  Trading Session Sub Id Values
     /// </summary>
     public enum TradingSessionSubId : byte {
-        PreTrading = "1",
-        Trading = "3",
-        Closing = "4",
-        PostTrading = "5",
-        Quiescent = "7",
-        TradingSessionSubId = "7",
-        TradingSessionSubId = "1",
+        PreTrading = 1,
+        Trading = 3,
+        Closing = 4,
+        PostTrading = 5,
+        Quiescent = 7,
+        TradingSessionSubId = 7,
+        TradingSessionSubId = 1,
     };
 
 
     /// <summary>
     ///  Transact Time
     /// </summary>
-    public struct TransactTime {
-        public ulong Raw;
+    public unsafe struct TransactTime {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Trd Match Id
     /// </summary>
-    public struct TrdMatchId {
-        public uint Raw;
+    public unsafe struct TrdMatchId {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Trd Reg Ts Execution Time
     /// </summary>
-    public struct TrdRegTsExecutionTime {
-        public ulong Raw;
+    public unsafe struct TrdRegTsExecutionTime {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Trd Reg Ts Prev Time Priority
     /// </summary>
-    public struct TrdRegTsPrevTimePriority {
-        public ulong Raw;
+    public unsafe struct TrdRegTsPrevTimePriority {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Trd Reg Ts Time In
     /// </summary>
-    public struct TrdRegTsTimeIn {
-        public ulong Raw;
+    public unsafe struct TrdRegTsTimeIn {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Trd Reg Ts Time Priority
     /// </summary>
-    public struct TrdRegTsTimePriority {
-        public ulong Raw;
+    public unsafe struct TrdRegTsTimePriority {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 

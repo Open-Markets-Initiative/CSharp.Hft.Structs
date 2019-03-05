@@ -118,16 +118,34 @@ namespace MyNamespace {
     /// <summary>
     ///  Current Day
     /// </summary>
-    public struct CurrentDay {
-        public byte Raw;
+    public unsafe struct CurrentDay {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Current Month
     /// </summary>
-    public struct CurrentMonth {
-        public byte Raw;
+    public unsafe struct CurrentMonth {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -135,8 +153,8 @@ namespace MyNamespace {
     ///  Current Trading State Values
     /// </summary>
     public enum CurrentTradingState : byte {
-        HaltInEffect = "H",
-        TradingResumed = "T",
+        HaltInEffect = H,
+        TradingResumed = T,
     };
 
 
@@ -184,24 +202,51 @@ namespace MyNamespace {
     /// <summary>
     ///  Expiration Day
     /// </summary>
-    public struct ExpirationDay {
-        public byte Raw;
+    public unsafe struct ExpirationDay {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Expiration Month
     /// </summary>
-    public struct ExpirationMonth {
-        public byte Raw;
+    public unsafe struct ExpirationMonth {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Expiration Year
     /// </summary>
-    public struct ExpirationYear {
-        public byte Raw;
+    public unsafe struct ExpirationYear {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -241,8 +286,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Leg Id
     /// </summary>
-    public struct LegId {
-        public byte Raw;
+    public unsafe struct LegId {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -296,16 +350,34 @@ namespace MyNamespace {
     /// <summary>
     ///  Number Of Legs
     /// </summary>
-    public struct NumberOfLegs {
-        public byte Raw;
+    public unsafe struct NumberOfLegs {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Number Of Responses
     /// </summary>
-    public struct NumberOfResponses {
-        public byte Raw;
+    public unsafe struct NumberOfResponses {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -524,8 +596,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Source
     /// </summary>
-    public struct Source {
-        public byte Raw;
+    public unsafe struct Source {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -565,16 +646,34 @@ namespace MyNamespace {
     /// <summary>
     ///  Subversion
     /// </summary>
-    public struct Subversion {
-        public byte Raw;
+    public unsafe struct Subversion {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Timestamp
     /// </summary>
-    public struct Timestamp {
-        public ulong Raw;
+    public unsafe struct Timestamp {
+        public const int Size = 6;
+
+        public ulong Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ulong Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -597,8 +696,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Version
     /// </summary>
-    public struct Version {
-        public byte Raw;
+    public unsafe struct Version {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 

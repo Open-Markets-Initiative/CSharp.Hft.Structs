@@ -71,24 +71,6 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Allow Options Values
-    /// </summary>
-    public enum AllowOptions : byte {
-        Yes = (byte)'Y',
-        No = (byte)'N',
-    };
-
-
-    /// <summary>
-    ///  Allows Implied Values
-    /// </summary>
-    public enum AllowsImplied : byte {
-        Yes = (byte)'Y',
-        No = (byte)'N',
-    };
-
-
-    /// <summary>
     ///  Auction Date
     /// </summary>
     public unsafe struct AuctionDate {
@@ -172,22 +154,6 @@ namespace MyNamespace {
     ///  Contract Symbol
     /// </summary>
     public unsafe struct ContractSymbol {
-        public const int Size = 35;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Contract Symbol Extra
-    /// </summary>
-    public unsafe struct ContractSymbolExtra {
         public const int Size = 35;
 
         public fixed sbyte Bytes[Size];
@@ -383,16 +349,6 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Exchange Silo Values
-    /// </summary>
-    public enum ExchangeSilo : byte {
-        Ice = (byte)'0',
-        Endex = (byte)'1',
-        Liffe = (byte)'2',
-    };
-
-
-    /// <summary>
     ///  Extra Flags
     /// </summary>
     public struct ExtraFlags {
@@ -488,8 +444,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Hedge Body Length
     /// </summary>
-    public struct HedgeBodyLength {
-        public byte Raw;
+    public unsafe struct HedgeBodyLength {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -524,15 +489,6 @@ namespace MyNamespace {
         
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Hedge Only Values
-    /// </summary>
-    public enum HedgeOnly : byte {
-        Yes = (byte)'Y',
-        No = (byte)'N',
     };
 
 
@@ -598,23 +554,6 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Hedge Strategy Code
-    /// </summary>
-    public unsafe struct HedgeStrategyCode {
-        public const int Size = 2;
-
-        public ushort Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public ushort Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  High
     /// </summary>
     public struct High {
@@ -643,22 +582,6 @@ namespace MyNamespace {
     /// </summary>
     public struct HubId {
         public int Raw;
-    };
-
-
-    /// <summary>
-    ///  Iba Currency
-    /// </summary>
-    public unsafe struct IbaCurrency {
-        public const int Size = 3;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
     };
 
 
@@ -699,15 +622,6 @@ namespace MyNamespace {
     /// </summary>
     public struct IncrementQty {
         public int Raw;
-    };
-
-
-    /// <summary>
-    ///  Investigation Status Values
-    /// </summary>
-    public enum InvestigationStatus : byte {
-        UnderInvestigation = (byte)'1',
-        InvestigationCompleted = (byte)'2',
     };
 
 
@@ -867,15 +781,6 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Is Tradable Values
-    /// </summary>
-    public enum IsTradable : byte {
-        Yes = (byte)'Y',
-        No = (byte)'N',
-    };
-
-
-    /// <summary>
     ///  Is Up Values
     /// </summary>
     public enum IsUp : byte {
@@ -937,17 +842,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Leg Body Length
     /// </summary>
-    public struct LegBodyLength {
-        public byte Raw;
-    };
+    public unsafe struct LegBodyLength {
+        public const int Size = 1;
 
+        public byte Bytes;
 
-    /// <summary>
-    ///  Leg Deal Suppressed Values
-    /// </summary>
-    public enum LegDealSuppressed : byte {
-        Yes = (byte)'Y',
-        No = (byte)'N',
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -986,97 +891,12 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Leg Ratio Price Denominator
-    /// </summary>
-    public unsafe struct LegRatioPriceDenominator {
-        public const int Size = 4;
-
-        public uint Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Leg Ratio Price Numerator
-    /// </summary>
-    public unsafe struct LegRatioPriceNumerator {
-        public const int Size = 4;
-
-        public uint Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Leg Ratio Qty Denominator
-    /// </summary>
-    public unsafe struct LegRatioQtyDenominator {
-        public const int Size = 4;
-
-        public uint Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Leg Ratio Qty Numerator
-    /// </summary>
-    public unsafe struct LegRatioQtyNumerator {
-        public const int Size = 4;
-
-        public uint Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Leg Side Values
     /// </summary>
     public enum LegSide : byte {
         None = (byte)'',
         Bid = (byte)'1',
         Offer = (byte)'2',
-    };
-
-
-    /// <summary>
-    ///  Leg Strategy Code
-    /// </summary>
-    public unsafe struct LegStrategyCode {
-        public const int Size = 2;
-
-        public ushort Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public ushort Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
     };
 
 
@@ -1166,146 +986,146 @@ namespace MyNamespace {
     ///  Market Type Id Values
     /// </summary>
     public enum MarketTypeId : short {
-        FinancialGas = "0",
-        FinancialPower = "1",
-        Oil = "2",
-        IpeNaturalGasFutures = "3",
-        IpeGasOilFutures = "4",
-        IpeBrentFutures = "5",
-        IpeUkElectricityFuturesPeak = "7",
-        IpeUkElectricityFuturesBase = "8",
-        IceWtiCrudeFutures = "9",
-        GcNewcastleCoalFutures = "10",
-        IceBrentWtiFuturesSpread = "11",
-        IpeecxEuropeanEmissions = "12",
-        IceHeatingOilFutures = "13",
-        IceHeatingOilWtiFuturesCrack = "14",
-        IceNyhRbobGasolineFutures = "15",
-        IceNyhRbobGasolineWtiFuturesCrack = "16",
-        IceRotterdamCoalFutures = "17",
-        IceRichardsBayCoalFutures = "18",
-        IceRotterdamRichardsBayCoalFuturesSpread = "19",
-        Cocoa = "20",
-        CoffeeC = "21",
-        CottonNo2 = "22",
-        FcojA = "23",
-        SugarNo11 = "24",
-        HeatRateSpread = "25",
-        UsDollarIndex = "26",
-        CanadianOilseeds = "36",
-        EcxCerFutures = "38",
-        ForeignExchange = "39",
-        FinancialIndexData = "40",
-        SugarNo16 = "41",
-        EcxEuacerFuturesSpread = "42",
-        HenryHub = "44",
-        DutchTtfGasFutures = "48",
-        GermanNaturalGasFutures = "50",
-        EuropeanGasSpreads = "51",
-        CanadianFinancialGas = "53",
-        NgxCanadianPhysicalCrude = "54",
-        UsCoalFutures = "55",
-        FobIndoSubbitCoalFutures = "57",
-        HeatingOilBrentFuturesCrack = "58",
-        NyhRbobGasolineBrentFuturesCrack = "59",
-        WetFreight = "60",
-        DryFreight = "61",
-        FerrousMetals = "62",
-        PlattsVariableOil = "63",
-        NyhRbobGasolineHeatingOilSpread = "66",
-        PhysicalEnvironmental = "69",
-        HeatingOilLsGasoilFuturesSpread = "70",
-        LsGasoilBrentFuturesCrack = "71",
-        NyhRbobGasolineLsGasoilFuturesSpread = "72",
-        EcxEuaaFutures = "84",
-        EcxCereuaaFuturesSpread = "85",
-        EcxEuaaeuaFuturesSpread = "86",
-        Soybean = "89",
-        EcxEuaEibAuction = "92",
-        FinancialLng = "93",
-        EuaUkAuction = "95",
-        EuaaUkAuction = "96",
-        CfrSouthChinaCoalFutures = "97",
-        BelgianPowerFutures = "98",
-        DutchPowerFutures = "99",
-        GcNewcastleFobIndoSubbitCoalFuturesSpread = "100",
-        RichardsBaygCNewcastleCoalFuturesSpread = "101",
-        FcojAMini = "102",
-        CifUs = "104",
-        D6Rin = "108",
-        EuropeanPowerSpreads = "111",
-        Taqa = "112",
-        BelgianZtpGasSpot = "113",
-        DutchTtfGasSpot = "114",
-        DutchTtfGasStorage = "115",
-        EuropeanGasSpotSpreads = "116",
-        BelgianZtpGasFutures = "117",
-        UkOcmGasSpot = "118",
-        BelgianGasSpreads = "119",
-        FinancialOlefins = "124",
-        FinancialMonomers = "125",
-        PlattsVariableOilUrals = "126",
-        EndexSpotMarketIndices = "127",
-        InterestRateFutures = "131",
-        SingaporeEnergy = "133",
-        SingaporeFinancials = "134",
-        SingaporeMetals = "135",
-        ItalianNaturalGasFutures = "136",
-        ItalianPowerFutures = "137",
-        CreditSwapData = "139",
-        GoldFixing = "140",
-        NorthSeaPartials = "141",
-        EuFinancialPowerSpreads = "142",
-        EuFinancialPowerFutures = "143",
-        OilCad = "144",
-        SilverFixing = "147",
-        UkSparkSpread = "149",
-        UkOcmPhysicalGasSpot = "150",
-        JapanDomesticWaterborne = "152",
-        DailyMetals = "154",
-        BrixEnergiaFin = "155",
-        JapanDomesticRack = "156",
-        FinancialUsLng = "157",
-        IceRotterdamNewcastleCoalFuturesSpread = "160",
-        OilAmericas = "165",
-        PlattsPetrochemical = "167",
-        PermianWtiFutures = "168",
-        EndexEquityIndices = "170",
-        EndexSingleStockOptions = "171",
-        IfusIceIndices = "172",
-        PlattsAsiaBunker = "173",
-        SofrFutures = "177",
-        DigitalAssetFutures = "178",
-        PermianBrentFuturesSpread = "179",
-        PermianWtiFuturesSpread = "180",
-        LiffeStiRs = "200",
-        LiffeBonds = "202",
-        LiffeSwapnotes = "203",
-        1 = "205",
-        Metals = "206",
-        IfusEquityIndices = "207",
-        GcfRepo = "208",
-        LiffeThreeMonthEuroAndEonia = "209",
-        Eurodollar = "210",
-        LiffeEquityDerivativesNonUsBased = "211",
-        LiffeEquityDerivativesUsBased = "212",
-        LiffeIndexOptions = "213",
-        LiffeIndexFuturesUsRestricted = "214",
-        LiffeIndexFuturesNonUsRestricted = "215",
-        PhysicalGas = "305",
-        Power = "306",
-        NgxPhysicalGas = "314",
-        NgxFinancialPower = "315",
-        NgxFinancialGas = "316",
-        FinancialNgl = "317",
-        OlefinsPolymers = "318",
-        PhysicalNgl = "319",
-        PhysicalOil = "320",
-        TestIpe = "600",
-        TestNybot = "601",
-        TestNdex = "602",
-        TestLiffeuk1 = "603",
-        TestLiffeuk2 = "604",
+        FinancialGas = 0,
+        FinancialPower = 1,
+        Oil = 2,
+        IpeNaturalGasFutures = 3,
+        IpeGasOilFutures = 4,
+        IpeBrentFutures = 5,
+        IpeUkElectricityFuturesPeak = 7,
+        IpeUkElectricityFuturesBase = 8,
+        IceWtiCrudeFutures = 9,
+        GcNewcastleCoalFutures = 10,
+        IceBrentWtiFuturesSpread = 11,
+        IpeecxEuropeanEmissions = 12,
+        IceHeatingOilFutures = 13,
+        IceHeatingOilWtiFuturesCrack = 14,
+        IceNyhRbobGasolineFutures = 15,
+        IceNyhRbobGasolineWtiFuturesCrack = 16,
+        IceRotterdamCoalFutures = 17,
+        IceRichardsBayCoalFutures = 18,
+        IceRotterdamRichardsBayCoalFuturesSpread = 19,
+        Cocoa = 20,
+        CoffeeC = 21,
+        CottonNo2 = 22,
+        FcojA = 23,
+        SugarNo11 = 24,
+        HeatRateSpread = 25,
+        UsDollarIndex = 26,
+        CanadianOilseeds = 36,
+        EcxCerFutures = 38,
+        ForeignExchange = 39,
+        FinancialIndexData = 40,
+        SugarNo16 = 41,
+        EcxEuacerFuturesSpread = 42,
+        HenryHub = 44,
+        DutchTtfGasFutures = 48,
+        GermanNaturalGasFutures = 50,
+        EuropeanGasSpreads = 51,
+        CanadianFinancialGas = 53,
+        NgxCanadianPhysicalCrude = 54,
+        UsCoalFutures = 55,
+        FobIndoSubbitCoalFutures = 57,
+        HeatingOilBrentFuturesCrack = 58,
+        NyhRbobGasolineBrentFuturesCrack = 59,
+        WetFreight = 60,
+        DryFreight = 61,
+        FerrousMetals = 62,
+        PlattsVariableOil = 63,
+        NyhRbobGasolineHeatingOilSpread = 66,
+        PhysicalEnvironmental = 69,
+        HeatingOilLsGasoilFuturesSpread = 70,
+        LsGasoilBrentFuturesCrack = 71,
+        NyhRbobGasolineLsGasoilFuturesSpread = 72,
+        EcxEuaaFutures = 84,
+        EcxCereuaaFuturesSpread = 85,
+        EcxEuaaeuaFuturesSpread = 86,
+        Soybean = 89,
+        EcxEuaEibAuction = 92,
+        FinancialLng = 93,
+        EuaUkAuction = 95,
+        EuaaUkAuction = 96,
+        CfrSouthChinaCoalFutures = 97,
+        BelgianPowerFutures = 98,
+        DutchPowerFutures = 99,
+        GcNewcastleFobIndoSubbitCoalFuturesSpread = 100,
+        RichardsBaygCNewcastleCoalFuturesSpread = 101,
+        FcojAMini = 102,
+        CifUs = 104,
+        D6Rin = 108,
+        EuropeanPowerSpreads = 111,
+        Taqa = 112,
+        BelgianZtpGasSpot = 113,
+        DutchTtfGasSpot = 114,
+        DutchTtfGasStorage = 115,
+        EuropeanGasSpotSpreads = 116,
+        BelgianZtpGasFutures = 117,
+        UkOcmGasSpot = 118,
+        BelgianGasSpreads = 119,
+        FinancialOlefins = 124,
+        FinancialMonomers = 125,
+        PlattsVariableOilUrals = 126,
+        EndexSpotMarketIndices = 127,
+        InterestRateFutures = 131,
+        SingaporeEnergy = 133,
+        SingaporeFinancials = 134,
+        SingaporeMetals = 135,
+        ItalianNaturalGasFutures = 136,
+        ItalianPowerFutures = 137,
+        CreditSwapData = 139,
+        GoldFixing = 140,
+        NorthSeaPartials = 141,
+        EuFinancialPowerSpreads = 142,
+        EuFinancialPowerFutures = 143,
+        OilCad = 144,
+        SilverFixing = 147,
+        UkSparkSpread = 149,
+        UkOcmPhysicalGasSpot = 150,
+        JapanDomesticWaterborne = 152,
+        DailyMetals = 154,
+        BrixEnergiaFin = 155,
+        JapanDomesticRack = 156,
+        FinancialUsLng = 157,
+        IceRotterdamNewcastleCoalFuturesSpread = 160,
+        OilAmericas = 165,
+        PlattsPetrochemical = 167,
+        PermianWtiFutures = 168,
+        EndexEquityIndices = 170,
+        EndexSingleStockOptions = 171,
+        IfusIceIndices = 172,
+        PlattsAsiaBunker = 173,
+        SofrFutures = 177,
+        DigitalAssetFutures = 178,
+        PermianBrentFuturesSpread = 179,
+        PermianWtiFuturesSpread = 180,
+        LiffeStiRs = 200,
+        LiffeBonds = 202,
+        LiffeSwapnotes = 203,
+        1 = 205,
+        Metals = 206,
+        IfusEquityIndices = 207,
+        GcfRepo = 208,
+        LiffeThreeMonthEuroAndEonia = 209,
+        Eurodollar = 210,
+        LiffeEquityDerivativesNonUsBased = 211,
+        LiffeEquityDerivativesUsBased = 212,
+        LiffeIndexOptions = 213,
+        LiffeIndexFuturesUsRestricted = 214,
+        LiffeIndexFuturesNonUsRestricted = 215,
+        PhysicalGas = 305,
+        Power = 306,
+        NgxPhysicalGas = 314,
+        NgxFinancialPower = 315,
+        NgxFinancialGas = 316,
+        FinancialNgl = 317,
+        OlefinsPolymers = 318,
+        PhysicalNgl = 319,
+        PhysicalOil = 320,
+        TestIpe = 600,
+        TestNybot = 601,
+        TestNdex = 602,
+        TestLiffeuk1 = 603,
+        TestLiffeuk2 = 604,
     };
 
 
@@ -1373,7 +1193,7 @@ namespace MyNamespace {
         OpenPriceMessage = (byte)'N',
         ClosePriceMessage = (byte)'c',
         SettlementPriceMessage = (byte)'O',
-        IndexPricesMessage = (byte)'z',
+        MarkerIndexPrices = (byte)'z',
         EndOfDayMarketSummaryMessage = (byte)'u',
         MarketEventMessage = (byte)'f',
         PreOpenPriceIndicatorMessage = (byte)'g',
@@ -1388,7 +1208,6 @@ namespace MyNamespace {
         MessageBundleMarker = (byte)'T',
         FixingTransitionMessage = (byte)'3',
         FixingLockdownMessage = (byte)'4',
-        FixingIndicativePriceMessageMessage = (byte)'0',
         MarketSnapshotPriceLevelMessage = (byte)'m',
         AddPriceLevelMessage = (byte)'t',
         ChangePriceLevelMessage = (byte)'s',
@@ -1419,15 +1238,6 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Mifid Regulated Market Values
-    /// </summary>
-    public enum MifidRegulatedMarket : byte {
-        Yes = (byte)'Y',
-        No = (byte)'N',
-    };
-
-
-    /// <summary>
     ///  Min Options Price
     /// </summary>
     public struct MinOptionsPrice {
@@ -1448,14 +1258,6 @@ namespace MyNamespace {
     /// </summary>
     public struct MinQty {
         public int Raw;
-    };
-
-
-    /// <summary>
-    ///  Modification Timestamp
-    /// </summary>
-    public struct ModificationTimestamp {
-        public long Raw;
     };
 
 
@@ -1481,22 +1283,6 @@ namespace MyNamespace {
         
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Num Decimals Price
-    /// </summary>
-    public struct NumDecimalsPrice {
-        public sbyte Raw;
-    };
-
-
-    /// <summary>
-    ///  Num Decimals Price In Gram
-    /// </summary>
-    public struct NumDecimalsPriceInGram {
-        public sbyte Raw;
     };
 
 
@@ -1618,16 +1404,16 @@ namespace MyNamespace {
     ///  Off Market Trade Type Values
     /// </summary>
     public enum OffMarketTradeType : ulong {
-        Regular = ,
-        Block = K,
-        Efs = S,
-        Efp = E,
-        EfpEfs = O,
-        Eoo = Q,
-        Efm = I,
-        GuaranteedCross = 5,
-        Basis = 5,
-        AssetAllocation = AA,
+        Regular = "",
+        Block = "K",
+        Efs = "S",
+        Efp = "E",
+        EfpEfs = "O",
+        Eoo = "Q",
+        Efm = "I",
+        GuaranteedCross = "5",
+        Basis = "5",
+        AssetAllocation = "AA",
     };
 
 
@@ -1823,14 +1609,6 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Price In Gram
-    /// </summary>
-    public struct PriceInGram {
-        public long Raw;
-    };
-
-
-    /// <summary>
     ///  Price Level Position
     /// </summary>
     public struct PriceLevelPosition {
@@ -1879,17 +1657,9 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Reserved Bytes 4
+    ///  Reserved Field 1
     /// </summary>
-    public struct ReservedBytes4 {
-        public int Raw;
-    };
-
-
-    /// <summary>
-    ///  Reserved2 Bytes
-    /// </summary>
-    public unsafe struct Reserved2Bytes {
+    public unsafe struct ReservedField1 {
         public const int Size = 2;
 
         public fixed byte Bytes[Size];
@@ -1916,126 +1686,126 @@ namespace MyNamespace {
     ///  Security Sub Type Values
     /// </summary>
     public enum SecuritySubType : short {
-        None = "0",
-        Call = "1",
-        Put = "2",
-        FuturesButterfly = "3",
-        CallButterfly = "4",
-        PutButterfly = "5",
-        CallSpread = "6",
-        PutSpread = "7",
-        DiagonalCallSpread = "9",
-        DiagonalPutSpread = "10",
-        GutStrangle = "11",
-        1X2CallSpreadToThe2 = "12",
-        1X2PutSpreadToThe2 = "13",
-        IronButterfly = "14",
-        Strangle = "16",
-        CallLadderTree = "17",
-        PutLadderTree = "18",
-        StraddleSpread = "19",
-        ReversalConversionToTheCall = "21",
-        ReversalConversionToThePut = "21",
-        Straddle = "22",
-        FuturesCondor = "23",
-        CallCondor = "24",
-        PutCondor = "25",
-        Box = "26",
-        SyntheticUnderlying = "33",
-        CallSpreadVsPut3Way = "34",
-        PutSpreadVsCall3Way = "35",
-        StraddleVsCall3Way = "36",
-        StraddleVsPut3Way = "37",
-        CallCalendarSpread = "38",
-        PutCalendarSpread = "39",
-        IronCondor = "40",
-        JellyRoll = "41",
-        Hedged1x2CallSpreadToThe2 = "42",
-        Hedged1x2PutSpreadToThe2 = "43",
-        CallSpreadVersusSellPutHedge = "44",
-        PutSpreadVersusSellCall+Hedge = "45",
-        HedgedCallCalendar = "46",
-        HedgedPutCalendar = "47",
-        HedgedCallLadderTree = "48",
-        HedgedPutLadderTree = "49",
-        HedgedCallSpread = "50",
-        HedgedPutSpread = "51",
-        HedgedStraddle = "53",
-        HedgedStrangle = "54",
-        HedgedCall = "55",
-        HedgedPut = "56",
-        Custom = "58",
-        HedgedStraddleSpread = "59",
-        HedgedCallCondor = "60",
-        HedgedPutCondor = "61",
-        HedgedDiagonalCallSpread = "63",
-        HedgedDiagonalPutSpread = "64",
-        HedgedCallButterlfy = "65",
-        HedgedPutButterlfy = "66",
-        HedgedGutsStrangle = "67",
-        HedgedIronCondor = "68",
-        HedgedIronButterfly = "69",
-        FenceToTheCall = "70",
-        FenceToThePut = "71",
-        HedgedFenceToTheCall = "72",
-        HedgedFenceToThePut = "73",
-        1X2CallSpreadToThe1 = "74",
-        1X2PutSpreadToThe1 = "75",
-        Hedged1x2CallSpreadToThe1 = "76",
-        Hedged1x2PutSpreadToThe1 = "77",
-        DiscountSpreads = "88",
-        LocationSpreads = "89",
-        PlattsDiffSpread = "90",
-        PlattsSpread = "91",
-        OtcGasOilCrack = "92",
-        BalmoOverMonth = "93",
-        RatioSpread = "94",
-        VolumetricSpread = "95",
-        HeatRate = "96",
-        CrackSpread = "97",
-        ComboSpread = "98",
-        SpreadS = "99",
-        PacknoColor = "100",
-        PackWhite = "101",
-        PackRed = "102",
-        PackGreen = "103",
-        PackBlue = "104",
-        PackGold = "105",
-        PackPurple = "106",
-        PackOrange = "107",
-        PackPink = "108",
-        PackSilver = "109",
-        PackCopper = "110",
-        BundleNoColor = "200",
-        Bundle2Yr = "201",
-        Bundle3Yr = "202",
-        Bundle4Yr = "203",
-        Bundle5Yr = "204",
-        Bundle6Yr = "205",
-        Bundle7Yr = "206",
-        Bundle8Yr = "207",
-        Bundle9Yr = "208",
-        Bundle10Yr = "209",
-        Balmo = "400",
-        NextDay = "410",
-        Cfd = "411",
-        Weekend = "412",
-        SingleDay = "413",
-        CustomDaily = "414",
-        Hourly = "415",
-        Month = "416",
-        Balweek = "450",
-        Basket = "500",
-        CustomMonthly = "550",
-        NextWeek = "600",
-        Period = "700",
-        CustomDailyCfd = "711",
-        CustomDaily7x8 = "712",
-        CustomDaily7x16 = "713",
-        CustomDaily7x6 = "714",
-        CustomDailyOffPeakX16 = "715",
-        Quarter = "800",
-        Year = "900",
+        None = 0,
+        Call = 1,
+        Put = 2,
+        FuturesButterfly = 3,
+        CallButterfly = 4,
+        PutButterfly = 5,
+        CallSpread = 6,
+        PutSpread = 7,
+        DiagonalCallSpread = 9,
+        DiagonalPutSpread = 10,
+        GutStrangle = 11,
+        1X2CallSpreadToThe2 = 12,
+        1X2PutSpreadToThe2 = 13,
+        IronButterfly = 14,
+        Strangle = 16,
+        CallLadderTree = 17,
+        PutLadderTree = 18,
+        StraddleSpread = 19,
+        ReversalConversionToTheCall = 21,
+        ReversalConversionToThePut = 21,
+        Straddle = 22,
+        FuturesCondor = 23,
+        CallCondor = 24,
+        PutCondor = 25,
+        Box = 26,
+        SyntheticUnderlying = 33,
+        CallSpreadVsPut3Way = 34,
+        PutSpreadVsCall3Way = 35,
+        StraddleVsCall3Way = 36,
+        StraddleVsPut3Way = 37,
+        CallCalendarSpread = 38,
+        PutCalendarSpread = 39,
+        IronCondor = 40,
+        JellyRoll = 41,
+        Hedged1x2CallSpreadToThe2 = 42,
+        Hedged1x2PutSpreadToThe2 = 43,
+        CallSpreadVersusSellPutHedge = 44,
+        PutSpreadVersusSellCall+Hedge = 45,
+        HedgedCallCalendar = 46,
+        HedgedPutCalendar = 47,
+        HedgedCallLadderTree = 48,
+        HedgedPutLadderTree = 49,
+        HedgedCallSpread = 50,
+        HedgedPutSpread = 51,
+        HedgedStraddle = 53,
+        HedgedStrangle = 54,
+        HedgedCall = 55,
+        HedgedPut = 56,
+        Custom = 58,
+        HedgedStraddleSpread = 59,
+        HedgedCallCondor = 60,
+        HedgedPutCondor = 61,
+        HedgedDiagonalCallSpread = 63,
+        HedgedDiagonalPutSpread = 64,
+        HedgedCallButterlfy = 65,
+        HedgedPutButterlfy = 66,
+        HedgedGutsStrangle = 67,
+        HedgedIronCondor = 68,
+        HedgedIronButterfly = 69,
+        FenceToTheCall = 70,
+        FenceToThePut = 71,
+        HedgedFenceToTheCall = 72,
+        HedgedFenceToThePut = 73,
+        1X2CallSpreadToThe1 = 74,
+        1X2PutSpreadToThe1 = 75,
+        Hedged1x2CallSpreadToThe1 = 76,
+        Hedged1x2PutSpreadToThe1 = 77,
+        DiscountSpreads = 88,
+        LocationSpreads = 89,
+        PlattsDiffSpread = 90,
+        PlattsSpread = 91,
+        OtcGasOilCrack = 92,
+        BalmoOverMonth = 93,
+        RatioSpread = 94,
+        VolumetricSpread = 95,
+        HeatRate = 96,
+        CrackSpread = 97,
+        ComboSpread = 98,
+        SpreadS = 99,
+        PacknoColor = 100,
+        PackWhite = 101,
+        PackRed = 102,
+        PackGreen = 103,
+        PackBlue = 104,
+        PackGold = 105,
+        PackPurple = 106,
+        PackOrange = 107,
+        PackPink = 108,
+        PackSilver = 109,
+        PackCopper = 110,
+        BundleNoColor = 200,
+        Bundle2Yr = 201,
+        Bundle3Yr = 202,
+        Bundle4Yr = 203,
+        Bundle5Yr = 204,
+        Bundle6Yr = 205,
+        Bundle7Yr = 206,
+        Bundle8Yr = 207,
+        Bundle9Yr = 208,
+        Bundle10Yr = 209,
+        Balmo = 400,
+        NextDay = 410,
+        Cfd = 411,
+        Weekend = 412,
+        SingleDay = 413,
+        CustomDaily = 414,
+        Hourly = 415,
+        Month = 416,
+        Balweek = 450,
+        Basket = 500,
+        CustomMonthly = 550,
+        NextWeek = 600,
+        Period = 700,
+        CustomDailyCfd = 711,
+        CustomDaily7x8 = 712,
+        CustomDaily7x16 = 713,
+        CustomDaily7x6 = 714,
+        CustomDailyOffPeakX16 = 715,
+        Quarter = 800,
+        Year = 900,
     };
 
 
@@ -2160,8 +1930,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Special Field Id
     /// </summary>
-    public struct SpecialFieldId {
-        public byte Raw;
+    public unsafe struct SpecialFieldId {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -2301,15 +2080,6 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Test Market Indicator Values
-    /// </summary>
-    public enum TestMarketIndicator : byte {
-        Yes = (byte)'Y',
-        No = (byte)'N',
-    };
-
-
-    /// <summary>
     ///  Text Message
     /// </summary>
     public unsafe struct TextMessage {
@@ -2419,22 +2189,6 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Underlying Isin
-    /// </summary>
-    public unsafe struct UnderlyingIsin {
-        public const int Size = 12;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Underlying Market Id
     /// </summary>
     public struct UnderlyingMarketId {
@@ -2492,9 +2246,9 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Valuation Date
+    ///  Valuation Date Applying Date
     /// </summary>
-    public unsafe struct ValuationDate {
+    public unsafe struct ValuationDateApplyingDate {
         public const int Size = 10;
 
         public fixed sbyte Bytes[Size];
@@ -2561,7 +2315,6 @@ namespace MyNamespace {
         OrderEntryDateTime OrderEntryDateTime;
         ExtraFlags ExtraFlags;
         SequenceWithinMillis SequenceWithinMillis;
-        ModificationTimestamp ModificationTimestamp;
     };
 
 
@@ -2578,7 +2331,6 @@ namespace MyNamespace {
         OrderCount OrderCount;
         ImpliedQuantity ImpliedQuantity;
         ImpliedOrderCount ImpliedOrderCount;
-        Timestamp Timestamp;
     };
 
 
@@ -2610,7 +2362,6 @@ namespace MyNamespace {
         OrderCount OrderCount;
         ImpliedQuantity ImpliedQuantity;
         ImpliedOrderCount ImpliedOrderCount;
-        Timestamp Timestamp;
     };
 
 
@@ -2632,8 +2383,6 @@ namespace MyNamespace {
     public unsafe struct DeleteOrderMessage {
         MarketId MarketId;
         OrderId OrderId;
-        DateTime DateTime;
-        SequenceWithinMillis SequenceWithinMillis;
     };
 
 
@@ -2645,7 +2394,6 @@ namespace MyNamespace {
         MarketId MarketId;
         Side Side;
         PriceLevelPosition PriceLevelPosition;
-        Timestamp Timestamp;
     };
 
 
@@ -2667,20 +2415,6 @@ namespace MyNamespace {
         OpenInterest OpenInterest;
         DateTime DateTime;
         SettlementPrice SettlementPrice;
-    };
-
-
-    /// <summary>
-    ///  Struct for Fixing Indicative Price Message Message
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct FixingIndicativePriceMessageMessage {
-        MarketId MarketId;
-        IbaCurrency IbaCurrency;
-        Price Price;
-        PriceInGram PriceInGram;
-        NumDecimalsPrice NumDecimalsPrice;
-        NumDecimalsPriceInGram NumDecimalsPriceInGram;
     };
 
 
@@ -2729,21 +2463,6 @@ namespace MyNamespace {
         HedgePrice HedgePrice;
         HedgePriceDenominator HedgePriceDenominator;
         HedgeDelta HedgeDelta;
-        HedgeStrategyCode HedgeStrategyCode;
-    };
-
-
-    /// <summary>
-    ///  Struct for Index Prices Message
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct IndexPricesMessage {
-        MarketId MarketId;
-        Price Price;
-        ShortName ShortName;
-        PublishedDateTime PublishedDateTime;
-        ValuationDate ValuationDate;
-        Status Status;
     };
 
 
@@ -2773,7 +2492,7 @@ namespace MyNamespace {
         Quantity Quantity;
         OffMarketTradeIndicator OffMarketTradeIndicator;
         DateTime DateTime;
-        InvestigationStatus InvestigationStatus;
+        Status Status;
         OffMarketTradeType OffMarketTradeType;
     };
 
@@ -2787,11 +2506,20 @@ namespace MyNamespace {
         LegMarketId LegMarketId;
         LegRatio LegRatio;
         LegSide LegSide;
-        LegStrategyCode LegStrategyCode;
-        LegRatioQtyNumerator LegRatioQtyNumerator;
-        LegRatioQtyDenominator LegRatioQtyDenominator;
-        LegRatioPriceNumerator LegRatioPriceNumerator;
-        LegRatioPriceDenominator LegRatioPriceDenominator;
+    };
+
+
+    /// <summary>
+    ///  Struct for Marker Index Prices
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MarkerIndexPrices {
+        MarketId MarketId;
+        Price Price;
+        ShortName ShortName;
+        PublishedDateTime PublishedDateTime;
+        ValuationDateApplyingDate ValuationDateApplyingDate;
+        Status Status;
     };
 
 
@@ -2830,7 +2558,7 @@ namespace MyNamespace {
         LastTradeDateTime LastTradeDateTime;
         SettlePriceDateTime SettlePriceDateTime;
         LastMessageSequenceId LastMessageSequenceId;
-        Reserved2Bytes Reserved2Bytes;
+        ReservedField1 ReservedField1;
         OpenInterestDate OpenInterestDate;
         IsSettlePriceOfficial IsSettlePriceOfficial;
         SettlementPrice SettlementPrice;
@@ -2963,7 +2691,6 @@ namespace MyNamespace {
         GtAllowed GtAllowed;
         CrossOrderSupported CrossOrderSupported;
         UnitOfMeasure UnitOfMeasure;
-        MifidRegulatedMarket MifidRegulatedMarket;
     };
 
 
@@ -3005,7 +2732,6 @@ namespace MyNamespace {
         CrossOrderSupported CrossOrderSupported;
         GuaranteedCrossSupported GuaranteedCrossSupported;
         UnitOfMeasure UnitOfMeasure;
-        MifidRegulatedMarket MifidRegulatedMarket;
     };
 
 
@@ -3185,11 +2911,6 @@ namespace MyNamespace {
         LegUnderlyingMarketId LegUnderlyingMarketId;
         LegRatio LegRatio;
         LegSide LegSide;
-        LegStrategyCode LegStrategyCode;
-        LegRatioQtyNumerator LegRatioQtyNumerator;
-        LegRatioQtyDenominator LegRatioQtyDenominator;
-        LegRatioPriceNumerator LegRatioPriceNumerator;
-        LegRatioPriceDenominator LegRatioPriceDenominator;
     };
 
 

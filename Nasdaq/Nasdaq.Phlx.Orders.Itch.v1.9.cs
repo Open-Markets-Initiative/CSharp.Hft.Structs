@@ -91,8 +91,13 @@ namespace MyNamespace {
     /// <summary>
     ///  Count
     /// </summary>
-    public struct Count {
-        public ushort Raw;
+    public unsafe struct Count {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -100,8 +105,8 @@ namespace MyNamespace {
     ///  Current Trading State Values
     /// </summary>
     public enum CurrentTradingState : byte {
-        HaltInEffect = "H",
-        PhlxTradingResumed = "T",
+        HaltInEffect = H,
+        PhlxTradingResumed = T,
     };
 
 
@@ -341,8 +346,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Number Of Legs
     /// </summary>
-    public struct NumberOfLegs {
-        public byte Raw;
+    public unsafe struct NumberOfLegs {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -360,8 +374,8 @@ namespace MyNamespace {
     ///  Open State Values
     /// </summary>
     public enum OpenState : byte {
-        OpenForAutoExecution = "Y",
-        ClosedForAutoExecution = "N",
+        OpenForAutoExecution = Y,
+        ClosedForAutoExecution = N,
     };
 
 
@@ -369,9 +383,9 @@ namespace MyNamespace {
     ///  Option Closing Type Values
     /// </summary>
     public enum OptionClosingType : byte {
-        Normal = "N",
-        Late = "L",
-        WcoEarlyClosing = "W",
+        Normal = N,
+        Late = L,
+        WcoEarlyClosing = W,
     };
 
 
@@ -461,8 +475,8 @@ namespace MyNamespace {
     ///  Phlx Tradable Values
     /// </summary>
     public enum PhlxTradable : byte {
-        Tradable = "Y",
-        NotTradable = "N",
+        Tradable = Y,
+        NotTradable = N,
     };
 
 
@@ -579,8 +593,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Source
     /// </summary>
-    public struct Source {
-        public byte Raw;
+    public unsafe struct Source {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -630,8 +653,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Version
     /// </summary>
-    public struct Version {
-        public byte Raw;
+    public unsafe struct Version {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 

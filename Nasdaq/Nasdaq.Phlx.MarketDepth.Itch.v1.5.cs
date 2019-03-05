@@ -371,24 +371,51 @@ namespace MyNamespace {
     /// <summary>
     ///  Expiration Date
     /// </summary>
-    public struct ExpirationDate {
-        public byte Raw;
+    public unsafe struct ExpirationDate {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Expiration Month
     /// </summary>
-    public struct ExpirationMonth {
-        public byte Raw;
+    public unsafe struct ExpirationMonth {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
     /// <summary>
     ///  Expiration Year
     /// </summary>
-    public struct ExpirationYear {
-        public byte Raw;
+    public unsafe struct ExpirationYear {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -770,8 +797,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Reserved
     /// </summary>
-    public struct Reserved {
-        public ulong Raw;
+    public unsafe struct Reserved {
+        public const int Size = 3;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -912,8 +948,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Source
     /// </summary>
-    public struct Source {
-        public byte Raw;
+    public unsafe struct Source {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 

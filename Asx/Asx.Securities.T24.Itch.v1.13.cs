@@ -509,8 +509,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Expiry Month
     /// </summary>
-    public struct ExpiryMonth {
-        public byte Raw;
+    public unsafe struct ExpiryMonth {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -659,8 +668,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Legs
     /// </summary>
-    public struct Legs {
-        public byte Raw;
+    public unsafe struct Legs {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -719,8 +737,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Market Updates
     /// </summary>
-    public struct MarketUpdates {
-        public byte Raw;
+    public unsafe struct MarketUpdates {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -744,8 +771,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Maturity Value
     /// </summary>
-    public struct MaturityValue {
-        public byte Raw;
+    public unsafe struct MaturityValue {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -867,8 +903,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Payments Per Year
     /// </summary>
-    public struct PaymentsPerYear {
-        public byte Raw;
+    public unsafe struct PaymentsPerYear {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -883,8 +928,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Price Decimal Position
     /// </summary>
-    public struct PriceDecimalPosition {
-        public byte Raw;
+    public unsafe struct PriceDecimalPosition {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -973,8 +1027,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Primary Ratio
     /// </summary>
-    public struct PrimaryRatio {
-        public byte Raw;
+    public unsafe struct PrimaryRatio {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -1194,8 +1257,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Secondary Ratio
     /// </summary>
-    public struct SecondaryRatio {
-        public byte Raw;
+    public unsafe struct SecondaryRatio {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -1529,8 +1601,17 @@ namespace MyNamespace {
     /// <summary>
     ///  Strike Price Decimal Position
     /// </summary>
-    public struct StrikePriceDecimalPosition {
-        public byte Raw;
+    public unsafe struct StrikePriceDecimalPosition {
+        public const int Size = 1;
+
+        public byte Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public byte Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
     };
 
 

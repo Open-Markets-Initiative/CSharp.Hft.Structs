@@ -45,22 +45,6 @@ namespace MyNamespace {
     ///////////////////////////////////////////////////////////////////////
 
     /// <summary>
-    ///  Attribution
-    /// </summary>
-    public unsafe struct Attribution {
-        public const int Size = 4;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Auction Collar Extension
     /// </summary>
     public unsafe struct AuctionCollarExtension {
@@ -89,7 +73,7 @@ namespace MyNamespace {
     ///  Authenticity Values
     /// </summary>
     public enum Authenticity : byte {
-        LiveProduction = (byte)'P',
+        Production = (byte)'P',
         Test = (byte)'T',
     };
 
@@ -114,9 +98,9 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Canceled Shares
+    ///  Cancelled Shares
     /// </summary>
-    public unsafe struct CanceledShares {
+    public unsafe struct CancelledShares {
         public const int Size = 4;
 
         public uint Bytes;
@@ -156,30 +140,13 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Cross Shares
-    /// </summary>
-    public unsafe struct CrossShares {
-        public const int Size = 8;
-
-        public ulong Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public ulong Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Cross Type Values
     /// </summary>
     public enum CrossType : byte {
-        OpeningCross = (byte)'O',
-        ClosingCross = (byte)'C',
-        CrossHaltedOrPaused = (byte)'H',
-        IntradayCrossAndPostCloseCross = (byte)'I',
+        Opening = (byte)'O',
+        Closing = (byte)'C',
+        CrossForIpoAndHalted = (byte)'H',
+        NasdaqBxCrossNetwork = (byte)'I',
     };
 
 
@@ -197,7 +164,7 @@ namespace MyNamespace {
     public enum EtpFlag : byte {
         Etp = (byte)'Y',
         NotEtp = (byte)'N',
-        NotAvailable = (byte)' ',
+        NotAvailable = (byte)'',
     };
 
 
@@ -276,9 +243,8 @@ namespace MyNamespace {
         DeficientAndDelinquent = (byte)'H',
         DelinquentAndBankrupt = (byte)'J',
         DeficientDelinquentAndBankrupt = (byte)'K',
-        CreationsAndRedemptionsSuspended = (byte)'C',
+        CreationsAndOrRedemptionsSuspended = (byte)'C',
         Normal = (byte)'N',
-        Na = (byte)' ',
     };
 
 
@@ -288,8 +254,8 @@ namespace MyNamespace {
     public enum ImbalanceDirection : byte {
         Buy = (byte)'B',
         Sell = (byte)'S',
-        NoImbalance = (byte)'N',
-        InsufficientOrders = (byte)'O',
+        No = (byte)'N',
+        Insufficient = (byte)'O',
     };
 
 
@@ -314,10 +280,10 @@ namespace MyNamespace {
     ///  Interest Flag Values
     /// </summary>
     public enum InterestFlag : byte {
-        BuySideRpiOrdersAvailable = (byte)'B',
-        SellSideRpiOrdersAvailable = (byte)'S',
-        BothSidesRpiOrdersAvailable = (byte)'A',
-        NoRpiOrdersAvailable = (byte)'N',
+        BuySide = (byte)'B',
+        SellSide = (byte)'S',
+        BothSides = (byte)'A',
+        NoPi = (byte)'N',
     };
 
 
@@ -325,8 +291,8 @@ namespace MyNamespace {
     ///  Inverse Indicator Values
     /// </summary>
     public enum InverseIndicator : byte {
-        InverseEtp = (byte)'Y',
-        NotInverseEtp = (byte)'N',
+        IsAnInverseEtp = (byte)'Y',
+        NotAnInverseEtp = (byte)'N',
     };
 
 
@@ -334,40 +300,23 @@ namespace MyNamespace {
     ///  Ipo Flag Values
     /// </summary>
     public enum IpoFlag : byte {
-        SetUpForIpoRealease = (byte)'Y',
-        NotSetUpForIpoRealease = (byte)'N',
-        NotAvailable = (byte)' ',
+        Yes = (byte)'Y',
+        No = (byte)'N',
+        NotAvailable = (byte)'',
     };
 
 
     /// <summary>
-    ///  Ipo Price
+    ///  Issue Classification
     /// </summary>
-    public struct IpoPrice {
-        public int Raw;
-    };
+    public unsafe struct IssueClassification {
+        public const int Size = 1;
 
-
-    /// <summary>
-    ///  Ipo Quotation Release Qualifier Values
-    /// </summary>
-    public enum IpoQuotationReleaseQualifier : byte {
-        AnticipatedQuotationReleaseTime = (byte)'A',
-        IpoReleaseCanceledOrPostponed = (byte)'C',
-    };
-
-
-    /// <summary>
-    ///  Ipo Quotation Release Time
-    /// </summary>
-    public unsafe struct IpoQuotationReleaseTime {
-        public const int Size = 4;
-
-        public uint Bytes;
+        public byte Byte;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
-            => Swap(Bytes);
+        public char Value
+                => (char)Bytes;
         
         public override string ToString()
             => $"{Value}";
@@ -375,91 +324,18 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Issue Classification Values
+    ///  Issue Sub Type
     /// </summary>
-    public enum IssueClassification : byte {
-        AmericanDepositaryShare = (byte)'A',
-        Bond = (byte)'B',
-        Common = (byte)'C',
-        Depository = (byte)'F',
-        144A = (byte)'I',
-        Limited = (byte)'L',
-        Notes = (byte)'N',
-        OrdinaryShare = (byte)'O',
-        Preferred = (byte)'P',
-        Other = (byte)'Q',
-        Right = (byte)'R',
-        Shares = (byte)'S',
-        Convertible = (byte)'T',
-        Unit = (byte)'U',
-        UnitsBenifInt = (byte)'V',
-        Warrant = (byte)'W',
-    };
+    public unsafe struct IssueSubType {
+        public const int Size = 2;
 
+        public fixed sbyte Bytes[Size];
 
-    /// <summary>
-    ///  Issue Sub Type Values
-    /// </summary>
-    public enum IssueSubType : ulong {
-        PreferredTrustSecurities = "A",
-        AlphaIndexEtNs = "AI",
-        IndexBasedDerivative = "B",
-        CommonShares = "C",
-        CommodityBasedTrustShares = "CB",
-        CommodityFuturesTrustShares = "CF",
-        CurrencyTrustShares = "CL",
-        CommodityIndexTrustShares = "CM",
-        CollateralizedMortgageObligation = "CO",
-        CurrencyTrustShares = "CT",
-        Commodity­Currency = "CU",
-        CurrencyWarrants = "CW",
-        GlobalDepositary = "D",
-        Etf­PortfolioDepositaryReceipt = "E",
-        EquityGoldShares = "EG",
-        EtnEquity = "EI",
-        NextSharesExchange = "EM",
-        ExchangeTradedNotes = "EN",
-        EquityUnits = "EU",
-        Holdrs = "F",
-        EtnFixedIncome = "FI",
-        EtnFutures = "FL",
-        GlobalShares = "G",
-        Etf = "I",
-        Interest = "IR",
-        Index = "IW",
-        Index = "IX",
-        Corporate = "J",
-        Contingent = "L",
-        Warrant = "W",
-        IdentifiesSecurities = "LL",
-        EquityBasedDerivative = "M",
-        ManagedFundShares = "MF",
-        Etn = "ML",
-        ManagedTrustSecurities = "MT",
-        NyRegistryShares = "N",
-        OpenEndedMutualFund = "O",
-        PrivatelyHeldSecurity = "P",
-        PoisonPill = "PP",
-        PartnershipUnits = "PU",
-        ClosedEndFunds = "Q",
-        RegS = "R",
-        CommodityRedeemable = "RC",
-        Etn = "RF",
-        Reit = "RT",
-        Commodity­Redeemable = "RU",
-        Seed = "S",
-        SpotRateClosing = "SC",
-        SpotRateIntraday = "SI",
-        TrackingStock = "T",
-        TrustCertificates = "TC",
-        TrustUnits = "TU",
-        Portal = "U",
-        ContingentValueRight = "V",
-        TrustIssuedReceipts = "W",
-        WorldCurrencyOption = "WC",
-        Trust = "X",
-        Other = "Y",
-        NotApplicable = "Z",
+        public string Value
+            => new String((sbyte*)Bytes, 0, Size);
+
+        public override string ToString()
+            => $"{Value}";
     };
 
 
@@ -505,23 +381,6 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Locate Code
-    /// </summary>
-    public unsafe struct LocateCode {
-        public const int Size = 2;
-
-        public ushort Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public ushort Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Lower Auction Collar Price
     /// </summary>
     public struct LowerAuctionCollarPrice {
@@ -535,7 +394,7 @@ namespace MyNamespace {
     public enum LuldReferencePriceTier : byte {
         Tier1 = (byte)'1',
         Tier2 = (byte)'2',
-        NotAvailable = (byte)' ',
+        NotAvailable = (byte)'',
     };
 
 
@@ -550,8 +409,18 @@ namespace MyNamespace {
         NyseMkt = (byte)'A',
         NyseArca = (byte)'P',
         BatsZ = (byte)'Z',
-        InvestorsExchange = (byte)'V',
-        Na = (byte)' ',
+        Iex = (byte)'V',
+        NotAvailable = (byte)' ',
+    };
+
+
+    /// <summary>
+    ///  Market Code Values
+    /// </summary>
+    public enum MarketCode : byte {
+        Nasdaq = (byte)'Q',
+        Bx = (byte)'B',
+        Psx = (byte)'X',
     };
 
 
@@ -562,7 +431,7 @@ namespace MyNamespace {
         Normal = (byte)'N',
         Passive = (byte)'P',
         Syndicate = (byte)'S',
-        PreSyndicate = (byte)'R',
+        Presyndicate = (byte)'R',
         Penalty = (byte)'L',
     };
 
@@ -572,7 +441,7 @@ namespace MyNamespace {
     /// </summary>
     public enum MarketParticipantState : byte {
         Active = (byte)'A',
-        Excused = (byte)'E',
+        ExcusedWithdrawn = (byte)'E',
         Withdrawn = (byte)'W',
         Suspended = (byte)'S',
         Deleted = (byte)'D',
@@ -603,14 +472,14 @@ namespace MyNamespace {
         SystemEventMessage = (byte)'S',
         StockDirectoryMessage = (byte)'R',
         StockTradingActionMessage = (byte)'H',
-        RegShoShortSalePriceTestRestrictedIndicatorMessage = (byte)'Y',
+        RegShoRestrictionMessage = (byte)'Y',
         MarketParticipantPositionMessage = (byte)'L',
         MwcbDeclineLevelMessage = (byte)'V',
-        MwcbStatusLevelMessage = (byte)'W',
-        IpoQuotingPeriodUpdate = (byte)'K',
-        AddOrderNoMpidAttributionMessage = (byte)'A',
+        MwcbStatusMessage = (byte)'W',
         LuldAuctionCollarMessage = (byte)'J',
-        AddOrderWithMpidAttributionMessage = (byte)'F',
+        OperationalHaltMessage = (byte)'h',
+        AddOrderNoMpidAttributionMessage = (byte)'A',
+        AddOrderMpidAttributionMessage = (byte)'F',
         OrderExecutedMessage = (byte)'E',
         OrderExecutedWithPriceMessage = (byte)'C',
         OrderCancelMessage = (byte)'X',
@@ -662,6 +531,15 @@ namespace MyNamespace {
         
         public override string ToString()
             => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  Operational Halt Action Values
+    /// </summary>
+    public enum OperationalHaltAction : byte {
+        OperationallyHalted = (byte)'H',
+        OperationalHaltHasBeenLifted = (byte)'B',
     };
 
 
@@ -728,7 +606,7 @@ namespace MyNamespace {
     ///  Price Variation Indicator Values
     /// </summary>
     public enum PriceVariationIndicator : byte {
-        Less = (byte)'L',
+        LessThan1 = (byte)'L',
         1To199 = (byte)'1',
         2To299 = (byte)'2',
         3To399 = (byte)'3',
@@ -741,7 +619,7 @@ namespace MyNamespace {
         10To1999 = (byte)'A',
         20To2999 = (byte)'B',
         30OrGreater = (byte)'C',
-        NoCalculation = (byte)' ',
+        NotAvailable = (byte)'',
     };
 
 
@@ -750,7 +628,7 @@ namespace MyNamespace {
     /// </summary>
     public enum PrimaryMarketMaker : byte {
         Primary = (byte)'Y',
-        NonPrimary = (byte)'N',
+        Nonprimary = (byte)'N',
     };
 
 
@@ -758,7 +636,7 @@ namespace MyNamespace {
     ///  Printable Values
     /// </summary>
     public enum Printable : byte {
-        NonPrintable = (byte)'N',
+        Nonprintable = (byte)'N',
         Printable = (byte)'Y',
     };
 
@@ -783,9 +661,9 @@ namespace MyNamespace {
     ///  Reg Sho Action Values
     /// </summary>
     public enum RegShoAction : byte {
-        NoPriceTest = (byte)'0',
-        RegShoShortSalePriceTestRestriction = (byte)'1',
-        TestRestrictionRemains = (byte)'2',
+        NoPrice = (byte)'0',
+        RegShoShortSalePriceTestRestrictionInEffectDue = (byte)'1',
+        TestRestrictionRemainsInEffect = (byte)'2',
     };
 
 
@@ -828,7 +706,7 @@ namespace MyNamespace {
     /// </summary>
     public enum RoundLotsOnly : byte {
         RoundLotsOnly = (byte)'Y',
-        NoRestrictions = (byte)'N',
+        NoOrderSizeRestrictions = (byte)'N',
     };
 
 
@@ -888,7 +766,7 @@ namespace MyNamespace {
     public enum ShortSaleThresholdIndicator : byte {
         Restricted = (byte)'Y',
         NotRestricted = (byte)'N',
-        Na = (byte)' ',
+        NotAvailable = (byte)'',
     };
 
 
@@ -965,7 +843,7 @@ namespace MyNamespace {
     public enum TradingState : byte {
         Halted = (byte)'H',
         Paused = (byte)'P',
-        QuotationOnlyPeriod = (byte)'Q',
+        QuotationOnly = (byte)'Q',
         Trading = (byte)'T',
     };
 
@@ -985,10 +863,10 @@ namespace MyNamespace {
     ///////////////////////////////////////////////////////////////////////
 
     /// <summary>
-    ///  Struct for Add Order No Mpid Attribution Message
+    ///  Struct for Add Order Mpid Attribution Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct AddOrderNoMpidAttributionMessage {
+    public unsafe struct AddOrderMpidAttributionMessage {
         StockLocate StockLocate;
         TrackingNumber TrackingNumber;
         Timestamp Timestamp;
@@ -1001,10 +879,10 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Add Order With Mpid Attribution Message
+    ///  Struct for Add Order No Mpid Attribution Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct AddOrderWithMpidAttributionMessage {
+    public unsafe struct AddOrderNoMpidAttributionMessage {
         StockLocate StockLocate;
         TrackingNumber TrackingNumber;
         Timestamp Timestamp;
@@ -1013,7 +891,6 @@ namespace MyNamespace {
         Shares Shares;
         Stock Stock;
         Price Price;
-        Attribution Attribution;
     };
 
 
@@ -1037,26 +914,11 @@ namespace MyNamespace {
         StockLocate StockLocate;
         TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        CrossShares CrossShares;
+        Shares Shares;
         Stock Stock;
         CrossPrice CrossPrice;
         MatchNumber MatchNumber;
         CrossType CrossType;
-    };
-
-
-    /// <summary>
-    ///  Struct for Ipo Quoting Period Update
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct IpoQuotingPeriodUpdate {
-        StockLocate StockLocate;
-        TrackingNumber TrackingNumber;
-        Timestamp Timestamp;
-        Stock Stock;
-        IpoQuotationReleaseTime IpoQuotationReleaseTime;
-        IpoQuotationReleaseQualifier IpoQuotationReleaseQualifier;
-        IpoPrice IpoPrice;
     };
 
 
@@ -1126,10 +988,10 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Mwcb Status Level Message
+    ///  Struct for Mwcb Status Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MwcbStatusLevelMessage {
+    public unsafe struct MwcbStatusMessage {
         StockLocate StockLocate;
         TrackingNumber TrackingNumber;
         Timestamp Timestamp;
@@ -1175,6 +1037,20 @@ namespace MyNamespace {
 
 
     /// <summary>
+    ///  Struct for Operational Halt Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct OperationalHaltMessage {
+        StockLocate StockLocate;
+        TrackingNumber TrackingNumber;
+        Timestamp Timestamp;
+        Stock Stock;
+        MarketCode MarketCode;
+        OperationalHaltAction OperationalHaltAction;
+    };
+
+
+    /// <summary>
     ///  Struct for Order Cancel Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -1183,7 +1059,7 @@ namespace MyNamespace {
         TrackingNumber TrackingNumber;
         Timestamp Timestamp;
         OrderReferenceNumber OrderReferenceNumber;
-        CanceledShares CanceledShares;
+        CancelledShares CancelledShares;
     };
 
 
@@ -1265,12 +1141,10 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Reg Sho Short Sale Price Test Restricted Indicator Message
+    ///  Struct for Reg Sho Restriction Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RegShoShortSalePriceTestRestrictedIndicatorMessage {
-        LocateCode LocateCode;
-        TrackingNumber TrackingNumber;
+    public unsafe struct RegShoRestrictionMessage {
         Timestamp Timestamp;
         Stock Stock;
         RegShoAction RegShoAction;
@@ -1282,10 +1156,6 @@ namespace MyNamespace {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetailInterestMessage {
-        StockLocate StockLocate;
-        TrackingNumber TrackingNumber;
-        Timestamp Timestamp;
-        Stock Stock;
         InterestFlag InterestFlag;
     };
 

@@ -1,8 +1,8 @@
-## Omi C# Packed Structs
+# Omi C# Structs
 
 Packed C# Structs for binary protocols.
 
-This project contains c-style 'packed' structs in C# for packet overlay.  Any dynamically sized structs are excluded, if you need full parsers please see our other projects.
+This project contains high bandwidth - low latency binary protocol parsers.  
 
 
 ## Development
@@ -11,7 +11,7 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 |Protocol Count | Generated Lines|
 |--- | ---|
-|46 | 61,014|
+|47 | 67,472|
 
 Please report any errors as issues.  Include a small note on the protocol and version, and a minimal capture demonstrating the problem.
 
