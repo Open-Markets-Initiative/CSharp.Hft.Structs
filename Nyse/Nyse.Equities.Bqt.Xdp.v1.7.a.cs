@@ -278,8 +278,8 @@ namespace MyNamespace {
         NyseBonds = 5,
         GlobalOtc = 6,
         NyseAmexOptions = 8,
-        NyseAmericanCash = 9,
-        NyseNationalOptions = 10,
+        NyseAmericanEquities = 9,
+        NyseNationalEquities = 10,
     };
 
 

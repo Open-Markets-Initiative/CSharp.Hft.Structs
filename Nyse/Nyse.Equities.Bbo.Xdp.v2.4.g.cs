@@ -224,7 +224,7 @@ namespace MyNamespace {
         GlobalOtc = 6,
         NyseAmexOptions = 8,
         NyseAmericanEquities = 9,
-        NyseNationalOptions = 10,
+        NyseNationalEquities = 10,
     };
 
 

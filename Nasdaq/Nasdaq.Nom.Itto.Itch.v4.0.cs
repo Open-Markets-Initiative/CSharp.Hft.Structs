@@ -79,32 +79,15 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Ask Reference Delta Number
+    ///  Ask Reference Number
     /// </summary>
-    public unsafe struct AskReferenceDeltaNumber {
-        public const int Size = 4;
+    public unsafe struct AskReferenceNumber {
+        public const int Size = 8;
 
-        public uint Bytes;
+        public ulong Bytes;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Ask Reference Number Delta
-    /// </summary>
-    public unsafe struct AskReferenceNumberDelta {
-        public const int Size = 4;
-
-        public uint Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
+        public ulong Value
             => Swap(Bytes);
         
         public override string ToString()
@@ -152,25 +135,8 @@ namespace MyNamespace {
     public enum AuctionType : byte {
         Opening = (byte)'O',
         Reopening = (byte)'R',
-        Exposure = (byte)'I',
         PriceImprovement = (byte)'P',
-    };
-
-
-    /// <summary>
-    ///  Base Reference Number
-    /// </summary>
-    public unsafe struct BaseReferenceNumber {
-        public const int Size = 8;
-
-        public ulong Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public ulong Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
+        Exposure = (byte)'I',
     };
 
 
@@ -209,15 +175,15 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Bid Reference Number Delta
+    ///  Bid Reference Number
     /// </summary>
-    public unsafe struct BidReferenceNumberDelta {
-        public const int Size = 4;
+    public unsafe struct BidReferenceNumber {
+        public const int Size = 8;
 
-        public uint Bytes;
+        public ulong Bytes;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
+        public ulong Value
             => Swap(Bytes);
         
         public override string ToString()
@@ -316,8 +282,8 @@ namespace MyNamespace {
     ///  Cross Type Values
     /// </summary>
     public enum CrossType : byte {
-        BxOpeningReopening = (byte)'O',
-        BxOpeningReopening = (byte)'P',
+        NasdaqOpeningReopening = (byte)'O',
+        PriceImprovement = (byte)'P',
     };
 
 
@@ -329,8 +295,6 @@ namespace MyNamespace {
         Trading = (byte)'T',
         BuySideTradingSuspended = (byte)'B',
         SellSideTradingSuspended = (byte)'S',
-        Open = (byte)'Y',
-        Closed = (byte)'N',
     };
 
 
@@ -350,12 +314,13 @@ namespace MyNamespace {
     ///  Event Code Values
     /// </summary>
     public enum EventCode : byte {
-        StartOfMessages = (byte)'O',
-        StartOfSystemHours = (byte)'S',
-        StartOfMarketHours = (byte)'Q',
-        EndOfMarketHours = (byte)'M',
-        EndOfSystemHours = (byte)'E',
-        EndOfMessages = (byte)'C',
+        StartOfMessagesThisIsAlwaysTheFirstMessageSentInAnyTradingDay = (byte)'O',
+        StartOfSystemHoursThisMessageIndicatesThatNasdaqIsOpenAndReadyToStartAcceptingOrders = (byte)'S',
+        StartOfOpeningProcessThisMessageIsIntendedToIndicateThatNasdaqHasStartedItsOpeningAuctionProcess = (byte)'Q',
+        EndOfNormalHoursProcessingThisMessageIsIntendedToIndicateThatNasdaqWillNoLongerAcceptAnyNewOrdersOrChangesToExistingOrdersForOptionsThatTradeDuringNormalTradingHours = (byte)'N',
+        EndOfLateHoursProcessingThisMessageIsIntendedToIndicateThatNasdaqWillNoLongerAcceptAnyNewOrdersOrChangesToExistingOrdersForOptionsThatTradeDuringExtendedHours = (byte)'L',
+        EndOfSystemHoursThisMessageIndicatesThatNasdaqOptionsSystemIsNowClosed = (byte)'E',
+        EndOfMessagesThisIsAlwaysTheLastMessageSentInAnyTradingDay = (byte)'C',
     };
 
 
@@ -534,31 +499,28 @@ namespace MyNamespace {
     ///  Message Type Values
     /// </summary>
     public enum MessageType : byte {
-        SecondsMessage = (byte)'T',
         SystemEventMessage = (byte)'S',
-        BaseReferenceMessage = (byte)'L',
-        OptionDirectoryMessage = (byte)'R',
+        OptionsDirectoryMessage = (byte)'R',
         TradingActionMessage = (byte)'H',
-        OptionOpenMessage = (byte)'O',
-        AddOrderMessageShortForm = (byte)'a',
-        AddOrderMessageLongForm = (byte)'A',
-        AddQuoteMessageShortForm = (byte)'j',
-        AddQuoteMessageLongForm = (byte)'J',
+        SecurityOpenMessage = (byte)'O',
+        AddOrderMessageShortMessageForm = (byte)'a',
+        AddOrderMessageLongFormMessage = (byte)'A',
+        AddQuoteMessageShortFormMessage = (byte)'j',
+        AddQuoteMessageLongFormMessage = (byte)'J',
         SingleSideExecutedMessage = (byte)'E',
-        SingleSideOrderExecutedWithPriceMessage = (byte)'C',
+        SingleSideExecutedWithPriceMessage = (byte)'C',
         OrderCancelMessage = (byte)'X',
         SingleSideReplaceMessageShortForm = (byte)'u',
         SingleSideReplaceMessageLongForm = (byte)'U',
         SingleSideDeleteMessage = (byte)'D',
-        SingleSideUpdateMessage = (byte)'G',
+        SingleSideChangeMessage = (byte)'G',
         QuoteReplaceMessageShortForm = (byte)'k',
         QuoteReplaceMessageLongForm = (byte)'K',
         QuoteDeleteMessage = (byte)'Y',
-        BlockDeleteMessage = (byte)'Z',
-        NonAuctionOptionsTradeMessage = (byte)'P',
+        OptionsTradeMessagesNonAuction = (byte)'P',
         OptionsCrossTradeMessage = (byte)'Q',
-        BrokenTradeOrOrderExecutionMessage = (byte)'B',
-        NetOrderImbalanceIndicatorMessage = (byte)'I',
+        BrokenTradeOrderExecutedMessage = (byte)'B',
+        NoiiMessage = (byte)'I',
     };
 
 
@@ -573,15 +535,15 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  New Reference Number Delta
+    ///  New Reference Number
     /// </summary>
-    public unsafe struct NewReferenceNumberDelta {
-        public const int Size = 4;
+    public unsafe struct NewReferenceNumber {
+        public const int Size = 8;
 
-        public uint Bytes;
+        public ulong Bytes;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
+        public ulong Value
             => Swap(Bytes);
         
         public override string ToString()
@@ -590,19 +552,11 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Open State
+    ///  Open State Values
     /// </summary>
-    public unsafe struct OpenState {
-        public const int Size = 1;
-
-        public byte Byte;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public char Value
-                => (char)Bytes;
-        
-        public override string ToString()
-            => $"{Value}";
+    public enum OpenState : byte {
+        Open = (byte)'Y',
+        Closed = (byte)'N',
     };
 
 
@@ -642,15 +596,15 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Order Reference Number Delta
+    ///  Order Reference Number
     /// </summary>
-    public unsafe struct OrderReferenceNumberDelta {
-        public const int Size = 4;
+    public unsafe struct OrderReferenceNumber {
+        public const int Size = 8;
 
-        public uint Bytes;
+        public ulong Bytes;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
+        public ulong Value
             => Swap(Bytes);
         
         public override string ToString()
@@ -659,15 +613,15 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Original Ask Reference Number Delta
+    ///  Original Ask Reference Number
     /// </summary>
-    public unsafe struct OriginalAskReferenceNumberDelta {
-        public const int Size = 4;
+    public unsafe struct OriginalAskReferenceNumber {
+        public const int Size = 8;
 
-        public uint Bytes;
+        public ulong Bytes;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
+        public ulong Value
             => Swap(Bytes);
         
         public override string ToString()
@@ -676,15 +630,15 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Original Bid Reference Number Delta
+    ///  Original Bid Reference Number
     /// </summary>
-    public unsafe struct OriginalBidReferenceNumberDelta {
-        public const int Size = 4;
+    public unsafe struct OriginalBidReferenceNumber {
+        public const int Size = 8;
 
-        public uint Bytes;
+        public ulong Bytes;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
+        public ulong Value
             => Swap(Bytes);
         
         public override string ToString()
@@ -693,15 +647,15 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Original Reference Number Delta
+    ///  Original Reference Number
     /// </summary>
-    public unsafe struct OriginalReferenceNumberDelta {
-        public const int Size = 4;
+    public unsafe struct OriginalReferenceNumber {
+        public const int Size = 8;
 
-        public uint Bytes;
+        public ulong Bytes;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
+        public ulong Value
             => Swap(Bytes);
         
         public override string ToString()
@@ -753,32 +707,15 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Reference Number Delta
+    ///  Reference Number
     /// </summary>
-    public unsafe struct ReferenceNumberDelta {
-        public const int Size = 4;
+    public unsafe struct ReferenceNumber {
+        public const int Size = 8;
 
-        public uint Bytes;
+        public ulong Bytes;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Reference Number Deltan
-    /// </summary>
-    public unsafe struct ReferenceNumberDeltan {
-        public const int Size = 4;
-
-        public uint Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
+        public ulong Value
             => Swap(Bytes);
         
         public override string ToString()
@@ -791,23 +728,6 @@ namespace MyNamespace {
     /// </summary>
     public unsafe struct Reserved {
         public const int Size = 3;
-
-        public uint Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Second
-    /// </summary>
-    public unsafe struct Second {
-        public const int Size = 4;
 
         public uint Bytes;
 
@@ -890,12 +810,12 @@ namespace MyNamespace {
     ///  Timestamp
     /// </summary>
     public unsafe struct Timestamp {
-        public const int Size = 4;
+        public const int Size = 6;
 
-        public uint Bytes;
+        public ulong Bytes;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
+        public ulong Value
             => Swap(Bytes);
         
         public override string ToString()
@@ -904,9 +824,9 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Total Number Of Reference Number Deltas
+    ///  Tracking Number
     /// </summary>
-    public unsafe struct TotalNumberOfReferenceNumberDeltas {
+    public unsafe struct TrackingNumber {
         public const int Size = 2;
 
         public ushort Bytes;
@@ -969,12 +889,13 @@ namespace MyNamespace {
     ///////////////////////////////////////////////////////////////////////
 
     /// <summary>
-    ///  Struct for Add Order Message Long Form
+    ///  Struct for Add Order Message Long Form Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct AddOrderMessageLongForm {
+    public unsafe struct AddOrderMessageLongFormMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        OrderReferenceNumberDelta OrderReferenceNumberDelta;
+        OrderReferenceNumber OrderReferenceNumber;
         MarketSide MarketSide;
         OptionId OptionId;
         Price Price;
@@ -983,12 +904,13 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Add Order Message Short Form
+    ///  Struct for Add Order Message Short Message Form
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct AddOrderMessageShortForm {
+    public unsafe struct AddOrderMessageShortMessageForm {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        OrderReferenceNumberDelta OrderReferenceNumberDelta;
+        OrderReferenceNumber OrderReferenceNumber;
         MarketSide MarketSide;
         OptionId OptionId;
         Price Price;
@@ -997,13 +919,14 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Add Quote Message Long Form
+    ///  Struct for Add Quote Message Long Form Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct AddQuoteMessageLongForm {
+    public unsafe struct AddQuoteMessageLongFormMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        BidReferenceNumberDelta BidReferenceNumberDelta;
-        AskReferenceNumberDelta AskReferenceNumberDelta;
+        BidReferenceNumber BidReferenceNumber;
+        AskReferenceNumber AskReferenceNumber;
         OptionId OptionId;
         Bid Bid;
         BidSize BidSize;
@@ -1013,13 +936,14 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Add Quote Message Short Form
+    ///  Struct for Add Quote Message Short Form Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct AddQuoteMessageShortForm {
+    public unsafe struct AddQuoteMessageShortFormMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        BidReferenceNumberDelta BidReferenceNumberDelta;
-        AskReferenceNumberDelta AskReferenceNumberDelta;
+        BidReferenceNumber BidReferenceNumber;
+        AskReferenceNumber AskReferenceNumber;
         OptionId OptionId;
         BidPrice BidPrice;
         BidSize BidSize;
@@ -1029,31 +953,11 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Base Reference Message
+    ///  Struct for Broken Trade Order Executed Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct BaseReferenceMessage {
-        Timestamp Timestamp;
-        BaseReferenceNumber BaseReferenceNumber;
-    };
-
-
-    /// <summary>
-    ///  Struct for Block Delete Message
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct BlockDeleteMessage {
-        Timestamp Timestamp;
-        TotalNumberOfReferenceNumberDeltas TotalNumberOfReferenceNumberDeltas;
-        ReferenceNumberDeltan ReferenceNumberDeltan;
-    };
-
-
-    /// <summary>
-    ///  Struct for Broken Trade Or Order Execution Message
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct BrokenTradeOrOrderExecutionMessage {
+    public unsafe struct BrokenTradeOrderExecutedMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
         CrossNumber CrossNumber;
         MatchNumber MatchNumber;
@@ -1080,10 +984,11 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Net Order Imbalance Indicator Message
+    ///  Struct for Noii Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NetOrderImbalanceIndicatorMessage {
+    public unsafe struct NoiiMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
         AuctionId AuctionId;
         AuctionType AuctionType;
@@ -1098,25 +1003,27 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Non Auction Options Trade Message
+    ///  Struct for Options Cross Trade Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NonAuctionOptionsTradeMessage {
+    public unsafe struct OptionsCrossTradeMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        BuySellIndicator BuySellIndicator;
         OptionId OptionId;
         CrossNumber CrossNumber;
         MatchNumber MatchNumber;
+        CrossType CrossType;
         Price Price;
         Volume Volume;
     };
 
 
     /// <summary>
-    ///  Struct for Option Directory Message
+    ///  Struct for Options Directory Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct OptionDirectoryMessage {
+    public unsafe struct OptionsDirectoryMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
         OptionId OptionId;
         SecuritySymbol SecuritySymbol;
@@ -1134,26 +1041,16 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Option Open Message
+    ///  Struct for Options Trade Messages Non Auction
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct OptionOpenMessage {
+    public unsafe struct OptionsTradeMessagesNonAuction {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        OptionId OptionId;
-        OpenState OpenState;
-    };
-
-
-    /// <summary>
-    ///  Struct for Options Cross Trade Message
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct OptionsCrossTradeMessage {
-        Timestamp Timestamp;
+        BuySellIndicator BuySellIndicator;
         OptionId OptionId;
         CrossNumber CrossNumber;
         MatchNumber MatchNumber;
-        CrossType CrossType;
         Price Price;
         Volume Volume;
     };
@@ -1164,8 +1061,9 @@ namespace MyNamespace {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct OrderCancelMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        OrderReferenceNumberDelta OrderReferenceNumberDelta;
+        OrderReferenceNumber OrderReferenceNumber;
         CancelledContracts CancelledContracts;
     };
 
@@ -1195,9 +1093,10 @@ namespace MyNamespace {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteDeleteMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        BidReferenceNumberDelta BidReferenceNumberDelta;
-        AskReferenceNumberDelta AskReferenceNumberDelta;
+        BidReferenceNumber BidReferenceNumber;
+        AskReferenceNumber AskReferenceNumber;
     };
 
 
@@ -1206,11 +1105,12 @@ namespace MyNamespace {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteReplaceMessageLongForm {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        OriginalBidReferenceNumberDelta OriginalBidReferenceNumberDelta;
-        BidReferenceNumberDelta BidReferenceNumberDelta;
-        OriginalAskReferenceNumberDelta OriginalAskReferenceNumberDelta;
-        AskReferenceDeltaNumber AskReferenceDeltaNumber;
+        OriginalBidReferenceNumber OriginalBidReferenceNumber;
+        BidReferenceNumber BidReferenceNumber;
+        OriginalAskReferenceNumber OriginalAskReferenceNumber;
+        AskReferenceNumber AskReferenceNumber;
         BidPrice BidPrice;
         BidSize BidSize;
         AskPrice AskPrice;
@@ -1223,11 +1123,12 @@ namespace MyNamespace {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteReplaceMessageShortForm {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        OriginalBidReferenceNumberDelta OriginalBidReferenceNumberDelta;
-        BidReferenceNumberDelta BidReferenceNumberDelta;
-        OriginalAskReferenceNumberDelta OriginalAskReferenceNumberDelta;
-        AskReferenceDeltaNumber AskReferenceDeltaNumber;
+        OriginalBidReferenceNumber OriginalBidReferenceNumber;
+        BidReferenceNumber BidReferenceNumber;
+        OriginalAskReferenceNumber OriginalAskReferenceNumber;
+        AskReferenceNumber AskReferenceNumber;
         BidPrice BidPrice;
         BidSize BidSize;
         AskPrice AskPrice;
@@ -1236,11 +1137,28 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Seconds Message
+    ///  Struct for Security Open Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SecondsMessage {
-        Second Second;
+    public unsafe struct SecurityOpenMessage {
+        TrackingNumber TrackingNumber;
+        Timestamp Timestamp;
+        OptionId OptionId;
+        OpenState OpenState;
+    };
+
+
+    /// <summary>
+    ///  Struct for Single Side Change Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct SingleSideChangeMessage {
+        TrackingNumber TrackingNumber;
+        Timestamp Timestamp;
+        ReferenceNumber ReferenceNumber;
+        ChangeReason ChangeReason;
+        Price Price;
+        Volume Volume;
     };
 
 
@@ -1249,8 +1167,9 @@ namespace MyNamespace {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SingleSideDeleteMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        ReferenceNumberDelta ReferenceNumberDelta;
+        ReferenceNumber ReferenceNumber;
     };
 
 
@@ -1259,8 +1178,9 @@ namespace MyNamespace {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SingleSideExecutedMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        ReferenceNumberDelta ReferenceNumberDelta;
+        ReferenceNumber ReferenceNumber;
         ExecutedContracts ExecutedContracts;
         CrossNumber CrossNumber;
         MatchNumber MatchNumber;
@@ -1268,12 +1188,13 @@ namespace MyNamespace {
 
 
     /// <summary>
-    ///  Struct for Single Side Order Executed With Price Message
+    ///  Struct for Single Side Executed With Price Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SingleSideOrderExecutedWithPriceMessage {
+    public unsafe struct SingleSideExecutedWithPriceMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        ReferenceNumberDelta ReferenceNumberDelta;
+        ReferenceNumber ReferenceNumber;
         CrossNumber CrossNumber;
         MatchNumber MatchNumber;
         Printable Printable;
@@ -1287,9 +1208,10 @@ namespace MyNamespace {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SingleSideReplaceMessageLongForm {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        OriginalReferenceNumberDelta OriginalReferenceNumberDelta;
-        NewReferenceNumberDelta NewReferenceNumberDelta;
+        OriginalReferenceNumber OriginalReferenceNumber;
+        NewReferenceNumber NewReferenceNumber;
         Price Price;
         Volume Volume;
     };
@@ -1300,22 +1222,10 @@ namespace MyNamespace {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SingleSideReplaceMessageShortForm {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
-        OriginalReferenceNumberDelta OriginalReferenceNumberDelta;
-        NewReferenceNumberDelta NewReferenceNumberDelta;
-        Price Price;
-        Volume Volume;
-    };
-
-
-    /// <summary>
-    ///  Struct for Single Side Update Message
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SingleSideUpdateMessage {
-        Timestamp Timestamp;
-        ReferenceNumberDelta ReferenceNumberDelta;
-        ChangeReason ChangeReason;
+        OriginalReferenceNumber OriginalReferenceNumber;
+        NewReferenceNumber NewReferenceNumber;
         Price Price;
         Volume Volume;
     };
@@ -1326,6 +1236,7 @@ namespace MyNamespace {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SystemEventMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
         EventCode EventCode;
     };
@@ -1336,6 +1247,7 @@ namespace MyNamespace {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TradingActionMessage {
+        TrackingNumber TrackingNumber;
         Timestamp Timestamp;
         OptionId OptionId;
         CurrentTradingState CurrentTradingState;
