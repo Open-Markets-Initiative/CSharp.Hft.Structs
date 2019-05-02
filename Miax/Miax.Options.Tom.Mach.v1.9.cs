@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Miax.Options.Tom.Mach.v1.9 {
 
     #region Protocol Fields
     ///////////////////////////////////////////////////////////////////////

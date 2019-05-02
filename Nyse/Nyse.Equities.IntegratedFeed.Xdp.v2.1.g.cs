@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nyse.Equities.IntegratedFeed.Xdp.v2.1.g {
 
     #region Protocol Fields
     ///////////////////////////////////////////////////////////////////////

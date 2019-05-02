@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nasdaq.Nom.Itto.Itch.v4.0 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

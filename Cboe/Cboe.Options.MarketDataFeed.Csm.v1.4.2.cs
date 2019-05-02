@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Cboe.Options.MarketDataFeed.Csm.v1.4.2 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

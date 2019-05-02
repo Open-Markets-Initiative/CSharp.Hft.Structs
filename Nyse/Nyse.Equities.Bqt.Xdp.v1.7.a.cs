@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nyse.Equities.Bqt.Xdp.v1.7.a {
 
     #region Protocol Fields
     ///////////////////////////////////////////////////////////////////////

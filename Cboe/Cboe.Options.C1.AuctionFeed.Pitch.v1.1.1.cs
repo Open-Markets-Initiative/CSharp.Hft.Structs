@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Cboe.Options.C1.AuctionFeed.Pitch.v1.1.1 {
 
     #region Protocol Fields
     ///////////////////////////////////////////////////////////////////////

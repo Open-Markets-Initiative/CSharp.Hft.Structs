@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nasdaq.Ise.TopComboQuoteFeed.Itch.v1.0 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

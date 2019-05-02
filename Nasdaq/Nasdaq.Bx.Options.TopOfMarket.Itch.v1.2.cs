@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nasdaq.Bx.Options.TopOfMarket.Itch.v1.2 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

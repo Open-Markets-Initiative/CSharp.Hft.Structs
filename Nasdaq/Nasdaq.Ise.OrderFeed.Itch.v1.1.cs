@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nasdaq.Ise.OrderFeed.Itch.v1.1 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

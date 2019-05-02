@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nasdaq.Phlx.Orders.Itch.v1.9 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

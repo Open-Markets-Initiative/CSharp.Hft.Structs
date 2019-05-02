@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Opra.Options.Recipient.Obdi.v2.9 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

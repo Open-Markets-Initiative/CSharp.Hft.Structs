@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nasdaq.Psx.Bbo.Itch.v2.1 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

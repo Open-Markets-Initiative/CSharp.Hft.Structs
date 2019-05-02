@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Ice.Futures.Mdf.iMpact.v1.1.33 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

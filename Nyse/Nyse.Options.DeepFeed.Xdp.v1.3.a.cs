@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nyse.Options.DeepFeed.Xdp.v1.3.a {
 
     #region Protocol Fields
     ///////////////////////////////////////////////////////////////////////

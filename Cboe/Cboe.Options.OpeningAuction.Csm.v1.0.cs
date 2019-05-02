@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Cboe.Options.OpeningAuction.Csm.v1.0 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

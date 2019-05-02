@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nasdaq.Phlx.Topo.Itch.v3.3 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

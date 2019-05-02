@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nasdaq.Equities.TotalView.Itch.v5.0 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

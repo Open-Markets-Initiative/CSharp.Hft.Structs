@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Asx.Securities.T24.Itch.v1.13 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

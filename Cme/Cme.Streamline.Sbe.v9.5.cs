@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Cme.Streamline.Sbe.v9.5 {
 
     #region Protocol Fields
     ///////////////////////////////////////////////////////////////////////

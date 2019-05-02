@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Eurex.Derivatives.Eobi.T7.v2.5 {
 
     #region Protocol Fields
     ///////////////////////////////////////////////////////////////////////

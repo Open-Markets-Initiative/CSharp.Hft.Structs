@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Nasdaq.Phlx.MarketDepth.Itch.v1.5 {
 
     #region Methods
     ///////////////////////////////////////////////////////////////////////

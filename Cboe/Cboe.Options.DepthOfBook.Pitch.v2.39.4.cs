@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Cboe.Options.DepthOfBook.Pitch.v2.39.4 {
 
     #region Protocol Fields
     ///////////////////////////////////////////////////////////////////////

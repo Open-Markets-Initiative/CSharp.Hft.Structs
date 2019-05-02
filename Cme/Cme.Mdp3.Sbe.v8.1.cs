@@ -1,4 +1,4 @@
-namespace MyNamespace {
+namespace Cme.Mdp3.Sbe.v8.1 {
 
     #region Protocol Fields
     ///////////////////////////////////////////////////////////////////////
