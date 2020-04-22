@@ -9,8 +9,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum AggressorSide : byte {
         Buy = 1,
         Sell = 2,
-        AggressorSide = 2,
-        AggressorSide = 1,
+        AggressorSideMinimumValue = 2,
+        AggressorSideMinimumValue = 1,
     };
 
 
@@ -32,8 +32,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     /// </summary>
     public enum AlgorithmicTradeIndicator : byte {
         AlgorithmicTrade = 1,
-        AlgorithmicTradeIndicator = 1,
-        AlgorithmicTradeIndicator = 1,
+        AlgorithmicTradeIndicatorMinimumValue = 1,
+        AlgorithmicTradeIndicatorMinimumValue = 1,
     };
 
 
@@ -56,8 +56,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum ApplicationSequenceResetIndicator : byte {
         NoReset = 0,
         Reset = 1,
-        ApplSeqResetIndicator = 1,
-        ApplSeqResetIndicator = 0,
+        ApplSeqResetIndicatorMinimumValue = 1,
+        ApplSeqResetIndicatorMinimumValue = 0,
     };
 
 
@@ -106,8 +106,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum CompletionIndicator : byte {
         Incomplete = 0,
         Complete = 1,
-        CompletionIndicator = 1,
-        CompletionIndicator = 0,
+        CompletionIndicatorMinimumValue = 1,
+        CompletionIndicatorMinimumValue = 0,
     };
 
 
@@ -117,8 +117,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum CrossRequestType : byte {
         CrossAnnouncement = 1,
         LiquidityImprovementCross = 2,
-        CrossRequestType = 2,
-        CrossRequestType = 1,
+        CrossRequestTypeMinimumValue = 2,
+        CrossRequestTypeMinimumValue = 1,
     };
 
 
@@ -154,8 +154,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum FastMarketIndicator : byte {
         No = 0,
         Yes = 1,
-        FastMarketIndicator = 1,
-        FastMarketIndicator = 0,
+        FastMarketIndicatorMinimumValue = 1,
+        FastMarketIndicatorMinimumValue = 0,
     };
 
 
@@ -191,8 +191,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum ImpliedMarketIndicator : byte {
         NotImplied = 0,
         ImpliedInOut = 3,
-        ImpliedMarketIndicator = 3,
-        ImpliedMarketIndicator = 0,
+        ImpliedMarketIndicatorMinimumValue = 3,
+        ImpliedMarketIndicatorMinimumValue = 0,
     };
 
 
@@ -201,8 +201,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     /// </summary>
     public enum InputSource : byte {
         ClipClientBroker = 1,
-        InputSource = 1,
-        InputSource = 1,
+        InputSourceMinimumValue = 1,
+        InputSourceMinimumValue = 1,
     };
 
 
@@ -280,8 +280,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum LegSide : byte {
         Buy = 1,
         Sell = 2,
-        LegSide = 2,
-        LegSide = 1,
+        LegSideMinimumValue = 2,
+        LegSideMinimumValue = 1,
     };
 
 
@@ -299,13 +299,13 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum MarketCondition : byte {
         Normal = 0,
         Stressed = 1,
-        MarketCondition = 1,
-        MarketCondition = 0,
+        MarketConditionMinimumValue = 1,
+        MarketConditionMinimumValue = 0,
     };
 
 
     /// <summary>
-    ///  Market Segment ID
+    ///  Market Segment Id
     /// </summary>
     public struct MarketSegmentId {
         public int Raw;
@@ -321,8 +321,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
         IntradayAuction = 3,
         CircuitBreakerAuction = 4,
         IpoAuction = 5,
-        MatchSubType = 5,
-        MatchSubType = 1,
+        MatchSubTypeMinimumValue = 5,
+        MatchSubTypeMinimumValue = 1,
     };
 
 
@@ -334,8 +334,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
         CrossAuction = 5,
         CallAuction = 7,
         LiquidityImprovementCross = 13,
-        MatchType = 13,
-        MatchType = 3,
+        MatchTypeMinimumValue = 13,
+        MatchTypeMinimumValue = 3,
     };
 
 
@@ -381,8 +381,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
         CircuitBreakerAuction = 202,
         ClosingAuction = 203,
         IpoAuction = 204,
-        MdEntryType = 204,
-        MdEntryType = 2,
+        MdEntryTypeMinimumValue = 204,
+        MdEntryTypeMinimumValue = 2,
     };
 
 
@@ -456,8 +456,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     /// </summary>
     public enum OrdType : byte {
         Market = 1,
-        OrdType = 1,
-        OrdType = 1,
+        OrdTypeMinimumValue = 1,
+        OrdTypeMinimumValue = 1,
     };
 
 
@@ -558,17 +558,7 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
 
 
     /// <summary>
-    ///  Pad5
-    /// </summary>
-    public unsafe struct Pad5 {
-        public const int Size = 5;
-
-        public fixed byte Bytes[Size];
-    };
-
-
-    /// <summary>
-    ///  Partition ID
+    ///  Partition Id
     /// </summary>
     public unsafe struct PartitionId {
         public const int Size = 1;
@@ -586,8 +576,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum PotentialSecurityTradingEvent : byte {
         None = 0,
         PriceVolatilityAuctionIsExtended = 10,
-        PotentialSecurityTradingEvent = 10,
-        PotentialSecurityTradingEvent = 0,
+        PotentialSecurityTradingEventMinimumValue = 10,
+        PotentialSecurityTradingEventMinimumValue = 0,
     };
 
 
@@ -642,8 +632,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
         StandardFuturesStrategy = 7,
         PackAndBundle = 8,
         Strip = 9,
-        ProductComplex = 9,
-        ProductComplex = 2,
+        ProductComplexMinimumValue = 9,
+        ProductComplexMinimumValue = 2,
     };
 
 
@@ -701,8 +691,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
         Suspended = 9,
         PendingDeletion = 11,
         KnockedOutAndSuspended = 12,
-        SecurityStatus = 12,
-        SecurityStatus = 1,
+        SecurityStatusMinimumValue = 12,
+        SecurityStatusMinimumValue = 1,
     };
 
 
@@ -720,8 +710,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum SecurityTradingEvent : byte {
         PriceVolatilityAuctionIsExtended = 10,
         PriceVolatilityAuctionIsExtendedAgain = 11,
-        SecurityTradingEvent = 11,
-        SecurityTradingEvent = 0,
+        SecurityTradingEventMinimumValue = 11,
+        SecurityTradingEventMinimumValue = 0,
     };
 
 
@@ -748,8 +738,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
         IpoAuctionFreeze = 213,
         PreCall = 214,
         Call = 215,
-        SecurityTradingStatus = 215,
-        SecurityTradingStatus = 2,
+        SecurityTradingStatusMinimumValue = 215,
+        SecurityTradingStatusMinimumValue = 2,
     };
 
 
@@ -759,8 +749,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum Side : byte {
         Buy = 1,
         Sell = 2,
-        Side = 2,
-        Side = 1,
+        SideMinimumValue = 2,
+        SideMinimumValue = 1,
     };
 
 
@@ -770,8 +760,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
     public enum SoldOutIndicator : byte {
         NotSoldOut = 0,
         SoldOut = 1,
-        SoldOutIndicator = 1,
-        SoldOutIndicator = 0,
+        SoldOutIndicatorMinimumValue = 1,
+        SoldOutIndicatorMinimumValue = 0,
     };
 
 
@@ -808,8 +798,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
         Halted = 1,
         Open = 2,
         Closed = 3,
-        TradSesStatus = 3,
-        TradSesStatus = 1,
+        TradSesStatusMinimumValue = 3,
+        TradSesStatusMinimumValue = 1,
     };
 
 
@@ -822,8 +812,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
         SystematicInternalizer = 153,
         MidpointPrice = 155,
         TradedBeforeIssueDate = 156,
-        TradeCondition = 156,
-        TradeCondition = 1,
+        TradeConditionMinimumValue = 156,
+        TradeConditionMinimumValue = 1,
     };
 
 
@@ -836,8 +826,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
         Evening = 5,
         AfterHours = 6,
         Holiday = 7,
-        TradingSessionId = 7,
-        TradingSessionId = 1,
+        TradingSessionIDMinimumValue = 7,
+        TradingSessionIDMinimumValue = 1,
     };
 
 
@@ -850,8 +840,8 @@ namespace Eurex.Derivatives.Eobi.T7.v7.0 {
         Closing = 4,
         PostTrading = 5,
         Quiescent = 7,
-        TradingSessionSubId = 7,
-        TradingSessionSubId = 1,
+        TradingSessionSubIDMinimumValue = 7,
+        TradingSessionSubIDMinimumValue = 1,
     };
 
 

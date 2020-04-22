@@ -17,14 +17,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Accrued Coupons
-    /// </summary>
-    public struct AccruedCoupons {
-        public long Raw;
-    };
-
-
-    /// <summary>
     ///  Actual
     /// </summary>
     public unsafe struct Actual {
@@ -38,9 +30,10 @@ namespace Cme.Streamline.Sbe.v9.5 {
     ///  Aggressor Side Values
     /// </summary>
     public enum AggressorSide : byte {
-        AggressorSide = 0,
-        AggressorSide = 1,
-        AggressorSide = 2,
+        NoValue = 255,
+        NoAggressor = 0,
+        Buy = 1,
+        Sell = 2,
     };
 
 
@@ -84,14 +77,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Cal Fut Px
-    /// </summary>
-    public struct CalFutPx {
-        public long Raw;
-    };
-
-
-    /// <summary>
     ///  Coupon Rate
     /// </summary>
     public struct CouponRate {
@@ -116,14 +101,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Daily Incremental Eris Pai
-    /// </summary>
-    public struct DailyIncrementalErisPai {
-        public long Raw;
-    };
-
-
-    /// <summary>
     ///  Day
     /// </summary>
     public unsafe struct Day {
@@ -137,28 +114,12 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  DV 01
-    /// </summary>
-    public struct Dv01 {
-        public long Raw;
-    };
-
-
-    /// <summary>
     ///  End Of Event
     /// </summary>
     public unsafe struct EndOfEvent {
         public const int Size = 1;
 
         public fixed byte Bytes[Size];
-    };
-
-
-    /// <summary>
-    ///  Eris Pai
-    /// </summary>
-    public struct ErisPai {
-        public long Raw;
     };
 
 
@@ -189,10 +150,10 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Fair Coupon Pct
+    ///  Exponent
     /// </summary>
-    public struct FairCouponPct {
-        public long Raw;
+    public struct Exponent {
+        public sbyte Raw;
     };
 
 
@@ -210,60 +171,12 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Fed Funds Rate
-    /// </summary>
-    public struct FedFundsRate {
-        public long Raw;
-    };
-
-
-    /// <summary>
     ///  Final Daily
     /// </summary>
     public unsafe struct FinalDaily {
         public const int Size = 1;
 
         public fixed byte Bytes[Size];
-    };
-
-
-    /// <summary>
-    ///  Final Settlement Futures Price
-    /// </summary>
-    public struct FinalSettlementFuturesPrice {
-        public long Raw;
-    };
-
-
-    /// <summary>
-    ///  Fixed Npv
-    /// </summary>
-    public struct FixedNpv {
-        public long Raw;
-    };
-
-
-    /// <summary>
-    ///  Fixed Payment
-    /// </summary>
-    public struct FixedPayment {
-        public long Raw;
-    };
-
-
-    /// <summary>
-    ///  Float Npv
-    /// </summary>
-    public struct FloatNpv {
-        public long Raw;
-    };
-
-
-    /// <summary>
-    ///  Floating Payment
-    /// </summary>
-    public struct FloatingPayment {
-        public long Raw;
     };
 
 
@@ -317,14 +230,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Interpolation Factor
-    /// </summary>
-    public struct InterpolationFactor {
-        public long Raw;
     };
 
 
@@ -395,14 +300,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Leg Contract Multiplier
-    /// </summary>
-    public struct LegContractMultiplier {
-        public long Raw;
-    };
-
-
-    /// <summary>
     ///  Leg Credit Rating
     /// </summary>
     public unsafe struct LegCreditRating {
@@ -455,14 +352,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Leg Purchase Rate
-    /// </summary>
-    public struct LegPurchaseRate {
-        public long Raw;
     };
 
 
@@ -552,6 +441,14 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
+    ///  Mantissa
+    /// </summary>
+    public struct Mantissa {
+        public int Raw;
+    };
+
+
+    /// <summary>
     ///  Market Depth
     /// </summary>
     public unsafe struct MarketDepth {
@@ -597,11 +494,12 @@ namespace Cme.Streamline.Sbe.v9.5 {
     ///  Md Entry Code Values
     /// </summary>
     public enum MdEntryCode : byte {
-        MdEntryCode = 1,
-        MdEntryCode = 2,
-        MdEntryCode = 3,
-        MdEntryCode = 4,
-        MdEntryCode = 5,
+        NoValue = 255,
+        Indicative = 1,
+        PreMarket = 2,
+        PreliminaryClose = 3,
+        SessionClose = 4,
+        Close = 5,
     };
 
 
@@ -703,12 +601,12 @@ namespace Cme.Streamline.Sbe.v9.5 {
     ///  Md Update Action Values
     /// </summary>
     public enum MdUpdateAction : byte {
-        MdUpdateAction = 0,
-        MdUpdateAction = 1,
-        MdUpdateAction = 2,
-        MdUpdateAction = 3,
-        MdUpdateAction = 4,
-        MdUpdateAction = 5,
+        New = 0,
+        Change = 1,
+        Delete = 2,
+        DeleteThru = 3,
+        DeleteFrom = 4,
+        Overlay = 5,
     };
 
 
@@ -739,14 +637,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Min Price Increment
-    /// </summary>
-    public struct MinPriceIncrement {
-        public long Raw;
-    };
-
-
-    /// <summary>
     ///  Month
     /// </summary>
     public unsafe struct Month {
@@ -760,30 +650,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Net Chg Prev Day
-    /// </summary>
-    public struct NetChgPrevDay {
-        public long Raw;
-    };
-
-
-    /// <summary>
-    ///  Net Pct Chg
-    /// </summary>
-    public struct NetPctChg {
-        public long Raw;
-    };
-
-
-    /// <summary>
-    ///  Next Fixed Payment Amount
-    /// </summary>
-    public struct NextFixedPaymentAmount {
-        public long Raw;
-    };
-
-
-    /// <summary>
     ///  Next Fixed Payment Date
     /// </summary>
     public unsafe struct NextFixedPaymentDate {
@@ -793,14 +659,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Next Floating Payment Amount
-    /// </summary>
-    public struct NextFloatingPaymentAmount {
-        public long Raw;
     };
 
 
@@ -835,14 +693,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
     /// </summary>
     public struct NotionalPercentageOutstanding {
         public int Raw;
-    };
-
-
-    /// <summary>
-    ///  Npv
-    /// </summary>
-    public struct Npv {
-        public long Raw;
     };
 
 
@@ -904,22 +754,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Percent Trading
-    /// </summary>
-    public struct PercentTrading {
-        public long Raw;
-    };
-
-
-    /// <summary>
-    ///  Previous Eris Pai
-    /// </summary>
-    public struct PreviousErisPai {
-        public long Raw;
-    };
-
-
-    /// <summary>
     ///  Previous Fixing Date
     /// </summary>
     public unsafe struct PreviousFixingDate {
@@ -929,14 +763,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Previous Fixing Rate
-    /// </summary>
-    public struct PreviousFixingRate {
-        public long Raw;
     };
 
 
@@ -987,14 +813,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  PV 01
-    /// </summary>
-    public struct Pv01 {
-        public long Raw;
     };
 
 
@@ -1323,9 +1141,9 @@ namespace Cme.Streamline.Sbe.v9.5 {
     ///  Security Update Action Values
     /// </summary>
     public enum SecurityUpdateAction : byte {
-        SecurityUpdateAction = (byte)'A',
-        SecurityUpdateAction = (byte)'D',
-        SecurityUpdateAction = (byte)'M',
+        Add = (byte)'A',
+        Delete = (byte)'D',
+        Modify = (byte)'M',
     };
 
 
@@ -1368,14 +1186,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Settlement Npv
-    /// </summary>
-    public struct SettlementNpv {
-        public long Raw;
     };
 
 
@@ -1628,14 +1438,6 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Yield
-    /// </summary>
-    public struct Yield {
-        public long Raw;
-    };
-
-
-    /// <summary>
     ///  Yield Type
     /// </summary>
     public unsafe struct YieldType {
@@ -1658,6 +1460,16 @@ namespace Cme.Streamline.Sbe.v9.5 {
     ///////////////////////////////////////////////////////////////////////
 
     /// <summary>
+    ///  Struct for Accrued Coupons
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct AccruedCoupons {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
     ///  Struct for Admin Login 315
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -1672,6 +1484,66 @@ namespace Cme.Streamline.Sbe.v9.5 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct AdminLogout316 {
         Text Text;
+    };
+
+
+    /// <summary>
+    ///  Struct for Binary Packet Header
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct BinaryPacketHeader {
+        MessageSequenceNumber MessageSequenceNumber;
+        SendingTime SendingTime;
+    };
+
+
+    /// <summary>
+    ///  Struct for Cal Fut Px
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct CalFutPx {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Coupon Rate
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct CouponRate {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for D V 01
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct DV01 {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Daily Incremental Eris Pai
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct DailyIncrementalErisPai {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Eris Pai
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct ErisPai {
+        Mantissa Mantissa;
+        Exponent Exponent;
     };
 
 
@@ -1691,6 +1563,76 @@ namespace Cme.Streamline.Sbe.v9.5 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct EventsGroups {
         GroupSizeEncoding GroupSizeEncoding;
+    };
+
+
+    /// <summary>
+    ///  Struct for Fair Coupon Pct
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct FairCouponPct {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Fed Funds Rate
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct FedFundsRate {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Final Settlement Futures Price
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct FinalSettlementFuturesPrice {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Fixed Npv
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct FixedNpv {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Fixed Payment
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct FixedPayment {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Float Npv
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct FloatNpv {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Floating Payment
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct FloatingPayment {
+        Mantissa Mantissa;
+        Exponent Exponent;
     };
 
 
@@ -1734,32 +1676,32 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Struct for Legs Group
+    ///  Struct for Interpolation Factor
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct LegsGroup {
-        LegBenchmarkCurveName LegBenchmarkCurveName;
-        RateDescriptor RateDescriptor;
-        PreviousFixingDate PreviousFixingDate;
-        LegPayFrequencey LegPayFrequencey;
-        PreviousFixingRate PreviousFixingRate;
-        LegSymbol LegSymbol;
-        LegRatioQty LegRatioQty;
-        LegSide LegSide;
-        LegCurrency LegCurrency;
-        LegSecurityType LegSecurityType;
-        LegSecurityGroup LegSecurityGroup;
-        LegDateOffset LegDateOffset;
-        InterpolationFactor InterpolationFactor;
+    public unsafe struct InterpolationFactor {
+        Mantissa Mantissa;
+        Exponent Exponent;
     };
 
 
     /// <summary>
-    ///  Struct for Legs Groups
+    ///  Struct for Leg Contract Multiplier
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct LegsGroups {
-        GroupSize GroupSize;
+    public unsafe struct LegContractMultiplier {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Leg Purchase Rate
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct LegPurchaseRate {
+        Mantissa Mantissa;
+        Exponent Exponent;
     };
 
 
@@ -1782,79 +1724,29 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Struct for Match Event Indicator
+    ///  Struct for M D Feed Types Group
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MatchEventIndicator {
-        EndOfEvent EndOfEvent;
-        Reserved Reserved;
-        RecoveryMsg RecoveryMsg;
-        LastImpliedMsg LastImpliedMsg;
-        LastStatsMsg LastStatsMsg;
-        LastQuoteMsg LastQuoteMsg;
-        LastVolumeMsg LastVolumeMsg;
-        LastTradeMsg LastTradeMsg;
-    };
-
-
-    /// <summary>
-    ///  Struct for Maturity Month Year
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MaturityMonthYear {
-        Year Year;
-        Month Month;
-        Day Day;
-        Week Week;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Feed Types Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdFeedTypesGroup {
+    public unsafe struct MDFeedTypesGroup {
         MdFeedType MdFeedType;
         MarketDepth MarketDepth;
     };
 
 
     /// <summary>
-    ///  Struct for MD Feed Types Groups
+    ///  Struct for M D Feed Types Groups
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdFeedTypesGroups {
+    public unsafe struct MDFeedTypesGroups {
         GroupSize GroupSize;
     };
 
 
     /// <summary>
-    ///  Struct for Md Incremental Refresh Eris 351
+    ///  Struct for M D Incremental Refresh Eris Group
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshEris351 {
-        TransactTime TransactTime;
-        MatchEventIndicator MatchEventIndicator;
-        BatchTotalMessages BatchTotalMessages;
-    };
-
-
-    /// <summary>
-    ///  Struct for Md Incremental Refresh Eris 353
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshEris353 {
-        TransactTime TransactTime;
-        MatchEventIndicator MatchEventIndicator;
-        BatchTotalMessages BatchTotalMessages;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Eris Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshErisGroup {
+    public unsafe struct MDIncrementalRefreshErisGroup {
         MdUpdateAction MdUpdateAction;
         MdEntryType MdEntryType;
         RptSeq RptSeq;
@@ -1876,30 +1768,19 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Struct for MD Incremental Refresh Eris Groups
+    ///  Struct for M D Incremental Refresh Eris Groups
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshErisGroups {
+    public unsafe struct MDIncrementalRefreshErisGroups {
         GroupSize GroupSize;
     };
 
 
     /// <summary>
-    ///  Struct for Md Incremental Refresh Eris Reference Data And Daily Statistics 333
+    ///  Struct for M D Incremental Refresh Eris Reference Data And Daily Statistics Group
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshErisReferenceDataAndDailyStatistics333 {
-        TransactTime TransactTime;
-        MatchEventIndicator MatchEventIndicator;
-        BatchTotalMessages BatchTotalMessages;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Eris Reference Data And Daily Statistics Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshErisReferenceDataAndDailyStatisticsGroup {
+    public unsafe struct MDIncrementalRefreshErisReferenceDataAndDailyStatisticsGroup {
         MdUpdateAction MdUpdateAction;
         MdEntryType MdEntryType;
         RptSeq RptSeq;
@@ -1940,8 +1821,8 @@ namespace Cme.Streamline.Sbe.v9.5 {
         LegCreditRating LegCreditRating;
         LegContractMultiplier LegContractMultiplier;
         NextFloatingPaymentDate NextFloatingPaymentDate;
-        Pv01 Pv01;
-        Dv01 Dv01;
+        PV01 PV01;
+        DV01 DV01;
         SettlementNpv SettlementNpv;
         FinalSettlementFuturesPrice FinalSettlementFuturesPrice;
         SecurityDescription SecurityDescription;
@@ -1949,31 +1830,19 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Struct for MD Incremental Refresh Eris Reference Data And Daily Statistics Groups
+    ///  Struct for M D Incremental Refresh Eris Reference Data And Daily Statistics Groups
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshErisReferenceDataAndDailyStatisticsGroups {
+    public unsafe struct MDIncrementalRefreshErisReferenceDataAndDailyStatisticsGroups {
         GroupSize GroupSize;
     };
 
 
     /// <summary>
-    ///  Struct for Md Incremental Refresh Indices 348
+    ///  Struct for M D Incremental Refresh Indices Group
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshIndices348 {
-        TransactTime TransactTime;
-        MdFeedType MdFeedType;
-        MatchEventIndicator MatchEventIndicator;
-        BatchTotalMessages BatchTotalMessages;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Indices Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshIndicesGroup {
+    public unsafe struct MDIncrementalRefreshIndicesGroup {
         MdEntryType MdEntryType;
         RptSeq RptSeq;
         MdEntryPx MdEntryPx;
@@ -1993,43 +1862,19 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Struct for MD Incremental Refresh Indices Groups
+    ///  Struct for M D Incremental Refresh Indices Groups
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshIndicesGroups {
+    public unsafe struct MDIncrementalRefreshIndicesGroups {
         GroupSize GroupSize;
     };
 
 
     /// <summary>
-    ///  Struct for Md Incremental Refresh Ot C 356
+    ///  Struct for M D Incremental Refresh Otc Group
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshOtC356 {
-        TransactTime TransactTime;
-        TradeDate TradeDate;
-        MatchEventIndicator MatchEventIndicator;
-        BatchTotalMessages BatchTotalMessages;
-    };
-
-
-    /// <summary>
-    ///  Struct for Md Incremental Refresh Ot C 366
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshOtC366 {
-        TransactTime TransactTime;
-        TradeDate TradeDate;
-        MatchEventIndicator MatchEventIndicator;
-        BatchTotalMessages BatchTotalMessages;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Otc Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshOtcGroup {
+    public unsafe struct MDIncrementalRefreshOtcGroup {
         MdEntryType MdEntryType;
         RptSeq RptSeq;
         MdEntryPx MdEntryPx;
@@ -2066,11 +1911,204 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Struct for MD Incremental Refresh Otc Groups
+    ///  Struct for M D Incremental Refresh Otc Groups
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshOtcGroups {
+    public unsafe struct MDIncrementalRefreshOtcGroups {
         GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Trade Blocks Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshTradeBlocksGroup {
+        MdUpdateAction MdUpdateAction;
+        SecurityId SecurityId;
+        RptSeq RptSeq;
+        MdEntryPx MdEntryPx;
+        MdEntrySize MdEntrySize;
+        NumberOfOrders NumberOfOrders;
+        TradeId TradeId;
+        AggressorSide AggressorSide;
+        Symbol Symbol;
+        SecurityGroup SecurityGroup;
+        SecurityType SecurityType;
+        SecuritySubType SecuritySubType;
+        MaturityMonthYear MaturityMonthYear;
+        SecurityExchange SecurityExchange;
+        MaturityDate MaturityDate;
+        UnitOfMeasure UnitOfMeasure;
+        UnitOfMeasureCurrency UnitOfMeasureCurrency;
+        UnitOfMeasureQty UnitOfMeasureQty;
+        CouponRate CouponRate;
+        PriceType PriceType;
+        TrdType TrdType;
+        MdEntryId MdEntryId;
+        PutOrCall PutOrCall;
+        StrikePrice StrikePrice;
+        RestructuringType RestructuringType;
+        Seniority Seniority;
+        ReferenceId ReferenceId;
+        StrategyLinkId StrategyLinkId;
+        LegRefId LegRefId;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Trade Blocks Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshTradeBlocksGroups {
+        GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Instrument Definition Eris Leg Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDInstrumentDefinitionErisLegGroup {
+        LegBenchmarkCurveName LegBenchmarkCurveName;
+        RateDescriptor RateDescriptor;
+        PreviousFixingDate PreviousFixingDate;
+        LegPayFrequencey LegPayFrequencey;
+        PreviousFixingRate PreviousFixingRate;
+        LegSymbol LegSymbol;
+        LegRatioQty LegRatioQty;
+        LegSide LegSide;
+        LegCurrency LegCurrency;
+        LegSecurityType LegSecurityType;
+        LegSecurityGroup LegSecurityGroup;
+        LegDateOffset LegDateOffset;
+        InterpolationFactor InterpolationFactor;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Instrument Definition Eris Leg Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDInstrumentDefinitionErisLegGroups {
+        GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for Match Event Indicator
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MatchEventIndicator {
+        EndOfEvent EndOfEvent;
+        Reserved Reserved;
+        RecoveryMsg RecoveryMsg;
+        LastImpliedMsg LastImpliedMsg;
+        LastStatsMsg LastStatsMsg;
+        LastQuoteMsg LastQuoteMsg;
+        LastVolumeMsg LastVolumeMsg;
+        LastTradeMsg LastTradeMsg;
+    };
+
+
+    /// <summary>
+    ///  Struct for Maturity Month Year
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MaturityMonthYear {
+        Year Year;
+        Month Month;
+        Day Day;
+        Week Week;
+    };
+
+
+    /// <summary>
+    ///  Struct for Md Entry Px
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MdEntryPx {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Md Entry Size
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MdEntrySize {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Md Incremental Refresh Eris 351
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MdIncrementalRefreshEris351 {
+        TransactTime TransactTime;
+        MatchEventIndicator MatchEventIndicator;
+        BatchTotalMessages BatchTotalMessages;
+    };
+
+
+    /// <summary>
+    ///  Struct for Md Incremental Refresh Eris 353
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MdIncrementalRefreshEris353 {
+        TransactTime TransactTime;
+        MatchEventIndicator MatchEventIndicator;
+        BatchTotalMessages BatchTotalMessages;
+    };
+
+
+    /// <summary>
+    ///  Struct for Md Incremental Refresh Eris Reference Data And Daily Statistics 333
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MdIncrementalRefreshErisReferenceDataAndDailyStatistics333 {
+        TransactTime TransactTime;
+        MatchEventIndicator MatchEventIndicator;
+        BatchTotalMessages BatchTotalMessages;
+    };
+
+
+    /// <summary>
+    ///  Struct for Md Incremental Refresh Indices 348
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MdIncrementalRefreshIndices348 {
+        TransactTime TransactTime;
+        MdFeedType MdFeedType;
+        MatchEventIndicator MatchEventIndicator;
+        BatchTotalMessages BatchTotalMessages;
+    };
+
+
+    /// <summary>
+    ///  Struct for Md Incremental Refresh Ot C 356
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MdIncrementalRefreshOtC356 {
+        TransactTime TransactTime;
+        TradeDate TradeDate;
+        MatchEventIndicator MatchEventIndicator;
+        BatchTotalMessages BatchTotalMessages;
+    };
+
+
+    /// <summary>
+    ///  Struct for Md Incremental Refresh Ot C 366
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MdIncrementalRefreshOtC366 {
+        TransactTime TransactTime;
+        TradeDate TradeDate;
+        MatchEventIndicator MatchEventIndicator;
+        BatchTotalMessages BatchTotalMessages;
     };
 
 
@@ -2110,57 +2148,10 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Struct for MD Incremental Refresh Trade Blocks Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshTradeBlocksGroup {
-        MdUpdateAction MdUpdateAction;
-        SecurityId SecurityId;
-        RptSeq RptSeq;
-        MdEntryPx MdEntryPx;
-        MdEntrySize MdEntrySize;
-        NumberOfOrders NumberOfOrders;
-        TradeId TradeId;
-        AggressorSide AggressorSide;
-        Symbol Symbol;
-        SecurityGroup SecurityGroup;
-        SecurityType SecurityType;
-        SecuritySubType SecuritySubType;
-        MaturityMonthYear MaturityMonthYear;
-        SecurityExchange SecurityExchange;
-        MaturityDate MaturityDate;
-        UnitOfMeasure UnitOfMeasure;
-        UnitOfMeasureCurrency UnitOfMeasureCurrency;
-        UnitOfMeasureQty UnitOfMeasureQty;
-        CouponRate CouponRate;
-        PriceType PriceType;
-        TrdType TrdType;
-        MdEntryId MdEntryId;
-        PutOrCall PutOrCall;
-        StrikePrice StrikePrice;
-        RestructuringType RestructuringType;
-        Seniority Seniority;
-        ReferenceId ReferenceId;
-        StrategyLinkId StrategyLinkId;
-        LegRefId LegRefId;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Trade Blocks Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshTradeBlocksGroups {
-        GroupSize GroupSize;
-    };
-
-
-    /// <summary>
     ///  Struct for Message Header
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MessageHeader {
-        MessageSize MessageSize;
         BlockLength BlockLength;
         TemplateId TemplateId;
         SchemaId SchemaId;
@@ -2169,12 +2160,102 @@ namespace Cme.Streamline.Sbe.v9.5 {
 
 
     /// <summary>
-    ///  Struct for Packet Header
+    ///  Struct for Min Price Increment
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct PacketHeader {
-        MessageSequenceNumber MessageSequenceNumber;
-        SendingTime SendingTime;
+    public unsafe struct MinPriceIncrement {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Net Chg Prev Day
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct NetChgPrevDay {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Net Pct Chg
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct NetPctChg {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Next Fixed Payment Amount
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct NextFixedPaymentAmount {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Next Floating Payment Amount
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct NextFloatingPaymentAmount {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Npv
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Npv {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for P V 01
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct PV01 {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Percent Trading
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct PercentTrading {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Previous Eris Pai
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct PreviousErisPai {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Previous Fixing Rate
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct PreviousFixingRate {
+        Mantissa Mantissa;
+        Exponent Exponent;
     };
 
 
@@ -2236,6 +2317,46 @@ namespace Cme.Streamline.Sbe.v9.5 {
         Rounded Rounded;
         Actual Actual;
         FinalDaily FinalDaily;
+    };
+
+
+    /// <summary>
+    ///  Struct for Settlement Npv
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct SettlementNpv {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Strike Price
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct StrikePrice {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Unit Of Measure Qty
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct UnitOfMeasureQty {
+        Mantissa Mantissa;
+        Exponent Exponent;
+    };
+
+
+    /// <summary>
+    ///  Struct for Yield
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Yield {
+        Mantissa Mantissa;
+        Exponent Exponent;
     };
 
 

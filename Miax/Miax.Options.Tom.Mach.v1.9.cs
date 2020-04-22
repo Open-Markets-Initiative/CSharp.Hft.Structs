@@ -811,7 +811,7 @@ namespace Miax.Options.Tom.Mach.v1.9 {
 
 
     /// <summary>
-    ///  Struct for Double-Sided Top of Market Compact Message
+    ///  Struct for Double Sided Top Of Market Compact Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DoubleSidedTopOfMarketCompactMessage {
@@ -895,7 +895,7 @@ namespace Miax.Options.Tom.Mach.v1.9 {
 
 
     /// <summary>
-    ///  Struct for Top of Market Bid Compact Message
+    ///  Struct for Top Of Market Bid Compact Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TopOfMarketBidCompactMessage {
@@ -909,7 +909,7 @@ namespace Miax.Options.Tom.Mach.v1.9 {
 
 
     /// <summary>
-    ///  Struct for Top of Market Offer Compact Message
+    ///  Struct for Top Of Market Offer Compact Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TopOfMarketOfferCompactMessage {
@@ -969,7 +969,7 @@ namespace Miax.Options.Tom.Mach.v1.9 {
 
 
     /// <summary>
-    ///  Struct for Wide Double Sided Top of Market Message
+    ///  Struct for Wide Double Sided Top Of Market Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct WideDoubleSidedTopOfMarketMessage {
@@ -987,7 +987,7 @@ namespace Miax.Options.Tom.Mach.v1.9 {
 
 
     /// <summary>
-    ///  Struct for Wide Top of Market Bid Message
+    ///  Struct for Wide Top Of Market Bid Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct WideTopOfMarketBidMessage {
@@ -1001,7 +1001,7 @@ namespace Miax.Options.Tom.Mach.v1.9 {
 
 
     /// <summary>
-    ///  Struct for Wide Top of Market Offer Message
+    ///  Struct for Wide Top Of Market Offer Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct WideTopOfMarketOfferMessage {

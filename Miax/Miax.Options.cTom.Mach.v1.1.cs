@@ -798,7 +798,7 @@ namespace Miax.Options.cTom.Mach.v1.1 {
 
 
     /// <summary>
-    ///  Struct for Complex Double Sided Top of Market Compact Message
+    ///  Struct for Complex Double Sided Top Of Market Compact Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ComplexDoubleSidedTopOfMarketCompactMessage {
@@ -968,7 +968,7 @@ namespace Miax.Options.cTom.Mach.v1.1 {
 
 
     /// <summary>
-    ///  Struct for Wide Complex Double Sided Top of Market Message
+    ///  Struct for Wide Complex Double Sided Top Of Market Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct WideComplexDoubleSidedTopOfMarketMessage {

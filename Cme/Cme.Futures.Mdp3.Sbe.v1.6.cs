@@ -1,4 +1,4 @@
-namespace Cme.Mdp3.Sbe.v8.1 {
+namespace Cme.Futures.Mdp3.Sbe.v1.6 {
 
     #region Protocol Fields
     ///////////////////////////////////////////////////////////////////////
@@ -17,9 +17,10 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     ///  Aggressor Side Values
     /// </summary>
     public enum AggressorSide : byte {
-        AggressorSide = 0,
-        AggressorSide = 1,
-        AggressorSide = 2,
+        NoValue = 255,
+        NoAggressor = 0,
+        Buy = 1,
+        Sell = 2,
     };
 
 
@@ -120,19 +121,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
         public string Value
             => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Current Chunk
-    /// </summary>
-    public unsafe struct CurrentChunk {
-        public const int Size = 4;
-
-        public int Value;
 
         public override string ToString()
             => $"{Value}";
@@ -278,8 +266,8 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     ///  Event Type Values
     /// </summary>
     public enum EventType : byte {
-        EventType = 5,
-        EventType = 7,
+        Activation = 5,
+        LastEligibleTradeDate = 7,
     };
 
 
@@ -315,13 +303,13 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     ///  Halt Reason Values
     /// </summary>
     public enum HaltReason : byte {
-        HaltReason = 0,
-        HaltReason = 1,
-        HaltReason = 2,
-        HaltReason = 3,
-        HaltReason = 4,
-        HaltReason = 5,
-        HaltReason = 6,
+        GroupSchedule = 0,
+        SurveillanceIntervention = 1,
+        MarketEvent = 2,
+        InstrumentActivation = 3,
+        InstrumentExpiration = 4,
+        Unknown = 5,
+        RecoveryInProcess = 6,
     };
 
 
@@ -501,8 +489,8 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     ///  Leg Side Values
     /// </summary>
     public enum LegSide : byte {
-        LegSide = 1,
-        LegSide = 2,
+        BuySide = 1,
+        SellSide = 2,
     };
 
 
@@ -595,14 +583,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
 
     /// <summary>
-    ///  Md Display Qty
-    /// </summary>
-    public struct MdDisplayQty {
-        public int Raw;
-    };
-
-
-    /// <summary>
     ///  Md Entry Px
     /// </summary>
     public struct MdEntryPx {
@@ -622,23 +602,23 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     ///  Md Entry Type Values
     /// </summary>
     public enum MdEntryType : byte {
-        MdEntryType = (byte)'0',
-        MdEntryType = (byte)'1',
-        MdEntryType = (byte)'2',
-        MdEntryType = (byte)'4',
-        MdEntryType = (byte)'6',
-        MdEntryType = (byte)'7',
-        MdEntryType = (byte)'8',
-        MdEntryType = (byte)'B',
-        MdEntryType = (byte)'C',
-        MdEntryType = (byte)'E',
-        MdEntryType = (byte)'F',
-        MdEntryType = (byte)'J',
-        MdEntryType = (byte)'N',
-        MdEntryType = (byte)'O',
-        MdEntryType = (byte)'W',
-        MdEntryType = (byte)'e',
-        MdEntryType = (byte)'g',
+        Bid = (byte)'0',
+        Offer = (byte)'1',
+        Trade = (byte)'2',
+        OpenPrice = (byte)'4',
+        SettlementPrice = (byte)'6',
+        TradingSessionHighPrice = (byte)'7',
+        TradingSessionLowPrice = (byte)'8',
+        ClearedVolume = (byte)'B',
+        OpenInterest = (byte)'C',
+        ImpliedBid = (byte)'E',
+        ImpliedOffer = (byte)'F',
+        BookReset = (byte)'J',
+        SessionHighBid = (byte)'N',
+        SessionLowOffer = (byte)'O',
+        FixingPrice = (byte)'W',
+        ElectronicVolume = (byte)'e',
+        ThresholdLimitsandPriceBandVariation = (byte)'g',
     };
 
 
@@ -652,19 +632,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
         public string Value
             => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Md Order Priority
-    /// </summary>
-    public unsafe struct MdOrderPriority {
-        public const int Size = 8;
-
-        public long Value;
 
         public override string ToString()
             => $"{Value}";
@@ -698,28 +665,15 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
 
     /// <summary>
-    ///  Md Trade Entry Id
-    /// </summary>
-    public unsafe struct MdTradeEntryId {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Md Update Action Values
     /// </summary>
     public enum MdUpdateAction : byte {
-        MdUpdateAction = 0,
-        MdUpdateAction = 1,
-        MdUpdateAction = 2,
-        MdUpdateAction = 3,
-        MdUpdateAction = 4,
-        MdUpdateAction = 5,
+        New = 0,
+        Change = 1,
+        Delete = 2,
+        DeleteThru = 3,
+        DeleteFrom = 4,
+        Overlay = 5,
     };
 
 
@@ -828,19 +782,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
 
     /// <summary>
-    ///  No Chunks
-    /// </summary>
-    public unsafe struct NoChunks {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Null Value
     /// </summary>
     public unsafe struct NullValue {
@@ -875,8 +816,9 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     ///  Open Close Settl Flag Values
     /// </summary>
     public enum OpenCloseSettlFlag : byte {
-        OpenCloseSettlFlag = 0,
-        OpenCloseSettlFlag = 5,
+        NoValue = 255,
+        DailyOpenPrice = 0,
+        IndicativeOpeningPrice = 5,
     };
 
 
@@ -920,16 +862,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
 
     /// <summary>
-    ///  Order Update Action Values
-    /// </summary>
-    public enum OrderUpdateAction : byte {
-        OrderUpdateAction = 0,
-        OrderUpdateAction = 1,
-        OrderUpdateAction = 2,
-    };
-
-
-    /// <summary>
     ///  Original Contract Size
     /// </summary>
     public struct OriginalContractSize {
@@ -941,16 +873,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     ///  Otc Eligible
     /// </summary>
     public unsafe struct OtcEligible {
-        public const int Size = 1;
-
-        public fixed byte Bytes[Size];
-    };
-
-
-    /// <summary>
-    ///  Padding 1
-    /// </summary>
-    public unsafe struct Padding1 {
         public const int Size = 1;
 
         public fixed byte Bytes[Size];
@@ -1042,8 +964,8 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     ///  Put Or Call Values
     /// </summary>
     public enum PutOrCall : byte {
-        PutOrCall = 0,
-        PutOrCall = 1,
+        Put = 0,
+        Call = 1,
     };
 
 
@@ -1078,43 +1000,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
         public const int Size = 1;
 
         public fixed byte Bytes[Size];
-    };
-
-
-    /// <summary>
-    ///  Reference Id
-    /// </summary>
-    public unsafe struct ReferenceId {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Related Security Id
-    /// </summary>
-    public struct RelatedSecurityId {
-        public int Raw;
-    };
-
-
-    /// <summary>
-    ///  Related Symbol
-    /// </summary>
-    public unsafe struct RelatedSymbol {
-        public const int Size = 20;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
     };
 
 
@@ -1254,11 +1139,11 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     ///  Security Trading Event Values
     /// </summary>
     public enum SecurityTradingEvent : byte {
-        SecurityTradingEvent = 0,
-        SecurityTradingEvent = 1,
-        SecurityTradingEvent = 4,
-        SecurityTradingEvent = 5,
-        SecurityTradingEvent = 6,
+        NoEvent = 0,
+        NoCancel = 1,
+        ResetStatistics = 4,
+        ImpliedMatchingOn = 5,
+        ImpliedMatchingOff = 6,
     };
 
 
@@ -1266,17 +1151,18 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     ///  Security Trading Status Values
     /// </summary>
     public enum SecurityTradingStatus : byte {
-        SecurityTradingStatus = 2,
-        SecurityTradingStatus = 4,
-        SecurityTradingStatus = 15,
-        SecurityTradingStatus = 17,
-        SecurityTradingStatus = 18,
-        SecurityTradingStatus = 20,
-        SecurityTradingStatus = 21,
-        SecurityTradingStatus = 24,
-        SecurityTradingStatus = 25,
-        SecurityTradingStatus = 26,
-        SecurityTradingStatus = 103,
+        NoValue = 255,
+        TradingHalt = 2,
+        Close = 4,
+        NewPriceIndication = 15,
+        ReadyToTrade = 17,
+        NotAvailableForTrading = 18,
+        UnknownorInvalid = 20,
+        PreOpen = 21,
+        PreCross = 24,
+        Cross = 25,
+        PostClose = 26,
+        NoChange = 103,
     };
 
 
@@ -1300,9 +1186,9 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     ///  Security Update Action Values
     /// </summary>
     public enum SecurityUpdateAction : byte {
-        SecurityUpdateAction = (byte)'A',
-        SecurityUpdateAction = (byte)'D',
-        SecurityUpdateAction = (byte)'M',
+        Add = (byte)'A',
+        Delete = (byte)'D',
+        Modify = (byte)'M',
     };
 
 
@@ -1417,8 +1303,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
         QuoteRequest = 39,
         MdInstrumentDefinitionOption = 41,
         MdIncrementalRefreshTradeSummary = 42,
-        MdIncrementalRefreshOrderBook = 43,
-        SnapshotFullRefreshOrderBook = 44,
     };
 
 
@@ -1686,6 +1570,16 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
 
     /// <summary>
+    ///  Struct for Binary Packet Header
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct BinaryPacketHeader {
+        MessageSequenceNumber MessageSequenceNumber;
+        SendingTime SendingTime;
+    };
+
+
+    /// <summary>
     ///  Struct for Channel Reset 4
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -1743,7 +1637,7 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Group Size8 Byte
+    ///  Struct for Group Size 8 Byte
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct GroupSize8Byte {
@@ -1801,28 +1695,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Legs Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct LegsGroup {
-        LegSecurityId LegSecurityId;
-        LegSide LegSide;
-        LegRatioQty LegRatioQty;
-        LegPrice LegPrice;
-        LegOptionDelta LegOptionDelta;
-    };
-
-
-    /// <summary>
-    ///  Struct for Legs Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct LegsGroups {
-        GroupSize GroupSize;
-    };
-
-
-    /// <summary>
     ///  Struct for Lot Type Rules Group
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -1837,6 +1709,238 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LotTypeRulesGroups {
+        GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Feed Types Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDFeedTypesGroup {
+        MdFeedType MdFeedType;
+        MarketDepth MarketDepth;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Feed Types Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDFeedTypesGroups {
+        GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Book Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshBookGroup {
+        MdEntryPx MdEntryPx;
+        MdEntrySize MdEntrySize;
+        SecurityId SecurityId;
+        RptSeq RptSeq;
+        NumberOfOrders NumberOfOrders;
+        MdPriceLevel MdPriceLevel;
+        MdUpdateAction MdUpdateAction;
+        MdEntryType MdEntryType;
+        Padding5 Padding5;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Book Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshBookGroups {
+        GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Daily Statistics Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshDailyStatisticsGroup {
+        MdEntryPx MdEntryPx;
+        MdEntrySize MdEntrySize;
+        SecurityId SecurityId;
+        RptSeq RptSeq;
+        TradingReferenceDate TradingReferenceDate;
+        SettlPriceType SettlPriceType;
+        MdUpdateAction MdUpdateAction;
+        MdEntryType MdEntryType;
+        Padding7 Padding7;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Daily Statistics Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshDailyStatisticsGroups {
+        GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Limits Banding Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshLimitsBandingGroup {
+        HighLimitPrice HighLimitPrice;
+        LowLimitPrice LowLimitPrice;
+        MaxPriceVariation MaxPriceVariation;
+        SecurityId SecurityId;
+        RptSeq RptSeq;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Limits Banding Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshLimitsBandingGroups {
+        GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Session Statistics Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshSessionStatisticsGroup {
+        MdEntryPx MdEntryPx;
+        SecurityId SecurityId;
+        RptSeq RptSeq;
+        OpenCloseSettlFlag OpenCloseSettlFlag;
+        MdUpdateAction MdUpdateAction;
+        MdEntryType MdEntryType;
+        Padding5 Padding5;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Session Statistics Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshSessionStatisticsGroups {
+        GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Trade Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshTradeGroup {
+        MdEntryPx MdEntryPx;
+        MdEntrySize MdEntrySize;
+        SecurityId SecurityId;
+        RptSeq RptSeq;
+        NumberOfOrders NumberOfOrders;
+        TradeId TradeId;
+        AggressorSide AggressorSide;
+        MdUpdateAction MdUpdateAction;
+        Padding2 Padding2;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Trade Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshTradeGroups {
+        GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Trade Summary Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshTradeSummaryGroup {
+        MdEntryPx MdEntryPx;
+        MdEntrySize MdEntrySize;
+        SecurityId SecurityId;
+        RptSeq RptSeq;
+        NumberOfOrders NumberOfOrders;
+        AggressorSide AggressorSide;
+        MdUpdateAction MdUpdateAction;
+        Padding6 Padding6;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Trade Summary Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshTradeSummaryGroups {
+        GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Trade Summary Order Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshTradeSummaryOrderGroup {
+        OrderId OrderId;
+        LastQty LastQty;
+        Padding4 Padding4;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Trade Summary Order Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshTradeSummaryOrderGroups {
+        GroupSize8Byte GroupSize8Byte;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Volume Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshVolumeGroup {
+        MdEntrySize MdEntrySize;
+        SecurityId SecurityId;
+        RptSeq RptSeq;
+        MdUpdateAction MdUpdateAction;
+        Padding3 Padding3;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Incremental Refresh Volume Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDIncrementalRefreshVolumeGroups {
+        GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Instrument Definition Spread Leg Group
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDInstrumentDefinitionSpreadLegGroup {
+        LegSecurityId LegSecurityId;
+        LegSide LegSide;
+        LegRatioQty LegRatioQty;
+        LegPrice LegPrice;
+        LegOptionDelta LegOptionDelta;
+    };
+
+
+    /// <summary>
+    ///  Struct for M D Instrument Definition Spread Leg Groups
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MDInstrumentDefinitionSpreadLegGroups {
         GroupSize GroupSize;
     };
 
@@ -1870,70 +1974,13 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
 
     /// <summary>
-    ///  Struct for MD Feed Types Group
+    ///  Struct for Md Incremental Refresh Book 32
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdFeedTypesGroup {
-        MdFeedType MdFeedType;
-        MarketDepth MarketDepth;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Feed Types Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdFeedTypesGroups {
-        GroupSize GroupSize;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Book Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshBookGroup {
-        MdEntryPx MdEntryPx;
-        MdEntrySize MdEntrySize;
-        SecurityId SecurityId;
-        RptSeq RptSeq;
-        NumberOfOrders NumberOfOrders;
-        MdPriceLevel MdPriceLevel;
-        MdUpdateAction MdUpdateAction;
-        MdEntryType MdEntryType;
-        Padding5 Padding5;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Book Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshBookGroups {
-        GroupSize GroupSize;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Book Order Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshBookOrderGroup {
-        OrderId OrderId;
-        MdOrderPriority MdOrderPriority;
-        MdDisplayQty MdDisplayQty;
-        ReferenceId ReferenceId;
-        OrderUpdateAction OrderUpdateAction;
+    public unsafe struct MdIncrementalRefreshBook32 {
+        TransactTime TransactTime;
+        MatchEventIndicator MatchEventIndicator;
         Padding2 Padding2;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Book Order Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshBookOrderGroups {
-        GroupSize8Byte GroupSize8Byte;
     };
 
 
@@ -1949,32 +1996,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
 
     /// <summary>
-    ///  Struct for MD Incremental Refresh Daily Statistics Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshDailyStatisticsGroup {
-        MdEntryPx MdEntryPx;
-        MdEntrySize MdEntrySize;
-        SecurityId SecurityId;
-        RptSeq RptSeq;
-        TradingReferenceDate TradingReferenceDate;
-        SettlPriceType SettlPriceType;
-        MdUpdateAction MdUpdateAction;
-        MdEntryType MdEntryType;
-        Padding7 Padding7;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Daily Statistics Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshDailyStatisticsGroups {
-        GroupSize GroupSize;
-    };
-
-
-    /// <summary>
     ///  Struct for Md Incremental Refresh Limits Banding 34
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -1982,64 +2003,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
         TransactTime TransactTime;
         MatchEventIndicator MatchEventIndicator;
         Padding2 Padding2;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Limits Banding Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshLimitsBandingGroup {
-        HighLimitPrice HighLimitPrice;
-        LowLimitPrice LowLimitPrice;
-        MaxPriceVariation MaxPriceVariation;
-        SecurityId SecurityId;
-        RptSeq RptSeq;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Limits Banding Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshLimitsBandingGroups {
-        GroupSize GroupSize;
-    };
-
-
-    /// <summary>
-    ///  Struct for Md Incremental Refresh Order Book 43
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshOrderBook43 {
-        TransactTime TransactTime;
-        MatchEventIndicator MatchEventIndicator;
-        Padding2 Padding2;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Order Book Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshOrderBookGroup {
-        OrderId OrderId;
-        MdOrderPriority MdOrderPriority;
-        MdEntryPx MdEntryPx;
-        MdDisplayQty MdDisplayQty;
-        SecurityId SecurityId;
-        MdUpdateAction MdUpdateAction;
-        MdEntryType MdEntryType;
-        Padding6 Padding6;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Order Book Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshOrderBookGroups {
-        GroupSize GroupSize;
     };
 
 
@@ -2055,31 +2018,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
 
     /// <summary>
-    ///  Struct for MD Incremental Refresh Session Statistics Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshSessionStatisticsGroup {
-        MdEntryPx MdEntryPx;
-        SecurityId SecurityId;
-        RptSeq RptSeq;
-        OpenCloseSettlFlag OpenCloseSettlFlag;
-        MdUpdateAction MdUpdateAction;
-        MdEntryType MdEntryType;
-        MdEntrySize MdEntrySize;
-        Padding1 Padding1;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Session Statistics Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshSessionStatisticsGroups {
-        GroupSize GroupSize;
-    };
-
-
-    /// <summary>
     ///  Struct for Md Incremental Refresh Trade 36
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -2087,78 +2025,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
         TransactTime TransactTime;
         MatchEventIndicator MatchEventIndicator;
         Padding2 Padding2;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Trade Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshTradeGroup {
-        MdEntryPx MdEntryPx;
-        MdEntrySize MdEntrySize;
-        SecurityId SecurityId;
-        RptSeq RptSeq;
-        NumberOfOrders NumberOfOrders;
-        TradeId TradeId;
-        AggressorSide AggressorSide;
-        MdUpdateAction MdUpdateAction;
-        Padding2 Padding2;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Trade Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshTradeGroups {
-        GroupSize GroupSize;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Trade Summary Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshTradeSummaryGroup {
-        MdEntryPx MdEntryPx;
-        MdEntrySize MdEntrySize;
-        SecurityId SecurityId;
-        RptSeq RptSeq;
-        NumberOfOrders NumberOfOrders;
-        AggressorSide AggressorSide;
-        MdUpdateAction MdUpdateAction;
-        MdTradeEntryId MdTradeEntryId;
-        Padding2 Padding2;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Trade Summary Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshTradeSummaryGroups {
-        GroupSize GroupSize;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Trade Summary Order Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshTradeSummaryOrderGroup {
-        OrderId OrderId;
-        LastQty LastQty;
-        Padding4 Padding4;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Trade Summary Order Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshTradeSummaryOrderGroups {
-        GroupSize8Byte GroupSize8Byte;
     };
 
 
@@ -2174,47 +2040,14 @@ namespace Cme.Mdp3.Sbe.v8.1 {
 
 
     /// <summary>
-    ///  Struct for MD Incremental Refresh Volume Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshVolumeGroup {
-        MdEntrySize MdEntrySize;
-        SecurityId SecurityId;
-        RptSeq RptSeq;
-        MdUpdateAction MdUpdateAction;
-        Padding3 Padding3;
-    };
-
-
-    /// <summary>
-    ///  Struct for MD Incremental Refresh Volume Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdIncrementalRefreshVolumeGroups {
-        GroupSize GroupSize;
-    };
-
-
-    /// <summary>
     ///  Struct for Message Header
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MessageHeader {
-        MessageSize MessageSize;
         BlockLength BlockLength;
         TemplateId TemplateId;
         SchemaId SchemaId;
         Version Version;
-    };
-
-
-    /// <summary>
-    ///  Struct for Packet Header
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct PacketHeader {
-        MessageSequenceNumber MessageSequenceNumber;
-        SendingTime SendingTime;
     };
 
 
@@ -2227,25 +2060,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
         QuoteReqId QuoteReqId;
         MatchEventIndicator MatchEventIndicator;
         Padding3 Padding3;
-    };
-
-
-    /// <summary>
-    ///  Struct for Related Instruments Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RelatedInstrumentsGroup {
-        RelatedSecurityId RelatedSecurityId;
-        RelatedSymbol RelatedSymbol;
-    };
-
-
-    /// <summary>
-    ///  Struct for Related Instruments Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RelatedInstrumentsGroups {
-        GroupSize GroupSize;
     };
 
 
@@ -2343,42 +2157,6 @@ namespace Cme.Mdp3.Sbe.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SnapshotFullRefreshGroups {
-        GroupSize GroupSize;
-    };
-
-
-    /// <summary>
-    ///  Struct for Snapshot Full Refresh Order Book 44
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SnapshotFullRefreshOrderBook44 {
-        LastMsgSeqNumProcessed LastMsgSeqNumProcessed;
-        TotNumReports TotNumReports;
-        SecurityId SecurityId;
-        NoChunks NoChunks;
-        CurrentChunk CurrentChunk;
-        TransactTime TransactTime;
-    };
-
-
-    /// <summary>
-    ///  Struct for Snapshot Full Refresh Order Book Group
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SnapshotFullRefreshOrderBookGroup {
-        OrderId OrderId;
-        MdOrderPriority MdOrderPriority;
-        MdEntryPx MdEntryPx;
-        MdDisplayQty MdDisplayQty;
-        MdEntryType MdEntryType;
-    };
-
-
-    /// <summary>
-    ///  Struct for Snapshot Full Refresh Order Book Groups
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SnapshotFullRefreshOrderBookGroups {
         GroupSize GroupSize;
     };
 

@@ -9,8 +9,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
     public enum AggressorSide : byte {
         Buy = 1,
         Sell = 2,
-        AggressorSide = 2,
-        AggressorSide = 1,
+        AggressorSideMinimumValue = 2,
+        AggressorSideMinimumValue = 1,
     };
 
 
@@ -46,8 +46,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
     public enum ApplicationSequenceResetIndicator : byte {
         NoReset = 0,
         Reset = 1,
-        ApplSeqResetIndicator = 1,
-        ApplSeqResetIndicator = 0,
+        ApplSeqResetIndicatorMinimumValue = 1,
+        ApplSeqResetIndicatorMinimumValue = 0,
     };
 
 
@@ -83,8 +83,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
     public enum CompletionIndicator : byte {
         Incomplete = 0,
         Complete = 1,
-        CompletionIndicator = 1,
-        CompletionIndicator = 0,
+        CompletionIndicatorMinimumValue = 1,
+        CompletionIndicatorMinimumValue = 0,
     };
 
 
@@ -115,8 +115,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
     public enum FastMarketIndicator : byte {
         No = 0,
         Yes = 1,
-        FastMarketIndicator = 1,
-        FastMarketIndicator = 0,
+        FastMarketIndicatorMinimumValue = 1,
+        FastMarketIndicatorMinimumValue = 0,
     };
 
 
@@ -139,8 +139,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
     public enum ImpliedMarketIndicator : byte {
         NotImplied = 0,
         ImpliedInOut = 3,
-        ImpliedMarketIndicator = 3,
-        ImpliedMarketIndicator = 0,
+        ImpliedMarketIndicatorMinimumValue = 3,
+        ImpliedMarketIndicatorMinimumValue = 0,
     };
 
 
@@ -213,8 +213,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
     public enum LegSide : byte {
         Buy = 1,
         Sell = 2,
-        LegSide = 2,
-        LegSide = 1,
+        LegSideMinimumValue = 2,
+        LegSideMinimumValue = 1,
     };
 
 
@@ -227,7 +227,7 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
 
 
     /// <summary>
-    ///  Market Segment ID
+    ///  Market Segment Id
     /// </summary>
     public struct MarketSegmentId {
         public int Raw;
@@ -242,8 +242,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
         ClosingAuction = 2,
         IntradayAuction = 3,
         CircuitBreakerAuction = 4,
-        MatchSubType = 4,
-        MatchSubType = 1,
+        MatchSubTypeMinimumValue = 4,
+        MatchSubTypeMinimumValue = 1,
     };
 
 
@@ -254,8 +254,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
         ConfirmedTradeReport = 3,
         CrossAuction = 5,
         CallAuction = 7,
-        MatchType = 7,
-        MatchType = 3,
+        MatchTypeMinimumValue = 7,
+        MatchTypeMinimumValue = 3,
     };
 
 
@@ -295,8 +295,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
         IntradayAuction = 201,
         CircuitBreakerAuction = 202,
         ClosingAuction = 203,
-        MdEntryType = 203,
-        MdEntryType = 2,
+        MdEntryTypeMinimumValue = 203,
+        MdEntryTypeMinimumValue = 2,
     };
 
 
@@ -449,17 +449,7 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
 
 
     /// <summary>
-    ///  Pad5
-    /// </summary>
-    public unsafe struct Pad5 {
-        public const int Size = 5;
-
-        public fixed byte Bytes[Size];
-    };
-
-
-    /// <summary>
-    ///  Partition ID
+    ///  Partition Id
     /// </summary>
     public unsafe struct PartitionId {
         public const int Size = 1;
@@ -514,8 +504,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
         StandardFuturesStrategy = 7,
         PackAndBundle = 8,
         Strip = 9,
-        ProductComplex = 9,
-        ProductComplex = 5,
+        ProductComplexMinimumValue = 9,
+        ProductComplexMinimumValue = 5,
     };
 
 
@@ -564,8 +554,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
         Inactive = 2,
         Expired = 4,
         Suspended = 9,
-        SecurityStatus = 9,
-        SecurityStatus = 1,
+        SecurityStatusMinimumValue = 9,
+        SecurityStatusMinimumValue = 1,
     };
 
 
@@ -593,8 +583,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
         CircuitBreakerAuctionFreeze = 209,
         ClosingAuction = 210,
         ClosingAuctionFreeze = 211,
-        SecurityTradingStatus = 211,
-        SecurityTradingStatus = 200,
+        SecurityTradingStatusMinimumValue = 211,
+        SecurityTradingStatusMinimumValue = 200,
     };
 
 
@@ -604,8 +594,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
     public enum Side : byte {
         Buy = 1,
         Sell = 2,
-        Side = 2,
-        Side = 1,
+        SideMinimumValue = 2,
+        SideMinimumValue = 1,
     };
 
 
@@ -642,8 +632,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
         Halted = 1,
         Open = 2,
         Closed = 3,
-        TradSesStatus = 3,
-        TradSesStatus = 1,
+        TradSesStatusMinimumValue = 3,
+        TradSesStatusMinimumValue = 1,
     };
 
 
@@ -652,8 +642,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
     /// </summary>
     public enum TradeCondition : byte {
         ImpliedTrade = 1,
-        TradeCondition = 1,
-        TradeCondition = 1,
+        TradeConditionMinimumValue = 1,
+        TradeConditionMinimumValue = 1,
     };
 
 
@@ -665,8 +655,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
         Morning = 3,
         Evening = 5,
         Holiday = 7,
-        TradingSessionId = 7,
-        TradingSessionId = 1,
+        TradingSessionIDMinimumValue = 7,
+        TradingSessionIDMinimumValue = 1,
     };
 
 
@@ -679,8 +669,8 @@ namespace Eurex.Derivatives.Eobi.T7.v3.0 {
         Closing = 4,
         PostTrading = 5,
         Quiescent = 7,
-        TradingSessionSubId = 7,
-        TradingSessionSubId = 1,
+        TradingSessionSubIDMinimumValue = 7,
+        TradingSessionSubIDMinimumValue = 1,
     };
 
 

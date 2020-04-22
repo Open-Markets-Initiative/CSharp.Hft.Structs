@@ -1193,7 +1193,7 @@ namespace Ice.Futures.Mdf.iMpact.v1.1.33 {
         IpeUkElectricityFuturesPeak = 7,
         IpeUkElectricityFuturesBase = 8,
         IceWtiCrudeFutures = 9,
-        GcNewcastleCoalFutures = 10,
+        GCNewcastleCoalFutures = 10,
         IceBrentWtiFuturesSpread = 11,
         IpeecxEuropeanEmissions = 12,
         IceHeatingOilFutures = 13,
@@ -1246,7 +1246,7 @@ namespace Ice.Futures.Mdf.iMpact.v1.1.33 {
         CfrSouthChinaCoalFutures = 97,
         BelgianPowerFutures = 98,
         DutchPowerFutures = 99,
-        GcNewcastleFobIndoSubbitCoalFuturesSpread = 100,
+        GCNewcastleFobIndoSubbitCoalFuturesSpread = 100,
         RichardsBaygCNewcastleCoalFuturesSpread = 101,
         FcojAMini = 102,
         CifUs = 104,
@@ -1897,20 +1897,20 @@ namespace Ice.Futures.Mdf.iMpact.v1.1.33 {
 
 
     /// <summary>
-    ///  Reserved Bytes 4
-    /// </summary>
-    public struct ReservedBytes4 {
-        public int Raw;
-    };
-
-
-    /// <summary>
-    ///  Reserved2 Bytes
+    ///  Reserved 2 Bytes
     /// </summary>
     public unsafe struct Reserved2Bytes {
         public const int Size = 2;
 
         public fixed byte Bytes[Size];
+    };
+
+
+    /// <summary>
+    ///  Reserved Bytes 4
+    /// </summary>
+    public struct ReservedBytes4 {
+        public int Raw;
     };
 
 
@@ -1968,8 +1968,8 @@ namespace Ice.Futures.Mdf.iMpact.v1.1.33 {
         PutCalendarSpread = 39,
         IronCondor = 40,
         JellyRoll = 41,
-        Hedged1x2CallSpreadToThe2 = 42,
-        Hedged1x2PutSpreadToThe2 = 43,
+        Hedged1X2CallSpreadToThe2 = 42,
+        Hedged1X2PutSpreadToThe2 = 43,
         CallSpreadVersusSellPutHedge = 44,
         PutSpreadVersusSellCall+Hedge = 45,
         HedgedCallCalendar = 46,
@@ -1999,8 +1999,8 @@ namespace Ice.Futures.Mdf.iMpact.v1.1.33 {
         HedgedFenceToThePut = 73,
         1X2CallSpreadToThe1 = 74,
         1X2PutSpreadToThe1 = 75,
-        Hedged1x2CallSpreadToThe1 = 76,
-        Hedged1x2PutSpreadToThe1 = 77,
+        Hedged1X2CallSpreadToThe1 = 76,
+        Hedged1X2PutSpreadToThe1 = 77,
         DiscountSpreads = 88,
         LocationSpreads = 89,
         PlattsDiffSpread = 90,
@@ -2048,9 +2048,9 @@ namespace Ice.Futures.Mdf.iMpact.v1.1.33 {
         NextWeek = 600,
         Period = 700,
         CustomDailyCfd = 711,
-        CustomDaily7x8 = 712,
-        CustomDaily7x16 = 713,
-        CustomDaily7x6 = 714,
+        CustomDaily7X8 = 712,
+        CustomDaily7X16 = 713,
+        CustomDaily7X6 = 714,
         CustomDailyOffPeakX16 = 715,
         Quarter = 800,
         Year = 900,

@@ -715,7 +715,7 @@ namespace Nyse.Equities.IntegratedFeed.Xdp.v2.1.g {
     ///  Printable Flag Values
     /// </summary>
     public enum PrintableFlag : byte {
-        NotPrinted = O,
+        NotPrinted = 0,
         Printed = 1,
     };
 
@@ -844,22 +844,26 @@ namespace Nyse.Equities.IntegratedFeed.Xdp.v2.1.g {
     ///  Security Type Values
     /// </summary>
     public enum SecurityType : byte {
-        Adr = (byte)'A',
-        CommonStock = (byte)'C',
-        Debentures = (byte)'D',
-        Etf = (byte)'E',
-        Foreign = (byte)'F',
-        UsDepositaryShares = (byte)'H',
-        Units = (byte)'I',
-        IndexLinkedNotes = (byte)'L',
-        MiscliquidTrust = (byte)'M',
-        OrdinaryShares = (byte)'O',
-        PreferredStock = (byte)'P',
-        Rights = (byte)'R',
-        SharesOfBeneficiaryInterest = (byte)'S',
-        Test = (byte)'T',
-        Units = (byte)'U',
-        Warrant = (byte)'W',
+        CommonStock = (byte)'A',
+        PreferredStock = (byte)'B',
+        Warrant = (byte)'C',
+        Right = (byte)'D',
+        CorporateBond = (byte)'E',
+        TreasuryBond = (byte)'F',
+        StructuredProduct = (byte)'G',
+        AdrCommon = (byte)'H',
+        AdrPreferred = (byte)'I',
+        AdrWarrants = (byte)'J',
+        AdrRights = (byte)'K',
+        AdrCorporateBond = (byte)'L',
+        NyRegisteredShare = (byte)'M',
+        GlobalRegisteredShare = (byte)'N',
+        Index = (byte)'O',
+        Fund = (byte)'P',
+        Basket = (byte)'Q',
+        Unit = (byte)'R',
+        LiquidatingTrust = (byte)'S',
+        Unknown = (byte)'U',
     };
 
 

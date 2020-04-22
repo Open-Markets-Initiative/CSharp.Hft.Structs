@@ -5,14 +5,31 @@
 
 |Division | Data | Protocol | Version | Date | Size | Testing | Specification|
 |--- | --- | --- | --- | --- | --- | --- | ---|
-|Derivatives | Eobi | T7 | [7.1][Eurex.Derivatives.Eobi.T7.v7.1.Structs] | 3/14/2019 | 1416 | Untested | [url][Eurex.Derivatives.Eobi.T7.v7.1.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v7.1.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v7.1.Xml]|
-|Derivatives | Eobi | T7 | [7.0][Eurex.Derivatives.Eobi.T7.v7.0.Structs] | 8/20/2018 | 1361 | Untested | [url][Eurex.Derivatives.Eobi.T7.v7.0.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v7.0.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v7.0.Xml]|
-|Derivatives | Eobi | T7 | [6.1][Eurex.Derivatives.Eobi.T7.v6.1.Structs] | 3/20/2018 | 1275 | Untested | [url][Eurex.Derivatives.Eobi.T7.v6.1.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v6.1.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v6.1.Xml]|
-|Derivatives | Eobi | T7 | [6.0][Eurex.Derivatives.Eobi.T7.v6.0.Structs] | 10/23/2017 | 1274 | Verified | [url][Eurex.Derivatives.Eobi.T7.v6.0.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v6.0.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v6.0.Xml]|
+|Cash | Eti | T7 | [8.1][Eurex.Cash.Eti.T7.v8.1.Structs] | 3/25/2020 | 7325 | Untested | [url][Eurex.Cash.Eti.T7.v8.1.Url] - [pdf][Eurex.Cash.Eti.T7.v8.1.Pdf] - [xml][Eurex.Cash.Eti.T7.v8.1.Xml]|
+|Cash | Eti | T7 | [7.1][Eurex.Cash.Eti.T7.v7.1.Structs] | 5/27/2019 | 6894 | Untested | [url][Eurex.Cash.Eti.T7.v7.1.Url] - [pdf][Eurex.Cash.Eti.T7.v7.1.Pdf] - [xml][Eurex.Cash.Eti.T7.v7.1.Xml]|
+|Cash | Eti | T7 | [7.0][Eurex.Cash.Eti.T7.v7.0.Structs] | 5/22/2017 | 5925 | Untested | [url][Eurex.Cash.Eti.T7.v7.0.Url] - [pdf][Eurex.Cash.Eti.T7.v7.0.Pdf] - [xml][Eurex.Cash.Eti.T7.v7.0.Xml]|
+|Cash | Eti | T7 | [6.1][Eurex.Cash.Eti.T7.v6.1.Structs] | 5/16/2018 | 4974 | Untested | [url][Eurex.Cash.Eti.T7.v6.1.Url] - [pdf][Eurex.Cash.Eti.T7.v6.1.Pdf] - [xml][Eurex.Cash.Eti.T7.v6.1.Xml]|
+|Cash | Eti | T7 | [6.0][Eurex.Cash.Eti.T7.v6.0.Structs] | 10/19/2017 | 4970 | Untested | [url][Eurex.Cash.Eti.T7.v6.0.Url] - [pdf][Eurex.Cash.Eti.T7.v6.0.Pdf] - [xml][Eurex.Cash.Eti.T7.v6.0.Xml]|
+|Cash | Eti | T7 | [5.0][Eurex.Cash.Eti.T7.v5.0.Structs] | 5/22/2017 | 4508 | Untested | [url][Eurex.Cash.Eti.T7.v5.0.Url] - [pdf][Eurex.Cash.Eti.T7.v5.0.Pdf] - [xml][Eurex.Cash.Eti.T7.v5.0.Xml]|
+|Cash | Eti | T7 | [5.0][Eurex.Cash.Eti.T7.v5.0.Structs] | 10/15/2019 | 7319 | Untested | [url][Eurex.Cash.Eti.T7.v5.0.Url] - [pdf][Eurex.Cash.Eti.T7.v5.0.Pdf] - [xml][Eurex.Cash.Eti.T7.v5.0.Xml]|
+|Derivatives | Eobi | T7 | [8.1][Eurex.Derivatives.Eobi.T7.v8.1.Structs] | 3/23/2020 | 1568 | Untested | [url][Eurex.Derivatives.Eobi.T7.v8.1.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v8.1.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v8.1.Xml]|
+|Derivatives | Eobi | T7 | [8.0][Eurex.Derivatives.Eobi.T7.v8.0.Structs] | 9/23/2019 | 1561 | Untested | [url][Eurex.Derivatives.Eobi.T7.v8.0.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v8.0.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v8.0.Xml]|
+|Derivatives | Eobi | T7 | [7.1][Eurex.Derivatives.Eobi.T7.v7.1.Structs] | 3/14/2019 | 1406 | Untested | [url][Eurex.Derivatives.Eobi.T7.v7.1.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v7.1.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v7.1.Xml]|
+|Derivatives | Eobi | T7 | [7.0][Eurex.Derivatives.Eobi.T7.v7.0.Structs] | 8/20/2018 | 1351 | Untested | [url][Eurex.Derivatives.Eobi.T7.v7.0.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v7.0.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v7.0.Xml]|
+|Derivatives | Eobi | T7 | [6.1][Eurex.Derivatives.Eobi.T7.v6.1.Structs] | 3/20/2018 | 1265 | Untested | [url][Eurex.Derivatives.Eobi.T7.v6.1.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v6.1.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v6.1.Xml]|
+|Derivatives | Eobi | T7 | [6.0][Eurex.Derivatives.Eobi.T7.v6.0.Structs] | 10/23/2017 | 1264 | Verified | [url][Eurex.Derivatives.Eobi.T7.v6.0.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v6.0.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v6.0.Xml]|
 |Derivatives | Eobi | T7 | [5.0][Eurex.Derivatives.Eobi.T7.v5.0.Structs] | 6/9/2017 | 1231 | Untested | [url][Eurex.Derivatives.Eobi.T7.v5.0.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v5.0.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v5.0.Xml]|
 |Derivatives | Eobi | T7 | [4.0][Eurex.Derivatives.Eobi.T7.v4.0.Structs] | 11/11/2016 | 1230 | Untested | [url][Eurex.Derivatives.Eobi.T7.v4.0.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v4.0.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v4.0.Xml]|
-|Derivatives | Eobi | T7 | [3.0][Eurex.Derivatives.Eobi.T7.v3.0.Structs] | 8/3/2015 | 1160 | Verified | [url][Eurex.Derivatives.Eobi.T7.v3.0.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v3.0.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v3.0.Xml]|
-|Derivatives | Eobi | T7 | [2.5][Eurex.Derivatives.Eobi.T7.v2.5.Structs] | 11/7/2014 | 1152 | Untested | [url][Eurex.Derivatives.Eobi.T7.v2.5.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v2.5.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v2.5.Xml]|
+|Derivatives | Eobi | T7 | [3.0][Eurex.Derivatives.Eobi.T7.v3.0.Structs] | 8/3/2015 | 1150 | Verified | [url][Eurex.Derivatives.Eobi.T7.v3.0.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v3.0.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v3.0.Xml]|
+|Derivatives | Eobi | T7 | [2.5][Eurex.Derivatives.Eobi.T7.v2.5.Structs] | 11/7/2014 | 1142 | Untested | [url][Eurex.Derivatives.Eobi.T7.v2.5.Url] - [pdf][Eurex.Derivatives.Eobi.T7.v2.5.Pdf] - [xml][Eurex.Derivatives.Eobi.T7.v2.5.Xml]|
+|Derivatives | Eti | T7 | [8.1][Eurex.Derivatives.Eti.T7.v8.1.Structs] | 3/25/2020 | 8708 | Untested | [url][Eurex.Derivatives.Eti.T7.v8.1.Url] - [pdf][Eurex.Derivatives.Eti.T7.v8.1.Pdf] - [xml][Eurex.Derivatives.Eti.T7.v8.1.Xml]|
+|Derivatives | Eti | T7 | [8.0][Eurex.Derivatives.Eti.T7.v8.0.Structs] | 10/15/2019 | 8540 | Untested | [url][Eurex.Derivatives.Eti.T7.v8.0.Url] - [pdf][Eurex.Derivatives.Eti.T7.v8.0.Pdf] - [xml][Eurex.Derivatives.Eti.T7.v8.0.Xml]|
+|Derivatives | Eti | T7 | [7.1][Eurex.Derivatives.Eti.T7.v7.1.Structs] | 5/27/2019 | 8337 | Untested | [url][Eurex.Derivatives.Eti.T7.v7.1.Url] - [pdf][Eurex.Derivatives.Eti.T7.v7.1.Pdf] - [xml][Eurex.Derivatives.Eti.T7.v7.1.Xml]|
+|Derivatives | Eti | T7 | [7.0][Eurex.Derivatives.Eti.T7.v7.0.Structs] | 5/22/2017 | 7828 | Untested | [url][Eurex.Derivatives.Eti.T7.v7.0.Url] - [pdf][Eurex.Derivatives.Eti.T7.v7.0.Pdf] - [xml][Eurex.Derivatives.Eti.T7.v7.0.Xml]|
+|Derivatives | Eti | T7 | [6.1][Eurex.Derivatives.Eti.T7.v6.1.Structs] | 5/16/2018 | 7143 | Untested | [url][Eurex.Derivatives.Eti.T7.v6.1.Url] - [pdf][Eurex.Derivatives.Eti.T7.v6.1.Pdf] - [xml][Eurex.Derivatives.Eti.T7.v6.1.Xml]|
+|Derivatives | Eti | T7 | [6.0][Eurex.Derivatives.Eti.T7.v6.0.Structs] | 10/19/2017 | 6859 | Untested | [url][Eurex.Derivatives.Eti.T7.v6.0.Url] - [pdf][Eurex.Derivatives.Eti.T7.v6.0.Pdf] - [xml][Eurex.Derivatives.Eti.T7.v6.0.Xml]|
+|Derivatives | Eti | T7 | [5.0][Eurex.Derivatives.Eti.T7.v5.0.Structs] | 5/22/2017 | 5913 | Untested | [url][Eurex.Derivatives.Eti.T7.v5.0.Url] - [pdf][Eurex.Derivatives.Eti.T7.v5.0.Pdf] - [xml][Eurex.Derivatives.Eti.T7.v5.0.Xml]|
+|Derivatives | Eti | T7 | [2.5][Eurex.Derivatives.Eti.T7.v2.5.Structs] | 7/15/2016 | 4825 | Untested | [url][Eurex.Derivatives.Eti.T7.v2.5.Url] - [pdf][Eurex.Derivatives.Eti.T7.v2.5.Pdf] - [xml][Eurex.Derivatives.Eti.T7.v2.5.Xml]|
 
 
 Eurex: [website](https://www.eurexchange.com "Go to Eurex Exchange")
@@ -50,3 +67,71 @@ Eurex: [website](https://www.eurexchange.com "Go to Eurex Exchange")
 [Eurex.Derivatives.Eobi.T7.v7.1.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
 [Eurex.Derivatives.Eobi.T7.v7.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eobi.T7.v7.1.pdf "Eurex Exchange 7.1 Pdf"
 [Eurex.Derivatives.Eobi.T7.v7.1.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eobi.T7.v7.1.xml "Eurex Exchange 7.1 Xml"
+[Eurex.Derivatives.Eobi.T7.v8.0.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Derivatives.Eobi.T7.v8.0.cs "Eurex Exchange 8.0 C# Parsers Source File"
+[Eurex.Derivatives.Eobi.T7.v8.0.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Derivatives.Eobi.T7.v8.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eobi.T7.v8.0.pdf "Eurex Exchange 8.0 Pdf"
+[Eurex.Derivatives.Eobi.T7.v8.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eobi.T7.v8.0.xml "Eurex Exchange 8.0 Xml"
+[Eurex.Derivatives.Eobi.T7.v8.1.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Derivatives.Eobi.T7.v8.1.cs "Eurex Exchange 8.1 C# Parsers Source File"
+[Eurex.Derivatives.Eobi.T7.v8.1.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Derivatives.Eobi.T7.v8.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eobi.T7.v8.1.pdf "Eurex Exchange 8.1 Pdf"
+[Eurex.Derivatives.Eobi.T7.v8.1.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eobi.T7.v8.1.xml "Eurex Exchange 8.1 Xml"
+[Eurex.Derivatives.Eti.T7.v2.5.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Derivatives.Eti.T7.v2.5.cs "Eurex Exchange 2.5 C# Parsers Source File"
+[Eurex.Derivatives.Eti.T7.v2.5.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Derivatives.Eti.T7.v2.5.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v2.5.pdf "Eurex Exchange 2.5 Pdf"
+[Eurex.Derivatives.Eti.T7.v2.5.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v2.5.xml "Eurex Exchange 2.5 Xml"
+[Eurex.Cash.Eti.T7.v5.0.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Cash.Eti.T7.v5.0.cs "Eurex Exchange 5.0 C# Parsers Source File"
+[Eurex.Cash.Eti.T7.v5.0.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Cash.Eti.T7.v5.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v5.0.pdf "Eurex Exchange 5.0 Pdf"
+[Eurex.Cash.Eti.T7.v5.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Cash.Eti.T7.v5.0.xml "Eurex Exchange 5.0 Xml"
+[Eurex.Derivatives.Eti.T7.v5.0.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Derivatives.Eti.T7.v5.0.cs "Eurex Exchange 5.0 C# Parsers Source File"
+[Eurex.Derivatives.Eti.T7.v5.0.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Derivatives.Eti.T7.v5.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v5.0.pdf "Eurex Exchange 5.0 Pdf"
+[Eurex.Derivatives.Eti.T7.v5.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v5.0.xml "Eurex Exchange 5.0 Xml"
+[Eurex.Cash.Eti.T7.v6.0.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Cash.Eti.T7.v6.0.cs "Eurex Exchange 6.0 C# Parsers Source File"
+[Eurex.Cash.Eti.T7.v6.0.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Cash.Eti.T7.v6.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v6.0.pdf "Eurex Exchange 6.0 Pdf"
+[Eurex.Cash.Eti.T7.v6.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Cash.Eti.T7.v6.0.xml "Eurex Exchange 6.0 Xml"
+[Eurex.Derivatives.Eti.T7.v6.0.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Derivatives.Eti.T7.v6.0.cs "Eurex Exchange 6.0 C# Parsers Source File"
+[Eurex.Derivatives.Eti.T7.v6.0.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Derivatives.Eti.T7.v6.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v6.0.pdf "Eurex Exchange 6.0 Pdf"
+[Eurex.Derivatives.Eti.T7.v6.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v6.0.xml "Eurex Exchange 6.0 Xml"
+[Eurex.Cash.Eti.T7.v6.1.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Cash.Eti.T7.v6.1.cs "Eurex Exchange 6.1 C# Parsers Source File"
+[Eurex.Cash.Eti.T7.v6.1.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Cash.Eti.T7.v6.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v6.1.pdf "Eurex Exchange 6.1 Pdf"
+[Eurex.Cash.Eti.T7.v6.1.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Cash.Eti.T7.v6.1.xml "Eurex Exchange 6.1 Xml"
+[Eurex.Derivatives.Eti.T7.v6.1.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Derivatives.Eti.T7.v6.1.cs "Eurex Exchange 6.1 C# Parsers Source File"
+[Eurex.Derivatives.Eti.T7.v6.1.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Derivatives.Eti.T7.v6.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v6.1.pdf "Eurex Exchange 6.1 Pdf"
+[Eurex.Derivatives.Eti.T7.v6.1.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v6.1.xml "Eurex Exchange 6.1 Xml"
+[Eurex.Cash.Eti.T7.v7.0.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Cash.Eti.T7.v7.0.cs "Eurex Exchange 7.0 C# Parsers Source File"
+[Eurex.Cash.Eti.T7.v7.0.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Cash.Eti.T7.v7.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v7.0.pdf "Eurex Exchange 7.0 Pdf"
+[Eurex.Cash.Eti.T7.v7.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Cash.Eti.T7.v7.0.xml "Eurex Exchange 7.0 Xml"
+[Eurex.Derivatives.Eti.T7.v7.0.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Derivatives.Eti.T7.v7.0.cs "Eurex Exchange 7.0 C# Parsers Source File"
+[Eurex.Derivatives.Eti.T7.v7.0.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Derivatives.Eti.T7.v7.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v7.0.pdf "Eurex Exchange 7.0 Pdf"
+[Eurex.Derivatives.Eti.T7.v7.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v7.0.xml "Eurex Exchange 7.0 Xml"
+[Eurex.Cash.Eti.T7.v7.1.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Cash.Eti.T7.v7.1.cs "Eurex Exchange 7.1 C# Parsers Source File"
+[Eurex.Cash.Eti.T7.v7.1.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Cash.Eti.T7.v7.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v7.1.pdf "Eurex Exchange 7.1 Pdf"
+[Eurex.Cash.Eti.T7.v7.1.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Cash.Eti.T7.v7.1.xml "Eurex Exchange 7.1 Xml"
+[Eurex.Derivatives.Eti.T7.v7.1.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Derivatives.Eti.T7.v7.1.cs "Eurex Exchange 7.1 C# Parsers Source File"
+[Eurex.Derivatives.Eti.T7.v7.1.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Derivatives.Eti.T7.v7.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v7.1.pdf "Eurex Exchange 7.1 Pdf"
+[Eurex.Derivatives.Eti.T7.v7.1.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v7.1.xml "Eurex Exchange 7.1 Xml"
+[Eurex.Cash.Eti.T7.v5.0.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Cash.Eti.T7.v5.0.cs "Eurex Exchange 5.0 C# Parsers Source File"
+[Eurex.Cash.Eti.T7.v5.0.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Cash.Eti.T7.v5.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v8.0.pdf "Eurex Exchange 5.0 Pdf"
+[Eurex.Cash.Eti.T7.v5.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Cash.Eti.T7.v8.0.xml "Eurex Exchange 5.0 Xml"
+[Eurex.Derivatives.Eti.T7.v8.0.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Derivatives.Eti.T7.v8.0.cs "Eurex Exchange 8.0 C# Parsers Source File"
+[Eurex.Derivatives.Eti.T7.v8.0.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Derivatives.Eti.T7.v8.0.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v8.0.pdf "Eurex Exchange 8.0 Pdf"
+[Eurex.Derivatives.Eti.T7.v8.0.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v8.0.xml "Eurex Exchange 8.0 Xml"
+[Eurex.Cash.Eti.T7.v8.1.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Cash.Eti.T7.v8.1.cs "Eurex Exchange 8.1 C# Parsers Source File"
+[Eurex.Cash.Eti.T7.v8.1.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Cash.Eti.T7.v8.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v8.1.pdf "Eurex Exchange 8.1 Pdf"
+[Eurex.Cash.Eti.T7.v8.1.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Cash.Eti.T7.v8.1.xml "Eurex Exchange 8.1 Xml"
+[Eurex.Derivatives.Eti.T7.v8.1.Structs]: https://github.com/Open-Markets-Initiative/CSharp.Hft.Structs/blob/master/Eurex/Eurex.Derivatives.Eti.T7.v8.1.cs "Eurex Exchange 8.1 C# Parsers Source File"
+[Eurex.Derivatives.Eti.T7.v8.1.Url]: https://www.eurexchange.com/exchange-en/technology/t7/system-documentation "Specification url"
+[Eurex.Derivatives.Eti.T7.v8.1.Pdf]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v8.1.pdf "Eurex Exchange 8.1 Pdf"
+[Eurex.Derivatives.Eti.T7.v8.1.Xml]: https://github.com/Open-Markets-Initiative/Directory/blob/master/Specifications/Eurex/Eurex.Derivatives.Eti.T7.v8.1.xml "Eurex Exchange 8.1 Xml"
