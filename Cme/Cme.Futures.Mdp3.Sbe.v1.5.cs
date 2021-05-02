@@ -591,6 +591,14 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
 
 
     /// <summary>
+    ///  Md Entry Px Optional
+    /// </summary>
+    public struct MdEntryPxOptional {
+        public long Raw;
+    };
+
+
+    /// <summary>
     ///  Md Entry Size
     /// </summary>
     public struct MdEntrySize {
@@ -599,7 +607,15 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
 
 
     /// <summary>
-    ///  Md Entry Type Values
+    ///  Md Entry Size Optional
+    /// </summary>
+    public struct MdEntrySizeOptional {
+        public int Raw;
+    };
+
+
+    /// <summary>
+    ///  Md Entry Type  Values
     /// </summary>
     public enum MdEntryType : byte {
         Bid = (byte)'0',
@@ -619,6 +635,41 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
         FixingPrice = (byte)'W',
         ElectronicVolume = (byte)'e',
         ThresholdLimitsandPriceBandVariation = (byte)'g',
+    };
+
+
+    /// <summary>
+    ///  Md Entry Type Book Values
+    /// </summary>
+    public enum MdEntryTypeBook : byte {
+        Bid = (byte)'0',
+        Offer = (byte)'1',
+        ImpliedBid = (byte)'E',
+        ImpliedOffer = (byte)'F',
+        BookReset = (byte)'J',
+    };
+
+
+    /// <summary>
+    ///  Md Entry Type Daily Statistics Values
+    /// </summary>
+    public enum MdEntryTypeDailyStatistics : byte {
+        SettlementPrice = (byte)'6',
+        ClearedVolume = (byte)'B',
+        OpenInterest = (byte)'C',
+        FixingPrice = (byte)'W',
+    };
+
+
+    /// <summary>
+    ///  Md Entry Type Statistics Values
+    /// </summary>
+    public enum MdEntryTypeStatistics : byte {
+        OpenPrice = (byte)'4',
+        HighTrade = (byte)'7',
+        LowTrade = (byte)'8',
+        HighestBid = (byte)'N',
+        LowestOffer = (byte)'O',
     };
 
 
@@ -652,15 +703,29 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
 
 
     /// <summary>
-    ///  Md Security Trading Status
+    ///  Md Price Level Optional
     /// </summary>
-    public unsafe struct MdSecurityTradingStatus {
-        public const int Size = 1;
+    public struct MdPriceLevelOptional {
+        public sbyte Raw;
+    };
 
-        public sbyte Value;
 
-        public override string ToString()
-            => $"{Value}";
+    /// <summary>
+    ///  Md Security Trading Status Values
+    /// </summary>
+    public enum MdSecurityTradingStatus : byte {
+        NoValue = 255,
+        TradingHalt = 2,
+        Close = 4,
+        NewPriceIndication = 15,
+        ReadyToTrade = 17,
+        NotAvailableForTrading = 18,
+        UnknownorInvalid = 20,
+        PreOpen = 21,
+        PreCross = 24,
+        Cross = 25,
+        PostClose = 26,
+        NoChange = 103,
     };
 
 
@@ -720,17 +785,25 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
 
 
     /// <summary>
-    ///  Min Price Increment
+    ///  Min Price Increment Amount
     /// </summary>
-    public struct MinPriceIncrement {
+    public struct MinPriceIncrementAmount {
         public long Raw;
     };
 
 
     /// <summary>
-    ///  Min Price Increment Amount
+    ///  Min Price Increment Price
     /// </summary>
-    public struct MinPriceIncrementAmount {
+    public struct MinPriceIncrementPrice {
+        public long Raw;
+    };
+
+
+    /// <summary>
+    ///  Min Price Increment Pricenull
+    /// </summary>
+    public struct MinPriceIncrementPricenull {
         public long Raw;
     };
 
@@ -1120,6 +1193,14 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
 
 
     /// <summary>
+    ///  Security Id Optional
+    /// </summary>
+    public struct SecurityIdOptional {
+        public int Raw;
+    };
+
+
+    /// <summary>
     ///  Security Sub Type
     /// </summary>
     public unsafe struct SecuritySubType {
@@ -1344,6 +1425,19 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
 
 
     /// <summary>
+    ///  Tot Num Reports Optional
+    /// </summary>
+    public unsafe struct TotNumReportsOptional {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
     ///  Trade Date
     /// </summary>
     public unsafe struct TradeDate {
@@ -1402,6 +1496,19 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
     ///  Underlying Product
     /// </summary>
     public unsafe struct UnderlyingProduct {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  Underlying Product Optional
+    /// </summary>
+    public unsafe struct UnderlyingProductOptional {
         public const int Size = 1;
 
         public sbyte Value;
@@ -1737,14 +1844,14 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MDIncrementalRefreshBookGroup {
-        MdEntryPx MdEntryPx;
-        MdEntrySize MdEntrySize;
+        MdEntryPxOptional MdEntryPxOptional;
+        MdEntrySizeOptional MdEntrySizeOptional;
         SecurityId SecurityId;
         RptSeq RptSeq;
         NumberOfOrders NumberOfOrders;
         MdPriceLevel MdPriceLevel;
         MdUpdateAction MdUpdateAction;
-        MdEntryType MdEntryType;
+        MdEntryTypeBook MdEntryTypeBook;
         Padding5 Padding5;
     };
 
@@ -1763,14 +1870,14 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MDIncrementalRefreshDailyStatisticsGroup {
-        MdEntryPx MdEntryPx;
-        MdEntrySize MdEntrySize;
+        MdEntryPxOptional MdEntryPxOptional;
+        MdEntrySizeOptional MdEntrySizeOptional;
         SecurityId SecurityId;
         RptSeq RptSeq;
         TradingReferenceDate TradingReferenceDate;
         SettlPriceType SettlPriceType;
         MdUpdateAction MdUpdateAction;
-        MdEntryType MdEntryType;
+        MdEntryTypeDailyStatistics MdEntryTypeDailyStatistics;
         Padding7 Padding7;
     };
 
@@ -1816,7 +1923,7 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
         RptSeq RptSeq;
         OpenCloseSettlFlag OpenCloseSettlFlag;
         MdUpdateAction MdUpdateAction;
-        MdEntryType MdEntryType;
+        MdEntryTypeStatistics MdEntryTypeStatistics;
         Padding5 Padding5;
     };
 
@@ -2040,6 +2147,16 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
 
 
     /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        MessageSize MessageSize;
+        MessageHeader MessageHeader;
+    };
+
+
+    /// <summary>
     ///  Struct for Message Header
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -2048,6 +2165,15 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
         TemplateId TemplateId;
         SchemaId SchemaId;
         Version Version;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        BinaryPacketHeader BinaryPacketHeader;
     };
 
 
@@ -2094,7 +2220,7 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
         TransactTime TransactTime;
         SecurityGroup SecurityGroup;
         Asset Asset;
-        SecurityId SecurityId;
+        SecurityIdOptional SecurityIdOptional;
         TradeDate TradeDate;
         MatchEventIndicator MatchEventIndicator;
         SecurityTradingStatus SecurityTradingStatus;
@@ -2141,10 +2267,10 @@ namespace Cme.Futures.Mdp3.Sbe.v1.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SnapshotFullRefreshGroup {
-        MdEntryPx MdEntryPx;
-        MdEntrySize MdEntrySize;
+        MdEntryPxOptional MdEntryPxOptional;
+        MdEntrySizeOptional MdEntrySizeOptional;
         NumberOfOrders NumberOfOrders;
-        MdPriceLevel MdPriceLevel;
+        MdPriceLevelOptional MdPriceLevelOptional;
         TradingReferenceDate TradingReferenceDate;
         OpenCloseSettlFlag OpenCloseSettlFlag;
         SettlPriceType SettlPriceType;

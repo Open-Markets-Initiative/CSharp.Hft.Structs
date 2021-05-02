@@ -38,9 +38,9 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
 
 
     /// <summary>
-    ///  Application Sequence Number
+    ///  Appl Seq Num
     /// </summary>
-    public unsafe struct ApplicationSequenceNumber {
+    public unsafe struct ApplSeqNum {
         public const int Size = 4;
 
         public int Value;
@@ -51,9 +51,9 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
 
 
     /// <summary>
-    ///  Application Sequence Reset Indicator Values
+    ///  Appl Seq Reset Indicator Values
     /// </summary>
-    public enum ApplicationSequenceResetIndicator : byte {
+    public enum ApplSeqResetIndicator : byte {
         NoReset = 0,
         Reset = 1,
         ApplSeqResetIndicatorMinimumValue = 1,
@@ -423,9 +423,9 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
 
 
     /// <summary>
-    ///  Packet Seq Num
+    ///  Packet Sequence Number
     /// </summary>
-    public unsafe struct PacketSeqNum {
+    public unsafe struct PacketSequenceNumber {
         public const int Size = 4;
 
         public int Value;
@@ -955,10 +955,10 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
 
 
     /// <summary>
-    ///  Struct for Instrmt Leg Grp
+    ///  Struct for Instrmt Leg Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct InstrmtLegGrp {
+    public unsafe struct InstrmtLegGrpComp {
         LegSymbol LegSymbol;
         Pad4 Pad4;
         LegSecurityId LegSecurityId;
@@ -1003,10 +1003,10 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
 
 
     /// <summary>
-    ///  Struct for Md Instrument Entry Grp
+    ///  Struct for Md Instrument Entry Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdInstrumentEntryGrp {
+    public unsafe struct MdInstrumentEntryGrpComp {
         MdEntryPx MdEntryPx;
         MdEntrySize MdEntrySize;
         MdEntryType MdEntryType;
@@ -1016,10 +1016,10 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
 
 
     /// <summary>
-    ///  Struct for Md Trade Entry Grp
+    ///  Struct for Md Trade Entry Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MdTradeEntryGrp {
+    public unsafe struct MdTradeEntryGrpComp {
         MdEntryPx MdEntryPx;
         MdEntrySize MdEntrySize;
         MdEntryType MdEntryType;
@@ -1028,10 +1028,19 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
 
 
     /// <summary>
-    ///  Struct for Message Header
+    ///  Struct for Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MessageHeader {
+    public unsafe struct Message {
+        MessageHeaderComp MessageHeaderComp;
+    };
+
+
+    /// <summary>
+    ///  Struct for Message Header Comp
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MessageHeaderComp {
         BodyLen BodyLen;
         TemplateId TemplateId;
         MsgSeqNum MsgSeqNum;
@@ -1045,7 +1054,7 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
     public unsafe struct OrderAdd {
         TrdRegTsTimeIn TrdRegTsTimeIn;
         SecurityId SecurityId;
-        OrderDetails OrderDetails;
+        OrderDetailsComp OrderDetailsComp;
     };
 
 
@@ -1057,15 +1066,15 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
         TrdRegTsTimeIn TrdRegTsTimeIn;
         TransactTime TransactTime;
         SecurityId SecurityId;
-        OrderDetails OrderDetails;
+        OrderDetailsComp OrderDetailsComp;
     };
 
 
     /// <summary>
-    ///  Struct for Order Details
+    ///  Struct for Order Details Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct OrderDetails {
+    public unsafe struct OrderDetailsComp {
         TrdRegTsTimePriority TrdRegTsTimePriority;
         DisplayQty DisplayQty;
         Side Side;
@@ -1096,7 +1105,7 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
         PrevDisplayQty PrevDisplayQty;
         Pad4 Pad4;
         SecurityId SecurityId;
-        OrderDetails OrderDetails;
+        OrderDetailsComp OrderDetailsComp;
     };
 
 
@@ -1110,7 +1119,16 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
         PrevDisplayQty PrevDisplayQty;
         Pad4 Pad4;
         SecurityId SecurityId;
-        OrderDetails OrderDetails;
+        OrderDetailsComp OrderDetailsComp;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
     };
 
 
@@ -1120,11 +1138,11 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct PacketHeader {
         PacketInfo PacketInfo;
-        ApplicationSequenceNumber ApplicationSequenceNumber;
+        ApplSeqNum ApplSeqNum;
         MarketSegmentId MarketSegmentId;
         PartitionId PartitionId;
         CompletionIndicator CompletionIndicator;
-        ApplicationSequenceResetIndicator ApplicationSequenceResetIndicator;
+        ApplSeqResetIndicator ApplSeqResetIndicator;
         Pad5 Pad5;
         TransactTime TransactTime;
     };
@@ -1137,7 +1155,7 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
     public unsafe struct PacketInfo {
         HeaderLength HeaderLength;
         PacketId PacketId;
-        PacketSeqNum PacketSeqNum;
+        PacketSequenceNumber PacketSequenceNumber;
     };
 
 
@@ -1207,7 +1225,7 @@ namespace Eurex.Derivatives.Eobi.T7.v6.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SnapshotOrder {
-        OrderDetails OrderDetails;
+        OrderDetailsComp OrderDetailsComp;
     };
 
 

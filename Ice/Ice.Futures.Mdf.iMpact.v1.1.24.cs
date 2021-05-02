@@ -2630,6 +2630,15 @@ namespace Ice.Futures.Mdf.iMpact.v1.1.24 {
 
 
     /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        MessageHeader MessageHeader;
+    };
+
+
+    /// <summary>
     ///  Struct for Message Bundle Marker
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -2808,6 +2817,15 @@ namespace Ice.Futures.Mdf.iMpact.v1.1.24 {
         Volatility Volatility;
         SettlementPrice SettlementPrice;
         Delta Delta;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
     };
 
 

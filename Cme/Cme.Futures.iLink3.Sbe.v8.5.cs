@@ -33,15 +33,11 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Aggressor Indicator
+    ///  Aggressor Indicator Values
     /// </summary>
-    public unsafe struct AggressorIndicator {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum AggressorIndicator : byte {
+        False = 0,
+        True = 1,
     };
 
 
@@ -56,15 +52,11 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Auto Quote Request
+    ///  Auto Quote Request Values
     /// </summary>
-    public unsafe struct AutoQuoteRequest {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum AutoQuoteRequest : byte {
+        False = 0,
+        True = 1,
     };
 
 
@@ -85,15 +77,13 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Avg Px Indicator
+    ///  Avg Px Indicator Values
     /// </summary>
-    public unsafe struct AvgPxIndicator {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum AvgPxIndicator : byte {
+        NoValue = 255,
+        NoAveragePricing = 0,
+        TradeispartofanAveragePriceGroupIdentifiedbytheAvgPxGrpId = 1,
+        TradeispartofaNotionalValueAveragePriceGroup = 3,
     };
 
 
@@ -174,9 +164,29 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Cl Ord Id
+    ///  Clearing Account Type Values
     /// </summary>
-    public unsafe struct ClOrdId {
+    public enum ClearingAccountType : byte {
+        NoValue = 255,
+        Customer = 0,
+        Firm = 1,
+    };
+
+
+    /// <summary>
+    ///  Clearing Trade Price Type Values
+    /// </summary>
+    public enum ClearingTradePriceType : byte {
+        NoValue = 255,
+        TradeClearingatExecutionPrice = 0,
+        TradeClearingatAlternateClearingPrice = 1,
+    };
+
+
+    /// <summary>
+    ///  ClOrdId
+    /// </summary>
+    public unsafe struct Clordid {
         public const int Size = 20;
 
         public fixed sbyte Bytes[Size];
@@ -190,36 +200,10 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Clearing Account Type
-    /// </summary>
-    public unsafe struct ClearingAccountType {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Clearing Trade Price Type
-    /// </summary>
-    public unsafe struct ClearingTradePriceType {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Cmta Giveup Cd Values
     /// </summary>
     public enum CmtaGiveupCd : byte {
-        NoValue = (byte)'0',
+        NoValue = (byte)'zeroed',
         GiveUp = (byte)'G',
         SgXoffset = (byte)'S',
     };
@@ -239,17 +223,26 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
+    ///  Cross Id Optional
+    /// </summary>
+    public unsafe struct CrossIdOptional {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
     ///  Cross Type
     /// </summary>
     public unsafe struct CrossType {
         public const int Size = 1;
 
-        public byte Byte;
+        public sbyte Value;
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public char Value
-                => (char)Bytes;
-        
         public override string ToString()
             => $"{Value}";
     };
@@ -297,19 +290,16 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Cust Order Handling Inst
+    ///  Cust Order Handling Inst Values
     /// </summary>
-    public unsafe struct CustOrderHandlingInst {
-        public const int Size = 1;
-
-        public byte Byte;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public char Value
-                => (char)Bytes;
-        
-        public override string ToString()
-            => $"{Value}";
+    public enum CustOrderHandlingInst : byte {
+        NoValue = (byte)'zeroed',
+        FcMprovidedscreen = (byte)'C',
+        Otherprovidedscreen = (byte)'D',
+        FcmapiCtaIx = (byte)'G',
+        AlgoEngine = (byte)'H',
+        DeskElectronic = (byte)'W',
+        ClientElectronic = (byte)'Y',
     };
 
 
@@ -330,6 +320,19 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     ///  Cxl Rej Reason
     /// </summary>
     public unsafe struct CxlRejReason {
+        public const int Size = 2;
+
+        public short Value;
+
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  Data Length
+    /// </summary>
+    public unsafe struct DataLength {
         public const int Size = 2;
 
         public short Value;
@@ -395,7 +398,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     ///  Dk Reason Values
     /// </summary>
     public enum DkReason : byte {
-        NoValue = (byte)'0',
+        NoValue = (byte)'zeroed',
         UnknownSecurity = (byte)'A',
         WrongSide = (byte)'B',
         QuantityExceedsOrder = (byte)'C',
@@ -488,49 +491,38 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Exec Restatement Reason
+    ///  Exec Restatement Reason Values
     /// </summary>
-    public unsafe struct ExecRestatementReason {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum ExecRestatementReason : byte {
+        NoValue = 255,
+        MarketExchangeOption = 8,
+        CancelledNotBest = 9,
+        CancelOnDisconnect = 100,
+        SelfMatchPreventionOldestOrderCancelled = 103,
+        CancelOnGlobexCreditControlsViolation = 104,
+        CancelFromFirmsoft = 105,
+        CancelFromRiskManagementApi = 106,
+        SelfMatchPreventionNewestOrderCancelled = 107,
+        Cancelduetovolquotedoptionorderrestedqtylessthanminordersize = 108,
     };
 
 
     /// <summary>
-    ///  Exec Type
+    ///  Exec Type Values
     /// </summary>
-    public unsafe struct ExecType {
-        public const int Size = 1;
-
-        public byte Byte;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public char Value
-                => (char)Bytes;
-        
-        public override string ToString()
-            => $"{Value}";
+    public enum ExecType : byte {
+        TradeCorrection = (byte)'G',
+        TradeCancel = (byte)'H',
     };
 
 
     /// <summary>
-    ///  Execution Mode
+    ///  Execution Mode Values
     /// </summary>
-    public unsafe struct ExecutionMode {
-        public const int Size = 1;
-
-        public byte Byte;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public char Value
-                => (char)Bytes;
-        
-        public override string ToString()
-            => $"{Value}";
+    public enum ExecutionMode : byte {
+        NoValue = (byte)'zeroed',
+        Aggressive = (byte)'A',
+        Passive = (byte)'P',
     };
 
 
@@ -548,15 +540,12 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Expiration Cycle
+    ///  Expiration Cycle Values
     /// </summary>
-    public unsafe struct ExpirationCycle {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum ExpirationCycle : byte {
+        NoValue = 255,
+        ExpireOnTradingSessionClose = 0,
+        Expirationatgivendate = 2,
     };
 
 
@@ -582,15 +571,12 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Fault Tolerance Indicator
+    ///  Fault Tolerance Indicator Values
     /// </summary>
-    public unsafe struct FaultToleranceIndicator {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum FaultToleranceIndicator : byte {
+        NoValue = 255,
+        Backup = 0,
+        Primary = 1,
     };
 
 
@@ -695,13 +681,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     public unsafe struct HmacSignature {
         public const int Size = 32;
 
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
+        public fixed byte Bytes[Size];
     };
 
 
@@ -745,28 +725,20 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Keep Alive Interval Lapsed
+    ///  Keep Alive Interval Lapsed Values
     /// </summary>
-    public unsafe struct KeepAliveIntervalLapsed {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum KeepAliveIntervalLapsed : byte {
+        NotLapsed = 0,
+        Lapsed = 1,
     };
 
 
     /// <summary>
-    ///  Last Fragment
+    ///  Last Fragment Values
     /// </summary>
-    public unsafe struct LastFragment {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum LastFragment : byte {
+        False = 0,
+        True = 1,
     };
 
 
@@ -792,15 +764,12 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Last Rpt Requested
+    ///  Last Rpt Requested Values
     /// </summary>
-    public unsafe struct LastRptRequested {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum LastRptRequested : byte {
+        NoValue = 255,
+        False = 0,
+        True = 1,
     };
 
 
@@ -907,15 +876,11 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Leg Side
+    ///  Leg Side Values
     /// </summary>
-    public unsafe struct LegSide {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum LegSide : byte {
+        Buy = 1,
+        Sell = 2,
     };
 
 
@@ -946,45 +911,21 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Length
+    ///  Liquidity Flag Values
     /// </summary>
-    public unsafe struct Length {
-        public const int Size = 2;
-
-        public short Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum LiquidityFlag : byte {
+        NoValue = 255,
+        False = 0,
+        True = 1,
     };
 
 
     /// <summary>
-    ///  Liquidity Flag
+    ///  List Update Action Values
     /// </summary>
-    public unsafe struct LiquidityFlag {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  List Update Action
-    /// </summary>
-    public unsafe struct ListUpdateAction {
-        public const int Size = 1;
-
-        public byte Byte;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public char Value
-                => (char)Bytes;
-        
-        public override string ToString()
-            => $"{Value}";
+    public enum ListUpdateAction : byte {
+        Add = (byte)'A',
+        Delete = (byte)'D',
     };
 
 
@@ -1005,15 +946,28 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Managed Order
+    ///  Location Optional
     /// </summary>
-    public unsafe struct ManagedOrder {
-        public const int Size = 1;
+    public unsafe struct LocationOptional {
+        public const int Size = 5;
 
-        public sbyte Value;
+        public fixed sbyte Bytes[Size];
+
+        public string Value
+            => new String((sbyte*)Bytes, 0, Size);
 
         public override string ToString()
             => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  Managed Order Values
+    /// </summary>
+    public enum ManagedOrder : byte {
+        NoValue = 255,
+        False = 0,
+        True = 1,
     };
 
 
@@ -1021,20 +975,34 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     ///  Mantissa
     /// </summary>
     public struct Mantissa {
+        public long Raw;
+    };
+
+
+    /// <summary>
+    ///  Mantissa 32
+    /// </summary>
+    public struct Mantissa32 {
         public int Raw;
     };
 
 
     /// <summary>
-    ///  Manual Order Indicator
+    ///  Manual Order Indicator Values
     /// </summary>
-    public unsafe struct ManualOrderIndicator {
-        public const int Size = 1;
+    public enum ManualOrderIndicator : byte {
+        Automated = 0,
+        Manual = 1,
+    };
 
-        public sbyte Value;
 
-        public override string ToString()
-            => $"{Value}";
+    /// <summary>
+    ///  Manual Order Indicator Optional Values
+    /// </summary>
+    public enum ManualOrderIndicatorOptional : byte {
+        NoValue = 255,
+        Automated = 0,
+        Manual = 1,
     };
 
 
@@ -1048,6 +1016,16 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
         public override string ToString()
             => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  Mass Action Ord Typ Values
+    /// </summary>
+    public enum MassActionOrdTyp : byte {
+        NoValue = (byte)'zeroed',
+        Limit = (byte)'2',
+        StopLimit = (byte)'4',
     };
 
 
@@ -1099,15 +1077,23 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Mass Cancel Request Type
+    ///  Mass Cancel Request Type Values
     /// </summary>
-    public unsafe struct MassCancelRequestType {
-        public const int Size = 1;
+    public enum MassCancelRequestType : byte {
+        NoValue = 255,
+        SenderSubId = 100,
+        Account = 101,
+    };
 
-        public sbyte Value;
 
-        public override string ToString()
-            => $"{Value}";
+    /// <summary>
+    ///  Mass Cancel Tif Values
+    /// </summary>
+    public enum MassCancelTif : byte {
+        NoValue = 255,
+        Day = 0,
+        GoodTillCancel = 1,
+        GoodTillDate = 6,
     };
 
 
@@ -1125,15 +1111,36 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Mass Status Req Type
+    ///  Mass Status Req Id Optional
     /// </summary>
-    public unsafe struct MassStatusReqType {
-        public const int Size = 1;
+    public unsafe struct MassStatusReqIdOptional {
+        public const int Size = 8;
 
-        public sbyte Value;
+        public long Value;
 
         public override string ToString()
             => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  Mass Status Req Type Values
+    /// </summary>
+    public enum MassStatusReqType : byte {
+        Instrument = 1,
+        InstrumentGroup = 3,
+        MarketSegment = 100,
+    };
+
+
+    /// <summary>
+    ///  Mass Status Tif Values
+    /// </summary>
+    public enum MassStatusTif : byte {
+        NoValue = 255,
+        Day = 0,
+        Gtc = 1,
+        Gtd = 6,
     };
 
 
@@ -1206,15 +1213,11 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Mm Protection Reset
+    ///  Mm Protection Reset Values
     /// </summary>
-    public unsafe struct MmProtectionReset {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum MmProtectionReset : byte {
+        False = 0,
+        True = 1,
     };
 
 
@@ -1235,6 +1238,19 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     ///  Msg Count
     /// </summary>
     public unsafe struct MsgCount {
+        public const int Size = 4;
+
+        public int Value;
+
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  Msg Count 16
+    /// </summary>
+    public unsafe struct MsgCount16 {
         public const int Size = 2;
 
         public short Value;
@@ -1338,15 +1354,11 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Ofm Override
+    ///  Ofm Override Values
     /// </summary>
-    public unsafe struct OfmOverride {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum OfmOverride : byte {
+        Disabled = 0,
+        Enabled = 1,
     };
 
 
@@ -1364,19 +1376,17 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Ord Status
+    ///  Ord Status Values
     /// </summary>
-    public unsafe struct OrdStatus {
-        public const int Size = 1;
-
-        public byte Byte;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public char Value
-                => (char)Bytes;
-        
-        public override string ToString()
-            => $"{Value}";
+    public enum OrdStatus : byte {
+        New = (byte)'0',
+        PartiallyFilled = (byte)'1',
+        Filled = (byte)'2',
+        Cancelled = (byte)'4',
+        Replaced = (byte)'5',
+        Rejected = (byte)'8',
+        Expired = (byte)'C',
+        Undefined = (byte)'U',
     };
 
 
@@ -1394,12 +1404,12 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Ord Status Req Type
+    ///  Ord Status Req Id Optional
     /// </summary>
-    public unsafe struct OrdStatusReqType {
-        public const int Size = 1;
+    public unsafe struct OrdStatusReqIdOptional {
+        public const int Size = 8;
 
-        public sbyte Value;
+        public long Value;
 
         public override string ToString()
             => $"{Value}";
@@ -1407,19 +1417,53 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Ord Type
+    ///  Ord Status Req Type Values
     /// </summary>
-    public unsafe struct OrdType {
-        public const int Size = 1;
+    public enum OrdStatusReqType : byte {
+        NoValue = 255,
+        SenderSubId = 100,
+        Account = 101,
+    };
 
-        public byte Byte;
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public char Value
-                => (char)Bytes;
-        
-        public override string ToString()
-            => $"{Value}";
+    /// <summary>
+    ///  Ord Status Trd Values
+    /// </summary>
+    public enum OrdStatusTrd : byte {
+        PartiallyFilled = 1,
+        Filled = 2,
+    };
+
+
+    /// <summary>
+    ///  Ord Status Trd Cxl Values
+    /// </summary>
+    public enum OrdStatusTrdCxl : byte {
+        TradeCorrection = (byte)'G',
+        TradeCancel = (byte)'H',
+    };
+
+
+    /// <summary>
+    ///  Ord Type Values
+    /// </summary>
+    public enum OrdType : byte {
+        MarketwithProtection = (byte)'1',
+        Limit = (byte)'2',
+        StopwithProtection = (byte)'3',
+        StopLimitt = (byte)'4',
+        MarketWithLeftoverAsLimit = (byte)'K',
+    };
+
+
+    /// <summary>
+    ///  Ord Type Optional Values
+    /// </summary>
+    public enum OrdTypeOptional : byte {
+        MarketWithProtection = (byte)'1',
+        Limit = (byte)'2',
+        StopLimit = (byte)'4',
+        MarketWithLeftoverAsLimit = (byte)'K',
     };
 
 
@@ -1523,12 +1567,12 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Order Request Id
+    ///  Order Qty Optional
     /// </summary>
-    public unsafe struct OrderRequestId {
-        public const int Size = 8;
+    public unsafe struct OrderQtyOptional {
+        public const int Size = 4;
 
-        public long Value;
+        public int Value;
 
         public override string ToString()
             => $"{Value}";
@@ -1536,15 +1580,12 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Orig Ci Ord Id
+    ///  Order Request Id
     /// </summary>
-    public unsafe struct OrigCiOrdId {
-        public const int Size = 20;
+    public unsafe struct OrderRequestId {
+        public const int Size = 8;
 
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
+        public long Value;
 
         public override string ToString()
             => $"{Value}";
@@ -1571,6 +1612,22 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         public const int Size = 4;
 
         public int Value;
+
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  OrigClOrdId
+    /// </summary>
+    public unsafe struct Origclordid {
+        public const int Size = 20;
+
+        public fixed sbyte Bytes[Size];
+
+        public string Value
+            => new String((sbyte*)Bytes, 0, Size);
 
         public override string ToString()
             => $"{Value}";
@@ -1684,6 +1741,19 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
+    ///  Party Details List Req Id Optional
+    /// </summary>
+    public unsafe struct PartyDetailsListReqIdOptional {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
     ///  Party Id
     /// </summary>
     public unsafe struct PartyId {
@@ -1727,15 +1797,11 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Poss Retrans Flag
+    ///  Poss Retrans Flag Values
     /// </summary>
-    public unsafe struct PossRetransFlag {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum PossRetransFlag : byte {
+        False = 0,
+        True = 1,
     };
 
 
@@ -1774,15 +1840,42 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Quote Cancel Type
+    ///  Price Optional
     /// </summary>
-    public unsafe struct QuoteCancelType {
-        public const int Size = 1;
+    public struct PriceOptional {
+        public long Raw;
+    };
 
-        public sbyte Value;
 
-        public override string ToString()
-            => $"{Value}";
+    /// <summary>
+    ///  Quote Ack Status Values
+    /// </summary>
+    public enum QuoteAckStatus : byte {
+        Accepted = 0,
+        Rejected = 5,
+    };
+
+
+    /// <summary>
+    ///  Quote Cancel Type Values
+    /// </summary>
+    public enum QuoteCancelType : byte {
+        CancelperInstrument = 1,
+        CancelperInstrumentgroup = 3,
+        Cancelallquotes = 4,
+        CancelperQuoteSet = 100,
+    };
+
+
+    /// <summary>
+    ///  Quote Cxl Status Values
+    /// </summary>
+    public enum QuoteCxlStatus : byte {
+        CancelperInstrument = 1,
+        CancelperInstrumentgroup = 3,
+        Cancelallquotes = 4,
+        Rejected = 5,
+        CancelperQuoteSet = 100,
     };
 
 
@@ -1865,6 +1958,19 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
+    ///  Quote Req Id Optional
+    /// </summary>
+    public unsafe struct QuoteReqIdOptional {
+        public const int Size = 8;
+
+        public long Value;
+
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
     ///  Quote Set Id
     /// </summary>
     public unsafe struct QuoteSetId {
@@ -1878,28 +1984,11 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Quote Status
+    ///  Quote Type Values
     /// </summary>
-    public unsafe struct QuoteStatus {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Quote Type
-    /// </summary>
-    public unsafe struct QuoteType {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum QuoteType : byte {
+        NoValue = 255,
+        Tradeable = 1,
     };
 
 
@@ -1962,15 +2051,13 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Request Result
+    ///  Request Result Values
     /// </summary>
-    public unsafe struct RequestResult {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum RequestResult : byte {
+        ValidRequest = 0,
+        NoDataFoundThatMatchedSelectionCriteria = 2,
+        NotAuthorizedtoRetrieveData = 3,
+        DataTemporarilyUnavailable = 4,
     };
 
 
@@ -2117,6 +2204,17 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
+    ///  Rfq Side Values
+    /// </summary>
+    public enum RfqSide : byte {
+        NoValue = 255,
+        Buy = 1,
+        Sell = 2,
+        Cross = 8,
+    };
+
+
+    /// <summary>
     ///  Schema Id
     /// </summary>
     public unsafe struct SchemaId {
@@ -2180,6 +2278,14 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
+    ///  Security Id Optional
+    /// </summary>
+    public struct SecurityIdOptional {
+        public int Raw;
+    };
+
+
+    /// <summary>
     ///  Security Req Id
     /// </summary>
     public unsafe struct SecurityReqId {
@@ -2206,15 +2312,12 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Security Response Type
+    ///  Security Response Type Values
     /// </summary>
-    public unsafe struct SecurityResponseType {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public enum SecurityResponseType : byte {
+        AcceptSecurityProposalasis = 1,
+        AcceptSecurityproposalwithrevisionsasindicatedinthemessage = 2,
+        RejectSecurityProposal = 5,
     };
 
 
@@ -2264,19 +2367,12 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Self Match Prevention Instruction
+    ///  Self Match Prevention Instruction Values
     /// </summary>
-    public unsafe struct SelfMatchPreventionInstruction {
-        public const int Size = 1;
-
-        public byte Byte;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public char Value
-                => (char)Bytes;
-        
-        public override string ToString()
-            => $"{Value}";
+    public enum SelfMatchPreventionInstruction : byte {
+        NoValue = (byte)'zeroed',
+        CancelNewest = (byte)'N',
+        CancelOldest = (byte)'O',
     };
 
 
@@ -2284,6 +2380,22 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     ///  Sender Id
     /// </summary>
     public unsafe struct SenderId {
+        public const int Size = 20;
+
+        public fixed sbyte Bytes[Size];
+
+        public string Value
+            => new String((sbyte*)Bytes, 0, Size);
+
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  Sender Id Optional
+    /// </summary>
+    public unsafe struct SenderIdOptional {
         public const int Size = 20;
 
         public fixed sbyte Bytes[Size];
@@ -2351,15 +2463,21 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
-    ///  Side
+    ///  Side Values
     /// </summary>
-    public unsafe struct Side {
-        public const int Size = 1;
+    public enum Side : byte {
+        Buy = 1,
+        Sell = 2,
+    };
 
-        public sbyte Value;
 
-        public override string ToString()
-            => $"{Value}";
+    /// <summary>
+    ///  Side Optional Values
+    /// </summary>
+    public enum SideOptional : byte {
+        NoValue = 255,
+        Buy = 1,
+        Sell = 2,
     };
 
 
@@ -2554,6 +2672,19 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
 
     /// <summary>
+    ///  Tot No Quote Entries Optional
+    /// </summary>
+    public unsafe struct TotNoQuoteEntriesOptional {
+        public const int Size = 1;
+
+        public sbyte Value;
+
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
     ///  Tot Num Parties
     /// </summary>
     public unsafe struct TotNumParties {
@@ -2589,6 +2720,17 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
 
         public override string ToString()
             => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  Trade Addendum Values
+    /// </summary>
+    public enum TradeAddendum : byte {
+        PartiallyFilled = 4,
+        Filled = 5,
+        TradeCancel = 100,
+        TradeCorrection = 101,
     };
 
 
@@ -2768,16 +2910,9 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     ///  Var Data
     /// </summary>
     public unsafe struct VarData {
-        public const int Size = 1;
+        public const int Size = 0;
 
-        public byte Byte;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public char Value
-                => (char)Bytes;
-        
-        public override string ToString()
-            => $"{Value}";
+        public fixed byte Bytes[Size];
     };
 
 
@@ -2831,7 +2966,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct AffectedOrdersGroup {
-        OrigCiOrdId OrigCiOrdId;
+        Origclordid Origclordid;
         AffectedOrderId AffectedOrderId;
         CxlQuantity CxlQuantity;
     };
@@ -2854,17 +2989,17 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         SeqNum SeqNum;
         Uuid Uuid;
         Text Text;
-        SenderId SenderId;
-        PartyDetailsListReqId PartyDetailsListReqId;
+        SenderIdOptional SenderIdOptional;
+        PartyDetailsListReqIdOptional PartyDetailsListReqIdOptional;
         SendingTimeEpoch SendingTimeEpoch;
         BusinessRejectRefId BusinessRejectRefId;
-        Location Location;
+        LocationOptional LocationOptional;
         RefSeqNum RefSeqNum;
         RefTagId RefTagId;
         BusinessRejectReason BusinessRejectReason;
         RefMsgType RefMsgType;
         PossRetransFlag PossRetransFlag;
-        ManualOrderIndicator ManualOrderIndicator;
+        ManualOrderIndicatorOptional ManualOrderIndicatorOptional;
         SplitMsg SplitMsg;
     };
 
@@ -2874,7 +3009,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct Credentials {
-        Length Length;
+        DataLength DataLength;
     };
 
 
@@ -2954,7 +3089,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         OrderId OrderId;
         ExecAckStatus ExecAckStatus;
         SeqNum SeqNum;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         SecExecId SecExecId;
         LastPx LastPx;
         SecurityId SecurityId;
@@ -2977,7 +3112,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         Uuid Uuid;
         ExecId ExecId;
         SenderId SenderId;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         PartyDetailsListReqId PartyDetailsListReqId;
         OrderId OrderId;
         Price Price;
@@ -2985,7 +3120,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         TransactTime TransactTime;
         SendingTimeEpoch SendingTimeEpoch;
         OrderRequestId OrderRequestId;
-        CrossId CrossId;
+        CrossIdOptional CrossIdOptional;
         HostCrossId HostCrossId;
         Location Location;
         SecurityId SecurityId;
@@ -2995,7 +3130,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         DisplayQty DisplayQty;
         ExpireDate ExpireDate;
         DelayDuration DelayDuration;
-        OrdType OrdType;
+        OrdTypeOptional OrdTypeOptional;
         Side Side;
         TimeInForce TimeInForce;
         ManualOrderIndicator ManualOrderIndicator;
@@ -3021,7 +3156,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         Uuid Uuid;
         ExecId ExecId;
         SenderId SenderId;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         PartyDetailsListReqId PartyDetailsListReqId;
         OrderId OrderId;
         Price Price;
@@ -3029,7 +3164,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         TransactTime TransactTime;
         SendingTimeEpoch SendingTimeEpoch;
         OrderRequestId OrderRequestId;
-        CrossId CrossId;
+        CrossIdOptional CrossIdOptional;
         HostCrossId HostCrossId;
         Location Location;
         SecurityId SecurityId;
@@ -3038,7 +3173,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         MinQty MinQty;
         DisplayQty DisplayQty;
         ExpireDate ExpireDate;
-        OrdType OrdType;
+        OrdTypeOptional OrdTypeOptional;
         Side Side;
         TimeInForce TimeInForce;
         ManualOrderIndicator ManualOrderIndicator;
@@ -3061,7 +3196,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         Uuid Uuid;
         ExecId ExecId;
         SenderId SenderId;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         PartyDetailsListReqId PartyDetailsListReqId;
         OrderId OrderId;
         Price Price;
@@ -3069,7 +3204,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         TransactTime TransactTime;
         SendingTimeEpoch SendingTimeEpoch;
         OrderRequestId OrderRequestId;
-        CrossId CrossId;
+        CrossIdOptional CrossIdOptional;
         HostCrossId HostCrossId;
         Location Location;
         SecurityId SecurityId;
@@ -3080,7 +3215,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         DisplayQty DisplayQty;
         ExpireDate ExpireDate;
         DelayDuration DelayDuration;
-        OrdType OrdType;
+        OrdTypeOptional OrdTypeOptional;
         Side Side;
         TimeInForce TimeInForce;
         ManualOrderIndicator ManualOrderIndicator;
@@ -3105,7 +3240,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         Uuid Uuid;
         ExecId ExecId;
         SenderId SenderId;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         PartyDetailsListReqId PartyDetailsListReqId;
         OrderId OrderId;
         Price Price;
@@ -3113,7 +3248,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         TransactTime TransactTime;
         SendingTimeEpoch SendingTimeEpoch;
         OrderRequestId OrderRequestId;
-        CrossId CrossId;
+        CrossIdOptional CrossIdOptional;
         HostCrossId HostCrossId;
         Location Location;
         SecurityId SecurityId;
@@ -3122,7 +3257,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         DisplayQty DisplayQty;
         ExpireDate ExpireDate;
         DelayDuration DelayDuration;
-        OrdType OrdType;
+        OrdTypeOptional OrdTypeOptional;
         Side Side;
         TimeInForce TimeInForce;
         ManualOrderIndicator ManualOrderIndicator;
@@ -3148,15 +3283,15 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         Text Text;
         ExecId ExecId;
         SenderId SenderId;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         PartyDetailsListReqId PartyDetailsListReqId;
         OrderId OrderId;
-        Price Price;
+        PriceOptional PriceOptional;
         StopPx StopPx;
         TransactTime TransactTime;
         SendingTimeEpoch SendingTimeEpoch;
         OrderRequestId OrderRequestId;
-        CrossId CrossId;
+        CrossIdOptional CrossIdOptional;
         HostCrossId HostCrossId;
         Location Location;
         SecurityId SecurityId;
@@ -3166,7 +3301,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         OrdRejReason OrdRejReason;
         ExpireDate ExpireDate;
         DelayDuration DelayDuration;
-        OrdType OrdType;
+        OrdTypeOptional OrdTypeOptional;
         Side Side;
         TimeInForce TimeInForce;
         ManualOrderIndicator ManualOrderIndicator;
@@ -3192,17 +3327,17 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         Text Text;
         ExecId ExecId;
         SenderId SenderId;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         PartyDetailsListReqId PartyDetailsListReqId;
         OrderId OrderId;
-        Price Price;
+        PriceOptional PriceOptional;
         StopPx StopPx;
         TransactTime TransactTime;
         SendingTimeEpoch SendingTimeEpoch;
         OrderRequestId OrderRequestId;
-        OrdStatusReqId OrdStatusReqId;
-        MassStatusReqId MassStatusReqId;
-        CrossId CrossId;
+        OrdStatusReqIdOptional OrdStatusReqIdOptional;
+        MassStatusReqIdOptional MassStatusReqIdOptional;
+        CrossIdOptional CrossIdOptional;
         HostCrossId HostCrossId;
         Location Location;
         SecurityId SecurityId;
@@ -3213,7 +3348,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         DisplayQty DisplayQty;
         ExpireDate ExpireDate;
         OrdStatus OrdStatus;
-        OrdType OrdType;
+        OrdTypeOptional OrdTypeOptional;
         Side Side;
         TimeInForce TimeInForce;
         ManualOrderIndicator ManualOrderIndicator;
@@ -3237,7 +3372,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         OrderEventText OrderEventText;
         OrderEventExecId OrderEventExecId;
         OrderEventQty OrderEventQty;
-        OrderEventType OrderEventType;
+        TradeAddendum TradeAddendum;
         OrderEventReason OrderEventReason;
         OriginalOrderEventExecId OriginalOrderEventExecId;
     };
@@ -3286,7 +3421,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         OrderEventText OrderEventText;
         OrderEventExecId OrderEventExecId;
         OrderEventQty OrderEventQty;
-        OrderEventType OrderEventType;
+        TradeAddendum TradeAddendum;
         OrderEventReason OrderEventReason;
         OriginalOrderEventExecId OriginalOrderEventExecId;
     };
@@ -3310,7 +3445,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         OrderEventText OrderEventText;
         OrderEventExecId OrderEventExecId;
         OrderEventQty OrderEventQty;
-        OrderEventType OrderEventType;
+        TradeAddendum TradeAddendum;
         OrderEventReason OrderEventReason;
         OriginalOrderEventExecId OriginalOrderEventExecId;
     };
@@ -3453,7 +3588,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LegOptionDelta {
-        Mantissa Mantissa;
+        Mantissa32 Mantissa32;
         Exponent Exponent;
     };
 
@@ -3468,7 +3603,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         ManualOrderIndicator ManualOrderIndicator;
         SeqNum SeqNum;
         SenderId SenderId;
-        QuoteReqId QuoteReqId;
+        QuoteReqIdOptional QuoteReqIdOptional;
         Location Location;
         QuoteId QuoteId;
         TotNoQuoteEntries TotNoQuoteEntries;
@@ -3491,19 +3626,19 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         PartyDetailsListReqId PartyDetailsListReqId;
         RequestTime RequestTime;
         SendingTimeEpoch SendingTimeEpoch;
-        QuoteReqId QuoteReqId;
+        QuoteReqIdOptional QuoteReqIdOptional;
         Location Location;
         QuoteId QuoteId;
         QuoteRejectReason QuoteRejectReason;
         DelayDuration DelayDuration;
-        QuoteStatus QuoteStatus;
+        QuoteAckStatus QuoteAckStatus;
         ManualOrderIndicator ManualOrderIndicator;
         NoProcessedQuotes NoProcessedQuotes;
         MmProtectionReset MmProtectionReset;
         SplitMsg SplitMsg;
         LiquidityFlag LiquidityFlag;
         ShortSaleType ShortSaleType;
-        TotNoQuoteEntries TotNoQuoteEntries;
+        TotNoQuoteEntriesOptional TotNoQuoteEntriesOptional;
         PossRetransFlag PossRetransFlag;
         DelayToTime DelayToTime;
     };
@@ -3645,13 +3780,13 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderSingle514 {
-        Price Price;
+        PriceOptional PriceOptional;
         OrderQty OrderQty;
         SecurityId SecurityId;
         Side Side;
         SeqNum SeqNum;
         SenderId SenderId;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         PartyDetailsListReqId PartyDetailsListReqId;
         OrderRequestId OrderRequestId;
         SendingTimeEpoch SendingTimeEpoch;
@@ -3688,7 +3823,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct OptionDelta {
-        Mantissa Mantissa;
+        Mantissa32 Mantissa32;
         Exponent Exponent;
     };
 
@@ -3703,7 +3838,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         Text Text;
         ExecId ExecId;
         SenderId SenderId;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         PartyDetailsListReqId PartyDetailsListReqId;
         OrderId OrderId;
         TransactTime TransactTime;
@@ -3730,7 +3865,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         Text Text;
         ExecId ExecId;
         SenderId SenderId;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         PartyDetailsListReqId PartyDetailsListReqId;
         OrderId OrderId;
         TransactTime TransactTime;
@@ -3752,13 +3887,13 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct OrderCancelReplaceRequest515 {
-        Price Price;
+        PriceOptional PriceOptional;
         OrderQty OrderQty;
         SecurityId SecurityId;
         Side Side;
         SeqNum SeqNum;
         SenderId SenderId;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         PartyDetailsListReqId PartyDetailsListReqId;
         OrderId OrderId;
         StopPx StopPx;
@@ -3790,7 +3925,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         ManualOrderIndicator ManualOrderIndicator;
         SeqNum SeqNum;
         SenderId SenderId;
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         OrderRequestId OrderRequestId;
         SendingTimeEpoch SendingTimeEpoch;
         Location Location;
@@ -3815,7 +3950,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         MassActionReportId MassActionReportId;
         SecurityGroup SecurityGroup;
         Location Location;
-        SecurityId SecurityId;
+        SecurityIdOptional SecurityIdOptional;
         DelayDuration DelayDuration;
         MassActionResponse MassActionResponse;
         ManualOrderIndicator ManualOrderIndicator;
@@ -3825,9 +3960,9 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         MassActionRejectReason MassActionRejectReason;
         MarketSegmentId MarketSegmentId;
         MassCancelRequestType MassCancelRequestType;
-        Side Side;
-        OrdType OrdType;
-        TimeInForce TimeInForce;
+        SideOptional SideOptional;
+        MassActionOrdTyp MassActionOrdTyp;
+        MassCancelTif MassCancelTif;
         SplitMsg SplitMsg;
         LiquidityFlag LiquidityFlag;
         PossRetransFlag PossRetransFlag;
@@ -3848,13 +3983,13 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         SendingTimeEpoch SendingTimeEpoch;
         SecurityGroup SecurityGroup;
         Location Location;
-        SecurityId SecurityId;
+        SecurityIdOptional SecurityIdOptional;
         MassActionScope MassActionScope;
         MarketSegmentId MarketSegmentId;
         MassCancelRequestType MassCancelRequestType;
-        Side Side;
-        OrdType OrdType;
-        TimeInForce TimeInForce;
+        SideOptional SideOptional;
+        MassActionOrdTyp MassActionOrdTyp;
+        MassCancelTif MassCancelTif;
         LiquidityFlag LiquidityFlag;
     };
 
@@ -3872,10 +4007,10 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         SendingTimeEpoch SendingTimeEpoch;
         SecurityGroup SecurityGroup;
         Location Location;
-        SecurityId SecurityId;
+        SecurityIdOptional SecurityIdOptional;
         MassStatusReqType MassStatusReqType;
         OrdStatusReqType OrdStatusReqType;
-        TimeInForce TimeInForce;
+        MassStatusTif MassStatusTif;
         MarketSegmentId MarketSegmentId;
     };
 
@@ -3893,6 +4028,14 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         OrderId OrderId;
         SendingTimeEpoch SendingTimeEpoch;
         Location Location;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
     };
 
 
@@ -3980,7 +4123,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteCancelEntryGroup {
         SecurityGroup SecurityGroup;
-        SecurityId SecurityId;
+        SecurityIdOptional SecurityIdOptional;
     };
 
 
@@ -4019,8 +4162,8 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RelatedSymGroup {
         SecurityId SecurityId;
-        OrderQty OrderQty;
-        Side Side;
+        OrderQtyOptional OrderQtyOptional;
+        RfqSide RfqSide;
     };
 
 
@@ -4066,7 +4209,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         Location Location;
         QuoteRejectReason QuoteRejectReason;
         DelayDuration DelayDuration;
-        QuoteStatus QuoteStatus;
+        QuoteAckStatus QuoteAckStatus;
         ManualOrderIndicator ManualOrderIndicator;
         SplitMsg SplitMsg;
         PossRetransFlag PossRetransFlag;
@@ -4103,7 +4246,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         LastUuid LastUuid;
         RequestTimestamp RequestTimestamp;
         FromSeqNo FromSeqNo;
-        MsgCount MsgCount;
+        MsgCount16 MsgCount16;
         SplitMsg SplitMsg;
     };
 
@@ -4131,7 +4274,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         LastUuid LastUuid;
         RequestTimestamp RequestTimestamp;
         FromSeqNo FromSeqNo;
-        MsgCount MsgCount;
+        MsgCount16 MsgCount16;
     };
 
 
@@ -4140,7 +4283,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RiskFreeRate {
-        Mantissa Mantissa;
+        Mantissa32 Mantissa32;
         Exponent Exponent;
     };
 
@@ -4154,7 +4297,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         SecurityReqId SecurityReqId;
         ManualOrderIndicator ManualOrderIndicator;
         SeqNum SeqNum;
-        SenderId SenderId;
+        SenderIdOptional SenderIdOptional;
         SendingTimeEpoch SendingTimeEpoch;
         SecuritySubType SecuritySubType;
         Location Location;
@@ -4205,7 +4348,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
         SecurityGroup SecurityGroup;
         SecurityType SecurityType;
         Location Location;
-        SecurityId SecurityId;
+        SecurityIdOptional SecurityIdOptional;
         Currency Currency;
         MaturityMonthYear MaturityMonthYear;
         DelayDuration DelayDuration;
@@ -4262,7 +4405,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SidesGroup {
-        ClOrdId ClOrdId;
+        Clordid Clordid;
         PartyDetailsListReqId PartyDetailsListReqId;
         OrderQty OrderQty;
         Side Side;
@@ -4276,6 +4419,16 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SidesGroups {
         GroupSize GroupSize;
+    };
+
+
+    /// <summary>
+    ///  Struct for Simple Open Frame
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct SimpleOpenFrame {
+        SimpleOpenFramingHeader SimpleOpenFramingHeader;
+        MessageHeader MessageHeader;
     };
 
 
@@ -4307,7 +4460,7 @@ namespace Cme.Futures.iLink3.Sbe.v8.5 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TimeToExpiration {
-        Mantissa Mantissa;
+        Mantissa32 Mantissa32;
         Exponent Exponent;
     };
 

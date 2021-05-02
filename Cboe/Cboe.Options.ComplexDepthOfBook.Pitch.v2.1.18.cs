@@ -646,14 +646,14 @@ namespace Cboe.Options.ComplexDepthOfBook.Pitch.v2.1.18 {
     ///  Trade Condition Values
     /// </summary>
     public enum TradeCondition : byte {
-        ComplexToComplexElectronicTrade = (byte)'F',
-        ComplexAuctionTrade = (byte)'G',
-        ComplexCross = (byte)'H',
-        ComplexElectronicTradeAgainstSingle = (byte)'J',
-        ComplexWithStockOptionsAuctionTrade = (byte)'K',
-        ComplexWithStockElectronicTrade = (byte)'N',
-        ComplexWithStockCross = (byte)'O',
-        ElectronicTrade = (byte)'L',
+        ComplexToComplexElectronicTrade = (byte)'f',
+        ComplexAuctionTrade = (byte)'g',
+        ComplexCross = (byte)'h',
+        ComplexElectronicTradeAgainstSingle = (byte)'j',
+        ComplexWithStockOptionsAuctionTrade = (byte)'k',
+        ComplexWithStockElectronicTrade = (byte)'n',
+        ComplexWithStockCross = (byte)'o',
+        ElectronicTrade = (byte)'l',
         OpeningTrade = (byte)'O',
     };
 
@@ -889,6 +889,15 @@ namespace Cboe.Options.ComplexDepthOfBook.Pitch.v2.1.18 {
 
 
     /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        MessageHeader MessageHeader;
+    };
+
+
+    /// <summary>
     ///  Struct for Message Header
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -949,6 +958,15 @@ namespace Cboe.Options.ComplexDepthOfBook.Pitch.v2.1.18 {
         ExecutedQuantity ExecutedQuantity;
         ExecutionId ExecutionId;
         TradeCondition TradeCondition;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
     };
 
 

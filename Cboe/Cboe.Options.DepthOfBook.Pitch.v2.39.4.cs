@@ -593,7 +593,7 @@ namespace Cboe.Options.DepthOfBook.Pitch.v2.39.4 {
     ///  Trade Condition Values
     /// </summary>
     public enum TradeCondition : byte {
-        NormalTrade = (byte)'',
+        NormalTrade = (byte)' ',
         SpreadTrade = (byte)'S',
     };
 

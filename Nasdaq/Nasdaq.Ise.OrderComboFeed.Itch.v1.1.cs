@@ -153,8 +153,8 @@ namespace Nasdaq.Ise.OrderComboFeed.Itch.v1.1 {
     ///  Current Trading State Values
     /// </summary>
     public enum CurrentTradingState : byte {
-        HaltInEffect = H,
-        TradingResumed = T,
+        HaltInEffect = (byte)'H',
+        TradingResumed = (byte)'T',
     };
 
 
@@ -314,6 +314,15 @@ namespace Nasdaq.Ise.OrderComboFeed.Itch.v1.1 {
         
         public override string ToString()
             => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  Leg Side Values
+    /// </summary>
+    public enum LegSide : byte {
+        Buy = (byte)'B',
+        Sell = (byte)'S',
     };
 
 
@@ -797,8 +806,17 @@ namespace Nasdaq.Ise.OrderComboFeed.Itch.v1.1 {
         ExpirationDay ExpirationDay;
         ExplicitStrikePrice ExplicitStrikePrice;
         OptionType OptionType;
-        Side Side;
+        LegSide LegSide;
         LegRatio LegRatio;
+    };
+
+
+    /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        MessageHeader MessageHeader;
     };
 
 
@@ -809,6 +827,15 @@ namespace Nasdaq.Ise.OrderComboFeed.Itch.v1.1 {
     public unsafe struct MessageHeader {
         Length Length;
         MessageType MessageType;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
     };
 
 

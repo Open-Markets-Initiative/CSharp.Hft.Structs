@@ -174,7 +174,7 @@ namespace Cboe.Options.MarketDataFeed.Csm.v1.4.2 {
 
 
     /// <summary>
-    ///  first Msg Seq Num
+    ///  First Msg Seq Num
     /// </summary>
     public unsafe struct FirstMsgSeqNum {
         public const int Size = 4;
@@ -380,23 +380,6 @@ namespace Cboe.Options.MarketDataFeed.Csm.v1.4.2 {
 
 
     /// <summary>
-    ///  Message Sequence Number
-    /// </summary>
-    public unsafe struct MessageSequenceNumber {
-        public const int Size = 4;
-
-        public uint Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Message Type
     /// </summary>
     public unsafe struct MessageType {
@@ -462,6 +445,23 @@ namespace Cboe.Options.MarketDataFeed.Csm.v1.4.2 {
 
 
     /// <summary>
+    ///  Msg Seq Num
+    /// </summary>
+    public unsafe struct MsgSeqNum {
+        public const int Size = 4;
+
+        public uint Bytes;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public uint Value
+            => Swap(Bytes);
+        
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
     ///  Net Chg Prev Day Exponent
     /// </summary>
     public struct NetChgPrevDayExponent {
@@ -480,34 +480,16 @@ namespace Cboe.Options.MarketDataFeed.Csm.v1.4.2 {
     /// <summary>
     ///  No Entries
     /// </summary>
-    public unsafe struct NoEntries {
-        public const int Size = 1;
-
-        public byte Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public byte Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
+    public struct NoEntries {
+        public byte Raw;
     };
 
 
     /// <summary>
     ///  No Legs
     /// </summary>
-    public unsafe struct NoLegs {
-        public const int Size = 1;
-
-        public byte Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public byte Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
+    public struct NoLegs {
+        public byte Raw;
     };
 
 
@@ -992,6 +974,15 @@ namespace Cboe.Options.MarketDataFeed.Csm.v1.4.2 {
 
 
     /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        MessageHeader MessageHeader;
+    };
+
+
+    /// <summary>
     ///  Struct for Message Header
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -999,7 +990,7 @@ namespace Cboe.Options.MarketDataFeed.Csm.v1.4.2 {
         MessageLength MessageLength;
         TemplateId TemplateId;
         MessageType MessageType;
-        MessageSequenceNumber MessageSequenceNumber;
+        MsgSeqNum MsgSeqNum;
     };
 
 
@@ -1040,6 +1031,15 @@ namespace Cboe.Options.MarketDataFeed.Csm.v1.4.2 {
     public unsafe struct NetChgPrevDay {
         NetChgPrevDayExponent NetChgPrevDayExponent;
         NetChgPrevDayMantissa NetChgPrevDayMantissa;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
     };
 
 

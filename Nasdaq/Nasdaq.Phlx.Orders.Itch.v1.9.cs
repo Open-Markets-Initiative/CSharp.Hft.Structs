@@ -105,8 +105,8 @@ namespace Nasdaq.Phlx.Orders.Itch.v1.9 {
     ///  Current Trading State Values
     /// </summary>
     public enum CurrentTradingState : byte {
-        HaltInEffect = H,
-        PhlxTradingResumed = T,
+        HaltInEffect = (byte)'H',
+        PhlxTradingResumed = (byte)'T',
     };
 
 
@@ -374,8 +374,8 @@ namespace Nasdaq.Phlx.Orders.Itch.v1.9 {
     ///  Open State Values
     /// </summary>
     public enum OpenState : byte {
-        OpenForAutoExecution = Y,
-        ClosedForAutoExecution = N,
+        OpenForAutoExecution = (byte)'Y',
+        ClosedForAutoExecution = (byte)'N',
     };
 
 
@@ -383,9 +383,9 @@ namespace Nasdaq.Phlx.Orders.Itch.v1.9 {
     ///  Option Closing Type Values
     /// </summary>
     public enum OptionClosingType : byte {
-        Normal = N,
-        Late = L,
-        WcoEarlyClosing = W,
+        Normal = (byte)'N',
+        Late = (byte)'L',
+        WcoEarlyClosing = (byte)'W',
     };
 
 
@@ -475,8 +475,8 @@ namespace Nasdaq.Phlx.Orders.Itch.v1.9 {
     ///  Phlx Tradable Values
     /// </summary>
     public enum PhlxTradable : byte {
-        Tradable = Y,
-        NotTradable = N,
+        Tradable = (byte)'Y',
+        NotTradable = (byte)'N',
     };
 
 
@@ -833,6 +833,15 @@ namespace Nasdaq.Phlx.Orders.Itch.v1.9 {
 
 
     /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        MessageHeader MessageHeader;
+    };
+
+
+    /// <summary>
     ///  Struct for Message Header
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -858,6 +867,15 @@ namespace Nasdaq.Phlx.Orders.Itch.v1.9 {
         UnderlyingSymbol UnderlyingSymbol;
         OptionClosingType OptionClosingType;
         PhlxTradable PhlxTradable;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
     };
 
 

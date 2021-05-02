@@ -271,10 +271,10 @@ namespace Nasdaq.Psx.Bbo.Itch.v2.1 {
     /// <summary>
     ///  Market Code Values
     /// </summary>
-    public enum MarketCode : sbyte {
-        Nasdaq = Q,
-        Bx = B,
-        Psx = X,
+    public enum MarketCode : byte {
+        Nasdaq = (byte)'Q',
+        Bx = (byte)'B',
+        Psx = (byte)'X',
     };
 
 
@@ -321,9 +321,9 @@ namespace Nasdaq.Psx.Bbo.Itch.v2.1 {
     /// <summary>
     ///  Operational Halt Action Values
     /// </summary>
-    public enum OperationalHaltAction : sbyte {
-        Halted = H,
-        Resumed = T,
+    public enum OperationalHaltAction : byte {
+        Halted = (byte)'H',
+        Resumed = (byte)'T',
     };
 
 

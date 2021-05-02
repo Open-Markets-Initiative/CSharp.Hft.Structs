@@ -916,6 +916,15 @@ namespace Nasdaq.Psx.Orders.Ouch.v4.2 {
 
 
     /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
+    };
+
+
+    /// <summary>
     ///  Struct for Packet Header
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]

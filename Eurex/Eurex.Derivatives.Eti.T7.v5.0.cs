@@ -3879,8 +3879,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct AddComplexInstrumentRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
         SecuritySubType SecuritySubType;
@@ -3896,8 +3896,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct AddComplexInstrumentResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         LowLimitPrice LowLimitPrice;
         HighLimitPrice HighLimitPrice;
         SecurityId SecurityId;
@@ -3918,8 +3918,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct AddFlexibleInstrumentRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ComplianceId ComplianceId;
         StrikePrice StrikePrice;
         MarketSegmentId MarketSegmentId;
@@ -3937,8 +3937,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct AddFlexibleInstrumentResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         SecurityResponseId SecurityResponseId;
         SecurityId SecurityId;
         StrikePrice StrikePrice;
@@ -3959,8 +3959,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ApproveTesTradeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ComplianceId ComplianceId;
         PackageId PackageId;
         AllocId AllocId;
@@ -3996,8 +3996,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct BroadcastErrorNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         ApplIdStatus ApplIdStatus;
         RefApplSubId RefApplSubId;
         VarTextLen VarTextLen;
@@ -4012,8 +4012,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct CrossRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
@@ -4028,8 +4028,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct CrossRequestResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         ExecId ExecId;
     };
 
@@ -4039,8 +4039,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllOrderBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MassActionReportId MassActionReportId;
         SecurityId SecurityId;
         Price Price;
@@ -4062,8 +4062,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         MassActionReportId MassActionReportId;
     };
 
@@ -4073,8 +4073,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllOrderQuoteEventBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MassActionReportId MassActionReportId;
         SecurityId SecurityId;
         MarketSegmentId MarketSegmentId;
@@ -4089,8 +4089,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllOrderRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         Price Price;
         ComplianceId ComplianceId;
@@ -4107,8 +4107,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllOrderResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         MassActionReportId MassActionReportId;
         NoNotAffectedOrders NoNotAffectedOrders;
         Pad6 Pad6;
@@ -4120,8 +4120,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllQuoteBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MassActionReportId MassActionReportId;
         SecurityId SecurityId;
         MarketSegmentId MarketSegmentId;
@@ -4141,8 +4141,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
         TargetPartyIdSessionId TargetPartyIdSessionId;
@@ -4154,8 +4154,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllQuoteResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         MassActionReportId MassActionReportId;
         NoNotAffectedSecurities NoNotAffectedSecurities;
         Pad6 Pad6;
@@ -4167,8 +4167,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4193,8 +4193,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderComplexRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4210,8 +4210,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4232,8 +4232,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4254,8 +4254,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderSingleRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4272,8 +4272,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteTesTradeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         PackageId PackageId;
         MarketSegmentId MarketSegmentId;
         TesExecId TesExecId;
@@ -4286,10 +4286,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Enrichment Rules Grp
+    ///  Struct for Enrichment Rules Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct EnrichmentRulesGrp {
+    public unsafe struct EnrichmentRulesGrpComp {
         EnrichmentRuleId EnrichmentRuleId;
         PartyIdOriginationMarket PartyIdOriginationMarket;
         Account Account;
@@ -4305,10 +4305,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Fills Grp
+    ///  Struct for Fills Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct FillsGrp {
+    public unsafe struct FillsGrpComp {
         FillPx FillPx;
         FillQty FillQty;
         FillMatchId FillMatchId;
@@ -4323,8 +4323,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ForcedLogoutNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         VarTextLen VarTextLen;
         Pad6 Pad6;
     };
@@ -4335,8 +4335,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ForcedUserLogoutNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         UserStatus UserStatus;
         Pad3 Pad3;
         Username Username;
@@ -4350,8 +4350,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct GatewayRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         PartyIdSessionId PartyIdSessionId;
         DefaultCstmApplVerId DefaultCstmApplVerId;
         Password Password;
@@ -4364,8 +4364,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct GatewayResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         GatewayId GatewayId;
         GatewaySubId GatewaySubId;
         SecondaryGatewayId SecondaryGatewayId;
@@ -4381,7 +4381,7 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct Heartbeat {
-        MessageHeaderIn MessageHeaderIn;
+        MessageHeaderInComp MessageHeaderInComp;
     };
 
 
@@ -4390,8 +4390,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct HeartbeatNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
     };
 
 
@@ -4400,8 +4400,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireEnrichmentRuleIdListRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         LastEntityProcessed LastEntityProcessed;
     };
 
@@ -4411,8 +4411,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireEnrichmentRuleIdListResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         LastEntityProcessed LastEntityProcessed;
         NoEnrichmentRules NoEnrichmentRules;
         Pad6 Pad6;
@@ -4424,8 +4424,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireMmParameterRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         MarketSegmentId MarketSegmentId;
         TargetPartyIdSessionId TargetPartyIdSessionId;
     };
@@ -4436,8 +4436,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireMmParameterResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         MmParameterReportId MmParameterReportId;
         MarketSegmentId MarketSegmentId;
         NoMmParameters NoMmParameters;
@@ -4450,8 +4450,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireSessionListRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
     };
 
 
@@ -4460,8 +4460,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireSessionListResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         NoSessions NoSessions;
         Pad6 Pad6;
     };
@@ -4472,8 +4472,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireUserRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         LastEntityProcessed LastEntityProcessed;
     };
 
@@ -4483,8 +4483,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireUserResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         LastEntityProcessed LastEntityProcessed;
         NoPartyDetails NoPartyDetails;
         Pad6 Pad6;
@@ -4492,10 +4492,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Instrmnt Leg Exec Grp
+    ///  Struct for Instrmnt Leg Exec Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct InstrmntLegExecGrp {
+    public unsafe struct InstrmntLegExecGrpComp {
         LegSecurityId LegSecurityId;
         LegLastPx LegLastPx;
         LegLastQty LegLastQty;
@@ -4507,10 +4507,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Instrmt Leg Grp
+    ///  Struct for Instrmt Leg Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct InstrmtLegGrp {
+    public unsafe struct InstrmtLegGrpComp {
         LegSecurityId LegSecurityId;
         LegPrice LegPrice;
         LegSymbol LegSymbol;
@@ -4522,10 +4522,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Instrument Attribute Grp
+    ///  Struct for Instrument Attribute Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct InstrumentAttributeGrp {
+    public unsafe struct InstrumentAttributeGrpComp {
         InstrAttribType InstrAttribType;
         InstrAttribValue InstrAttribValue;
         Pad7 Pad7;
@@ -4533,10 +4533,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Instrument Event Grp
+    ///  Struct for Instrument Event Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct InstrumentEventGrp {
+    public unsafe struct InstrumentEventGrpComp {
         EventDate EventDate;
         EventType EventType;
         Pad3 Pad3;
@@ -4544,10 +4544,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Leg Ord Grp
+    ///  Struct for Leg Ord Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct LegOrdGrp {
+    public unsafe struct LegOrdGrpComp {
         LegAccount LegAccount;
         LegPositionEffect LegPositionEffect;
         Pad5 Pad5;
@@ -4559,8 +4559,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LegalNotificationBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         VarTextLen VarTextLen;
         UserStatus UserStatus;
@@ -4573,8 +4573,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogonRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         HeartBtInt HeartBtInt;
         PartyIdSessionId PartyIdSessionId;
         DefaultCstmApplVerId DefaultCstmApplVerId;
@@ -4597,8 +4597,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogonResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ThrottleTimeInterval ThrottleTimeInterval;
         ThrottleNoMsgs ThrottleNoMsgs;
         ThrottleDisconnectLimit ThrottleDisconnectLimit;
@@ -4616,8 +4616,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogoutRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
     };
 
 
@@ -4626,8 +4626,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogoutResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 
@@ -4636,8 +4636,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MassQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         QuoteId QuoteId;
         ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
@@ -4655,8 +4655,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MassQuoteResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         QuoteId QuoteId;
         QuoteResponseId QuoteResponseId;
         MarketSegmentId MarketSegmentId;
@@ -4666,10 +4666,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Message Header In
+    ///  Struct for Message Header In Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MessageHeaderIn {
+    public unsafe struct MessageHeaderInComp {
         BodyLen BodyLen;
         TemplateId TemplateId;
         NetworkMsgId NetworkMsgId;
@@ -4678,10 +4678,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Message Header Out
+    ///  Struct for Message Header Out Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MessageHeaderOut {
+    public unsafe struct MessageHeaderOutComp {
         BodyLen BodyLen;
         TemplateId TemplateId;
         Pad2 Pad2;
@@ -4693,8 +4693,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MmParameterDefinitionRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ExposureDuration ExposureDuration;
         MarketSegmentId MarketSegmentId;
         TargetPartyIdSessionId TargetPartyIdSessionId;
@@ -4712,17 +4712,17 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MmParameterDefinitionResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         ExecId ExecId;
     };
 
 
     /// <summary>
-    ///  Struct for Mm Parameter Grp
+    ///  Struct for Mm Parameter Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MmParameterGrp {
+    public unsafe struct MmParameterGrpComp {
         ExposureDuration ExposureDuration;
         CumQty CumQty;
         PctCount PctCount;
@@ -4738,8 +4738,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderComplexRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4780,8 +4780,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4805,8 +4805,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4831,8 +4831,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderSingleRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4875,8 +4875,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderSingleShortRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         Price Price;
@@ -4899,8 +4899,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyTesTradeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         LastPx LastPx;
         TransBkdTime TransBkdTime;
         MarketSegmentId MarketSegmentId;
@@ -4922,8 +4922,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderComplexRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ClOrdId ClOrdId;
         SecurityId SecurityId;
         Price Price;
@@ -4960,8 +4960,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         SecurityId SecurityId;
@@ -4981,8 +4981,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         SecurityId SecurityId;
@@ -5004,8 +5004,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderSingleRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         Price Price;
         StopPx StopPx;
         ClOrdId ClOrdId;
@@ -5044,8 +5044,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderSingleShortRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         Price Price;
         ClOrdId ClOrdId;
         ComplianceId ComplianceId;
@@ -5067,8 +5067,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewsBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         OrigTime OrigTime;
         VarTextLen VarTextLen;
         Headline Headline;
@@ -5077,38 +5077,38 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Not Affected Orders Grp
+    ///  Struct for Not Affected Orders Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NotAffectedOrdersGrp {
+    public unsafe struct NotAffectedOrdersGrpComp {
         NotAffectedOrderId NotAffectedOrderId;
         NotAffOrigClOrdId NotAffOrigClOrdId;
     };
 
 
     /// <summary>
-    ///  Struct for Not Affected Securities Grp
+    ///  Struct for Not Affected Securities Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NotAffectedSecuritiesGrp {
+    public unsafe struct NotAffectedSecuritiesGrpComp {
         NotAffectedSecurityId NotAffectedSecurityId;
     };
 
 
     /// <summary>
-    ///  Struct for Notif Header
+    ///  Struct for Notif Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NotifHeader {
+    public unsafe struct NotifHeaderComp {
         SendingTime SendingTime;
     };
 
 
     /// <summary>
-    ///  Struct for Nr Response Header Me
+    ///  Struct for Nr Response Header Me Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NrResponseHeaderMe {
+    public unsafe struct NrResponseHeaderMeComp {
         RequestTime RequestTime;
         RequestOut RequestOut;
         TrdRegTsTimeIn TrdRegTsTimeIn;
@@ -5122,10 +5122,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Nrbc Header
+    ///  Struct for Nrbc Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NrbcHeader {
+    public unsafe struct NrbcHeaderComp {
         SendingTime SendingTime;
         ApplSubId ApplSubId;
         ApplId ApplId;
@@ -5139,8 +5139,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct PartyActionReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         TradeDate TradeDate;
         RequestingPartyIdExecutingTrader RequestingPartyIdExecutingTrader;
@@ -5154,10 +5154,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Party Details Grp
+    ///  Struct for Party Details Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct PartyDetailsGrp {
+    public unsafe struct PartyDetailsGrpComp {
         PartyDetailIdExecutingTrader PartyDetailIdExecutingTrader;
         PartyDetailExecutingTrader PartyDetailExecutingTrader;
         PartyDetailRoleQualifier PartyDetailRoleQualifier;
@@ -5172,8 +5172,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct PartyEntitlementsUpdateReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         TradeDate TradeDate;
         PartyDetailIdExecutingUnit PartyDetailIdExecutingUnit;
@@ -5192,8 +5192,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteActivationNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MassActionReportId MassActionReportId;
         MarketSegmentId MarketSegmentId;
         PartyIdEnteringTrader PartyIdEnteringTrader;
@@ -5211,8 +5211,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteActivationRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
         TargetPartyIdSessionId TargetPartyIdSessionId;
@@ -5227,8 +5227,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteActivationResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         MassActionReportId MassActionReportId;
         NoNotAffectedSecurities NoNotAffectedSecurities;
         Pad6 Pad6;
@@ -5236,10 +5236,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Quote Entry Ack Grp
+    ///  Struct for Quote Entry Ack Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct QuoteEntryAckGrp {
+    public unsafe struct QuoteEntryAckGrpComp {
         SecurityId SecurityId;
         BidCxlSize BidCxlSize;
         OfferCxlSize OfferCxlSize;
@@ -5250,10 +5250,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Quote Entry Grp
+    ///  Struct for Quote Entry Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct QuoteEntryGrp {
+    public unsafe struct QuoteEntryGrpComp {
         SecurityId SecurityId;
         BidPx BidPx;
         OfferPx OfferPx;
@@ -5263,10 +5263,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Quote Event Grp
+    ///  Struct for Quote Event Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct QuoteEventGrp {
+    public unsafe struct QuoteEventGrpComp {
         SecurityId SecurityId;
         QuoteEventPx QuoteEventPx;
         QuoteMsgId QuoteMsgId;
@@ -5281,10 +5281,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Quote Leg Exec Grp
+    ///  Struct for Quote Leg Exec Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct QuoteLegExecGrp {
+    public unsafe struct QuoteLegExecGrpComp {
         LegSecurityId LegSecurityId;
         LegLastPx LegLastPx;
         LegLastQty LegLastQty;
@@ -5296,10 +5296,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Rbc Header
+    ///  Struct for Rbc Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RbcHeader {
+    public unsafe struct RbcHeaderComp {
         SendingTime SendingTime;
         ApplSeqNum ApplSeqNum;
         ApplSubId ApplSubId;
@@ -5312,10 +5312,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Rbc Header Me
+    ///  Struct for Rbc Header Me Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RbcHeaderMe {
+    public unsafe struct RbcHeaderMeComp {
         TrdRegTsTimeOut TrdRegTsTimeOut;
         NotificationIn NotificationIn;
         SendingTime SendingTime;
@@ -5334,8 +5334,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct Reject {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         SessionRejectReason SessionRejectReason;
         VarTextLen VarTextLen;
         SessionStatus SessionStatus;
@@ -5344,20 +5344,20 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Request Header
+    ///  Struct for Request Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RequestHeader {
+    public unsafe struct RequestHeaderComp {
         MsgSeqNum MsgSeqNum;
         SenderSubId SenderSubId;
     };
 
 
     /// <summary>
-    ///  Struct for Response Header
+    ///  Struct for Response Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct ResponseHeader {
+    public unsafe struct ResponseHeaderComp {
         RequestTime RequestTime;
         SendingTime SendingTime;
         MsgSeqNum MsgSeqNum;
@@ -5366,10 +5366,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Response Header Me
+    ///  Struct for Response Header Me Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct ResponseHeaderMe {
+    public unsafe struct ResponseHeaderMeComp {
         RequestTime RequestTime;
         RequestOut RequestOut;
         TrdRegTsTimeIn TrdRegTsTimeIn;
@@ -5389,8 +5389,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitMeMessageRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SubscriptionScope SubscriptionScope;
         PartitionId PartitionId;
         RefApplId RefApplId;
@@ -5405,8 +5405,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitMeMessageResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ApplTotalMessageCount ApplTotalMessageCount;
         ApplEndMsgId ApplEndMsgId;
         RefApplLastMsgId RefApplLastMsgId;
@@ -5419,8 +5419,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ApplBegSeqNum ApplBegSeqNum;
         ApplEndSeqNum ApplEndSeqNum;
         PartitionId PartitionId;
@@ -5434,8 +5434,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ApplEndSeqNum ApplEndSeqNum;
         RefApplLastSeqNum RefApplLastSeqNum;
         ApplTotalMessageCount ApplTotalMessageCount;
@@ -5448,8 +5448,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RfqRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
@@ -5465,8 +5465,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RfqResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         ExecId ExecId;
     };
 
@@ -5476,8 +5476,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RiskNotificationBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         TradeDate TradeDate;
         PartyDetailIdExecutingUnit PartyDetailIdExecutingUnit;
@@ -5496,8 +5496,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ServiceAvailabilityBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        NrbcHeader NrbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrbcHeaderComp NrbcHeaderComp;
         MatchingEngineTradeDate MatchingEngineTradeDate;
         TradeManagerTradeDate TradeManagerTradeDate;
         ApplSeqTradeDate ApplSeqTradeDate;
@@ -5514,10 +5514,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Sessions Grp
+    ///  Struct for Sessions Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SessionsGrp {
+    public unsafe struct SessionsGrpComp {
         PartyIdSessionId PartyIdSessionId;
         SessionMode SessionMode;
         SessionSubMode SessionSubMode;
@@ -5526,10 +5526,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Side Alloc Ext Grp
+    ///  Struct for Side Alloc Ext Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SideAllocExtGrp {
+    public unsafe struct SideAllocExtGrpComp {
         ComplianceId ComplianceId;
         IndividualAllocId IndividualAllocId;
         AllocQty AllocQty;
@@ -5555,24 +5555,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Side Alloc Grp
+    ///  Struct for Side Alloc Grp Bc Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SideAllocGrp {
-        IndividualAllocId IndividualAllocId;
-        AllocQty AllocQty;
-        Side Side;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        Pad4 Pad4;
-    };
-
-
-    /// <summary>
-    ///  Struct for Side Alloc Grp Bc
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SideAllocGrpBc {
+    public unsafe struct SideAllocGrpBcComp {
         IndividualAllocId IndividualAllocId;
         AllocQty AllocQty;
         PartyExecutingFirm PartyExecutingFirm;
@@ -5584,12 +5570,26 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
+    ///  Struct for Side Alloc Grp Comp
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct SideAllocGrpComp {
+        IndividualAllocId IndividualAllocId;
+        AllocQty AllocQty;
+        Side Side;
+        PartyExecutingFirm PartyExecutingFirm;
+        PartyExecutingTrader PartyExecutingTrader;
+        Pad4 Pad4;
+    };
+
+
+    /// <summary>
     ///  Struct for Subscribe Request
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SubscribeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SubscriptionScope SubscriptionScope;
         RefApplId RefApplId;
         Pad3 Pad3;
@@ -5601,8 +5601,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SubscribeResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ApplSubId ApplSubId;
         Pad4 Pad4;
     };
@@ -5613,8 +5613,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TesDeleteBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         MarketSegmentId MarketSegmentId;
         PackageId PackageId;
@@ -5633,8 +5633,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TesExecutionBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         MarketSegmentId MarketSegmentId;
         PackageId PackageId;
@@ -5652,8 +5652,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TesResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         TesExecId TesExecId;
         TradeReportId TradeReportId;
     };
@@ -5664,8 +5664,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TesTradeBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         SecurityId SecurityId;
         LastPx LastPx;
         ClearingTradePrice ClearingTradePrice;
@@ -5717,8 +5717,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TesTradingSessionStatusBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TradeDate TradeDate;
         TradSesEvent TradSesEvent;
         Pad3 Pad3;
@@ -5730,8 +5730,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ThrottleUpdateNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         ThrottleTimeInterval ThrottleTimeInterval;
         ThrottleNoMsgs ThrottleNoMsgs;
         ThrottleDisconnectLimit ThrottleDisconnectLimit;
@@ -5743,8 +5743,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TmTradingSessionStatusBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TradSesEvent TradSesEvent;
         Pad7 Pad7;
     };
@@ -5755,8 +5755,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TradeBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         SecurityId SecurityId;
         RelatedSecurityId RelatedSecurityId;
         Price Price;
@@ -5819,8 +5819,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TradingSessionStatusBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MarketSegmentId MarketSegmentId;
         TradeDate TradeDate;
         TradSesEvent TradSesEvent;
@@ -5830,10 +5830,10 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Underlying Stip Grp
+    ///  Struct for Underlying Stip Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct UnderlyingStipGrp {
+    public unsafe struct UnderlyingStipGrpComp {
         UnderlyingStipValue UnderlyingStipValue;
         UnderlyingStipType UnderlyingStipType;
         Pad1 Pad1;
@@ -5845,8 +5845,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UnsubscribeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         RefApplSubId RefApplSubId;
         Pad4 Pad4;
     };
@@ -5857,8 +5857,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UnsubscribeResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 
@@ -5867,8 +5867,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLoginRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         Username Username;
         Password Password;
         Pad4 Pad4;
@@ -5880,8 +5880,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLoginResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 
@@ -5890,8 +5890,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLogoutRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         Username Username;
         Pad4 Pad4;
     };
@@ -5902,8 +5902,8 @@ namespace Eurex.Derivatives.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLogoutResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 

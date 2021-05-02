@@ -20,19 +20,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Accrued Interes Amt
-    /// </summary>
-    public unsafe struct AccruedInteresAmt {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Affected Order Id
     /// </summary>
     public unsafe struct AffectedOrderId {
@@ -46,59 +33,9 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Affected Order Request Id
-    /// </summary>
-    public unsafe struct AffectedOrderRequestId {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Affected Orig Cl Ord Id
     /// </summary>
     public unsafe struct AffectedOrigClOrdId {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Alloc Id
-    /// </summary>
-    public unsafe struct AllocId {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Alloc Method Values
-    /// </summary>
-    public enum AllocMethod : byte {
-        AutomaticRandom = 1,
-        Manual = 3,
-        AllocMethodMinimumValue = 3,
-        AllocMethodMinimumValue = 1,
-    };
-
-
-    /// <summary>
-    ///  Alloc Qty
-    /// </summary>
-    public unsafe struct AllocQty {
         public const int Size = 8;
 
         public long Value;
@@ -164,12 +101,7 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         Sessiondata = 4,
         Listenerdata = 5,
         RiskControl = 6,
-        TesMaintenance = 7,
-        TesTrade = 8,
-        SrqsMaintenance = 9,
-        ServiceAvailabilityMarket = 10,
-        SpecialistData = 11,
-        ApplIDMinimumValue = 11,
+        ApplIDMinimumValue = 8,
         ApplIDMinimumValue = 0,
     };
 
@@ -350,67 +282,10 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Best Bid Px
-    /// </summary>
-    public unsafe struct BestBidPx {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Best Bid Size
-    /// </summary>
-    public unsafe struct BestBidSize {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Best Offer Px
-    /// </summary>
-    public unsafe struct BestOfferPx {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Best Offer Size
-    /// </summary>
-    public unsafe struct BestOfferSize {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Bid Cxl Size
     /// </summary>
-    public unsafe struct BidCxlSize {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct BidCxlSize {
+        public int Raw;
     };
 
 
@@ -430,13 +305,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// <summary>
     ///  Bid Size
     /// </summary>
-    public unsafe struct BidSize {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct BidSize {
+        public int Raw;
     };
 
 
@@ -467,20 +337,9 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Clearing Instruction Values
+    ///  Compliance Id
     /// </summary>
-    public enum ClearingInstruction : byte {
-        Bilateralnettingonly = 2,
-        Selfclearing = 13,
-        ClearingInstructionMinimumValue = 13,
-        ClearingInstructionMinimumValue = 2,
-    };
-
-
-    /// <summary>
-    ///  Coupon Rate
-    /// </summary>
-    public unsafe struct CouponRate {
+    public unsafe struct ComplianceId {
         public const int Size = 8;
 
         public long Value;
@@ -491,26 +350,21 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Crossed Indicator Values
+    ///  Crossed Values
     /// </summary>
-    public enum CrossedIndicator : byte {
+    public enum Crossed : byte {
         Nocrossing = 0,
         Crossrejected = 1,
-        CrossedIndicatorMinimumValue = 1,
-        CrossedIndicatorMinimumValue = 0,
+        CrossedMinimumValue = 1,
+        CrossedMinimumValue = 0,
     };
 
 
     /// <summary>
     ///  Cum Qty
     /// </summary>
-    public unsafe struct CumQty {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct CumQty {
+        public int Raw;
     };
 
 
@@ -533,26 +387,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// <summary>
     ///  Cxl Qty
     /// </summary>
-    public unsafe struct CxlQty {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Cxl Size
-    /// </summary>
-    public unsafe struct CxlSize {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct CxlQty {
+        public int Raw;
     };
 
 
@@ -573,28 +409,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Default Cstm Appl Ver Sub Id Values
-    /// </summary>
-    public enum DefaultCstmApplVerSubId : ulong {
-        Cash = "C0004",
-    };
-
-
-    /// <summary>
-    ///  Delete Reason Values
-    /// </summary>
-    public enum DeleteReason : byte {
-        Nospecialreason = 100,
-        TasChange = 101,
-        IntradayExpiration = 102,
-        RiskEvent = 103,
-        StopTrading = 104,
-        DeleteReasonMinimumValue = 107,
-        DeleteReasonMinimumValue = 100,
-    };
-
-
-    /// <summary>
     ///  Delivery Type Values
     /// </summary>
     public enum DeliveryType : byte {
@@ -602,8 +416,7 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         Gs = 2,
         Str = 3,
         Wpr = 4,
-        Akt = 5,
-        DeliveryTypeMinimumValue = 5,
+        DeliveryTypeMinimumValue = 4,
         DeliveryTypeMinimumValue = 1,
     };
 
@@ -611,39 +424,24 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// <summary>
     ///  Display High Qty
     /// </summary>
-    public unsafe struct DisplayHighQty {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct DisplayHighQty {
+        public int Raw;
     };
 
 
     /// <summary>
     ///  Display Low Qty
     /// </summary>
-    public unsafe struct DisplayLowQty {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct DisplayLowQty {
+        public int Raw;
     };
 
 
     /// <summary>
     ///  Display Qty
     /// </summary>
-    public unsafe struct DisplayQty {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct DisplayQty {
+        public int Raw;
     };
 
 
@@ -657,64 +455,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Event Date
-    /// </summary>
-    public unsafe struct EventDate {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Event Px
-    /// </summary>
-    public unsafe struct EventPx {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Event Type Values
-    /// </summary>
-    public enum EventType : byte {
-        Redemption = 26,
-        Delisting = 100,
-        InstrumentAssignmentAdded = 104,
-        InstrumentAssignmentRemoved = 105,
-        Closed = 106,
-        Restricted = 107,
-        Book = 108,
-        Continuous = 109,
-        Auction = 110,
-        Freeze = 111,
-        CancelFreeze = 112,
-        PreCall = 113,
-        EndofRestatement = 114,
-        EventTypeMinimumValue = 114,
-        EventTypeMinimumValue = 8,
-    };
-
-
-    /// <summary>
-    ///  Ex Destination Type Values
-    /// </summary>
-    public enum ExDestinationType : byte {
-        TradeonexchangeorSi = 3,
-        ExDestinationTypeMinimumValue = 3,
-        ExDestinationTypeMinimumValue = 3,
     };
 
 
@@ -758,13 +498,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         IocOrderCancelled = 105,
         FokOrderCancelled = 107,
         BookOrderExecuted = 108,
-        ChangedtoIoc = 114,
-        ChangeofSpecialist = 119,
         InstrumentStateChange = 122,
-        PendingNew = 138,
-        PendingNewApplied = 141,
-        PendingReplace = 139,
-        PendingReplaceApplied = 142,
+        MarketOrderTriggered = 135,
         EndOfDayProcessing = 146,
         OrderExpiration = 148,
         CaoOrderActivated = 149,
@@ -773,8 +508,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         OaoOrderInactivated = 152,
         AaoOrderActivated = 153,
         AaoOrderInactivated = 154,
-        IaoOrderActivated = 159,
-        IaoOrderInactivated = 160,
         OrderRefreshed = 155,
         OcoOrderTriggered = 164,
         StopOrderTriggered = 172,
@@ -788,18 +521,17 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         UserDoesNotExist = 241,
         SessionDoesNotExist = 242,
         InvalidStopPrice = 243,
+        MarkedForDeletion = 244,
         InstrumentDoesNotExist = 245,
         BusinessUnitRiskEvent = 246,
-        PanicCancel = 261,
+        InitialCleanup = 257,
         DividendPayment = 292,
         LastTradingDay = 294,
         TradingParameterChange = 295,
         CurrencyChange = 296,
         ProductAssignmentChange = 297,
         ReferencePriceChange = 298,
-        TickRuleChange = 300,
-        QrsExpiry = 316,
-        ExecRestatementReasonMinimumValue = 344,
+        ExecRestatementReasonMinimumValue = 299,
         ExecRestatementReasonMinimumValue = 0,
     };
 
@@ -816,32 +548,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         Restated = (byte)'D',
         Triggered = (byte)'L',
         Trade = (byte)'F',
-        PendingNew = (byte)'A',
-        PendingReplace = (byte)'E',
-    };
-
-
-    /// <summary>
-    ///  Executing Trader
-    /// </summary>
-    public unsafe struct ExecutingTrader {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Executing Trader Qualifier Values
-    /// </summary>
-    public enum ExecutingTraderQualifier : byte {
-        Algo = 22,
-        Human = 24,
-        ExecutingTraderQualifierMinimumValue = 24,
-        ExecutingTraderQualifierMinimumValue = 22,
     };
 
 
@@ -852,19 +558,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         public const int Size = 4;
 
         public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Expire Time
-    /// </summary>
-    public unsafe struct ExpireTime {
-        public const int Size = 8;
-
-        public long Value;
 
         public override string ToString()
             => $"{Value}";
@@ -885,7 +578,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     public enum FillLiquidityInd : byte {
         AddedLiquidity = 1,
         RemovedLiquidity = 2,
-        Auction = 4,
         TriggeredStopOrder = 5,
         TriggeredOcoOrder = 6,
         TriggeredMarketOrder = 7,
@@ -923,61 +615,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// <summary>
     ///  Fill Qty
     /// </summary>
-    public unsafe struct FillQty {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Firm Negotiation Id
-    /// </summary>
-    public unsafe struct FirmNegotiationId {
-        public const int Size = 20;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Firm Trade Id
-    /// </summary>
-    public unsafe struct FirmTradeId {
-        public const int Size = 20;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Fix Cl Ord Id
-    /// </summary>
-    public unsafe struct FixClOrdId {
-        public const int Size = 20;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
+    public struct FillQty {
+        public int Raw;
     };
 
 
@@ -1046,22 +685,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Free Text 2
-    /// </summary>
-    public unsafe struct FreeText2 {
-        public const int Size = 12;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Free Text 4
     /// </summary>
     public unsafe struct FreeText4 {
@@ -1078,15 +701,25 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Free Text 5
+    ///  Gateway Id
     /// </summary>
-    public unsafe struct FreeText5 {
-        public const int Size = 132;
+    public unsafe struct GatewayId {
+        public const int Size = 4;
 
-        public fixed sbyte Bytes[Size];
+        public int Value;
 
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
+        public override string ToString()
+            => $"{Value}";
+    };
+
+
+    /// <summary>
+    ///  Gateway Sub Id
+    /// </summary>
+    public unsafe struct GatewaySubId {
+        public const int Size = 4;
+
+        public int Value;
 
         public override string ToString()
             => $"{Value}";
@@ -1123,48 +756,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Imbalance Qty
-    /// </summary>
-    public unsafe struct ImbalanceQty {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Individual Alloc Id
-    /// </summary>
-    public unsafe struct IndividualAllocId {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Last Coupon Deviation Indicator Values
-    /// </summary>
-    public enum LastCouponDeviationIndicator : byte {
-        None = 0,
-        Shortperiod = 1,
-        Longperiod = 2,
-        Onlyonecoupon = 3,
-        Shorttwointerestpaymentsdue = 4,
-        Longtwointerestpaymentsdue = 5,
-        Perpetual = 6,
-        LastCouponDeviationIndicatorMinimumValue = 6,
-        LastCouponDeviationIndicatorMinimumValue = 0,
-    };
-
-
-    /// <summary>
     ///  Last Entity Processed
     /// </summary>
     public unsafe struct LastEntityProcessed {
@@ -1186,24 +777,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Last Mkt Values
-    /// </summary>
-    public enum LastMkt : ushort {
-        Xetr = 3,
-        Xvie = 4,
-        Xmal = 6,
-        Xbul = 7,
-        Xbud = 8,
-        Xlju = 9,
-        Xpra = 10,
-        Xzag = 11,
-        Xfra = 13,
-        LastMktMinimumValue = 255,
-        LastMktMinimumValue = 1,
-    };
-
-
-    /// <summary>
     ///  Last Px
     /// </summary>
     public unsafe struct LastPx {
@@ -1219,26 +792,16 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// <summary>
     ///  Last Qty
     /// </summary>
-    public unsafe struct LastQty {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct LastQty {
+        public int Raw;
     };
 
 
     /// <summary>
     ///  Leaves Qty
     /// </summary>
-    public unsafe struct LeavesQty {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct LeavesQty {
+        public int Raw;
     };
 
 
@@ -1257,13 +820,7 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     public enum MarketId : ushort {
         Xetr = 3,
         Xvie = 4,
-        Xmal = 6,
-        Xbul = 7,
-        Xbud = 8,
-        Xlju = 9,
-        Xpra = 10,
-        Xzag = 11,
-        Xfra = 13,
+        Xdub = 5,
         MarketIDMinimumValue = 255,
         MarketIDMinimumValue = 1,
     };
@@ -1284,19 +841,16 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         NoSpecialReason = 0,
         StopTrading = 1,
         Emergency = 2,
+        MarketMakerProtection = 3,
         SessionLoss = 6,
         DuplicateSessionLogin = 7,
         ClearingRiskControl = 8,
-        InternalConnectionLoss = 100,
         ProductStateHalt = 105,
         ProductStateHoliday = 106,
         InstrumentSuspended = 107,
         VolatilityInterruption = 110,
         Producttemporarilynottradeable = 111,
         InstrumentStopped = 113,
-        InstrumentKnockOut = 115,
-        InstrumentSoldOut = 116,
-        InstrumentKnockOutReverted = 118,
         MassActionReasonMinimumValue = 200,
         MassActionReasonMinimumValue = 0,
     };
@@ -1360,7 +914,7 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         ClosingAuction = 2,
         IntradayAuction = 3,
         CircuitBreakerAuction = 4,
-        MatchSubTypeMinimumValue = 6,
+        MatchSubTypeMinimumValue = 4,
         MatchSubTypeMinimumValue = 1,
     };
 
@@ -1373,11 +927,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         Automatchincoming = 4,
         CrossAuction = 5,
         CallAuction = 7,
-        SystematicInternaliser = 9,
         Automatchresting = 11,
-        Automatchatmidpoint = 12,
-        ContinuousAuction = 14,
-        MatchTypeMinimumValue = 14,
+        MatchTypeMinimumValue = 12,
         MatchTypeMinimumValue = 0,
     };
 
@@ -1407,70 +958,12 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Md Book Type Values
-    /// </summary>
-    public enum MdBookType : byte {
-        TopOfBook = 1,
-        PriceDepth = 2,
-        MdBookTypeMinimumValue = 2,
-        MdBookTypeMinimumValue = 1,
-    };
-
-
-    /// <summary>
-    ///  Md Sub Book Type Values
-    /// </summary>
-    public enum MdSubBookType : byte {
-        VolumeWeightedAverage = 2,
-        MdSubBookTypeMinimumValue = 2,
-        MdSubBookTypeMinimumValue = 1,
-    };
-
-
-    /// <summary>
-    ///  Message Event Source Values
-    /// </summary>
-    public enum MessageEventSource : byte {
-        BroadcasttoInitiator = (byte)'I',
-        BroadcasttoApprover = (byte)'A',
-        BroadcasttoRequester = (byte)'R',
-        BroadcasttoQuoteSubmitter = (byte)'Q',
-    };
-
-
-    /// <summary>
     ///  Msg Seq Num
     /// </summary>
     public unsafe struct MsgSeqNum {
         public const int Size = 4;
 
         public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Negotiation Id
-    /// </summary>
-    public unsafe struct NegotiationId {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Negotiation Start Time
-    /// </summary>
-    public unsafe struct NegotiationStartTime {
-        public const int Size = 8;
-
-        public long Value;
 
         public override string ToString()
             => $"{Value}";
@@ -1487,19 +980,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
         public string Value
             => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  No Affected Order Requests
-    /// </summary>
-    public unsafe struct NoAffectedOrderRequests {
-        public const int Size = 2;
-
-        public short Value;
 
         public override string ToString()
             => $"{Value}";
@@ -1526,19 +1006,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         public const int Size = 2;
 
         public short Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  No Events
-    /// </summary>
-    public unsafe struct NoEvents {
-        public const int Size = 1;
-
-        public sbyte Value;
 
         public override string ToString()
             => $"{Value}";
@@ -1585,19 +1052,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  No Order Book Items
-    /// </summary>
-    public unsafe struct NoOrderBookItems {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  No Party Details
     /// </summary>
     public unsafe struct NoPartyDetails {
@@ -1637,51 +1091,12 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  No Quote Side Entries
-    /// </summary>
-    public unsafe struct NoQuoteSideEntries {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  No Sessions
     /// </summary>
     public unsafe struct NoSessions {
         public const int Size = 2;
 
         public short Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  No Side Allocs
-    /// </summary>
-    public unsafe struct NoSideAllocs {
-        public const int Size = 1;
-
-        public sbyte Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  No Target Party I Ds
-    /// </summary>
-    public unsafe struct NoTargetPartyIDs {
-        public const int Size = 1;
-
-        public sbyte Value;
 
         public override string ToString()
             => $"{Value}";
@@ -1741,52 +1156,10 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Num Days Interest
-    /// </summary>
-    public unsafe struct NumDaysInterest {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Number Of Resp Disclosure Instruction Values
-    /// </summary>
-    public enum NumberOfRespDisclosureInstruction : byte {
-        No = 0,
-        Yes = 1,
-        NumberOfRespDisclosureInstructionMinimumValue = 1,
-        NumberOfRespDisclosureInstructionMinimumValue = 0,
-    };
-
-
-    /// <summary>
-    ///  Number Of Respondents
-    /// </summary>
-    public unsafe struct NumberOfRespondents {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Offer Cxl Size
     /// </summary>
-    public unsafe struct OfferCxlSize {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct OfferCxlSize {
+        public int Raw;
     };
 
 
@@ -1806,13 +1179,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// <summary>
     ///  Offer Size
     /// </summary>
-    public unsafe struct OfferSize {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct OfferSize {
+        public int Raw;
     };
 
 
@@ -1826,8 +1194,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         Canceled = (byte)'4',
         PendingCancel = (byte)'6',
         Suspended = (byte)'9',
-        PendingNew = (byte)'A',
-        PendingReplace = (byte)'E',
     };
 
 
@@ -1845,32 +1211,11 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Order Attribute Liquidity Provision Values
-    /// </summary>
-    public enum OrderAttributeLiquidityProvision : byte {
-        Y = 1,
-        N = 0,
-        OrderAttributeLiquidityProvisionMinimumValue = 1,
-        OrderAttributeLiquidityProvisionMinimumValue = 0,
-    };
-
-
-    /// <summary>
     ///  Order Category Values
     /// </summary>
     public enum OrderCategory : byte {
         Order = (byte)'1',
         Quote = (byte)'2',
-    };
-
-
-    /// <summary>
-    ///  Order Event Type Values
-    /// </summary>
-    public enum OrderEventType : byte {
-        Pendingrequestsdiscarded = 100,
-        OrderEventTypeMinimumValue = 100,
-        OrderEventTypeMinimumValue = 100,
     };
 
 
@@ -1901,25 +1246,10 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Order Origination Values
-    /// </summary>
-    public enum OrderOrigination : byte {
-        Directaccessorsponsoredaccesscustomer = 5,
-        OrderOriginationMinimumValue = 5,
-        OrderOriginationMinimumValue = 5,
-    };
-
-
-    /// <summary>
     ///  Order Qty
     /// </summary>
-    public unsafe struct OrderQty {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct OrderQty {
+        public int Raw;
     };
 
 
@@ -1979,19 +1309,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         ChangetoExecutingTrader = 1,
         OwnershipIndicatorMinimumValue = 1,
         OwnershipIndicatorMinimumValue = 0,
-    };
-
-
-    /// <summary>
-    ///  Package Id
-    /// </summary>
-    public unsafe struct PackageId {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
     };
 
 
@@ -2171,89 +1488,12 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Party Entering Firm
-    /// </summary>
-    public unsafe struct PartyEnteringFirm {
-        public const int Size = 5;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Party Entering Trader
-    /// </summary>
-    public unsafe struct PartyEnteringTrader {
-        public const int Size = 6;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Party Executing Firm
-    /// </summary>
-    public unsafe struct PartyExecutingFirm {
-        public const int Size = 5;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Party Executing Trader
-    /// </summary>
-    public unsafe struct PartyExecutingTrader {
-        public const int Size = 6;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Party Id Client Id
-    /// </summary>
-    public unsafe struct PartyIdClientId {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Party Id Entering Firm Values
     /// </summary>
     public enum PartyIdEnteringFirm : byte {
         Participant = 1,
         MarketSupervision = 2,
-        PartyIdEnteringFirmMinimumValue = 3,
+        PartyIdEnteringFirmMinimumValue = 2,
         PartyIdEnteringFirmMinimumValue = 1,
     };
 
@@ -2298,81 +1538,12 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Party Id Investment Decision Maker
-    /// </summary>
-    public unsafe struct PartyIdInvestmentDecisionMaker {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Party Id Investment Decision Maker Qualifier Values
-    /// </summary>
-    public enum PartyIdInvestmentDecisionMakerQualifier : byte {
-        Algo = 22,
-        Human = 24,
-        PartyIdInvestmentDecisionMakerQualifierMinimumValue = 24,
-        PartyIdInvestmentDecisionMakerQualifierMinimumValue = 22,
-    };
-
-
-    /// <summary>
     ///  Party Id Session Id
     /// </summary>
     public unsafe struct PartyIdSessionId {
         public const int Size = 4;
 
         public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Party Id Specialist Trader
-    /// </summary>
-    public unsafe struct PartyIdSpecialistTrader {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Party Specialist Firm
-    /// </summary>
-    public unsafe struct PartySpecialistFirm {
-        public const int Size = 5;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Party Specialist Trader
-    /// </summary>
-    public unsafe struct PartySpecialistTrader {
-        public const int Size = 6;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
 
         public override string ToString()
             => $"{Value}";
@@ -2409,48 +1580,9 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Peg Offset Value Bid Px
-    /// </summary>
-    public unsafe struct PegOffsetValueBidPx {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Peg Offset Value Offer Px
-    /// </summary>
-    public unsafe struct PegOffsetValueOfferPx {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Peg Offset Value Pct
     /// </summary>
     public unsafe struct PegOffsetValuePct {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Potential Exec Volume
-    /// </summary>
-    public unsafe struct PotentialExecVolume {
         public const int Size = 8;
 
         public long Value;
@@ -2485,16 +1617,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Quote Cancel Type Values
-    /// </summary>
-    public enum QuoteCancelType : byte {
-        CancelAllQuotes = 4,
-        QuoteCancelTypeMinimumValue = 4,
-        QuoteCancelTypeMinimumValue = 4,
-    };
-
-
-    /// <summary>
     ///  Quote Entry Reject Reason Values
     /// </summary>
     public enum QuoteEntryRejectReason : uint {
@@ -2516,32 +1638,7 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         BidValueExceedsLimit = 120,
         AskValueExceedsLimit = 121,
         NotTradeableForBusinessUnit = 122,
-        QuantityLimitExceeded = 125,
-        ValueLimitExceeded = 126,
-        InvalidQuoteSpread = 127,
         CantProcInCurrInstrState = 131,
-        InvalidQuoteType = 134,
-        PwtQuotenotallowedincurrentstate = 135,
-        StandardQuotenotallowedincurrentstate = 136,
-        PwtQuotenotallowedwithcrossedbook = 137,
-        Asksidequotenotallowed = 138,
-        Asksidequotewithqtynotallowed = 139,
-        InvalidchangeLPsession = 140,
-        OnBookTradingdisabledforInstrumentType = 144,
-        LPlicencenotassigned = 145,
-        SPlicencenotassigned = 146,
-        Liquidityproviderprotectionbidsidecancelled = 147,
-        Liquidityproviderprotectionasksidecancelled = 148,
-        QuantityLimitExceededInstrument = 149,
-        ValueLimitExceededInstrument = 150,
-        IssuerStopped = 151,
-        PartialExecOfQrsOrder = 152,
-        MatchingQuoteNotAllowedInCurrentState = 153,
-        OutsideQuotingPeriod = 155,
-        MatchPriceNotOnPriceStep = 156,
-        QuantityLimitExceedsTsl = 161,
-        InvalidTradingSessionSubIDforInstrument = 162,
-        TooManyOrdersandQuotesinOrderBook = 163,
         QuoteEntryRejectReasonMinimumValue = 65535,
         QuoteEntryRejectReasonMinimumValue = 0,
     };
@@ -2574,8 +1671,7 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     public enum QuoteEventLiquidityInd : byte {
         AddedLiquidity = 1,
         RemovedLiquidity = 2,
-        Auction = 4,
-        QuoteEventLiquidityIndMinimumValue = 4,
+        QuoteEventLiquidityIndMinimumValue = 2,
         QuoteEventLiquidityIndMinimumValue = 1,
     };
 
@@ -2609,13 +1705,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// <summary>
     ///  Quote Event Qty
     /// </summary>
-    public unsafe struct QuoteEventQty {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
+    public struct QuoteEventQty {
+        public int Raw;
     };
 
 
@@ -2626,11 +1717,7 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         Pendingcancellationexecuted = 14,
         Invalidprice = 15,
         Crossrejected = 16,
-        Plp = 18,
-        PricenotTopofBook = 19,
-        RandomSelection = 20,
-        ManualSelection = 21,
-        QuoteEventReasonMinimumValue = 21,
+        QuoteEventReasonMinimumValue = 16,
         QuoteEventReasonMinimumValue = 14,
     };
 
@@ -2686,39 +1773,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Quote Req Id
-    /// </summary>
-    public unsafe struct QuoteReqId {
-        public const int Size = 20;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Quote Request Reject Reason Values
-    /// </summary>
-    public enum QuoteRequestRejectReason : byte {
-        Exchangeclosed = 2,
-        Other = 99,
-        Requestedsizetoosmall = 100,
-        Requestedsizetoobig = 101,
-        Novalidquotefromissuer = 102,
-        Soldout = 103,
-        Tradingrestriction = 104,
-        Pendingrequesttimedout = 105,
-        QuoteRequestRejectReasonMinimumValue = 106,
-        QuoteRequestRejectReasonMinimumValue = 2,
-    };
-
-
-    /// <summary>
     ///  Quote Response Id
     /// </summary>
     public unsafe struct QuoteResponseId {
@@ -2743,44 +1797,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Quote Status Values
-    /// </summary>
-    public enum QuoteStatus : byte {
-        Removed = 6,
-        Expired = 7,
-        Active = 16,
-        QuoteStatusMinimumValue = 17,
-        QuoteStatusMinimumValue = 6,
-    };
-
-
-    /// <summary>
-    ///  Quote Type Values
-    /// </summary>
-    public enum QuoteType : byte {
-        Tradeable = 1,
-        TradeableMatching = 101,
-        TradeablePwt = 102,
-        SpecialAuction = 103,
-        QuoteTypeMinimumValue = 103,
-        QuoteTypeMinimumValue = 0,
-    };
-
-
-    /// <summary>
-    ///  Quoting Status Values
-    /// </summary>
-    public enum QuotingStatus : byte {
-        OpenActive = 1,
-        OpenIdle = 2,
-        ClosedInactive = 3,
-        OpenNotResponded = 4,
-        QuotingStatusMinimumValue = 4,
-        QuotingStatusMinimumValue = 0,
-    };
-
-
-    /// <summary>
     ///  Ref Appl Id Values
     /// </summary>
     public enum RefApplId : byte {
@@ -2790,12 +1806,7 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         Sessiondata = 4,
         Listenerdata = 5,
         RiskControl = 6,
-        TesMaintenance = 7,
-        TesTrade = 8,
-        SrqsMaintenance = 9,
-        ServiceAvailabilityMarket = 10,
-        SpecialistData = 11,
-        RefApplIDMinimumValue = 11,
+        RefApplIDMinimumValue = 8,
         RefApplIDMinimumValue = 0,
     };
 
@@ -2837,26 +1848,12 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Refinancing Eligibility Indicator Values
+    ///  Request Out
     /// </summary>
-    public enum RefinancingEligibilityIndicator : byte {
-        No = 0,
-        Yes = 1,
-        RefinancingEligibilityIndicatorMinimumValue = 1,
-        RefinancingEligibilityIndicatorMinimumValue = 0,
-    };
+    public unsafe struct RequestOut {
+        public const int Size = 8;
 
-
-    /// <summary>
-    ///  Regulatory Trade Id
-    /// </summary>
-    public unsafe struct RegulatoryTradeId {
-        public const int Size = 52;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
+        public long Value;
 
         public override string ToString()
             => $"{Value}";
@@ -2943,57 +1940,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Reserved Bid Size
-    /// </summary>
-    public unsafe struct ReservedBidSize {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Reserved Offer Size
-    /// </summary>
-    public unsafe struct ReservedOfferSize {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Reserved Size
-    /// </summary>
-    public unsafe struct ReservedSize {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Respondent Type Values
-    /// </summary>
-    public enum RespondentType : byte {
-        Specifiedmarketparticipants = 2,
-        SpecifiedandSmartRfQselectedparticipants = 100,
-        SmartRfQselectedparticipants = 101,
-        RespondentTypeMinimumValue = 101,
-        RespondentTypeMinimumValue = 2,
-    };
-
-
-    /// <summary>
     ///  Response In
     /// </summary>
     public unsafe struct ResponseIn {
@@ -3003,32 +1949,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Rfq Publish Indicator Values
-    /// </summary>
-    public enum RfqPublishIndicator : byte {
-        MarketData = 1,
-        DesignatedSponsor = 2,
-        MarketDataandDesignatedSponsor = 3,
-        MarketMakerandDesignatedSponsor = 4,
-        MarketDataandMarketMakerandDesignatedSponsor = 5,
-        Specialist = 6,
-        RfqPublishIndicatorMinimumValue = 6,
-        RfqPublishIndicatorMinimumValue = 1,
-    };
-
-
-    /// <summary>
-    ///  Rfq Requester Disclosure Instruction Values
-    /// </summary>
-    public enum RfqRequesterDisclosureInstruction : byte {
-        No = 0,
-        Yes = 1,
-        RfqRequesterDisclosureInstructionMinimumValue = 1,
-        RfqRequesterDisclosureInstructionMinimumValue = 0,
     };
 
 
@@ -3138,22 +2058,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Root Party Entering Trader
-    /// </summary>
-    public unsafe struct RootPartyEnteringTrader {
-        public const int Size = 6;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Root Party Executing Firm
     /// </summary>
     public unsafe struct RootPartyExecutingFirm {
@@ -3215,19 +2119,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Root Party Id Client Id
-    /// </summary>
-    public unsafe struct RootPartyIdClientId {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Root Party Id Contra Settlement Unit
     /// </summary>
     public unsafe struct RootPartyIdContraSettlementUnit {
@@ -3276,46 +2167,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Root Party Id Execution Venue
-    /// </summary>
-    public unsafe struct RootPartyIdExecutionVenue {
-        public const int Size = 4;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Root Party Id Investment Decision Maker
-    /// </summary>
-    public unsafe struct RootPartyIdInvestmentDecisionMaker {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Root Party Id Investment Decision Maker Qualifier Values
-    /// </summary>
-    public enum RootPartyIdInvestmentDecisionMakerQualifier : byte {
-        Algo = 22,
-        Human = 24,
-        RootPartyIdInvestmentDecisionMakerQualifierMinimumValue = 24,
-        RootPartyIdInvestmentDecisionMakerQualifierMinimumValue = 22,
     };
 
 
@@ -3403,12 +2254,12 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Secondary Quote Id
+    ///  Secondary Gateway Id
     /// </summary>
-    public unsafe struct SecondaryQuoteId {
-        public const int Size = 8;
+    public unsafe struct SecondaryGatewayId {
+        public const int Size = 4;
 
-        public long Value;
+        public int Value;
 
         public override string ToString()
             => $"{Value}";
@@ -3416,9 +2267,9 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Secondary Trade Id
+    ///  Secondary Gateway Sub Id
     /// </summary>
-    public unsafe struct SecondaryTradeId {
+    public unsafe struct SecondaryGatewaySubId {
         public const int Size = 4;
 
         public int Value;
@@ -3433,66 +2284,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     public struct SecurityId {
         public long Raw;
-    };
-
-
-    /// <summary>
-    ///  Security Status Values
-    /// </summary>
-    public enum SecurityStatus : byte {
-        Knockedout = 6,
-        Knockoutrevoked = 7,
-        Knockedoutandsuspend = 12,
-        SecurityStatusMinimumValue = 12,
-        SecurityStatusMinimumValue = 6,
-    };
-
-
-    /// <summary>
-    ///  Security Status Report Id
-    /// </summary>
-    public unsafe struct SecurityStatusReportId {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Security Trading Status Values
-    /// </summary>
-    public enum SecurityTradingStatus : byte {
-        MarketImbalanceBuy = 7,
-        MarketImbalanceSell = 8,
-        SecurityTradingStatusMinimumValue = 8,
-        SecurityTradingStatusMinimumValue = 7,
-    };
-
-
-    /// <summary>
-    ///  Selective Request For Quote Service Status Values
-    /// </summary>
-    public enum SelectiveRequestForQuoteServiceStatus : byte {
-        Unavailable = 0,
-        Available = 1,
-        SelectiveRequestForQuoteServiceStatusMinimumValue = 1,
-        SelectiveRequestForQuoteServiceStatusMinimumValue = 0,
-    };
-
-
-    /// <summary>
-    ///  Selective Request For Quote Service Trade Date
-    /// </summary>
-    public unsafe struct SelectiveRequestForQuoteServiceTradeDate {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
     };
 
 
@@ -3561,18 +2352,14 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         ExposureLimitExceeded = 101,
         ServiceTemporarilyNotAvailable = 102,
         ServiceNotAvailable = 103,
+        ResultOfTransactionUnknown = 104,
         Outboundconversionerror = 105,
         HeartbeatViolation = 152,
         Internaltechnicalerror = 200,
         ValidationError = 210,
         UserAlreadyLoggedIn = 211,
-        GatewayIsStandby = 216,
-        SessionLoginLimitReached = 217,
-        UserEntitlementDataTimeout = 223,
-        PsGatewaySessionLimitReached = 224,
-        UserLoginLimitReached = 225,
-        OutstandingLoginsBuLimitReached = 226,
-        OutstandingLoginsSessionLimitReached = 227,
+        SessionGatewayAssignmentExpired = 214,
+        GatewayNotReservedToSession = 215,
         OrderNotFound = 10000,
         PriceNotReasonable = 10001,
         ClientOrderIdNotUnique = 10002,
@@ -3607,7 +2394,7 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         Regulartradingsession = 0,
         FiXtradingsession = 1,
         RegularBackOfficesession = 2,
-        SessionSubModeMinimumValue = 3,
+        SessionSubModeMinimumValue = 2,
         SessionSubModeMinimumValue = 0,
     };
 
@@ -3679,25 +2466,12 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Side Gross Trade Amt
-    /// </summary>
-    public unsafe struct SideGrossTradeAmt {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Side Liquidity Ind Values
     /// </summary>
     public enum SideLiquidityInd : byte {
         AddedLiquidity = 1,
         RemovedLiquidity = 2,
-        Auction = 4,
+        None = 4,
         SideLiquidityIndMinimumValue = 4,
         SideLiquidityIndMinimumValue = 1,
     };
@@ -3720,30 +2494,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     ///  Side Trade Report Id
     /// </summary>
     public unsafe struct SideTradeReportId {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Sold Out Indicator Values
-    /// </summary>
-    public enum SoldOutIndicator : byte {
-        Revertsoldout = 0,
-        Soldout = 1,
-        SoldOutIndicatorMinimumValue = 1,
-        SoldOutIndicatorMinimumValue = 0,
-    };
-
-
-    /// <summary>
-    ///  Srqs Related Trade Id
-    /// </summary>
-    public unsafe struct SrqsRelatedTradeId {
         public const int Size = 4;
 
         public int Value;
@@ -3784,86 +2534,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         public const int Size = 4;
 
         public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  T 7 Entry Service Rtm Status Values
-    /// </summary>
-    public enum T7EntryServiceRtmStatus : byte {
-        Unavailable = 0,
-        Available = 1,
-        T7EntryServiceRtmStatusMinimumValue = 1,
-        T7EntryServiceRtmStatusMinimumValue = 0,
-    };
-
-
-    /// <summary>
-    ///  T 7 Entry Service Rtm Trade Date
-    /// </summary>
-    public unsafe struct T7EntryServiceRtmTradeDate {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  T 7 Entry Service Status Values
-    /// </summary>
-    public enum T7EntryServiceStatus : byte {
-        Unavailable = 0,
-        Available = 1,
-        T7EntryServiceStatusMinimumValue = 1,
-        T7EntryServiceStatusMinimumValue = 0,
-    };
-
-
-    /// <summary>
-    ///  T 7 Entry Service Trade Date
-    /// </summary>
-    public unsafe struct T7EntryServiceTradeDate {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Target Party Executing Firm
-    /// </summary>
-    public unsafe struct TargetPartyExecutingFirm {
-        public const int Size = 5;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Target Party Executing Trader
-    /// </summary>
-    public unsafe struct TargetPartyExecutingTrader {
-        public const int Size = 6;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
 
         public override string ToString()
             => $"{Value}";
@@ -3926,19 +2596,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Tes Exec Id
-    /// </summary>
-    public unsafe struct TesExecId {
-        public const int Size = 4;
-
-        public int Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Throttle Disconnect Limit
     /// </summary>
     public unsafe struct ThrottleDisconnectLimit {
@@ -3980,7 +2637,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         Gtc = 1,
         Ioc = 3,
         Fok = 4,
-        Gtx = 5,
         Gtd = 6,
         TimeInForceMinimumValue = 6,
         TimeInForceMinimumValue = 0,
@@ -4009,23 +2665,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         Simulated = 2,
         Production = 3,
         Acceptance = 4,
-        DisasterRecovery = 5,
-        TradSesModeMinimumValue = 5,
+        TradSesModeMinimumValue = 4,
         TradSesModeMinimumValue = 1,
-    };
-
-
-    /// <summary>
-    ///  Trade Alloc Status Values
-    /// </summary>
-    public enum TradeAllocStatus : byte {
-        Pending = 1,
-        Approved = 2,
-        AutoApproved = 3,
-        Uploaded = 4,
-        Canceled = 5,
-        TradeAllocStatusMinimumValue = 5,
-        TradeAllocStatusMinimumValue = 0,
     };
 
 
@@ -4093,60 +2734,11 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Trade Publish Indicator Values
-    /// </summary>
-    public enum TradePublishIndicator : byte {
-        DeferredPublication = 2,
-        Published = 3,
-        TradePublishIndicatorMinimumValue = 3,
-        TradePublishIndicatorMinimumValue = 0,
-    };
-
-
-    /// <summary>
-    ///  Trade Report Id
-    /// </summary>
-    public unsafe struct TradeReportId {
-        public const int Size = 20;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Trade Report Text
-    /// </summary>
-    public unsafe struct TradeReportText {
-        public const int Size = 20;
-
-        public fixed sbyte Bytes[Size];
-
-        public string Value
-            => new String((sbyte*)Bytes, 0, Size);
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
     ///  Trade Report Type Values
     /// </summary>
     public enum TradeReportType : byte {
         Submit = 0,
-        Accept = 2,
-        Decline = 3,
-        NoWasReplaced = 5,
-        TradeReportCancel = 6,
         TradeBreak = 7,
-        AllegedNew = 11,
-        AllegedNoWas = 13,
         TradeReportTypeMinimumValue = 13,
         TradeReportTypeMinimumValue = 0,
     };
@@ -4157,12 +2749,9 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     public enum TradingCapacity : byte {
         Customer = 1,
-        Brokerdealer = 3,
         Principal = 5,
         MarketMaker = 6,
-        SystematicInternaliser = 8,
-        RisklessPrincipal = 9,
-        TradingCapacityMinimumValue = 9,
+        TradingCapacityMinimumValue = 6,
         TradingCapacityMinimumValue = 1,
     };
 
@@ -4173,24 +2762,9 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     public enum TradingSessionSubId : byte {
         Openingauction = 2,
         Closingauction = 4,
-        IntradayAuction = 6,
         AnyAuction = 8,
-        SpecialAuction = 105,
-        TradingSessionSubIDMinimumValue = 105,
+        TradingSessionSubIDMinimumValue = 8,
         TradingSessionSubIDMinimumValue = 1,
-    };
-
-
-    /// <summary>
-    ///  Trans Bkd Time
-    /// </summary>
-    public unsafe struct TransBkdTime {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
     };
 
 
@@ -4204,17 +2778,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
         public override string ToString()
             => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Transaction Delay Indicator Values
-    /// </summary>
-    public enum TransactionDelayIndicator : byte {
-        Notdelayed = 0,
-        Delayed = 1,
-        TransactionDelayIndicatorMinimumValue = 1,
-        TransactionDelayIndicatorMinimumValue = 0,
     };
 
 
@@ -4246,19 +2809,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     ///  Trd Reg Ts Entry Time
     /// </summary>
     public unsafe struct TrdRegTsEntryTime {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Trd Reg Ts Execution Time
-    /// </summary>
-    public unsafe struct TrdRegTsExecutionTime {
         public const int Size = 8;
 
         public long Value;
@@ -4308,33 +2858,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Trd Rpt Status Values
-    /// </summary>
-    public enum TrdRptStatus : byte {
-        Accepted = 0,
-        Rejected = 1,
-        Cancelled = 2,
-        PendingNew = 4,
-        Terminated = 7,
-        DeemedVerified = 9,
-        TrdRptStatusMinimumValue = 9,
-        TrdRptStatusMinimumValue = 0,
-    };
-
-
-    /// <summary>
-    ///  Trd Type Values
-    /// </summary>
-    public enum TrdType : ushort {
-        Otc = 54,
-        Lis = 1005,
-        Enlight = 1006,
-        TrdTypeMinimumValue = 1010,
-        TrdTypeMinimumValue = 1,
-    };
-
-
-    /// <summary>
     ///  Triggered Values
     /// </summary>
     public enum Triggered : byte {
@@ -4372,41 +2895,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Valid Until Time
-    /// </summary>
-    public unsafe struct ValidUntilTime {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
-    /// <summary>
-    ///  Value Check Type Quantity Values
-    /// </summary>
-    public enum ValueCheckTypeQuantity : byte {
-        Donotcheck = 0,
-        Check = 1,
-        ValueCheckTypeQuantityMinimumValue = 1,
-        ValueCheckTypeQuantityMinimumValue = 0,
-    };
-
-
-    /// <summary>
-    ///  Value Check Type Value Values
-    /// </summary>
-    public enum ValueCheckTypeValue : byte {
-        Donotcheck = 0,
-        Check = 1,
-        ValueCheckTypeValueMinimumValue = 1,
-        ValueCheckTypeValueMinimumValue = 0,
-    };
-
-
-    /// <summary>
     ///  Var Text
     /// </summary>
     public unsafe struct VarText {
@@ -4435,19 +2923,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     };
 
 
-    /// <summary>
-    ///  Volume Discovery Price
-    /// </summary>
-    public unsafe struct VolumeDiscoveryPrice {
-        public const int Size = 8;
-
-        public long Value;
-
-        public override string ToString()
-            => $"{Value}";
-    };
-
-
     ///////////////////////////////////////////////////////////////////////
     #endregion
 
@@ -4455,95 +2930,12 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     ///////////////////////////////////////////////////////////////////////
 
     /// <summary>
-    ///  Struct for Affected Ord Grp
+    ///  Struct for Affected Ord Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct AffectedOrdGrp {
+    public unsafe struct AffectedOrdGrpComp {
         AffectedOrderId AffectedOrderId;
         AffectedOrigClOrdId AffectedOrigClOrdId;
-    };
-
-
-    /// <summary>
-    ///  Struct for Affected Order Requests Grp
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct AffectedOrderRequestsGrp {
-        AffectedOrderRequestId AffectedOrderRequestId;
-        Pad4 Pad4;
-    };
-
-
-    /// <summary>
-    ///  Struct for Approve Tes Trade Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct ApproveTesTradeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        PartyIdClientId PartyIdClientId;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
-        AllocQty AllocQty;
-        PackageId PackageId;
-        AllocId AllocId;
-        TesExecId TesExecId;
-        MarketSegmentId MarketSegmentId;
-        TrdType TrdType;
-        TradingCapacity TradingCapacity;
-        TradeReportType TradeReportType;
-        Side Side;
-        ValueCheckTypeValue ValueCheckTypeValue;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        TradeReportId TradeReportId;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        FreeText1 FreeText1;
-        FreeText2 FreeText2;
-        FreeText4 FreeText4;
-        Pad7 Pad7;
-    };
-
-
-    /// <summary>
-    ///  Struct for Best Quote Execution Report
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct BestQuoteExecutionReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
-        ExecId ExecId;
-        QuoteMsgId QuoteMsgId;
-        SecurityId SecurityId;
-        QuoteEventPx QuoteEventPx;
-        QuoteEventQty QuoteEventQty;
-        ReservedSize ReservedSize;
-        MarketSegmentId MarketSegmentId;
-        QuoteEventMatchId QuoteEventMatchId;
-        QuoteEventExecId QuoteEventExecId;
-        QuoteEventType QuoteEventType;
-        QuoteEventSide QuoteEventSide;
-        Pad2 Pad2;
-    };
-
-
-    /// <summary>
-    ///  Struct for Best Quote Response
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct BestQuoteResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
-        QuoteId QuoteId;
-        QuoteResponseId QuoteResponseId;
-        SecurityId SecurityId;
-        BidCxlSize BidCxlSize;
-        OfferCxlSize OfferCxlSize;
-        MarketSegmentId MarketSegmentId;
-        Pad4 Pad4;
     };
 
 
@@ -4552,8 +2944,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct BroadcastErrorNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         ApplIdStatus ApplIdStatus;
         RefApplSubId RefApplSubId;
         VarTextLen VarTextLen;
@@ -4568,12 +2960,12 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct CrossRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
-        OrderQty OrderQty;
+        ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
-        Pad4 Pad4;
+        OrderQty OrderQty;
     };
 
 
@@ -4582,8 +2974,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct CrossRequestResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         ExecId ExecId;
     };
 
@@ -4593,8 +2985,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         MassActionReportId MassActionReportId;
     };
 
@@ -4604,8 +2996,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllOrderQuoteEventBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MassActionReportId MassActionReportId;
         SecurityId SecurityId;
         MarketSegmentId MarketSegmentId;
@@ -4620,19 +3012,16 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllOrderRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         Price Price;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
+        ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
         TargetPartyIdSessionId TargetPartyIdSessionId;
         TargetPartyIdExecutingTrader TargetPartyIdExecutingTrader;
         Side Side;
-        OrderOrigination OrderOrigination;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
+        Pad3 Pad3;
     };
 
 
@@ -4641,8 +3030,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllQuoteBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MassActionReportId MassActionReportId;
         SecurityId SecurityId;
         MarketSegmentId MarketSegmentId;
@@ -4662,15 +3051,11 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
+        ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
         TargetPartyIdSessionId TargetPartyIdSessionId;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        Pad6 Pad6;
     };
 
 
@@ -4679,8 +3064,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllQuoteResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         MassActionReportId MassActionReportId;
         NoNotAffectedSecurities NoNotAffectedSecurities;
         Pad6 Pad6;
@@ -4692,30 +3077,24 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         SecurityId SecurityId;
         ExecId ExecId;
+        OrderIdSfx OrderIdSfx;
         CumQty CumQty;
         CxlQty CxlQty;
-        QuoteId QuoteId;
-        OrderIdSfx OrderIdSfx;
         MarketSegmentId MarketSegmentId;
         PartyIdEnteringTrader PartyIdEnteringTrader;
-        PartyIdSessionId PartyIdSessionId;
         ExecRestatementReason ExecRestatementReason;
         PartyIdEnteringFirm PartyIdEnteringFirm;
         OrdStatus OrdStatus;
         ExecType ExecType;
         Side Side;
-        OrderEventType OrderEventType;
-        FixClOrdId FixClOrdId;
-        PartyEnteringFirm PartyEnteringFirm;
-        PartyEnteringTrader PartyEnteringTrader;
-        Pad2 Pad2;
+        Pad6 Pad6;
     };
 
 
@@ -4724,21 +3103,19 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         SecurityId SecurityId;
         ExecId ExecId;
+        OrderIdSfx OrderIdSfx;
         CumQty CumQty;
         CxlQty CxlQty;
-        OrderIdSfx OrderIdSfx;
         OrdStatus OrdStatus;
         ExecType ExecType;
         ExecRestatementReason ExecRestatementReason;
-        TransactionDelayIndicator TransactionDelayIndicator;
-        Pad7 Pad7;
     };
 
 
@@ -4747,21 +3124,19 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         SecurityId SecurityId;
         ExecId ExecId;
+        OrderIdSfx OrderIdSfx;
         CumQty CumQty;
         CxlQty CxlQty;
-        OrderIdSfx OrderIdSfx;
         OrdStatus OrdStatus;
         ExecType ExecType;
         ExecRestatementReason ExecRestatementReason;
-        TransactionDelayIndicator TransactionDelayIndicator;
-        Pad7 Pad7;
     };
 
 
@@ -4770,104 +3145,27 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderSingleRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         SecurityId SecurityId;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
+        ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
         TargetPartyIdSessionId TargetPartyIdSessionId;
-        OrderOrigination OrderOrigination;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        FixClOrdId FixClOrdId;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        Pad6 Pad6;
     };
 
 
     /// <summary>
-    ///  Struct for Delete Tes Trade Request
+    ///  Struct for Enrichment Rules Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct DeleteTesTradeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        PackageId PackageId;
-        MarketSegmentId MarketSegmentId;
-        TesExecId TesExecId;
-        TrdType TrdType;
-        TradeReportType TradeReportType;
-        TradeReportId TradeReportId;
-        Pad5 Pad5;
-    };
-
-
-    /// <summary>
-    ///  Struct for Enrichment Rules Grp
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct EnrichmentRulesGrp {
+    public unsafe struct EnrichmentRulesGrpComp {
         EnrichmentRuleId EnrichmentRuleId;
         FreeText1 FreeText1;
-        FreeText2 FreeText2;
         FreeText4 FreeText4;
-        Pad6 Pad6;
-    };
-
-
-    /// <summary>
-    ///  Struct for Enter Best Quote Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct EnterBestQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        QuoteId QuoteId;
-        SecurityId SecurityId;
-        BidPx BidPx;
-        BidSize BidSize;
-        ReservedBidSize ReservedBidSize;
-        OfferPx OfferPx;
-        OfferSize OfferSize;
-        ReservedOfferSize ReservedOfferSize;
-        PegOffsetValueBidPx PegOffsetValueBidPx;
-        PegOffsetValueOfferPx PegOffsetValueOfferPx;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
-        MarketSegmentId MarketSegmentId;
-        EnrichmentRuleId EnrichmentRuleId;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        Pad6 Pad6;
-    };
-
-
-    /// <summary>
-    ///  Struct for Enter Tes Trade Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct EnterTesTradeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        SecurityId SecurityId;
-        LastPx LastPx;
-        TransBkdTime TransBkdTime;
-        SettlCurrFxRate SettlCurrFxRate;
-        MarketSegmentId MarketSegmentId;
-        SettlDate SettlDate;
-        TrdType TrdType;
-        TradeReportType TradeReportType;
-        NoSideAllocs NoSideAllocs;
-        TradeReportText TradeReportText;
-        TradeReportId TradeReportId;
-        Pad4 Pad4;
+        Pad2 Pad2;
     };
 
 
@@ -4876,8 +3174,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ExtendedDeletionReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4885,6 +3183,11 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         ExecId ExecId;
         TrdRegTsEntryTime TrdRegTsEntryTime;
         Price Price;
+        StopPx StopPx;
+        PegOffsetValueAbs PegOffsetValueAbs;
+        PegOffsetValuePct PegOffsetValuePct;
+        MarketSegmentId MarketSegmentId;
+        OrderIdSfx OrderIdSfx;
         LeavesQty LeavesQty;
         CumQty CumQty;
         CxlQty CxlQty;
@@ -4892,13 +3195,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         DisplayQty DisplayQty;
         DisplayLowQty DisplayLowQty;
         DisplayHighQty DisplayHighQty;
-        StopPx StopPx;
-        VolumeDiscoveryPrice VolumeDiscoveryPrice;
-        PegOffsetValueAbs PegOffsetValueAbs;
-        PegOffsetValuePct PegOffsetValuePct;
-        QuoteId QuoteId;
-        MarketSegmentId MarketSegmentId;
-        OrderIdSfx OrderIdSfx;
         ExpireDate ExpireDate;
         MatchInstCrossId MatchInstCrossId;
         PartyIdExecutingUnit PartyIdExecutingUnit;
@@ -4915,31 +3211,24 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         ExecInst ExecInst;
         TradingSessionSubId TradingSessionSubId;
         ApplSeqIndicator ApplSeqIndicator;
-        ExDestinationType ExDestinationType;
         FreeText1 FreeText1;
-        FreeText2 FreeText2;
         FreeText4 FreeText4;
-        PartyEnteringFirm PartyEnteringFirm;
-        PartyEnteringTrader PartyEnteringTrader;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        FixClOrdId FixClOrdId;
         Triggered Triggered;
-        Pad1 Pad1;
+        Pad4 Pad4;
     };
 
 
     /// <summary>
-    ///  Struct for Fills Grp
+    ///  Struct for Fills Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct FillsGrp {
+    public unsafe struct FillsGrpComp {
         FillPx FillPx;
         FillQty FillQty;
         FillMatchId FillMatchId;
         FillExecId FillExecId;
         FillLiquidityInd FillLiquidityInd;
-        Pad7 Pad7;
+        Pad3 Pad3;
     };
 
 
@@ -4948,8 +3237,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ForcedLogoutNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         VarTextLen VarTextLen;
         Pad6 Pad6;
     };
@@ -4960,8 +3249,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ForcedUserLogoutNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         UserStatus UserStatus;
         Pad3 Pad3;
         Username Username;
@@ -4971,11 +3260,42 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
+    ///  Struct for Gateway Request
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct GatewayRequest {
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
+        PartyIdSessionId PartyIdSessionId;
+        DefaultCstmApplVerId DefaultCstmApplVerId;
+        Password Password;
+        Pad6 Pad6;
+    };
+
+
+    /// <summary>
+    ///  Struct for Gateway Response
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct GatewayResponse {
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
+        GatewayId GatewayId;
+        GatewaySubId GatewaySubId;
+        SecondaryGatewayId SecondaryGatewayId;
+        SecondaryGatewaySubId SecondaryGatewaySubId;
+        SessionMode SessionMode;
+        TradSesMode TradSesMode;
+        Pad6 Pad6;
+    };
+
+
+    /// <summary>
     ///  Struct for Heartbeat
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct Heartbeat {
-        MessageHeaderIn MessageHeaderIn;
+        MessageHeaderInComp MessageHeaderInComp;
     };
 
 
@@ -4984,8 +3304,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct HeartbeatNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
     };
 
 
@@ -4994,8 +3314,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireEnrichmentRuleIdListRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         LastEntityProcessed LastEntityProcessed;
     };
 
@@ -5005,8 +3325,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireEnrichmentRuleIdListResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         LastEntityProcessed LastEntityProcessed;
         NoEnrichmentRules NoEnrichmentRules;
         Pad6 Pad6;
@@ -5018,8 +3338,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireSessionListRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
     };
 
 
@@ -5028,8 +3348,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireSessionListResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         NoSessions NoSessions;
         Pad6 Pad6;
     };
@@ -5040,8 +3360,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireUserRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         LastEntityProcessed LastEntityProcessed;
     };
 
@@ -5051,59 +3371,11 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireUserResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         LastEntityProcessed LastEntityProcessed;
         NoPartyDetails NoPartyDetails;
         Pad6 Pad6;
-    };
-
-
-    /// <summary>
-    ///  Struct for Issuer Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct IssuerNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
-        SecurityId SecurityId;
-        TransactTime TransactTime;
-        LastPx LastPx;
-        PotentialExecVolume PotentialExecVolume;
-        LastQty LastQty;
-        ImbalanceQty ImbalanceQty;
-        MarketSegmentId MarketSegmentId;
-        PartyIdSessionId PartyIdSessionId;
-        SecurityTradingStatus SecurityTradingStatus;
-        Pad7 Pad7;
-    };
-
-
-    /// <summary>
-    ///  Struct for Issuer Security State Change Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct IssuerSecurityStateChangeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        SecurityId SecurityId;
-        TransactTime TransactTime;
-        MarketSegmentId MarketSegmentId;
-        NoEvents NoEvents;
-        SecurityStatus SecurityStatus;
-        SoldOutIndicator SoldOutIndicator;
-        Pad1 Pad1;
-    };
-
-
-    /// <summary>
-    ///  Struct for Issuer Security State Change Response
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct IssuerSecurityStateChangeResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
-        SecurityStatusReportId SecurityStatusReportId;
     };
 
 
@@ -5112,8 +3384,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LegalNotificationBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         VarTextLen VarTextLen;
         UserStatus UserStatus;
@@ -5126,8 +3398,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogonRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         HeartBtInt HeartBtInt;
         PartyIdSessionId PartyIdSessionId;
         DefaultCstmApplVerId DefaultCstmApplVerId;
@@ -5150,8 +3422,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogonResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ThrottleTimeInterval ThrottleTimeInterval;
         ThrottleNoMsgs ThrottleNoMsgs;
         ThrottleDisconnectLimit ThrottleDisconnectLimit;
@@ -5160,8 +3432,7 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         MarketId MarketId;
         TradSesMode TradSesMode;
         DefaultCstmApplVerId DefaultCstmApplVerId;
-        DefaultCstmApplVerSubId DefaultCstmApplVerSubId;
-        Pad2 Pad2;
+        Pad7 Pad7;
     };
 
 
@@ -5170,8 +3441,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogoutRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
     };
 
 
@@ -5180,8 +3451,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogoutResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 
@@ -5190,25 +3461,17 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MassQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         QuoteId QuoteId;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
+        ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
         MatchInstCrossId MatchInstCrossId;
         EnrichmentRuleId EnrichmentRuleId;
         PriceValidityCheckType PriceValidityCheckType;
-        ValueCheckTypeValue ValueCheckTypeValue;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
         QuoteSizeType QuoteSizeType;
-        QuoteType QuoteType;
-        TradingCapacity TradingCapacity;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
         NoQuoteEntries NoQuoteEntries;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        Pad4 Pad4;
+        Pad3 Pad3;
     };
 
 
@@ -5217,21 +3480,21 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MassQuoteResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         QuoteId QuoteId;
         QuoteResponseId QuoteResponseId;
         MarketSegmentId MarketSegmentId;
-        NoQuoteSideEntries NoQuoteSideEntries;
+        NoQuoteEntries NoQuoteEntries;
         Pad3 Pad3;
     };
 
 
     /// <summary>
-    ///  Struct for Message Header In
+    ///  Struct for Message Header In Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MessageHeaderIn {
+    public unsafe struct MessageHeaderInComp {
         BodyLen BodyLen;
         TemplateId TemplateId;
         NetworkMsgId NetworkMsgId;
@@ -5240,10 +3503,10 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Message Header Out
+    ///  Struct for Message Header Out Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MessageHeaderOut {
+    public unsafe struct MessageHeaderOutComp {
         BodyLen BodyLen;
         TemplateId TemplateId;
         Pad2 Pad2;
@@ -5255,26 +3518,25 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         SecurityId SecurityId;
         ExecId ExecId;
         StopPx StopPx;
+        OrderIdSfx OrderIdSfx;
         LeavesQty LeavesQty;
         CumQty CumQty;
         CxlQty CxlQty;
         DisplayQty DisplayQty;
-        OrderIdSfx OrderIdSfx;
         OrdStatus OrdStatus;
         ExecType ExecType;
         ExecRestatementReason ExecRestatementReason;
-        CrossedIndicator CrossedIndicator;
+        Crossed Crossed;
         Triggered Triggered;
-        TransactionDelayIndicator TransactionDelayIndicator;
-        Pad5 Pad5;
+        Pad6 Pad6;
     };
 
 
@@ -5283,27 +3545,26 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         SecurityId SecurityId;
         ExecId ExecId;
         StopPx StopPx;
+        TrdRegTsTimePriority TrdRegTsTimePriority;
+        OrderIdSfx OrderIdSfx;
         LeavesQty LeavesQty;
         CumQty CumQty;
         CxlQty CxlQty;
         DisplayQty DisplayQty;
-        TrdRegTsTimePriority TrdRegTsTimePriority;
-        OrderIdSfx OrderIdSfx;
         OrdStatus OrdStatus;
         ExecType ExecType;
         ExecRestatementReason ExecRestatementReason;
-        CrossedIndicator CrossedIndicator;
+        Crossed Crossed;
         Triggered Triggered;
-        TransactionDelayIndicator TransactionDelayIndicator;
-        Pad5 Pad5;
+        Pad6 Pad6;
     };
 
 
@@ -5312,24 +3573,21 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderSingleRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         SecurityId SecurityId;
         Price Price;
+        StopPx StopPx;
+        PegOffsetValueAbs PegOffsetValueAbs;
+        PegOffsetValuePct PegOffsetValuePct;
+        ComplianceId ComplianceId;
         OrderQty OrderQty;
         DisplayQty DisplayQty;
         DisplayLowQty DisplayLowQty;
         DisplayHighQty DisplayHighQty;
-        StopPx StopPx;
-        VolumeDiscoveryPrice VolumeDiscoveryPrice;
-        PegOffsetValueAbs PegOffsetValueAbs;
-        PegOffsetValuePct PegOffsetValuePct;
-        PartyIdClientId PartyIdClientId;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
         ExpireDate ExpireDate;
         MarketSegmentId MarketSegmentId;
         MatchInstCrossId MatchInstCrossId;
@@ -5338,25 +3596,15 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         Side Side;
         OrdType OrdType;
         PriceValidityCheckType PriceValidityCheckType;
-        ValueCheckTypeValue ValueCheckTypeValue;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
         TimeInForce TimeInForce;
         ExecInst ExecInst;
         TradingSessionSubId TradingSessionSubId;
         StopPxIndicator StopPxIndicator;
         TradingCapacity TradingCapacity;
-        ExDestinationType ExDestinationType;
-        OrderOrigination OrderOrigination;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
         OwnershipIndicator OwnershipIndicator;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
         FreeText1 FreeText1;
-        FreeText2 FreeText2;
         FreeText4 FreeText4;
-        FixClOrdId FixClOrdId;
+        Pad2 Pad2;
     };
 
 
@@ -5365,54 +3613,22 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderSingleShortRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         SecurityId SecurityId;
         Price Price;
+        ComplianceId ComplianceId;
         OrderQty OrderQty;
-        PartyIdClientId PartyIdClientId;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
         MatchInstCrossId MatchInstCrossId;
         EnrichmentRuleId EnrichmentRuleId;
         Side Side;
         PriceValidityCheckType PriceValidityCheckType;
-        ValueCheckTypeValue ValueCheckTypeValue;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
         TimeInForce TimeInForce;
-        ApplSeqIndicator ApplSeqIndicator;
         ExecInst ExecInst;
         TradingCapacity TradingCapacity;
-        ExDestinationType ExDestinationType;
-        OrderOrigination OrderOrigination;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        Pad5 Pad5;
-    };
-
-
-    /// <summary>
-    ///  Struct for Modify Tes Trade Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct ModifyTesTradeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        LastPx LastPx;
-        TransBkdTime TransBkdTime;
-        MarketSegmentId MarketSegmentId;
-        PackageId PackageId;
-        TesExecId TesExecId;
-        SettlDate SettlDate;
-        TrdType TrdType;
-        TradeReportType TradeReportType;
-        NoSideAllocs NoSideAllocs;
-        TradeReportText TradeReportText;
-        TradeReportId TradeReportId;
-        Pad4 Pad4;
+        Pad1 Pad1;
     };
 
 
@@ -5421,8 +3637,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         SecurityId SecurityId;
@@ -5431,10 +3647,9 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         OrdStatus OrdStatus;
         ExecType ExecType;
         ExecRestatementReason ExecRestatementReason;
-        CrossedIndicator CrossedIndicator;
+        Crossed Crossed;
         Triggered Triggered;
-        TransactionDelayIndicator TransactionDelayIndicator;
-        Pad5 Pad5;
+        Pad6 Pad6;
     };
 
 
@@ -5443,8 +3658,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         SecurityId SecurityId;
@@ -5455,10 +3670,9 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         OrdStatus OrdStatus;
         ExecType ExecType;
         ExecRestatementReason ExecRestatementReason;
-        CrossedIndicator CrossedIndicator;
+        Crossed Crossed;
         Triggered Triggered;
-        TransactionDelayIndicator TransactionDelayIndicator;
-        Pad5 Pad5;
+        Pad6 Pad6;
     };
 
 
@@ -5467,49 +3681,32 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderSingleRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         Price Price;
-        OrderQty OrderQty;
-        DisplayQty DisplayQty;
-        DisplayLowQty DisplayLowQty;
-        DisplayHighQty DisplayHighQty;
         StopPx StopPx;
-        VolumeDiscoveryPrice VolumeDiscoveryPrice;
         PegOffsetValueAbs PegOffsetValueAbs;
         PegOffsetValuePct PegOffsetValuePct;
         ClOrdId ClOrdId;
         SecurityId SecurityId;
-        PartyIdClientId PartyIdClientId;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
-        QuoteId QuoteId;
+        ComplianceId ComplianceId;
+        OrderQty OrderQty;
+        DisplayQty DisplayQty;
+        DisplayLowQty DisplayLowQty;
+        DisplayHighQty DisplayHighQty;
         ExpireDate ExpireDate;
         MarketSegmentId MarketSegmentId;
-        TargetPartyIdSessionId TargetPartyIdSessionId;
         MatchInstCrossId MatchInstCrossId;
         ApplSeqIndicator ApplSeqIndicator;
         Side Side;
         OrdType OrdType;
         PriceValidityCheckType PriceValidityCheckType;
-        ValueCheckTypeValue ValueCheckTypeValue;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
         TimeInForce TimeInForce;
         ExecInst ExecInst;
         TradingSessionSubId TradingSessionSubId;
         TradingCapacity TradingCapacity;
-        ExDestinationType ExDestinationType;
-        OrderOrigination OrderOrigination;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
         FreeText1 FreeText1;
-        FreeText2 FreeText2;
         FreeText4 FreeText4;
-        FixClOrdId FixClOrdId;
-        Pad2 Pad2;
     };
 
 
@@ -5518,31 +3715,21 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderSingleShortRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         Price Price;
-        OrderQty OrderQty;
         ClOrdId ClOrdId;
-        PartyIdClientId PartyIdClientId;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
+        ComplianceId ComplianceId;
+        OrderQty OrderQty;
         MatchInstCrossId MatchInstCrossId;
         EnrichmentRuleId EnrichmentRuleId;
         Side Side;
-        ApplSeqIndicator ApplSeqIndicator;
         PriceValidityCheckType PriceValidityCheckType;
-        ValueCheckTypeValue ValueCheckTypeValue;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
         TimeInForce TimeInForce;
         ExecInst ExecInst;
         TradingCapacity TradingCapacity;
-        ExDestinationType ExDestinationType;
-        OrderOrigination OrderOrigination;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        Pad5 Pad5;
+        Pad1 Pad1;
     };
 
 
@@ -5551,8 +3738,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewsBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         OrigTime OrigTime;
         VarTextLen VarTextLen;
         Headline Headline;
@@ -5561,39 +3748,40 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Not Affected Orders Grp
+    ///  Struct for Not Affected Orders Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NotAffectedOrdersGrp {
+    public unsafe struct NotAffectedOrdersGrpComp {
         NotAffectedOrderId NotAffectedOrderId;
         NotAffOrigClOrdId NotAffOrigClOrdId;
     };
 
 
     /// <summary>
-    ///  Struct for Not Affected Securities Grp
+    ///  Struct for Not Affected Securities Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NotAffectedSecuritiesGrp {
+    public unsafe struct NotAffectedSecuritiesGrpComp {
         NotAffectedSecurityId NotAffectedSecurityId;
     };
 
 
     /// <summary>
-    ///  Struct for Notif Header
+    ///  Struct for Notif Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NotifHeader {
+    public unsafe struct NotifHeaderComp {
         SendingTime SendingTime;
     };
 
 
     /// <summary>
-    ///  Struct for Nr Response Header Me
+    ///  Struct for Nr Response Header Me Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NrResponseHeaderMe {
+    public unsafe struct NrResponseHeaderMeComp {
         RequestTime RequestTime;
+        RequestOut RequestOut;
         TrdRegTsTimeIn TrdRegTsTimeIn;
         TrdRegTsTimeOut TrdRegTsTimeOut;
         ResponseIn ResponseIn;
@@ -5605,10 +3793,10 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Nrbc Header
+    ///  Struct for Nrbc Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NrbcHeader {
+    public unsafe struct NrbcHeaderComp {
         SendingTime SendingTime;
         ApplSubId ApplSubId;
         ApplId ApplId;
@@ -5618,49 +3806,30 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Order Book Item Grp
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct OrderBookItemGrp {
-        BestBidPx BestBidPx;
-        BestBidSize BestBidSize;
-        BestOfferPx BestOfferPx;
-        BestOfferSize BestOfferSize;
-        MdBookType MdBookType;
-        MdSubBookType MdSubBookType;
-        Pad6 Pad6;
-    };
-
-
-    /// <summary>
     ///  Struct for Order Exec Notification
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct OrderExecNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         SecurityId SecurityId;
         ExecId ExecId;
+        MarketSegmentId MarketSegmentId;
+        OrderIdSfx OrderIdSfx;
         LeavesQty LeavesQty;
         CumQty CumQty;
         CxlQty CxlQty;
         DisplayQty DisplayQty;
-        MarketSegmentId MarketSegmentId;
-        OrderIdSfx OrderIdSfx;
         ExecRestatementReason ExecRestatementReason;
         Side Side;
         OrdStatus OrdStatus;
         ExecType ExecType;
-        OrderEventType OrderEventType;
-        MatchType MatchType;
         Triggered Triggered;
-        CrossedIndicator CrossedIndicator;
-        FixClOrdId FixClOrdId;
+        Crossed Crossed;
         NoFills NoFills;
-        Pad2 Pad2;
     };
 
 
@@ -5669,8 +3838,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct OrderExecReportBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -5679,6 +3848,11 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         TrdRegTsEntryTime TrdRegTsEntryTime;
         TrdRegTsTimePriority TrdRegTsTimePriority;
         Price Price;
+        StopPx StopPx;
+        PegOffsetValueAbs PegOffsetValueAbs;
+        PegOffsetValuePct PegOffsetValuePct;
+        MarketSegmentId MarketSegmentId;
+        OrderIdSfx OrderIdSfx;
         LeavesQty LeavesQty;
         CumQty CumQty;
         CxlQty CxlQty;
@@ -5686,13 +3860,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         DisplayQty DisplayQty;
         DisplayLowQty DisplayLowQty;
         DisplayHighQty DisplayHighQty;
-        StopPx StopPx;
-        VolumeDiscoveryPrice VolumeDiscoveryPrice;
-        PegOffsetValueAbs PegOffsetValueAbs;
-        PegOffsetValuePct PegOffsetValuePct;
-        QuoteId QuoteId;
-        MarketSegmentId MarketSegmentId;
-        OrderIdSfx OrderIdSfx;
         ExpireDate ExpireDate;
         MatchInstCrossId MatchInstCrossId;
         PartyIdExecutingUnit PartyIdExecutingUnit;
@@ -5703,8 +3870,6 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         PartyIdEnteringFirm PartyIdEnteringFirm;
         OrdStatus OrdStatus;
         ExecType ExecType;
-        OrderEventType OrderEventType;
-        MatchType MatchType;
         Side Side;
         OrdType OrdType;
         TradingCapacity TradingCapacity;
@@ -5712,19 +3877,12 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         ExecInst ExecInst;
         TradingSessionSubId TradingSessionSubId;
         ApplSeqIndicator ApplSeqIndicator;
-        ExDestinationType ExDestinationType;
-        PartyEnteringFirm PartyEnteringFirm;
-        PartyEnteringTrader PartyEnteringTrader;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
         FreeText1 FreeText1;
-        FreeText2 FreeText2;
         FreeText4 FreeText4;
-        FixClOrdId FixClOrdId;
         NoFills NoFills;
         Triggered Triggered;
-        CrossedIndicator CrossedIndicator;
-        Pad4 Pad4;
+        Crossed Crossed;
+        Pad1 Pad1;
     };
 
 
@@ -5733,8 +3891,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct OrderExecResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -5742,22 +3900,19 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         ExecId ExecId;
         TrdRegTsEntryTime TrdRegTsEntryTime;
         TrdRegTsTimePriority TrdRegTsTimePriority;
+        MarketSegmentId MarketSegmentId;
+        OrderIdSfx OrderIdSfx;
         LeavesQty LeavesQty;
         CumQty CumQty;
         CxlQty CxlQty;
         DisplayQty DisplayQty;
-        MarketSegmentId MarketSegmentId;
-        OrderIdSfx OrderIdSfx;
         ExecRestatementReason ExecRestatementReason;
         Side Side;
         OrdStatus OrdStatus;
         ExecType ExecType;
-        MatchType MatchType;
         Triggered Triggered;
-        CrossedIndicator CrossedIndicator;
-        TransactionDelayIndicator TransactionDelayIndicator;
+        Crossed Crossed;
         NoFills NoFills;
-        Pad6 Pad6;
     };
 
 
@@ -5766,8 +3921,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct PartyActionReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         TradeDate TradeDate;
         RequestingPartyIdExecutingTrader RequestingPartyIdExecutingTrader;
@@ -5781,10 +3936,10 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Party Details Grp
+    ///  Struct for Party Details Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct PartyDetailsGrp {
+    public unsafe struct PartyDetailsGrpComp {
         PartyDetailIdExecutingTrader PartyDetailIdExecutingTrader;
         PartyDetailExecutingTrader PartyDetailExecutingTrader;
         PartyDetailRoleQualifier PartyDetailRoleQualifier;
@@ -5799,8 +3954,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct PartyEntitlementsUpdateReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         TradeDate TradeDate;
         PartyDetailIdExecutingUnit PartyDetailIdExecutingUnit;
@@ -5819,8 +3974,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteActivationNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MassActionReportId MassActionReportId;
         MarketSegmentId MarketSegmentId;
         PartyIdEnteringTrader PartyIdEnteringTrader;
@@ -5837,16 +3992,13 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteActivationRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
+        ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
         TargetPartyIdSessionId TargetPartyIdSessionId;
         MassActionType MassActionType;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        Pad5 Pad5;
+        Pad7 Pad7;
     };
 
 
@@ -5855,8 +4007,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteActivationResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         MassActionReportId MassActionReportId;
         NoNotAffectedSecurities NoNotAffectedSecurities;
         Pad6 Pad6;
@@ -5864,48 +4016,47 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Quote Entry Ack Grp
+    ///  Struct for Quote Entry Ack Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct QuoteEntryAckGrp {
+    public unsafe struct QuoteEntryAckGrpComp {
         SecurityId SecurityId;
-        CxlSize CxlSize;
+        BidCxlSize BidCxlSize;
+        OfferCxlSize OfferCxlSize;
         QuoteEntryRejectReason QuoteEntryRejectReason;
         QuoteEntryStatus QuoteEntryStatus;
-        Side Side;
-        Pad2 Pad2;
+        Pad3 Pad3;
     };
 
 
     /// <summary>
-    ///  Struct for Quote Entry Grp
+    ///  Struct for Quote Entry Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct QuoteEntryGrp {
+    public unsafe struct QuoteEntryGrpComp {
         SecurityId SecurityId;
         BidPx BidPx;
-        BidSize BidSize;
         OfferPx OfferPx;
+        BidSize BidSize;
         OfferSize OfferSize;
     };
 
 
     /// <summary>
-    ///  Struct for Quote Event Grp
+    ///  Struct for Quote Event Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct QuoteEventGrp {
+    public unsafe struct QuoteEventGrpComp {
         SecurityId SecurityId;
         QuoteEventPx QuoteEventPx;
-        QuoteEventQty QuoteEventQty;
         QuoteMsgId QuoteMsgId;
         QuoteEventMatchId QuoteEventMatchId;
         QuoteEventExecId QuoteEventExecId;
+        QuoteEventQty QuoteEventQty;
         QuoteEventType QuoteEventType;
         QuoteEventSide QuoteEventSide;
         QuoteEventLiquidityInd QuoteEventLiquidityInd;
         QuoteEventReason QuoteEventReason;
-        Pad4 Pad4;
     };
 
 
@@ -5914,8 +4065,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteExecutionReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         ExecId ExecId;
         MarketSegmentId MarketSegmentId;
         NoQuoteEvents NoQuoteEvents;
@@ -5924,10 +4075,10 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Rbc Header
+    ///  Struct for Rbc Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RbcHeader {
+    public unsafe struct RbcHeaderComp {
         SendingTime SendingTime;
         ApplSeqNum ApplSeqNum;
         ApplSubId ApplSubId;
@@ -5940,10 +4091,10 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Rbc Header Me
+    ///  Struct for Rbc Header Me Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RbcHeaderMe {
+    public unsafe struct RbcHeaderMeComp {
         TrdRegTsTimeOut TrdRegTsTimeOut;
         NotificationIn NotificationIn;
         SendingTime SendingTime;
@@ -5962,8 +4113,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct Reject {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         SessionRejectReason SessionRejectReason;
         VarTextLen VarTextLen;
         SessionStatus SessionStatus;
@@ -5972,20 +4123,20 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Request Header
+    ///  Struct for Request Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RequestHeader {
+    public unsafe struct RequestHeaderComp {
         MsgSeqNum MsgSeqNum;
         SenderSubId SenderSubId;
     };
 
 
     /// <summary>
-    ///  Struct for Response Header
+    ///  Struct for Response Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct ResponseHeader {
+    public unsafe struct ResponseHeaderComp {
         RequestTime RequestTime;
         SendingTime SendingTime;
         MsgSeqNum MsgSeqNum;
@@ -5994,11 +4145,12 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
 
 
     /// <summary>
-    ///  Struct for Response Header Me
+    ///  Struct for Response Header Me Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct ResponseHeaderMe {
+    public unsafe struct ResponseHeaderMeComp {
         RequestTime RequestTime;
+        RequestOut RequestOut;
         TrdRegTsTimeIn TrdRegTsTimeIn;
         TrdRegTsTimeOut TrdRegTsTimeOut;
         ResponseIn ResponseIn;
@@ -6016,8 +4168,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitMeMessageRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SubscriptionScope SubscriptionScope;
         PartitionId PartitionId;
         RefApplId RefApplId;
@@ -6032,8 +4184,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitMeMessageResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ApplTotalMessageCount ApplTotalMessageCount;
         ApplEndMsgId ApplEndMsgId;
         RefApplLastMsgId RefApplLastMsgId;
@@ -6046,8 +4198,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ApplBegSeqNum ApplBegSeqNum;
         ApplEndSeqNum ApplEndSeqNum;
         PartitionId PartitionId;
@@ -6061,45 +4213,11 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ApplEndSeqNum ApplEndSeqNum;
         RefApplLastSeqNum RefApplLastSeqNum;
         ApplTotalMessageCount ApplTotalMessageCount;
-        Pad6 Pad6;
-    };
-
-
-    /// <summary>
-    ///  Struct for Rfq Broadcast
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RfqBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
-        SecurityId SecurityId;
-        ExecId ExecId;
-        OrderQty OrderQty;
-        MarketSegmentId MarketSegmentId;
-        Side Side;
-        PartyExecutingFirm PartyExecutingFirm;
-        Pad6 Pad6;
-    };
-
-
-    /// <summary>
-    ///  Struct for Rfq Reject Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RfqRejectNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
-        SecurityId SecurityId;
-        ExecId ExecId;
-        QuoteId QuoteId;
-        MarketSegmentId MarketSegmentId;
-        QuoteRequestRejectReason QuoteRequestRejectReason;
-        PartyExecutingFirm PartyExecutingFirm;
         Pad6 Pad6;
     };
 
@@ -6109,16 +4227,14 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RfqRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
-        OrderQty OrderQty;
-        QuoteId QuoteId;
+        ComplianceId ComplianceId;
         MarketSegmentId MarketSegmentId;
-        RfqPublishIndicator RfqPublishIndicator;
-        RfqRequesterDisclosureInstruction RfqRequesterDisclosureInstruction;
+        OrderQty OrderQty;
         Side Side;
-        Pad1 Pad1;
+        Pad7 Pad7;
     };
 
 
@@ -6127,39 +4243,9 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RfqResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         ExecId ExecId;
-    };
-
-
-    /// <summary>
-    ///  Struct for Rfq Specialist Broadcast
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RfqSpecialistBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
-        SecurityId SecurityId;
-        ExecId ExecId;
-        OrderQty OrderQty;
-        QuoteId QuoteId;
-        MarketSegmentId MarketSegmentId;
-        Side Side;
-        PartyExecutingFirm PartyExecutingFirm;
-        Pad6 Pad6;
-    };
-
-
-    /// <summary>
-    ///  Struct for Security Status Event Grp
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SecurityStatusEventGrp {
-        EventPx EventPx;
-        EventDate EventDate;
-        EventType EventType;
-        Pad3 Pad3;
     };
 
 
@@ -6168,286 +4254,27 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ServiceAvailabilityBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        NrbcHeader NrbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrbcHeaderComp NrbcHeaderComp;
         MatchingEngineTradeDate MatchingEngineTradeDate;
         TradeManagerTradeDate TradeManagerTradeDate;
         ApplSeqTradeDate ApplSeqTradeDate;
-        T7EntryServiceTradeDate T7EntryServiceTradeDate;
-        T7EntryServiceRtmTradeDate T7EntryServiceRtmTradeDate;
         PartitionId PartitionId;
         MatchingEngineStatus MatchingEngineStatus;
         TradeManagerStatus TradeManagerStatus;
         ApplSeqStatus ApplSeqStatus;
-        T7EntryServiceStatus T7EntryServiceStatus;
-        T7EntryServiceRtmStatus T7EntryServiceRtmStatus;
-        Pad5 Pad5;
+        Pad7 Pad7;
     };
 
 
     /// <summary>
-    ///  Struct for Service Availability Market Broadcast
+    ///  Struct for Sessions Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct ServiceAvailabilityMarketBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        NrbcHeader NrbcHeader;
-        SelectiveRequestForQuoteServiceTradeDate SelectiveRequestForQuoteServiceTradeDate;
-        SelectiveRequestForQuoteServiceStatus SelectiveRequestForQuoteServiceStatus;
-        Pad3 Pad3;
-    };
-
-
-    /// <summary>
-    ///  Struct for Sessions Grp
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SessionsGrp {
+    public unsafe struct SessionsGrpComp {
         PartyIdSessionId PartyIdSessionId;
         SessionMode SessionMode;
         SessionSubMode SessionSubMode;
-        Pad2 Pad2;
-    };
-
-
-    /// <summary>
-    ///  Struct for Side Alloc Grp
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SideAllocGrp {
-        AllocQty AllocQty;
-        IndividualAllocId IndividualAllocId;
-        Side Side;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-    };
-
-
-    /// <summary>
-    ///  Struct for Side Alloc Grp Bc
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SideAllocGrpBc {
-        AllocQty AllocQty;
-        IndividualAllocId IndividualAllocId;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        Side Side;
-        TradeAllocStatus TradeAllocStatus;
-        Pad7 Pad7;
-    };
-
-
-    /// <summary>
-    ///  Struct for Single Quote Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SingleQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        QuoteId QuoteId;
-        SecurityId SecurityId;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
-        BidPx BidPx;
-        BidSize BidSize;
-        OfferPx OfferPx;
-        OfferSize OfferSize;
-        SettlCurrFxRate SettlCurrFxRate;
-        MarketSegmentId MarketSegmentId;
-        MatchInstCrossId MatchInstCrossId;
-        PriceValidityCheckType PriceValidityCheckType;
-        ValueCheckTypeValue ValueCheckTypeValue;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
-        QuoteSizeType QuoteSizeType;
-        QuoteType QuoteType;
-        TradingCapacity TradingCapacity;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        FreeText1 FreeText1;
-        FreeText2 FreeText2;
-        FreeText4 FreeText4;
-        Pad7 Pad7;
-    };
-
-
-    /// <summary>
-    ///  Struct for Specialist Instrument Event Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SpecialistInstrumentEventNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
-        SecurityId SecurityId;
-        TransactTime TransactTime;
-        MarketSegmentId MarketSegmentId;
-        EventType EventType;
-        Pad3 Pad3;
-    };
-
-
-    /// <summary>
-    ///  Struct for Specialist Order Book Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SpecialistOrderBookNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
-        OrderId OrderId;
-        ClOrdId ClOrdId;
-        OrigClOrdId OrigClOrdId;
-        SecurityId SecurityId;
-        ExecId ExecId;
-        TrdRegTsEntryTime TrdRegTsEntryTime;
-        TrdRegTsTimePriority TrdRegTsTimePriority;
-        Price Price;
-        LeavesQty LeavesQty;
-        CumQty CumQty;
-        CxlQty CxlQty;
-        OrderQty OrderQty;
-        StopPx StopPx;
-        QuoteId QuoteId;
-        MarketSegmentId MarketSegmentId;
-        OrderIdSfx OrderIdSfx;
-        ExpireDate ExpireDate;
-        PartyIdExecutingUnit PartyIdExecutingUnit;
-        PartyIdSessionId PartyIdSessionId;
-        PartyIdExecutingTrader PartyIdExecutingTrader;
-        PartyIdEnteringTrader PartyIdEnteringTrader;
-        NoFills NoFills;
-        Pad1 Pad1;
-        ExecRestatementReason ExecRestatementReason;
-        PartyIdEnteringFirm PartyIdEnteringFirm;
-        OrdStatus OrdStatus;
-        ExecType ExecType;
-        OrderEventType OrderEventType;
-        MatchType MatchType;
-        Side Side;
-        OrdType OrdType;
-        TradingCapacity TradingCapacity;
-        TimeInForce TimeInForce;
-        ExecInst ExecInst;
-        TradingSessionSubId TradingSessionSubId;
-        ApplSeqIndicator ApplSeqIndicator;
-        Triggered Triggered;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
-        PartyEnteringFirm PartyEnteringFirm;
-        PartyEnteringTrader PartyEnteringTrader;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        FixClOrdId FixClOrdId;
-    };
-
-
-    /// <summary>
-    ///  Struct for Specialist Rfq Reject Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SpecialistRfqRejectRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        SecurityId SecurityId;
-        QuoteId QuoteId;
-        MarketSegmentId MarketSegmentId;
-        QuoteRequestRejectReason QuoteRequestRejectReason;
-        PartyExecutingFirm PartyExecutingFirm;
-        Pad6 Pad6;
-    };
-
-
-    /// <summary>
-    ///  Struct for Specialist Rfq Reply Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SpecialistRfqReplyNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
-        SecurityId SecurityId;
-        TransactTime TransactTime;
-        QuoteId QuoteId;
-        BidPx BidPx;
-        BidSize BidSize;
-        OfferPx OfferPx;
-        OfferSize OfferSize;
-        MarketSegmentId MarketSegmentId;
-        PartyExecutingFirm PartyExecutingFirm;
-        Pad7 Pad7;
-    };
-
-
-    /// <summary>
-    ///  Struct for Specialist Rfq Reply Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SpecialistRfqReplyRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        SecurityId SecurityId;
-        QuoteId QuoteId;
-        BidPx BidPx;
-        BidSize BidSize;
-        OfferPx OfferPx;
-        OfferSize OfferSize;
-        MarketSegmentId MarketSegmentId;
-        PartyExecutingFirm PartyExecutingFirm;
-        Pad7 Pad7;
-    };
-
-
-    /// <summary>
-    ///  Struct for Specialist Rfq Reply Response
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SpecialistRfqReplyResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
-        TransactTime TransactTime;
-    };
-
-
-    /// <summary>
-    ///  Struct for Specialist Security State Change Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SpecialistSecurityStateChangeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        SecurityId SecurityId;
-        MarketSegmentId MarketSegmentId;
-        EventType EventType;
-        Pad3 Pad3;
-    };
-
-
-    /// <summary>
-    ///  Struct for Specialist Security State Change Response
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SpecialistSecurityStateChangeResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
-        SecurityStatusReportId SecurityStatusReportId;
-    };
-
-
-    /// <summary>
-    ///  Struct for Srqs Quote Entry Grp
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SrqsQuoteEntryGrp {
-        TransactTime TransactTime;
-        QuoteId QuoteId;
-        SecondaryQuoteId SecondaryQuoteId;
-        BidPx BidPx;
-        BidSize BidSize;
-        OfferPx OfferPx;
-        OfferSize OfferSize;
-        PartyIdExecutingTrader PartyIdExecutingTrader;
-        QuotingStatus QuotingStatus;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        PartyEnteringTrader PartyEnteringTrader;
         Pad2 Pad2;
     };
 
@@ -6457,8 +4284,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SubscribeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SubscriptionScope SubscriptionScope;
         RefApplId RefApplId;
         Pad3 Pad3;
@@ -6470,215 +4297,10 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SubscribeResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ApplSubId ApplSubId;
         Pad4 Pad4;
-    };
-
-
-    /// <summary>
-    ///  Struct for Tes Approve Broadcast
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct TesApproveBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        SecurityId SecurityId;
-        LastPx LastPx;
-        AllocQty AllocQty;
-        TransactTime TransactTime;
-        TransBkdTime TransBkdTime;
-        SettlCurrFxRate SettlCurrFxRate;
-        MarketSegmentId MarketSegmentId;
-        PackageId PackageId;
-        TesExecId TesExecId;
-        AllocId AllocId;
-        SettlDate SettlDate;
-        TrdType TrdType;
-        Side Side;
-        ValueCheckTypeValue ValueCheckTypeValue;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
-        TradeReportType TradeReportType;
-        TradingCapacity TradingCapacity;
-        TradeAllocStatus TradeAllocStatus;
-        MessageEventSource MessageEventSource;
-        TradeReportId TradeReportId;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        PartyIdEnteringFirm PartyIdEnteringFirm;
-        PartyEnteringTrader PartyEnteringTrader;
-        RootPartyExecutingFirm RootPartyExecutingFirm;
-        RootPartyExecutingTrader RootPartyExecutingTrader;
-        FreeText1 FreeText1;
-        FreeText2 FreeText2;
-        FreeText4 FreeText4;
-        Pad2 Pad2;
-    };
-
-
-    /// <summary>
-    ///  Struct for Tes Broadcast
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct TesBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        SecurityId SecurityId;
-        LastPx LastPx;
-        TransactTime TransactTime;
-        TransBkdTime TransBkdTime;
-        SettlCurrFxRate SettlCurrFxRate;
-        MarketSegmentId MarketSegmentId;
-        PackageId PackageId;
-        TesExecId TesExecId;
-        SettlDate SettlDate;
-        TrdType TrdType;
-        TradeReportType TradeReportType;
-        NoSideAllocs NoSideAllocs;
-        MessageEventSource MessageEventSource;
-        TradeReportText TradeReportText;
-        TradeReportId TradeReportId;
-        RootPartyExecutingFirm RootPartyExecutingFirm;
-        RootPartyExecutingTrader RootPartyExecutingTrader;
-    };
-
-
-    /// <summary>
-    ///  Struct for Tes Delete Broadcast
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct TesDeleteBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TransactTime TransactTime;
-        MarketSegmentId MarketSegmentId;
-        PackageId PackageId;
-        TesExecId TesExecId;
-        TrdType TrdType;
-        DeleteReason DeleteReason;
-        TradeReportType TradeReportType;
-        MessageEventSource MessageEventSource;
-        TradeReportId TradeReportId;
-        Pad3 Pad3;
-    };
-
-
-    /// <summary>
-    ///  Struct for Tes Execution Broadcast
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct TesExecutionBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TransactTime TransactTime;
-        MarketSegmentId MarketSegmentId;
-        PackageId PackageId;
-        TesExecId TesExecId;
-        AllocId AllocId;
-        TrdType TrdType;
-        TradeReportType TradeReportType;
-        Side Side;
-        MessageEventSource MessageEventSource;
-        Pad3 Pad3;
-    };
-
-
-    /// <summary>
-    ///  Struct for Tes Response
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct TesResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
-        TesExecId TesExecId;
-        TradeReportId TradeReportId;
-    };
-
-
-    /// <summary>
-    ///  Struct for Tes Trade Broadcast
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct TesTradeBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        SecurityId SecurityId;
-        LastPx LastPx;
-        LastQty LastQty;
-        TransactTime TransactTime;
-        SettlCurrAmt SettlCurrAmt;
-        SideGrossTradeAmt SideGrossTradeAmt;
-        SettlCurrFxRate SettlCurrFxRate;
-        AccruedInteresAmt AccruedInteresAmt;
-        CouponRate CouponRate;
-        RootPartyIdClientId RootPartyIdClientId;
-        ExecutingTrader ExecutingTrader;
-        RootPartyIdInvestmentDecisionMaker RootPartyIdInvestmentDecisionMaker;
-        PackageId PackageId;
-        MarketSegmentId MarketSegmentId;
-        TradeId TradeId;
-        TradeDate TradeDate;
-        SideTradeId SideTradeId;
-        RootPartyIdSessionId RootPartyIdSessionId;
-        RootPartyIdSettlementUnit RootPartyIdSettlementUnit;
-        RootPartyIdContraUnit RootPartyIdContraUnit;
-        RootPartyIdContraSettlementUnit RootPartyIdContraSettlementUnit;
-        OrigTradeId OrigTradeId;
-        RootPartyIdExecutingUnit RootPartyIdExecutingUnit;
-        RootPartyIdExecutingTrader RootPartyIdExecutingTrader;
-        RootPartyIdClearingUnit RootPartyIdClearingUnit;
-        SettlDate SettlDate;
-        NumDaysInterest NumDaysInterest;
-        NegotiationId NegotiationId;
-        SrqsRelatedTradeId SrqsRelatedTradeId;
-        TrdType TrdType;
-        LastMkt LastMkt;
-        Side Side;
-        TradingCapacity TradingCapacity;
-        TradeReportType TradeReportType;
-        TransferReason TransferReason;
-        TradePublishIndicator TradePublishIndicator;
-        DeliveryType DeliveryType;
-        LastCouponDeviationIndicator LastCouponDeviationIndicator;
-        RefinancingEligibilityIndicator RefinancingEligibilityIndicator;
-        ClearingInstruction ClearingInstruction;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        RootPartyIdInvestmentDecisionMakerQualifier RootPartyIdInvestmentDecisionMakerQualifier;
-        Account Account;
-        FreeText1 FreeText1;
-        FreeText2 FreeText2;
-        FreeText4 FreeText4;
-        SettlCurrency SettlCurrency;
-        RootPartyExecutingFirm RootPartyExecutingFirm;
-        RootPartyExecutingTrader RootPartyExecutingTrader;
-        RootPartyClearingFirm RootPartyClearingFirm;
-        RootPartyExecutingFirmKvNumber RootPartyExecutingFirmKvNumber;
-        RootPartySettlementAccount RootPartySettlementAccount;
-        RootPartySettlementLocation RootPartySettlementLocation;
-        RootPartySettlementFirm RootPartySettlementFirm;
-        RootPartyContraFirm RootPartyContraFirm;
-        RootPartyContraSettlementFirm RootPartyContraSettlementFirm;
-        RootPartyContraFirmKvNumber RootPartyContraFirmKvNumber;
-        RootPartyContraSettlementAccount RootPartyContraSettlementAccount;
-        RootPartyContraSettlementLocation RootPartyContraSettlementLocation;
-        RootPartyIdExecutionVenue RootPartyIdExecutionVenue;
-        RegulatoryTradeId RegulatoryTradeId;
-        Pad4 Pad4;
-    };
-
-
-    /// <summary>
-    ///  Struct for Tes Trading Session Status Broadcast
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct TesTradingSessionStatusBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TradeDate TradeDate;
-        TradSesEvent TradSesEvent;
-        Pad3 Pad3;
     };
 
 
@@ -6687,8 +4309,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ThrottleUpdateNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         ThrottleTimeInterval ThrottleTimeInterval;
         ThrottleNoMsgs ThrottleNoMsgs;
         ThrottleDisconnectLimit ThrottleDisconnectLimit;
@@ -6700,8 +4322,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TmTradingSessionStatusBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TradSesEvent TradSesEvent;
         Pad7 Pad7;
     };
@@ -6712,25 +4334,16 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TradeBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         SecurityId SecurityId;
         Price Price;
         LastPx LastPx;
-        LastQty LastQty;
         SettlCurrAmt SettlCurrAmt;
         SettlCurrFxRate SettlCurrFxRate;
         TransactTime TransactTime;
         OrderId OrderId;
         ClOrdId ClOrdId;
-        LeavesQty LeavesQty;
-        CumQty CumQty;
-        SideGrossTradeAmt SideGrossTradeAmt;
-        AccruedInteresAmt AccruedInteresAmt;
-        CouponRate CouponRate;
-        RootPartyIdClientId RootPartyIdClientId;
-        ExecutingTrader ExecutingTrader;
-        RootPartyIdInvestmentDecisionMaker RootPartyIdInvestmentDecisionMaker;
         TradeId TradeId;
         OrigTradeId OrigTradeId;
         RootPartyIdExecutingUnit RootPartyIdExecutingUnit;
@@ -6740,17 +4353,18 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         RootPartyIdClearingUnit RootPartyIdClearingUnit;
         RootPartyIdContraUnit RootPartyIdContraUnit;
         RootPartyIdContraSettlementUnit RootPartyIdContraSettlementUnit;
-        PartyIdSpecialistTrader PartyIdSpecialistTrader;
         OrderIdSfx OrderIdSfx;
+        CumQty CumQty;
+        LeavesQty LeavesQty;
         MarketSegmentId MarketSegmentId;
+        LastQty LastQty;
         SideTradeId SideTradeId;
         SideTradeReportId SideTradeReportId;
         TradeNumber TradeNumber;
         MatchDate MatchDate;
         SettlDate SettlDate;
         TrdMatchId TrdMatchId;
-        NumDaysInterest NumDaysInterest;
-        LastMkt LastMkt;
+        MarketId MarketId;
         TradeReportType TradeReportType;
         TransferReason TransferReason;
         MatchType MatchType;
@@ -6759,18 +4373,10 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         SideLiquidityInd SideLiquidityInd;
         DeliveryType DeliveryType;
         TradingCapacity TradingCapacity;
-        LastCouponDeviationIndicator LastCouponDeviationIndicator;
-        RefinancingEligibilityIndicator RefinancingEligibilityIndicator;
-        ClearingInstruction ClearingInstruction;
-        OrderOrigination OrderOrigination;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        RootPartyIdInvestmentDecisionMakerQualifier RootPartyIdInvestmentDecisionMakerQualifier;
         Account Account;
         SettlCurrency SettlCurrency;
         Currency Currency;
         FreeText1 FreeText1;
-        FreeText2 FreeText2;
         FreeText4 FreeText4;
         OrderCategory OrderCategory;
         OrdType OrdType;
@@ -6786,11 +4392,7 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
         RootPartyContraFirmKvNumber RootPartyContraFirmKvNumber;
         RootPartyContraSettlementAccount RootPartyContraSettlementAccount;
         RootPartyContraSettlementLocation RootPartyContraSettlementLocation;
-        PartySpecialistFirm PartySpecialistFirm;
-        PartySpecialistTrader PartySpecialistTrader;
-        RegulatoryTradeId RegulatoryTradeId;
-        RootPartyIdExecutionVenue RootPartyIdExecutionVenue;
-        Pad3 Pad3;
+        Pad5 Pad5;
     };
 
 
@@ -6799,8 +4401,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TradingSessionStatusBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MarketSegmentId MarketSegmentId;
         TradeDate TradeDate;
         TradSesEvent TradSesEvent;
@@ -6814,22 +4416,21 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TrailingStopUpdateNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         SecurityId SecurityId;
         ExecId ExecId;
         StopPx StopPx;
-        OrderQty OrderQty;
         OrderIdSfx OrderIdSfx;
         MarketSegmentId MarketSegmentId;
+        OrderQty OrderQty;
         ExecRestatementReason ExecRestatementReason;
         OrdStatus OrdStatus;
         ExecType ExecType;
         Side Side;
-        FixClOrdId FixClOrdId;
         Pad7 Pad7;
     };
 
@@ -6839,8 +4440,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UnsubscribeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         RefApplSubId RefApplSubId;
         Pad4 Pad4;
     };
@@ -6851,8 +4452,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UnsubscribeResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 
@@ -6861,8 +4462,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLoginRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         Username Username;
         Password Password;
         Pad4 Pad4;
@@ -6874,8 +4475,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLoginResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 
@@ -6884,8 +4485,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLogoutRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         Username Username;
         Pad4 Pad4;
     };
@@ -6896,420 +4497,8 @@ namespace Eurex.Cash.Eti.T7.v5.0 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLogoutResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Create Deal Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightCreateDealNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TransactTime TransactTime;
-        LastPx LastPx;
-        LastQty LastQty;
-        QuoteId QuoteId;
-        SecurityId SecurityId;
-        PartyIdClientId PartyIdClientId;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
-        NegotiationId NegotiationId;
-        TradeId TradeId;
-        SettlDate SettlDate;
-        TradingCapacity TradingCapacity;
-        TrdRptStatus TrdRptStatus;
-        MessageEventSource MessageEventSource;
-        Side Side;
-        AllocMethod AllocMethod;
-        NoOrderBookItems NoOrderBookItems;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        RootPartyExecutingFirm RootPartyExecutingFirm;
-        RootPartyExecutingTrader RootPartyExecutingTrader;
-        RootPartyEnteringTrader RootPartyEnteringTrader;
-        TargetPartyExecutingFirm TargetPartyExecutingFirm;
-        TargetPartyExecutingTrader TargetPartyExecutingTrader;
-        FirmTradeId FirmTradeId;
-        FirmNegotiationId FirmNegotiationId;
-        FreeText1 FreeText1;
-        FreeText2 FreeText2;
-        FreeText4 FreeText4;
-        Pad7 Pad7;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Deal Response
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightDealResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
-        SecurityId SecurityId;
-        QuoteId QuoteId;
-        NegotiationId NegotiationId;
-        TradeId TradeId;
-        SecondaryTradeId SecondaryTradeId;
-        FirmTradeId FirmTradeId;
-        FirmNegotiationId FirmNegotiationId;
-        Pad4 Pad4;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Enter Quote Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightEnterQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        BidPx BidPx;
-        OfferPx OfferPx;
-        BidSize BidSize;
-        OfferSize OfferSize;
-        PartyIdClientId PartyIdClientId;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
-        MarketSegmentId MarketSegmentId;
-        NegotiationId NegotiationId;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
-        ValueCheckTypeValue ValueCheckTypeValue;
-        TradingCapacity TradingCapacity;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        FreeText1 FreeText1;
-        FreeText2 FreeText2;
-        FreeText4 FreeText4;
-        Pad7 Pad7;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Hit Quote Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightHitQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        QuoteId QuoteId;
-        OrderQty OrderQty;
-        Price Price;
-        PartyIdClientId PartyIdClientId;
-        PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
-        ExecutingTrader ExecutingTrader;
-        MarketSegmentId MarketSegmentId;
-        NegotiationId NegotiationId;
-        Side Side;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
-        ValueCheckTypeValue ValueCheckTypeValue;
-        TradingCapacity TradingCapacity;
-        OrderAttributeLiquidityProvision OrderAttributeLiquidityProvision;
-        ExecutingTraderQualifier ExecutingTraderQualifier;
-        AllocMethod AllocMethod;
-        PartyIdInvestmentDecisionMakerQualifier PartyIdInvestmentDecisionMakerQualifier;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        FirmTradeId FirmTradeId;
-        FreeText1 FreeText1;
-        FreeText2 FreeText2;
-        FreeText4 FreeText4;
-        Pad1 Pad1;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Negotiation Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightNegotiationNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TransactTime TransactTime;
-        BidPx BidPx;
-        OfferPx OfferPx;
-        LeavesQty LeavesQty;
-        NegotiationId NegotiationId;
-        NumberOfRespondents NumberOfRespondents;
-        SettlDate SettlDate;
-        QuoteStatus QuoteStatus;
-        Side Side;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        PartyEnteringTrader PartyEnteringTrader;
-        TargetPartyExecutingFirm TargetPartyExecutingFirm;
-        TargetPartyExecutingTrader TargetPartyExecutingTrader;
-        FirmNegotiationId FirmNegotiationId;
-        FreeText5 FreeText5;
-        Pad6 Pad6;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Negotiation Requester Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightNegotiationRequesterNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TransactTime TransactTime;
-        TrdRegTsExecutionTime TrdRegTsExecutionTime;
-        BidPx BidPx;
-        OfferPx OfferPx;
-        OrderQty OrderQty;
-        LastPx LastPx;
-        LeavesQty LeavesQty;
-        LastQty LastQty;
-        NegotiationId NegotiationId;
-        NumberOfRespondents NumberOfRespondents;
-        SettlDate SettlDate;
-        QuoteStatus QuoteStatus;
-        NoTargetPartyIDs NoTargetPartyIDs;
-        NumberOfRespDisclosureInstruction NumberOfRespDisclosureInstruction;
-        Side Side;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        PartyEnteringTrader PartyEnteringTrader;
-        FirmNegotiationId FirmNegotiationId;
-        FreeText5 FreeText5;
-        Pad7 Pad7;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Negotiation Status Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightNegotiationStatusNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TransactTime TransactTime;
-        NegotiationId NegotiationId;
-        QuoteStatus QuoteStatus;
-        FirmNegotiationId FirmNegotiationId;
-        Pad7 Pad7;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Open Negotiation Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightOpenNegotiationNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TransactTime TransactTime;
-        NegotiationStartTime NegotiationStartTime;
-        SecurityId SecurityId;
-        BidPx BidPx;
-        OfferPx OfferPx;
-        LeavesQty LeavesQty;
-        ExpireTime ExpireTime;
-        NegotiationId NegotiationId;
-        MarketSegmentId MarketSegmentId;
-        NumberOfRespondents NumberOfRespondents;
-        SettlDate SettlDate;
-        QuoteStatus QuoteStatus;
-        Side Side;
-        RespondentType RespondentType;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        PartyEnteringTrader PartyEnteringTrader;
-        TargetPartyExecutingFirm TargetPartyExecutingFirm;
-        TargetPartyExecutingTrader TargetPartyExecutingTrader;
-        FirmNegotiationId FirmNegotiationId;
-        FreeText5 FreeText5;
-        Pad1 Pad1;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Open Negotiation Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightOpenNegotiationRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        SecurityId SecurityId;
-        BidPx BidPx;
-        OfferPx OfferPx;
-        OrderQty OrderQty;
-        ValidUntilTime ValidUntilTime;
-        MarketSegmentId MarketSegmentId;
-        SettlDate SettlDate;
-        NoTargetPartyIDs NoTargetPartyIDs;
-        NumberOfRespDisclosureInstruction NumberOfRespDisclosureInstruction;
-        Side Side;
-        ValueCheckTypeValue ValueCheckTypeValue;
-        ValueCheckTypeQuantity ValueCheckTypeQuantity;
-        RespondentType RespondentType;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        FreeText5 FreeText5;
-        QuoteReqId QuoteReqId;
-        Pad7 Pad7;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Open Negotiation Requester Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightOpenNegotiationRequesterNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TransactTime TransactTime;
-        SecurityId SecurityId;
-        BidPx BidPx;
-        OfferPx OfferPx;
-        OrderQty OrderQty;
-        LastPx LastPx;
-        LastQty LastQty;
-        ExpireTime ExpireTime;
-        NegotiationId NegotiationId;
-        MarketSegmentId MarketSegmentId;
-        NumberOfRespondents NumberOfRespondents;
-        SettlDate SettlDate;
-        QuoteStatus QuoteStatus;
-        NoTargetPartyIDs NoTargetPartyIDs;
-        Side Side;
-        NumberOfRespDisclosureInstruction NumberOfRespDisclosureInstruction;
-        RespondentType RespondentType;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        PartyEnteringTrader PartyEnteringTrader;
-        FirmNegotiationId FirmNegotiationId;
-        FreeText5 FreeText5;
-        Pad2 Pad2;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Quote Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightQuoteNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TransactTime TransactTime;
-        QuoteId QuoteId;
-        SecondaryQuoteId SecondaryQuoteId;
-        BidPx BidPx;
-        BidSize BidSize;
-        OfferPx OfferPx;
-        OfferSize OfferSize;
-        NegotiationId NegotiationId;
-        TradingCapacity TradingCapacity;
-        QuotingStatus QuotingStatus;
-        QuoteEventReason QuoteEventReason;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        PartyEnteringTrader PartyEnteringTrader;
-        QuoteReqId QuoteReqId;
-        FreeText1 FreeText1;
-        FreeText2 FreeText2;
-        FreeText4 FreeText4;
-        Pad4 Pad4;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Quote Requester Notification
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightQuoteRequesterNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TransactTime TransactTime;
-        NegotiationId NegotiationId;
-        TradeId TradeId;
-        QuoteReqId QuoteReqId;
-        NoQuoteEntries NoQuoteEntries;
-        Pad3 Pad3;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Quote Response
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightQuoteResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
-        QuoteId QuoteId;
-        NegotiationId NegotiationId;
-        QuoteReqId QuoteReqId;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Quoting Status Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightQuotingStatusRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        MarketSegmentId MarketSegmentId;
-        NegotiationId NegotiationId;
-        QuotingStatus QuotingStatus;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        Pad4 Pad4;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Status Broadcast
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightStatusBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
-        TradeDate TradeDate;
-        TradSesEvent TradSesEvent;
-        Pad3 Pad3;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Target Parties
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightTargetParties {
-        TargetPartyIdExecutingTrader TargetPartyIdExecutingTrader;
-        TargetPartyExecutingFirm TargetPartyExecutingFirm;
-        TargetPartyExecutingTrader TargetPartyExecutingTrader;
-        Pad1 Pad1;
-    };
-
-
-    /// <summary>
-    ///  Struct for Xetra En Light Update Negotiation Request
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightUpdateNegotiationRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
-        BidPx BidPx;
-        OfferPx OfferPx;
-        OrderQty OrderQty;
-        MarketSegmentId MarketSegmentId;
-        NegotiationId NegotiationId;
-        SettlDate SettlDate;
-        NoTargetPartyIDs NoTargetPartyIDs;
-        NumberOfRespDisclosureInstruction NumberOfRespDisclosureInstruction;
-        Side Side;
-        QuoteCancelType QuoteCancelType;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        FreeText5 FreeText5;
-        Pad1 Pad1;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 

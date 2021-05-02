@@ -466,7 +466,7 @@ namespace Nyse.Equities.Bqt.Xdp.v2.1.a {
 
 
     /// <summary>
-    ///  Ok for late hours
+    ///  Ok For Late Hours
     /// </summary>
     public unsafe struct OkForLateHours {
         public const int Size = 1;
@@ -476,7 +476,7 @@ namespace Nyse.Equities.Bqt.Xdp.v2.1.a {
 
 
     /// <summary>
-    ///  Ok for morning hours
+    ///  Ok For Morning Hours
     /// </summary>
     public unsafe struct OkForMorningHours {
         public const int Size = 1;
@@ -486,7 +486,7 @@ namespace Nyse.Equities.Bqt.Xdp.v2.1.a {
 
 
     /// <summary>
-    ///  Ok for national hours
+    ///  Ok For National Hours
     /// </summary>
     public unsafe struct OkForNationalHours {
         public const int Size = 1;
@@ -1352,6 +1352,15 @@ namespace Nyse.Equities.Bqt.Xdp.v2.1.a {
 
 
     /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        MessageHeader MessageHeader;
+    };
+
+
+    /// <summary>
     ///  Struct for Message Header
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -1370,6 +1379,15 @@ namespace Nyse.Equities.Bqt.Xdp.v2.1.a {
         EndSeqNum EndSeqNum;
         ProductId ProductId;
         ChannelId ChannelId;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
     };
 
 

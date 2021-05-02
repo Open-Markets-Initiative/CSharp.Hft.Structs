@@ -4481,20 +4481,20 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     ///////////////////////////////////////////////////////////////////////
 
     /// <summary>
-    ///  Struct for Affected Ord Grp
+    ///  Struct for Affected Ord Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct AffectedOrdGrp {
+    public unsafe struct AffectedOrdGrpComp {
         AffectedOrderId AffectedOrderId;
         AffectedOrigClOrdId AffectedOrigClOrdId;
     };
 
 
     /// <summary>
-    ///  Struct for Affected Order Requests Grp
+    ///  Struct for Affected Order Requests Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct AffectedOrderRequestsGrp {
+    public unsafe struct AffectedOrderRequestsGrpComp {
         AffectedOrderRequestId AffectedOrderRequestId;
         Pad4 Pad4;
     };
@@ -4505,8 +4505,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ApproveTesTradeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         PartyIdClientId PartyIdClientId;
         PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
         ExecutingTrader ExecutingTrader;
@@ -4540,8 +4540,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct BestQuoteExecutionReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         ExecId ExecId;
         QuoteMsgId QuoteMsgId;
         SecurityId SecurityId;
@@ -4562,8 +4562,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct BestQuoteResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         QuoteId QuoteId;
         QuoteResponseId QuoteResponseId;
         SecurityId SecurityId;
@@ -4579,8 +4579,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct BroadcastErrorNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         ApplIdStatus ApplIdStatus;
         RefApplSubId RefApplSubId;
         VarTextLen VarTextLen;
@@ -4595,8 +4595,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct CrossRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         OrderQty OrderQty;
         MarketSegmentId MarketSegmentId;
@@ -4609,8 +4609,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct CrossRequestResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         ExecId ExecId;
     };
 
@@ -4620,8 +4620,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         MassActionReportId MassActionReportId;
     };
 
@@ -4631,8 +4631,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllOrderQuoteEventBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MassActionReportId MassActionReportId;
         SecurityId SecurityId;
         MarketSegmentId MarketSegmentId;
@@ -4647,8 +4647,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllOrderRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         Price Price;
         PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
@@ -4668,8 +4668,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllQuoteBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MassActionReportId MassActionReportId;
         SecurityId SecurityId;
         MarketSegmentId MarketSegmentId;
@@ -4689,8 +4689,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
         ExecutingTrader ExecutingTrader;
         MarketSegmentId MarketSegmentId;
@@ -4706,8 +4706,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteAllQuoteResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         MassActionReportId MassActionReportId;
         NoNotAffectedSecurities NoNotAffectedSecurities;
         Pad6 Pad6;
@@ -4719,8 +4719,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4751,8 +4751,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4774,8 +4774,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4797,8 +4797,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteOrderSingleRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4822,8 +4822,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct DeleteTesTradeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         PackageId PackageId;
         MarketSegmentId MarketSegmentId;
         TesExecId TesExecId;
@@ -4835,10 +4835,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Enrichment Rules Grp
+    ///  Struct for Enrichment Rules Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct EnrichmentRulesGrp {
+    public unsafe struct EnrichmentRulesGrpComp {
         EnrichmentRuleId EnrichmentRuleId;
         FreeText1 FreeText1;
         FreeText2 FreeText2;
@@ -4852,8 +4852,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct EnterBestQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         QuoteId QuoteId;
         SecurityId SecurityId;
         BidPx BidPx;
@@ -4881,8 +4881,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct EnterTesTradeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         LastPx LastPx;
         TransBkdTime TransBkdTime;
@@ -4903,8 +4903,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ExtendedDeletionReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -4957,10 +4957,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Fills Grp
+    ///  Struct for Fills Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct FillsGrp {
+    public unsafe struct FillsGrpComp {
         FillPx FillPx;
         FillQty FillQty;
         FillMatchId FillMatchId;
@@ -4975,8 +4975,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ForcedLogoutNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         VarTextLen VarTextLen;
         Pad6 Pad6;
     };
@@ -4987,8 +4987,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ForcedUserLogoutNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         UserStatus UserStatus;
         Pad3 Pad3;
         Username Username;
@@ -5002,7 +5002,7 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct Heartbeat {
-        MessageHeaderIn MessageHeaderIn;
+        MessageHeaderInComp MessageHeaderInComp;
     };
 
 
@@ -5011,8 +5011,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct HeartbeatNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
     };
 
 
@@ -5021,8 +5021,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireEnrichmentRuleIdListRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         LastEntityProcessed LastEntityProcessed;
     };
 
@@ -5032,8 +5032,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireEnrichmentRuleIdListResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         LastEntityProcessed LastEntityProcessed;
         NoEnrichmentRules NoEnrichmentRules;
         Pad6 Pad6;
@@ -5045,8 +5045,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireSessionListRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
     };
 
 
@@ -5055,8 +5055,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireSessionListResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         NoSessions NoSessions;
         Pad6 Pad6;
     };
@@ -5067,8 +5067,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireUserRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         LastEntityProcessed LastEntityProcessed;
     };
 
@@ -5078,8 +5078,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct InquireUserResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         LastEntityProcessed LastEntityProcessed;
         NoPartyDetails NoPartyDetails;
         Pad6 Pad6;
@@ -5091,8 +5091,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct IssuerNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         SecurityId SecurityId;
         TransactTime TransactTime;
         LastPx LastPx;
@@ -5111,8 +5111,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct IssuerSecurityStateChangeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         TransactTime TransactTime;
         MarketSegmentId MarketSegmentId;
@@ -5128,8 +5128,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct IssuerSecurityStateChangeResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         SecurityStatusReportId SecurityStatusReportId;
     };
 
@@ -5139,8 +5139,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LegalNotificationBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         VarTextLen VarTextLen;
         UserStatus UserStatus;
@@ -5153,8 +5153,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogonRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         HeartBtInt HeartBtInt;
         PartyIdSessionId PartyIdSessionId;
         DefaultCstmApplVerId DefaultCstmApplVerId;
@@ -5177,8 +5177,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogonResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ThrottleTimeInterval ThrottleTimeInterval;
         ThrottleNoMsgs ThrottleNoMsgs;
         ThrottleDisconnectLimit ThrottleDisconnectLimit;
@@ -5197,8 +5197,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogoutRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
     };
 
 
@@ -5207,8 +5207,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct LogoutResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 
@@ -5217,8 +5217,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MassQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         QuoteId QuoteId;
         PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
         ExecutingTrader ExecutingTrader;
@@ -5244,8 +5244,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MassQuoteResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         QuoteId QuoteId;
         QuoteResponseId QuoteResponseId;
         MarketSegmentId MarketSegmentId;
@@ -5255,10 +5255,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Message Header In
+    ///  Struct for Message Header In Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MessageHeaderIn {
+    public unsafe struct MessageHeaderInComp {
         BodyLen BodyLen;
         TemplateId TemplateId;
         NetworkMsgId NetworkMsgId;
@@ -5267,10 +5267,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Message Header Out
+    ///  Struct for Message Header Out Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct MessageHeaderOut {
+    public unsafe struct MessageHeaderOutComp {
         BodyLen BodyLen;
         TemplateId TemplateId;
         Pad2 Pad2;
@@ -5282,8 +5282,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -5310,8 +5310,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -5339,8 +5339,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderSingleRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -5392,8 +5392,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyOrderSingleShortRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
         SecurityId SecurityId;
@@ -5426,8 +5426,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ModifyTesTradeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         LastPx LastPx;
         TransBkdTime TransBkdTime;
         MarketSegmentId MarketSegmentId;
@@ -5448,8 +5448,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderNrResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         SecurityId SecurityId;
@@ -5470,8 +5470,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         SecurityId SecurityId;
@@ -5494,8 +5494,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderSingleRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         Price Price;
         OrderQty OrderQty;
         DisplayQty DisplayQty;
@@ -5545,8 +5545,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewOrderSingleShortRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         Price Price;
         OrderQty OrderQty;
@@ -5578,8 +5578,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct NewsBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         OrigTime OrigTime;
         VarTextLen VarTextLen;
         Headline Headline;
@@ -5588,38 +5588,38 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Not Affected Orders Grp
+    ///  Struct for Not Affected Orders Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NotAffectedOrdersGrp {
+    public unsafe struct NotAffectedOrdersGrpComp {
         NotAffectedOrderId NotAffectedOrderId;
         NotAffOrigClOrdId NotAffOrigClOrdId;
     };
 
 
     /// <summary>
-    ///  Struct for Not Affected Securities Grp
+    ///  Struct for Not Affected Securities Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NotAffectedSecuritiesGrp {
+    public unsafe struct NotAffectedSecuritiesGrpComp {
         NotAffectedSecurityId NotAffectedSecurityId;
     };
 
 
     /// <summary>
-    ///  Struct for Notif Header
+    ///  Struct for Notif Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NotifHeader {
+    public unsafe struct NotifHeaderComp {
         SendingTime SendingTime;
     };
 
 
     /// <summary>
-    ///  Struct for Nr Response Header Me
+    ///  Struct for Nr Response Header Me Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NrResponseHeaderMe {
+    public unsafe struct NrResponseHeaderMeComp {
         RequestTime RequestTime;
         TrdRegTsTimeIn TrdRegTsTimeIn;
         TrdRegTsTimeOut TrdRegTsTimeOut;
@@ -5632,10 +5632,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Nrbc Header
+    ///  Struct for Nrbc Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct NrbcHeader {
+    public unsafe struct NrbcHeaderComp {
         SendingTime SendingTime;
         ApplSubId ApplSubId;
         ApplId ApplId;
@@ -5645,10 +5645,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Order Book Item Grp
+    ///  Struct for Order Book Item Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct OrderBookItemGrp {
+    public unsafe struct OrderBookItemGrpComp {
         BestBidPx BestBidPx;
         BestBidSize BestBidSize;
         BestOfferPx BestOfferPx;
@@ -5664,8 +5664,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct OrderExecNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -5696,8 +5696,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct OrderExecReportBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -5760,8 +5760,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct OrderExecResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeaderMe ResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderMeComp ResponseHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -5793,8 +5793,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct PartyActionReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         TradeDate TradeDate;
         RequestingPartyIdExecutingTrader RequestingPartyIdExecutingTrader;
@@ -5808,10 +5808,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Party Details Grp
+    ///  Struct for Party Details Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct PartyDetailsGrp {
+    public unsafe struct PartyDetailsGrpComp {
         PartyDetailIdExecutingTrader PartyDetailIdExecutingTrader;
         PartyDetailExecutingTrader PartyDetailExecutingTrader;
         PartyDetailRoleQualifier PartyDetailRoleQualifier;
@@ -5826,8 +5826,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct PartyEntitlementsUpdateReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         TradeDate TradeDate;
         PartyDetailIdExecutingUnit PartyDetailIdExecutingUnit;
@@ -5846,8 +5846,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteActivationNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MassActionReportId MassActionReportId;
         MarketSegmentId MarketSegmentId;
         PartyIdEnteringTrader PartyIdEnteringTrader;
@@ -5864,8 +5864,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteActivationRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
         ExecutingTrader ExecutingTrader;
         MarketSegmentId MarketSegmentId;
@@ -5882,8 +5882,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteActivationResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         MassActionReportId MassActionReportId;
         NoNotAffectedSecurities NoNotAffectedSecurities;
         Pad6 Pad6;
@@ -5891,10 +5891,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Quote Entry Ack Grp
+    ///  Struct for Quote Entry Ack Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct QuoteEntryAckGrp {
+    public unsafe struct QuoteEntryAckGrpComp {
         SecurityId SecurityId;
         CxlSize CxlSize;
         QuoteEntryRejectReason QuoteEntryRejectReason;
@@ -5905,10 +5905,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Quote Entry Grp
+    ///  Struct for Quote Entry Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct QuoteEntryGrp {
+    public unsafe struct QuoteEntryGrpComp {
         SecurityId SecurityId;
         BidPx BidPx;
         BidSize BidSize;
@@ -5918,10 +5918,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Quote Event Grp
+    ///  Struct for Quote Event Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct QuoteEventGrp {
+    public unsafe struct QuoteEventGrpComp {
         SecurityId SecurityId;
         QuoteEventPx QuoteEventPx;
         QuoteEventQty QuoteEventQty;
@@ -5941,8 +5941,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct QuoteExecutionReport {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         ExecId ExecId;
         MarketSegmentId MarketSegmentId;
         NoQuoteEvents NoQuoteEvents;
@@ -5951,10 +5951,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Rbc Header
+    ///  Struct for Rbc Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RbcHeader {
+    public unsafe struct RbcHeaderComp {
         SendingTime SendingTime;
         ApplSeqNum ApplSeqNum;
         ApplSubId ApplSubId;
@@ -5967,10 +5967,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Rbc Header Me
+    ///  Struct for Rbc Header Me Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RbcHeaderMe {
+    public unsafe struct RbcHeaderMeComp {
         TrdRegTsTimeOut TrdRegTsTimeOut;
         NotificationIn NotificationIn;
         SendingTime SendingTime;
@@ -5989,8 +5989,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct Reject {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         SessionRejectReason SessionRejectReason;
         VarTextLen VarTextLen;
         SessionStatus SessionStatus;
@@ -5999,20 +5999,20 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Request Header
+    ///  Struct for Request Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct RequestHeader {
+    public unsafe struct RequestHeaderComp {
         MsgSeqNum MsgSeqNum;
         SenderSubId SenderSubId;
     };
 
 
     /// <summary>
-    ///  Struct for Response Header
+    ///  Struct for Response Header Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct ResponseHeader {
+    public unsafe struct ResponseHeaderComp {
         RequestTime RequestTime;
         SendingTime SendingTime;
         MsgSeqNum MsgSeqNum;
@@ -6021,10 +6021,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Response Header Me
+    ///  Struct for Response Header Me Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct ResponseHeaderMe {
+    public unsafe struct ResponseHeaderMeComp {
         RequestTime RequestTime;
         TrdRegTsTimeIn TrdRegTsTimeIn;
         TrdRegTsTimeOut TrdRegTsTimeOut;
@@ -6043,8 +6043,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitMeMessageRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SubscriptionScope SubscriptionScope;
         PartitionId PartitionId;
         RefApplId RefApplId;
@@ -6059,8 +6059,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitMeMessageResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ApplTotalMessageCount ApplTotalMessageCount;
         ApplEndMsgId ApplEndMsgId;
         RefApplLastMsgId RefApplLastMsgId;
@@ -6073,8 +6073,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         ApplBegSeqNum ApplBegSeqNum;
         ApplEndSeqNum ApplEndSeqNum;
         PartitionId PartitionId;
@@ -6088,8 +6088,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RetransmitResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ApplEndSeqNum ApplEndSeqNum;
         RefApplLastSeqNum RefApplLastSeqNum;
         ApplTotalMessageCount ApplTotalMessageCount;
@@ -6102,8 +6102,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RfqBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         SecurityId SecurityId;
         ExecId ExecId;
         OrderQty OrderQty;
@@ -6119,8 +6119,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RfqRejectNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         SecurityId SecurityId;
         ExecId ExecId;
         QuoteId QuoteId;
@@ -6136,8 +6136,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RfqRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         OrderQty OrderQty;
         QuoteId QuoteId;
@@ -6154,8 +6154,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RfqResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         ExecId ExecId;
     };
 
@@ -6165,8 +6165,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct RfqSpecialistBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         SecurityId SecurityId;
         ExecId ExecId;
         OrderQty OrderQty;
@@ -6179,10 +6179,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Security Status Event Grp
+    ///  Struct for Security Status Event Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SecurityStatusEventGrp {
+    public unsafe struct SecurityStatusEventGrpComp {
         EventPx EventPx;
         EventDate EventDate;
         EventType EventType;
@@ -6195,8 +6195,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ServiceAvailabilityBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        NrbcHeader NrbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrbcHeaderComp NrbcHeaderComp;
         MatchingEngineTradeDate MatchingEngineTradeDate;
         TradeManagerTradeDate TradeManagerTradeDate;
         ApplSeqTradeDate ApplSeqTradeDate;
@@ -6217,8 +6217,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ServiceAvailabilityMarketBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        NrbcHeader NrbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrbcHeaderComp NrbcHeaderComp;
         SelectiveRequestForQuoteServiceTradeDate SelectiveRequestForQuoteServiceTradeDate;
         SelectiveRequestForQuoteServiceStatus SelectiveRequestForQuoteServiceStatus;
         Pad3 Pad3;
@@ -6226,10 +6226,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Sessions Grp
+    ///  Struct for Sessions Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SessionsGrp {
+    public unsafe struct SessionsGrpComp {
         PartyIdSessionId PartyIdSessionId;
         SessionMode SessionMode;
         SessionSubMode SessionSubMode;
@@ -6238,25 +6238,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Side Alloc Grp
+    ///  Struct for Side Alloc Grp Bc Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SideAllocGrp {
-        AllocQty AllocQty;
-        IndividualAllocId IndividualAllocId;
-        TesEnrichmentRuleId TesEnrichmentRuleId;
-        Side Side;
-        PartyExecutingFirm PartyExecutingFirm;
-        PartyExecutingTrader PartyExecutingTrader;
-        Pad4 Pad4;
-    };
-
-
-    /// <summary>
-    ///  Struct for Side Alloc Grp Bc
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SideAllocGrpBc {
+    public unsafe struct SideAllocGrpBcComp {
         AllocQty AllocQty;
         IndividualAllocId IndividualAllocId;
         TesEnrichmentRuleId TesEnrichmentRuleId;
@@ -6269,12 +6254,27 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
+    ///  Struct for Side Alloc Grp Comp
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct SideAllocGrpComp {
+        AllocQty AllocQty;
+        IndividualAllocId IndividualAllocId;
+        TesEnrichmentRuleId TesEnrichmentRuleId;
+        Side Side;
+        PartyExecutingFirm PartyExecutingFirm;
+        PartyExecutingTrader PartyExecutingTrader;
+        Pad4 Pad4;
+    };
+
+
+    /// <summary>
     ///  Struct for Single Quote Request
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SingleQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         QuoteId QuoteId;
         SecurityId SecurityId;
         PartyIdInvestmentDecisionMaker PartyIdInvestmentDecisionMaker;
@@ -6307,8 +6307,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SpecialistInstrumentEventNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         SecurityId SecurityId;
         TransactTime TransactTime;
         MarketSegmentId MarketSegmentId;
@@ -6322,8 +6322,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SpecialistOrderBookNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -6375,8 +6375,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SpecialistRfqRejectRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         QuoteId QuoteId;
         MarketSegmentId MarketSegmentId;
@@ -6391,8 +6391,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SpecialistRfqReplyNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         SecurityId SecurityId;
         TransactTime TransactTime;
         QuoteId QuoteId;
@@ -6411,8 +6411,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SpecialistRfqReplyRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         QuoteId QuoteId;
         BidPx BidPx;
@@ -6430,8 +6430,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SpecialistRfqReplyResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         TransactTime TransactTime;
     };
 
@@ -6441,8 +6441,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SpecialistSecurityStateChangeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         MarketSegmentId MarketSegmentId;
         EventType EventType;
@@ -6455,17 +6455,17 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SpecialistSecurityStateChangeResponse {
-        MessageHeaderOut MessageHeaderOut;
-        NrResponseHeaderMe NrResponseHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NrResponseHeaderMeComp NrResponseHeaderMeComp;
         SecurityStatusReportId SecurityStatusReportId;
     };
 
 
     /// <summary>
-    ///  Struct for Srqs Quote Entry Grp
+    ///  Struct for Srqs Quote Entry Grp Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct SrqsQuoteEntryGrp {
+    public unsafe struct SrqsQuoteEntryGrpComp {
         TransactTime TransactTime;
         QuoteId QuoteId;
         SecondaryQuoteId SecondaryQuoteId;
@@ -6487,8 +6487,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SubscribeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SubscriptionScope SubscriptionScope;
         RefApplId RefApplId;
         Pad3 Pad3;
@@ -6500,8 +6500,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct SubscribeResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         ApplSubId ApplSubId;
         Pad4 Pad4;
     };
@@ -6512,8 +6512,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TesApproveBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         SecurityId SecurityId;
         LastPx LastPx;
         AllocQty AllocQty;
@@ -6554,8 +6554,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TesDeleteBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         MarketSegmentId MarketSegmentId;
         PackageId PackageId;
@@ -6574,8 +6574,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TesExecutionBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         MarketSegmentId MarketSegmentId;
         PackageId PackageId;
@@ -6594,8 +6594,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TesResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         TesExecId TesExecId;
         TradeReportId TradeReportId;
     };
@@ -6606,8 +6606,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TesTradeBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         SecurityId SecurityId;
         LastPx LastPx;
         LastQty LastQty;
@@ -6680,8 +6680,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TesTradingSessionStatusBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TradeDate TradeDate;
         TradSesEvent TradSesEvent;
         Pad3 Pad3;
@@ -6693,8 +6693,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct ThrottleUpdateNotification {
-        MessageHeaderOut MessageHeaderOut;
-        NotifHeader NotifHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        NotifHeaderComp NotifHeaderComp;
         ThrottleTimeInterval ThrottleTimeInterval;
         ThrottleNoMsgs ThrottleNoMsgs;
         ThrottleDisconnectLimit ThrottleDisconnectLimit;
@@ -6706,8 +6706,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TmTradingSessionStatusBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TradSesEvent TradSesEvent;
         Pad7 Pad7;
     };
@@ -6718,8 +6718,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TradeBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         SecurityId SecurityId;
         Price Price;
         LastPx LastPx;
@@ -6805,8 +6805,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TradingSessionStatusBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         MarketSegmentId MarketSegmentId;
         TradeDate TradeDate;
         TradSesEvent TradSesEvent;
@@ -6820,8 +6820,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct TrailingStopUpdateNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeaderMe RbcHeaderMe;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderMeComp RbcHeaderMeComp;
         OrderId OrderId;
         ClOrdId ClOrdId;
         OrigClOrdId OrigClOrdId;
@@ -6845,8 +6845,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UnsubscribeRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         RefApplSubId RefApplSubId;
         Pad4 Pad4;
     };
@@ -6857,8 +6857,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UnsubscribeResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 
@@ -6867,8 +6867,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLoginRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         Username Username;
         Password Password;
         Pad4 Pad4;
@@ -6880,8 +6880,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLoginResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 
@@ -6890,8 +6890,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLogoutRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         Username Username;
         Pad4 Pad4;
     };
@@ -6902,8 +6902,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct UserLogoutResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
     };
 
 
@@ -6912,8 +6912,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightCreateDealNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         LastPx LastPx;
         LastQty LastQty;
@@ -6953,8 +6953,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightDealResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         SecurityId SecurityId;
         QuoteId QuoteId;
         NegotiationId NegotiationId;
@@ -6971,8 +6971,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightEnterQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         BidPx BidPx;
         OfferPx OfferPx;
         BidSize BidSize;
@@ -7002,8 +7002,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightHitQuoteRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         QuoteId QuoteId;
         OrderQty OrderQty;
         Price Price;
@@ -7035,8 +7035,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightNegotiationNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         BidPx BidPx;
         OfferPx OfferPx;
@@ -7062,8 +7062,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightNegotiationRequesterNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         TrdRegTsExecutionTime TrdRegTsExecutionTime;
         BidPx BidPx;
@@ -7093,8 +7093,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightNegotiationStatusNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         NegotiationId NegotiationId;
         QuoteStatus QuoteStatus;
@@ -7108,8 +7108,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightOpenNegotiationNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         NegotiationStartTime NegotiationStartTime;
         SecurityId SecurityId;
@@ -7140,8 +7140,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightOpenNegotiationRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         SecurityId SecurityId;
         BidPx BidPx;
         OfferPx OfferPx;
@@ -7168,8 +7168,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightOpenNegotiationRequesterNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         SecurityId SecurityId;
         BidPx BidPx;
@@ -7201,8 +7201,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightQuoteNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         QuoteId QuoteId;
         SecondaryQuoteId SecondaryQuoteId;
@@ -7230,8 +7230,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightQuoteRequesterNotification {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TransactTime TransactTime;
         NegotiationId NegotiationId;
         TradeId TradeId;
@@ -7246,8 +7246,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightQuoteResponse {
-        MessageHeaderOut MessageHeaderOut;
-        ResponseHeader ResponseHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        ResponseHeaderComp ResponseHeaderComp;
         QuoteId QuoteId;
         NegotiationId NegotiationId;
         QuoteReqId QuoteReqId;
@@ -7259,8 +7259,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightQuotingStatusRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         MarketSegmentId MarketSegmentId;
         NegotiationId NegotiationId;
         QuotingStatus QuotingStatus;
@@ -7275,8 +7275,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightStatusBroadcast {
-        MessageHeaderOut MessageHeaderOut;
-        RbcHeader RbcHeader;
+        MessageHeaderOutComp MessageHeaderOutComp;
+        RbcHeaderComp RbcHeaderComp;
         TradeDate TradeDate;
         TradSesEvent TradSesEvent;
         Pad3 Pad3;
@@ -7284,10 +7284,10 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
 
 
     /// <summary>
-    ///  Struct for Xetra En Light Target Parties
+    ///  Struct for Xetra En Light Target Parties Comp
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe struct XetraEnLightTargetParties {
+    public unsafe struct XetraEnLightTargetPartiesComp {
         TargetPartyIdExecutingTrader TargetPartyIdExecutingTrader;
         TargetPartyExecutingFirm TargetPartyExecutingFirm;
         TargetPartyExecutingTrader TargetPartyExecutingTrader;
@@ -7300,8 +7300,8 @@ namespace Eurex.Cash.Eti.T7.v8.1 {
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct XetraEnLightUpdateNegotiationRequest {
-        MessageHeaderIn MessageHeaderIn;
-        RequestHeader RequestHeader;
+        MessageHeaderInComp MessageHeaderInComp;
+        RequestHeaderComp RequestHeaderComp;
         BidPx BidPx;
         OfferPx OfferPx;
         OrderQty OrderQty;

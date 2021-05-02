@@ -377,17 +377,8 @@ namespace Siac.Cqs.Output.Cta.v1.91 {
     /// <summary>
     ///  Block Pad Byte
     /// </summary>
-    public unsafe struct BlockPadByte {
-        public const int Size = 1;
-
-        public byte Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public byte Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
+    public struct BlockPadByte {
+        public byte Raw;
     };
 
 
@@ -726,17 +717,8 @@ namespace Siac.Cqs.Output.Cta.v1.91 {
     /// <summary>
     ///  Message Id
     /// </summary>
-    public unsafe struct MessageId {
-        public const int Size = 1;
-
-        public byte Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public byte Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
+    public struct MessageId {
+        public byte Raw;
     };
 
 
@@ -760,17 +742,8 @@ namespace Siac.Cqs.Output.Cta.v1.91 {
     /// <summary>
     ///  Messages In Block
     /// </summary>
-    public unsafe struct MessagesInBlock {
-        public const int Size = 1;
-
-        public byte Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public byte Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
+    public struct MessagesInBlock {
+        public byte Raw;
     };
 
 
@@ -858,17 +831,8 @@ namespace Siac.Cqs.Output.Cta.v1.91 {
     /// <summary>
     ///  Number Of Extensions
     /// </summary>
-    public unsafe struct NumberOfExtensions {
-        public const int Size = 1;
-
-        public byte Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public byte Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
+    public struct NumberOfExtensions {
+        public byte Raw;
     };
 
 
@@ -1049,17 +1013,8 @@ namespace Siac.Cqs.Output.Cta.v1.91 {
     /// <summary>
     ///  Reserved
     /// </summary>
-    public unsafe struct Reserved {
-        public const int Size = 1;
-
-        public byte Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public byte Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
+    public struct Reserved {
+        public byte Raw;
     };
 
 
@@ -1189,17 +1144,8 @@ namespace Siac.Cqs.Output.Cta.v1.91 {
     /// <summary>
     ///  Version
     /// </summary>
-    public unsafe struct Version {
-        public const int Size = 1;
-
-        public byte Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public byte Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
+    public struct Version {
+        public byte Raw;
     };
 
 
@@ -1282,6 +1228,15 @@ namespace Siac.Cqs.Output.Cta.v1.91 {
 
 
     /// <summary>
+    ///  Struct for Control
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Control {
+        ControlMessageType ControlMessageType;
+    };
+
+
+    /// <summary>
     ///  Struct for Disaster Recovery Data Center Activation Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -1360,6 +1315,15 @@ namespace Siac.Cqs.Output.Cta.v1.91 {
 
 
     /// <summary>
+    ///  Struct for Market Status
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct MarketStatus {
+        MarketStatusMessageType MarketStatusMessageType;
+    };
+
+
+    /// <summary>
     ///  Struct for Market Wide Circuit Breaker Decline Level Status Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -1388,6 +1352,15 @@ namespace Siac.Cqs.Output.Cta.v1.91 {
         ParticipantReferenceNumber ParticipantReferenceNumber;
         MarketWideCircuitBreakerLevelIndicator MarketWideCircuitBreakerLevelIndicator;
         Reserved Reserved;
+    };
+
+
+    /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        MessageHeader MessageHeader;
     };
 
 
@@ -1456,6 +1429,15 @@ namespace Siac.Cqs.Output.Cta.v1.91 {
     public unsafe struct ParticipantTimestamp {
         Seconds Seconds;
         Nanoseconds Nanoseconds;
+    };
+
+
+    /// <summary>
+    ///  Struct for Quote
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Quote {
+        QuoteMessageType QuoteMessageType;
     };
 
 

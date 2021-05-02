@@ -2446,17 +2446,8 @@ namespace Ice.Futures.Mdf.iMpact.v1.1.34 {
     /// <summary>
     ///  Timestamp
     /// </summary>
-    public unsafe struct Timestamp {
-        public const int Size = 8;
-
-        public ulong Bytes;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public ulong Value
-            => Swap(Bytes);
-        
-        public override string ToString()
-            => $"{Value}";
+    public struct Timestamp {
+        public long Raw;
     };
 
 
@@ -2989,6 +2980,15 @@ namespace Ice.Futures.Mdf.iMpact.v1.1.34 {
 
 
     /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        MessageHeader MessageHeader;
+    };
+
+
+    /// <summary>
     ///  Struct for Message Bundle Marker
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -3178,6 +3178,15 @@ namespace Ice.Futures.Mdf.iMpact.v1.1.34 {
         Volatility Volatility;
         SettlementPrice SettlementPrice;
         Delta Delta;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
     };
 
 

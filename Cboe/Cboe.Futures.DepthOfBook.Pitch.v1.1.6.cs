@@ -707,7 +707,7 @@ namespace Cboe.Futures.DepthOfBook.Pitch.v1.1.6 {
     ///  Trade Condition Values
     /// </summary>
     public enum TradeCondition : byte {
-        NormalTrade = (byte)'',
+        NormalTrade = (byte)' ',
         OpeningTrade = (byte)'O',
         SpreadTrade = (byte)'S',
         BlockTrade = (byte)'B',
@@ -862,6 +862,35 @@ namespace Cboe.Futures.DepthOfBook.Pitch.v1.1.6 {
 
 
     /// <summary>
+    ///  Struct for Futures Instrument Definition Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct FuturesInstrumentDefinitionMessage {
+        TimeOffset TimeOffset;
+        Symbol Symbol;
+        UnitTimestamp UnitTimestamp;
+        ReportSymbol ReportSymbol;
+        FuturesFlags FuturesFlags;
+        ExpirationDate ExpirationDate;
+        ContractSize ContractSize;
+        ListingState ListingState;
+        PriceIncrement PriceIncrement;
+        LegCount LegCount;
+        LegOffset LegOffset;
+        VarianceBlockOffset VarianceBlockOffset;
+    };
+
+
+    /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        MessageHeader MessageHeader;
+    };
+
+
+    /// <summary>
     ///  Struct for Message Header
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -905,6 +934,15 @@ namespace Cboe.Futures.DepthOfBook.Pitch.v1.1.6 {
         ExecutedQuantity ExecutedQuantity;
         ExecutionId ExecutionId;
         TradeCondition TradeCondition;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
     };
 
 

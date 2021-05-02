@@ -398,7 +398,7 @@ namespace Nasdaq.Psx.LastSale.Itch.v2.1 {
         NyseMkt = (byte)'A',
         NyseArca = (byte)'P',
         BatsZ = (byte)'Z',
-        Investors’Exchange = (byte)'V',
+        InvestorsExchange = (byte)'V',
         NotAvailable = (byte)' ',
     };
 

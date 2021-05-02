@@ -227,14 +227,14 @@ namespace Nasdaq.Phlx.Topo.Itch.v3.3 {
     ///  Event Code Values
     /// </summary>
     public enum EventCode : byte {
-        StartOfMessages = O,
-        StartOfSystemHours = S,
-        StartOfOpeningProcess = Q,
-        StartOfNormalHoursClosingProcess = N,
-        StartOfLateHoursClosingProcess = L,
-        EndOfSystemHours = E,
-        EndOfMessages = C,
-        EndOfWcoEarlyClosing = W,
+        StartOfMessages = (byte)'O',
+        StartOfSystemHours = (byte)'S',
+        StartOfOpeningProcess = (byte)'Q',
+        StartOfNormalHoursClosingProcess = (byte)'N',
+        StartOfLateHoursClosingProcess = (byte)'L',
+        EndOfSystemHours = (byte)'E',
+        EndOfMessages = (byte)'C',
+        EndOfWcoEarlyClosing = (byte)'W',
     };
 
 

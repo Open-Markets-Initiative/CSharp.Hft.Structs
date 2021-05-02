@@ -795,7 +795,7 @@ namespace Nasdaq.Ise.TopComboQuoteFeed.Itch.v1.0 {
     public enum Side : byte {
         Buy = (byte)'B',
         Sell = (byte)'S',
-        Hidden = (byte)'',
+        Hidden = (byte)' ',
     };
 
 
@@ -1023,12 +1023,30 @@ namespace Nasdaq.Ise.TopComboQuoteFeed.Itch.v1.0 {
 
 
     /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        MessageHeader MessageHeader;
+    };
+
+
+    /// <summary>
     ///  Struct for Message Header
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe struct MessageHeader {
         Length Length;
         MessageType MessageType;
+    };
+
+
+    /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
     };
 
 

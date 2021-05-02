@@ -435,6 +435,15 @@ namespace Nyse.Amex.Equities.OpenBook.Ultra.v2.1.b {
 
 
     /// <summary>
+    ///  Struct for Packet
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Packet {
+        PacketHeader PacketHeader;
+    };
+
+
+    /// <summary>
     ///  Struct for Packet Header
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]

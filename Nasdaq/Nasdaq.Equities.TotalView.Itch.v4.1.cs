@@ -303,7 +303,7 @@ namespace Nasdaq.Equities.TotalView.Itch.v4.1 {
         Arca = (byte)'P',
         NasdaqGsm = (byte)'Q',
         NasdaqGm = (byte)'G',
-        NasdaqCm = (byte)'G',
+        NasdaqCm = (byte)'S',
         Bats = (byte)'Z',
     };
 
@@ -363,7 +363,7 @@ namespace Nasdaq.Equities.TotalView.Itch.v4.1 {
         OrderExecutedWithPriceMessage = (byte)'C',
         OrderCancelMessage = (byte)'X',
         OrderDeleteMessage = (byte)'D',
-        OrderReplaceMessage = (byte)'D',
+        OrderReplaceMessage = (byte)'U',
         TradeMessage = (byte)'P',
         CrossTradeMessage = (byte)'Q',
         BrokenTradeMessage = (byte)'B',

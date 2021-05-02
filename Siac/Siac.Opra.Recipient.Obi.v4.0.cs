@@ -800,6 +800,16 @@ namespace Siac.Opra.Recipient.Obi.v4.0 {
 
 
     /// <summary>
+    ///  Struct for Message
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public unsafe struct Message {
+        ParticipantId ParticipantId;
+        MessageCategory MessageCategory;
+    };
+
+
+    /// <summary>
     ///  Struct for Open Interest Message
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
